@@ -41,7 +41,10 @@ und nicht wie ein Vortrag.
 ## Vorher erledigen
 
 **Bis 14.08.**
-- [ ] Karte zum Mitnehmen drucken (`karte.html`, beidseitig auf A5, eine pro Person plus zehn Reserve)
+- [ ] Karte zum Mitnehmen drucken (`karte-zum-mitnehmen.pdf`, beidseitig auf A5,
+      eine pro Person plus zehn Reserve). Der QR darauf führt zur Präsentation,
+      damit niemand mitschreiben muss. Das darf man am Anfang einmal sagen,
+      dann hören alle zu statt zu tippen.
 - [ ] Bei Fanny Doll (WFL, doll@wfl.de, 04541 86040) die Teilnehmerinnenzahl erfragen
 - [ ] Klären, ob ein Beamer da ist, welcher Anschluss, welches Format
 - [ ] Klären, wie hell der Raum um 8:30 Uhr ist. Falls Fensterfront ohne Verdunklung:

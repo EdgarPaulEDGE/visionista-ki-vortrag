@@ -109,6 +109,9 @@ html,body{background:var(--sand);}
 .reveal h1,.reveal h2,.reveal h3{
   color:var(--burgund);
   letter-spacing:-.012em;line-height:1.1;
+  /* Bricht mehrzeilige Titel ausgeglichen statt lang-dann-kurz.
+     Ein manuelles <br> hat weiterhin Vorrang. */
+  text-wrap:balance;
   margin:0;text-transform:none;text-shadow:none;
 }
 .reveal h1{font-size:132px;}
@@ -1151,13 +1154,13 @@ html.nofrag .reveal .fragment{opacity:1!important;visibility:visible!important;t
     <hr class="strich" style="margin:56px 0 52px;">
     <div class="spalten zwei" style="align-items:start;">
       <div>
-        <h3 style="font-size:46px;">Sagen, wenn<br>kein Mensch antwortet.</h3>
+        <h3 style="font-size:46px;">Sagen, wenn kein Mensch antwortet.</h3>
         <p class="klein" style="margin-top:22px;font-size:29px;max-width:620px;">
           Betrifft Chatfenster auf der Website und täuschend echte Bilder.
         </p>
       </div>
       <div>
-        <h3 style="font-size:46px;">Der Rest wurde<br>auf 2027 verschoben.</h3>
+        <h3 style="font-size:46px;">Der Rest wurde auf 2027 verschoben.</h3>
         <p class="klein" style="margin-top:22px;font-size:29px;max-width:620px;">
           Und betrifft die wenigsten hier im Raum.
         </p>
@@ -1275,40 +1278,55 @@ html.nofrag .reveal .fragment{opacity:1!important;visibility:visible!important;t
   <div class="buehne">
     <div class="label">Wenn Sie heute nur eine Sache mitnehmen</div>
     <h2 style="margin-top:26px;">Ihre <span class="akz">erste Woche</span>.</h2>
-    <hr class="strich breit" style="margin:46px 0 0;">
+    <hr class="strich breit" style="margin:42px 0 0;">
     <div class="zeilen" style="margin-top:6px;">
+      <!-- Niemand faengt gern bei null an. Der erste Schritt ist bereits getan,
+           und das gehoert sichtbar auf die Folie. -->
+      <div style="opacity:.5;">
+        <div style="width:250px;flex-shrink:0;">
+          <div class="zahl klein" style="font-size:54px;">✓</div>
+          <div class="label" style="margin-top:10px;">Gerade eben</div>
+        </div>
+        <div>
+          <h3 style="font-size:44px;text-decoration:line-through;text-decoration-thickness:2px;">
+            Herausfinden, wie es geht.</h3>
+          <p class="klein" style="margin-top:9px;font-size:27px;max-width:1000px;">
+            Erledigt. Sie fangen nicht bei null an.
+          </p>
+        </div>
+      </div>
       <div class="fragment aufblende">
         <div style="width:250px;flex-shrink:0;">
-          <div class="zahl klein" style="font-size:62px;">01</div>
+          <div class="zahl klein" style="font-size:54px;">01</div>
           <div class="label" style="margin-top:10px;">Heute Mittag</div>
         </div>
         <div>
-          <h3 style="font-size:44px;">Eine Aufgabe. Nur eine.</h3>
-          <p class="klein" style="margin-top:12px;font-size:29px;max-width:1000px;">
+          <h3 style="font-size:40px;">Eine Aufgabe. Nur eine.</h3>
+          <p class="klein" style="margin-top:9px;font-size:27px;max-width:1000px;">
             Nicht die wichtigste. Die lästigste.
           </p>
         </div>
       </div>
       <div class="fragment aufblende">
         <div style="width:250px;flex-shrink:0;">
-          <div class="zahl klein" style="font-size:62px;">02</div>
+          <div class="zahl klein" style="font-size:54px;">02</div>
           <div class="label" style="margin-top:10px;">Diese Woche</div>
         </div>
         <div>
-          <h3 style="font-size:44px;">Dieselbe Aufgabe noch einmal.</h3>
-          <p class="klein" style="margin-top:12px;font-size:29px;max-width:1000px;">
+          <h3 style="font-size:40px;">Dieselbe Aufgabe noch einmal.</h3>
+          <p class="klein" style="margin-top:9px;font-size:27px;max-width:1000px;">
             Diesmal meckern Sie. Beim dritten Mal sitzt es.
           </p>
         </div>
       </div>
       <div class="fragment aufblende">
         <div style="width:250px;flex-shrink:0;">
-          <div class="zahl klein" style="font-size:62px;">03</div>
+          <div class="zahl klein" style="font-size:54px;">03</div>
           <div class="label" style="margin-top:10px;">Ab dann</div>
         </div>
         <div>
-          <h3 style="font-size:44px;">Den Satz aufheben, der funktioniert hat.</h3>
-          <p class="klein" style="margin-top:12px;font-size:29px;max-width:1000px;">
+          <h3 style="font-size:40px;">Den Satz aufheben, der funktioniert hat.</h3>
+          <p class="klein" style="margin-top:9px;font-size:27px;max-width:1000px;">
             Nach vier Wochen haben Sie fünf, die Ihren Betrieb kennen.
           </p>
         </div>
@@ -1408,11 +1426,20 @@ html.nofrag .reveal .fragment{opacity:1!important;visibility:visible!important;t
         Fragen Sie uns alles. Besonders das,
         was Sie eben nicht laut fragen wollten.
       </p>
-      <div style="margin-top:66px;display:flex;gap:48px;align-items:center;">
-        <img src="assets/logos/edge-logo-dark.png" alt="EDGE Digital"
-             style="height:92px;width:auto;display:block;">
-        <div style="border-left:1px solid var(--linie);padding-left:48px;">
-          <p class="klein" style="font-size:25px;line-height:1.55;">
+      <div style="margin-top:58px;display:flex;gap:44px;align-items:center;">
+        <img src="assets/logos/qr-vortrag.png" alt="QR-Code zur Präsentation"
+             style="width:150px;height:150px;display:block;">
+        <div>
+          <div class="label" style="margin-bottom:10px;">Alles hier zum Nachlesen</div>
+          <p class="klein" style="font-size:24px;line-height:1.5;max-width:420px;">
+            Die Folien, die vier Fragen und die fertigen Sätze.
+            Kein Login, nichts eintragen.
+          </p>
+        </div>
+        <div style="border-left:1px solid var(--linie);padding-left:44px;">
+          <img src="assets/logos/edge-logo-dark.png" alt="EDGE Digital"
+               style="height:60px;width:auto;display:block;margin-bottom:16px;">
+          <p class="klein" style="font-size:22px;line-height:1.5;">
             Fischstraße 16, 23552 Lübeck<br>
             info@edge-digital.ai
           </p>
