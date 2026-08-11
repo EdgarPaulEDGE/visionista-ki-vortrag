@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>KI für Macherinnen | Zum Nachlesen</title>
+<meta name="description" content="Die vier Fragen, fünf fertige Sätze und die eine Datenschutzregel aus dem visionista-Vormittag am 19. August 2026.">
+<link rel="icon" type="image/png" href="assets/logos/visionista-favicon.png">
+<style>
+@font-face{font-family:'Bodoni Moda';font-style:normal;font-weight:400 900;font-display:swap;
+  src:url('assets/fonts/BodoniModa-var-latin.woff2') format('woff2');}
+@font-face{font-family:'Bodoni Moda';font-style:italic;font-weight:400 900;font-display:swap;
+  src:url('assets/fonts/BodoniModa-var-ital-latin.woff2') format('woff2');}
+@font-face{font-family:'Montserrat';font-weight:300;font-display:swap;
+  src:url('assets/fonts/Montserrat-300-latin.woff2') format('woff2');}
+@font-face{font-family:'Montserrat';font-weight:400;font-display:swap;
+  src:url('assets/fonts/Montserrat-400-latin.woff2') format('woff2');}
+@font-face{font-family:'Montserrat';font-weight:600;font-display:swap;
+  src:url('assets/fonts/Montserrat-600-latin.woff2') format('woff2');}
+
+:root{
+  --sand:#F1ECE2; --sand-tief:#E6DFD1; --burgund:#4C102E; --tinte:#1E1E1E;
+  --weich:#57504A; --terra:#C0562A; --linie:rgba(76,16,46,.16);
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+html{-webkit-text-size-adjust:100%;}
+body{background:var(--sand);color:var(--tinte);
+     font-family:'Montserrat',system-ui,sans-serif;font-weight:300;
+     font-size:17px;line-height:1.62;-webkit-font-smoothing:antialiased;}
+
+.blatt{max-width:720px;margin:0 auto;padding:34px 22px 90px;}
+
+h1,h2,h3{font-family:'Bodoni Moda',Georgia,serif;color:var(--burgund);
+  font-optical-sizing:none;font-variation-settings:'opsz' 11,'wght' 600;
+  line-height:1.14;letter-spacing:-.01em;text-wrap:balance;}
+h1{font-size:clamp(34px,8.5vw,54px);}
+h2{font-size:clamp(25px,6vw,34px);margin-bottom:6px;}
+h3{font-size:clamp(19px,4.6vw,22px);}
+em{font-style:italic;}
+strong{font-weight:600;color:var(--burgund);}
+a{color:var(--burgund);}
+
+.marke{display:flex;align-items:center;gap:14px;margin-bottom:30px;}
+.marke img{height:26px;width:auto;display:block;}
+.marke span{font-size:10px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;
+  color:var(--burgund);opacity:.62;border-left:1px solid var(--linie);padding-left:14px;line-height:1.45;}
+
+.label{font-size:11px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;
+  color:var(--burgund);opacity:.7;}
+.lead{font-size:clamp(18px,4.4vw,21px);line-height:1.6;margin-top:16px;}
+.klein{font-size:15px;color:var(--weich);line-height:1.6;}
+
+hr{border:none;height:1px;background:var(--linie);margin:38px 0;}
+hr.kurz{width:70px;height:2px;background:var(--burgund);opacity:.85;margin:22px 0 26px;}
+
+section{margin-top:46px;}
+
+/* Nummerierte Blöcke ohne Kästen, nur mit Haarlinien getrennt */
+.schritte > div{padding:22px 0;border-top:1px solid var(--linie);}
+.schritte > div:first-child{border-top:none;}
+.nr{font-family:'Bodoni Moda',Georgia,serif;font-optical-sizing:none;
+  font-variation-settings:'opsz' 11,'wght' 600;
+  font-size:30px;color:var(--burgund);line-height:1;display:block;margin-bottom:8px;}
+
+/* Ein gesagter Satz, wie im Vortrag: kein Kasten, nur Farbe und Einzug */
+.gesagt{font-size:16.5px;line-height:1.66;color:var(--burgund);font-weight:400;
+  border-left:2px solid var(--linie);padding-left:18px;margin-top:12px;}
+.gesagt .wer{font-family:'Bodoni Moda',Georgia,serif;font-style:italic;
+  font-optical-sizing:none;font-variation-settings:'opsz' 11,'wght' 600;}
+.platzhalter{color:var(--terra);font-weight:400;}
+
+.regel{background:var(--sand-tief);padding:24px 22px;margin-top:26px;}
+.regel p{font-size:16px;line-height:1.62;}
+
+.fuss{margin-top:56px;padding-top:26px;border-top:1px solid var(--linie);}
+.fuss img{height:44px;width:auto;display:block;margin-bottom:14px;}
+
+.knopf{display:inline-block;margin-top:14px;padding:15px 26px;
+  background:var(--burgund);color:var(--sand);text-decoration:none;
+  font-size:15px;font-weight:600;letter-spacing:.06em;}
+.knopf:hover{background:#63183C;}
+
+@media (min-width:620px){
+  .blatt{padding:56px 40px 110px;}
+  .zwei{display:grid;grid-template-columns:1fr 1fr;gap:0 40px;}
+  .zwei > div{padding-left:34px;border-left:1px solid var(--linie);}
+  .zwei > div:first-child{padding-left:0;border-left:none;}
+}
+</style>
+</head>
+<body>
+<div class="blatt">
+
+  <div class="marke">
+    <img src="assets/logos/visionista-wortmarke.png" alt="visionista">
+    <span>KI für Macherinnen<br>19. August 2026</span>
+  </div>
+
+  <h1>Vier Fragen,<br>und Sie sind drin.</h1>
+  <hr class="kurz">
+  <p class="lead">
+    Alles vom Vormittag zum Nachlesen. Sie brauchen kein Konto,
+    müssen nichts eintragen und nichts installieren.
+  </p>
+
+  <section>
+    <h2>Der eine Anfängerfehler</h2>
+    <p class="lead" style="font-size:17px;">
+      Fast alle tippen wie bei Google: drei Wörter, dann hofft man auf einen Treffer.
+      Es funktioniert aber wie das Gespräch mit einer neuen Aushilfe.
+      Klug und schnell, und sie weiß nichts über Ihren Betrieb.
+      Also erzählen Sie ihr, was sie wissen muss.
+    </p>
+  </section>
+
+  <section>
+    <h2>Die vier Fragen</h2>
+    <div class="schritte" style="margin-top:20px;">
+      <div>
+        <span class="nr">01</span>
+        <h3>Wer bist du für mich?</h3>
+        <p class="klein">„Du bist meine Büroleiterin." „Du bist eine erfahrene Verkäuferin."</p>
+      </div>
+      <div>
+        <span class="nr">02</span>
+        <h3>Was soll dabei rauskommen?</h3>
+        <p class="klein">Ein Angebot. Ein Beitrag. Eine Antwort auf diese Mail.</p>
+      </div>
+      <div>
+        <span class="nr">03</span>
+        <h3>Was musst du dafür wissen?</h3>
+        <p class="klein">Wer ist die Kundin, was ist vorher passiert, was kostet es,
+        was darf nicht vorkommen. <strong>Diese Frage macht den Unterschied,
+        und sie ist die, die fast immer fehlt.</strong></p>
+      </div>
+      <div>
+        <span class="nr">04</span>
+        <h3>Wie soll es aussehen?</h3>
+        <p class="klein">Wie lang, wie förmlich, mit Anrede, in Stichpunkten,
+        freundlich oder deutlich.</p>
+      </div>
+    </div>
+
+    <div class="gesagt" style="margin-top:26px;">
+      <span class="wer">Du bist meine Büroleiterin.</span> Schreib das Angebot für Frau Petersen.
+      Sie hat Dienstag angerufen, will vier Räume streichen lassen, Altbau, hohe Decken,
+      zieht am 1. Oktober ein. Ich komme auf 2.400 Euro. Sie war nett, aber preisbewusst.
+      Freundlich, kurz, ohne Fachwörter, vier Wochen gültig.
+    </div>
+  </section>
+
+  <section>
+    <h2>Und dann meckern Sie</h2>
+    <p class="lead" style="font-size:17px;">
+      Die erste Antwort ist ein Entwurf, kein Ergebnis. Genau hier hören die meisten auf
+      und schreiben es am Ende doch selbst. Dabei ist das Nachbessern die eigentliche Technik.
+    </p>
+    <div class="gesagt">Zu förmlich. Schreib das so, wie ich mit einer Stammkundin rede.</div>
+    <div class="gesagt">Die Hälfte davon reicht. Und der letzte Absatz kann weg.</div>
+    <div class="gesagt">Gib mir drei Fassungen. Eine vorsichtige, eine klare, eine sehr deutliche.</div>
+    <p class="lead" style="font-size:17px;margin-top:20px;">
+      Sie müssen nicht wissen, wie man richtig fragt.
+      Sie müssen nur sagen, was Ihnen an der Antwort nicht passt.
+    </p>
+  </section>
+
+  <hr>
+
+  <section style="margin-top:0;">
+    <div class="label">Zum Abtippen und Anpassen</div>
+    <h2 style="margin-top:10px;">Fünf Sätze für fünf Abende,<br>die Sie zurückbekommen</h2>
+
+    <div class="schritte" style="margin-top:24px;">
+      <div>
+        <h3>Das Angebot</h3>
+        <div class="gesagt">Du bist meine Büroleiterin. Schreib ein Angebot für
+          <span class="platzhalter">[Leistung]</span> an <span class="platzhalter">[Kundin]</span>.
+          Ausgangslage: <span class="platzhalter">[was besprochen wurde]</span>.
+          Preis: <span class="platzhalter">[Betrag]</span>. Freundlich, kurz, ohne Fachwörter,
+          Gültigkeit <span class="platzhalter">[Zeitraum]</span>.</div>
+      </div>
+      <div>
+        <h3>Der Beitrag für Instagram</h3>
+        <div class="gesagt">Du bist verantwortlich für unseren Auftritt. Hier ist ein Foto
+          aus meinem Betrieb. Schreib drei Bildunterschriften: eine persönliche, eine sachliche,
+          eine mit Augenzwinkern. Kurze Sätze, keine Werbesprache, am Ende eine echte Frage.</div>
+      </div>
+      <div>
+        <h3>Die Mahnung, die niemanden verliert</h3>
+        <div class="gesagt">Du bist meine ruhigste Kollegin. Eine Stammkundin hat seit
+          <span class="platzhalter">[Zeitraum]</span> eine Rechnung offen und meldet sich nicht.
+          Ich will sie nicht verlieren. Zwei Fassungen: einmal freundlich mit klarer Frist,
+          einmal deutlich. Ohne Drohung, ohne Paragraphen.</div>
+      </div>
+      <div>
+        <h3>Die Absage, die freundlich bleibt</h3>
+        <div class="gesagt">Du bist meine Büroleiterin. Ich muss
+          <span class="platzhalter">[Anfrage]</span> absagen, weil
+          <span class="platzhalter">[Grund]</span>. Kurz, warm, ohne Ausreden,
+          und mit der Tür einen Spalt offen für später.</div>
+      </div>
+      <div>
+        <h3>Wenn Ihnen morgens nichts einfällt</h3>
+        <div class="gesagt">Du kennst meinen Betrieb:
+          <span class="platzhalter">[zwei Sätze dazu]</span>. Gib mir zehn Ideen für
+          <span class="platzhalter">[Anlass]</span>. Keine allgemeinen Tipps, sondern Dinge,
+          die zu genau diesem Betrieb passen. Sortiere danach, was am wenigsten Aufwand macht.</div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Die einzige Regel</h2>
+    <div class="regel">
+      <p><strong>Beschreiben Sie die Lage, nicht die Person.</strong>
+      Statt „Frau Petersen aus der Bergstraße 12" schreiben Sie „eine Stammkundin".
+      Den Namen setzen Sie beim Einfügen ein, das dauert vier Sekunden,
+      und der Text wird derselbe.</p>
+      <p style="margin-top:14px;">Gesundheitsangaben, Personalakten und Bewerbungsunterlagen
+      gehören nie in eine kostenlose Fassung. Wer regelmäßig mit Kundendaten arbeitet,
+      nimmt die bezahlte Version, da gehört ein Vertrag dazu, der genau das regelt.</p>
+    </div>
+  </section>
+
+  <section>
+    <h2>Ihre erste Woche</h2>
+    <div class="schritte" style="margin-top:20px;">
+      <div style="opacity:.55;">
+        <span class="nr">✓</span>
+        <h3 style="text-decoration:line-through;">Herausfinden, wie es geht</h3>
+        <p class="klein">Erledigt. Sie fangen nicht bei null an.</p>
+      </div>
+      <div>
+        <span class="nr">01</span>
+        <h3>Eine Aufgabe. Nur eine.</h3>
+        <p class="klein">Die von Ihrer Liste, die Sie am meisten nervt.
+        Nicht die wichtigste, die lästigste.</p>
+      </div>
+      <div>
+        <span class="nr">02</span>
+        <h3>Dieselbe Aufgabe noch einmal</h3>
+        <p class="klein">Diesmal meckern Sie. Beim dritten Mal sitzt es,
+        und ab da dauert es zwei Minuten.</p>
+      </div>
+      <div>
+        <span class="nr">03</span>
+        <h3>Den Satz aufheben, der funktioniert hat</h3>
+        <p class="klein">In eine Notiz auf dem Handy. Nach vier Wochen haben Sie fünf Sätze,
+        die Ihren Betrieb kennen. Ein Werkzeug, das sonst niemand hat.</p>
+      </div>
+    </div>
+    <p class="lead" style="margin-top:22px;">
+      <em>Nicht zehn Werkzeuge. Eines. Nicht zwanzig Aufgaben. Eine.</em>
+    </p>
+  </section>
+
+  <section>
+    <h2>Was es kostet</h2>
+    <div class="zwei" style="margin-top:18px;">
+      <div>
+        <p><strong>0 Euro</strong> für den Anfang: Diktieren kann Ihr Handy ab Werk,
+        und zum Üben reicht eine kostenlose Fassung. Nur eben ohne Kundendaten.</p>
+      </div>
+      <div style="margin-top:16px;">
+        <p><strong>Rund 22 Euro im Monat</strong> für eine Person, wenn auch Kundendaten
+        hinein sollen. Kein Jahresabo nötig. Rechnen Sie kurz nach, was eine Stunde
+        Ihrer eigenen Arbeitszeit kostet.</p>
+      </div>
+    </div>
+    <p class="klein" style="margin-top:18px;">
+      Die gängigen Anbieter liegen alle in derselben Größenordnung. Wenn im Betrieb
+      ohnehin Microsoft 365 läuft, ist Copilot der kürzeste Weg. Wer besonderen Wert
+      auf einen europäischen Anbieter legt, schaut sich Mistral aus Frankreich an.
+    </p>
+  </section>
+
+  <div class="fuss">
+    <p class="klein" style="margin-bottom:22px;">
+      Vortrag beim Unternehmerinnen-Netzwerk visionista der Wirtschaftsförderung
+      Herzogtum Lauenburg, am 19. August 2026 bei der AWSH in Elmenhorst.
+      Die Fotos stammen von Franzi Schädel Fotografie und aus dem Bildarchiv der WFL,
+      die Zeichnungen sind mit KI entstanden.
+    </p>
+    <a class="knopf" href="index.html">Die Folien ansehen</a>
+    <div style="margin-top:34px;">
+      <img src="assets/logos/edge-logo-dark.png" alt="EDGE Digital">
+      <p class="klein">
+        Edgar Paul-Ghazaryan und Emre Erdogan<br>
+        EDGE Digital, Fischstraße 16, 23552 Lübeck<br>
+        <a href="mailto:info@edge-digital.ai">info@edge-digital.ai</a>
+      </p>
+    </div>
+  </div>
+
+</div>
+</body>
+</html>
