@@ -108,7 +108,7 @@ html,body{background:var(--sand);}
 }
 .reveal h1,.reveal h2,.reveal h3{
   color:var(--burgund);
-  letter-spacing:-.012em;line-height:1.02;
+  letter-spacing:-.012em;line-height:1.1;
   margin:0;text-transform:none;text-shadow:none;
 }
 .reveal h1{font-size:132px;}
@@ -367,22 +367,22 @@ html.nofrag .reveal .fragment{opacity:1!important;visibility:visible!important;t
     <h2 style="margin-top:26px;">Was heute <span class="akz">nicht</span> passiert.</h2>
     <hr class="strich breit" style="margin:56px 0 0;">
     <div class="zeilen" style="margin-top:0;">
-      <div style="padding:44px 0;">
+      <div style="padding:62px 0;">
         <span class="zahl klein" style="width:150px;flex-shrink:0;">01</span>
         <div>
-          <h3 style="font-size:62px;">Keine Fachwörter.</h3>
+          <h3 style="font-size:70px;">Keine Fachwörter.</h3>
         </div>
       </div>
-      <div style="padding:44px 0;">
+      <div style="padding:62px 0;">
         <span class="zahl klein" style="width:150px;flex-shrink:0;">02</span>
         <div>
-          <h3 style="font-size:62px;">Keine Angst.</h3>
+          <h3 style="font-size:70px;">Keine Angst.</h3>
         </div>
       </div>
-      <div style="padding:44px 0;">
+      <div style="padding:62px 0;">
         <span class="zahl klein" style="width:150px;flex-shrink:0;">03</span>
         <div>
-          <h3 style="font-size:62px;">Kein Verkauf.</h3>
+          <h3 style="font-size:70px;">Kein Verkauf.</h3>
         </div>
       </div>
     </div>
@@ -971,10 +971,10 @@ html.nofrag .reveal .fragment{opacity:1!important;visibility:visible!important;t
         </div>
       </div>
       <hr class="strich breit" style="margin:36px 0 26px;">
-      <p class="takeaway" style="max-width:1400px;">Wer hat ein Foto auf dem Handy, das längst raus sollte?</p>
+      <p class="takeaway">Wer hat gerade so ein Foto auf dem Handy?</p>
     </div>
     <img src="assets/illu/handy.png" alt="" class="illu frei"
-         style="width:280px;height:280px;right:96px;bottom:42px;opacity:.92;">
+         style="width:265px;height:265px;right:96px;bottom:30px;opacity:.92;">
 
     <aside class="notes">
       REGIE: In den Raum fragen. Eine Teilnehmerin schickt das Foto per Mail
@@ -1147,10 +1147,8 @@ html.nofrag .reveal .fragment{opacity:1!important;visibility:visible!important;t
 <section data-slide-id="ai-act">
   <div class="buehne mittig">
     <div class="label">Und weil danach immer gefragt wird</div>
-    <h2 style="margin-top:28px;max-width:1620px;">
-      Seit dem 2. August gilt die neue<br>europäische Stufe. Für Sie heißt das:
-    </h2>
-    <hr class="strich" style="margin:48px 0 44px;">
+    <h2 style="margin-top:30px;">Was seit dem 2. August gilt.</h2>
+    <hr class="strich" style="margin:56px 0 52px;">
     <div class="spalten zwei" style="align-items:start;">
       <div>
         <h3 style="font-size:46px;">Sagen, wenn<br>kein Mensch antwortet.</h3>
@@ -1410,19 +1408,19 @@ html.nofrag .reveal .fragment{opacity:1!important;visibility:visible!important;t
         Fragen Sie uns alles. Besonders das,
         was Sie eben nicht laut fragen wollten.
       </p>
-      <div style="margin-top:64px;display:flex;gap:52px;align-items:flex-start;">
-        <div>
-          <div class="label" style="margin-bottom:14px;">Edgar Paul-Ghazaryan</div>
-          <p class="klein" style="font-size:23px;">EDGE Digital, Lübeck<br>info@edge-digital.ai</p>
-        </div>
-        <div style="border-left:1px solid var(--linie);padding-left:52px;">
-          <div class="label" style="margin-bottom:14px;">Emre Erdogan</div>
-          <p class="klein" style="font-size:23px;">EDGE Digital, Lübeck</p>
+      <div style="margin-top:66px;display:flex;gap:48px;align-items:center;">
+        <img src="assets/logos/edge-logo-dark.png" alt="EDGE Digital"
+             style="height:92px;width:auto;display:block;">
+        <div style="border-left:1px solid var(--linie);padding-left:48px;">
+          <p class="klein" style="font-size:25px;line-height:1.55;">
+            Fischstraße 16, 23552 Lübeck<br>
+            info@edge-digital.ai
+          </p>
         </div>
       </div>
-      <p class="quelle" style="margin-top:56px;">
+      <p class="quelle" style="margin-top:52px;">
         Die Fotos in dieser Präsentation stammen von Franzi Schädel Fotografie
-        und aus dem Bildarchiv der WFL.
+        und aus dem Bildarchiv der WFL. Die Zeichnungen sind mit KI entstanden.
       </p>
     </div>
     <div style="width:620px;flex-shrink:0;">
@@ -1491,6 +1489,16 @@ html.nofrag .reveal .fragment{opacity:1!important;visibility:visible!important;t
         kind.classList.add('fragment','aufblende');
       }
     });
+
+    // Schliesst die Folie mit einem Fazit ab, sitzt dieses am unteren Rand.
+    // Der freie Raum liegt dann in der Mitte und wirkt als Atem,
+    // statt unten als Loch zu klaffen.
+    const letzte = [...buehne.children];
+    const fazit = letzte[letzte.length - 1];
+    if (fazit && fazit.classList.contains('takeaway')) {
+      const davor = fazit.previousElementSibling;
+      (davor && davor.tagName === 'HR' ? davor : fazit).style.marginTop = 'auto';
+    }
   });
 })();
 
