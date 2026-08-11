@@ -147,6 +147,17 @@ das Vorleben genau der Punkt ist, den wir zwei Folien später machen.
 
 ---
 
+## Ein Satz, der immer zieht
+
+Die Strichzeichnungen in dieser Präsentation sind selbst mit KI gemacht,
+in einem Durchgang, alle im gleichen Stil. Das lässt sich beiläufig erwähnen,
+am besten auf der Folie mit dem Instagram-Beitrag: „Die kleinen Zeichnungen hier
+sind übrigens auch so entstanden. Zwölf Minuten, ein Satz Beschreibung."
+
+Zwei Gründe, warum das gut ankommt: es belegt die Behauptung im selben Moment,
+in dem sie fällt, und es ist ehrlich. Nebenbei ist es genau die Transparenz,
+die der europäische Rahmen inzwischen erwartet.
+
 ## Zum Anknüpfen, falls sich die Gelegenheit ergibt
 
 - Die Fotos in der Präsentation sind von **Franzi Schädel**, die selbst Partnerin
