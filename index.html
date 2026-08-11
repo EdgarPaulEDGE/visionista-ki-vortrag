@@ -4,6 +4,8 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>KI für Macherinnen | visionista 19.08.2026</title>
+<link rel="icon" type="image/png" href="assets/logos/visionista-favicon.png">
+<link rel="apple-touch-icon" href="assets/logos/visionista-favicon.png">
 <link rel="stylesheet" href="vendor/reveal/reveal.css">
 <style>
 /* ============================================================
@@ -189,17 +191,17 @@ hr.strich.zart{width:100%;height:1px;background:var(--linie);margin:26px 0;opaci
 /* ============================================================
    5. FUSSZEILE UND MARKE
    ============================================================ */
+/* Das echte visionista-Logo, nicht nachgebaut: die eigenwilligen
+   i-Punkte sind ein Markenzeichen, das sich mit Schrift nicht treffen laesst. */
 .marke,.wortmarke{display:flex;align-items:center;gap:20px;z-index:6;}
-.marke{position:absolute;top:52px;left:var(--rand-x);opacity:.72;}
-.marke .wort,.wortmarke .wort{font-family:'Bodoni Moda',Georgia,serif;font-weight:600;
-             color:var(--burgund);letter-spacing:-.01em;font-size:31px;}
+.marke{position:absolute;top:46px;left:var(--rand-x);opacity:.8;}
+.marke img{height:28px;width:auto;display:block;}
+.wortmarke img{height:104px;width:auto;display:block;}
 .marke .sub,.wortmarke .sub{font-family:'Montserrat',sans-serif;font-size:11px;font-weight:600;
             letter-spacing:.2em;text-transform:uppercase;color:var(--burgund);opacity:.6;
             border-left:1px solid var(--linie-satt);padding-left:20px;line-height:1.4;}
-/* Die Titelfolie fuehrt die Wortmarke im Textfluss, deshalb eine eigene Klasse:
-   die Chrome-Ausblendung unten greift sonst auch hier. */
-.wortmarke .wort{font-size:38px;}
-.wortmarke .sub{font-size:13px;}
+/* Auf dunklen Bildfolien braucht das Logo eine helle Fassung. */
+.auf-bild .marke img,[data-chrome="hell"] .marke img{filter:brightness(0) invert(1);opacity:.9;}
 .seitenzahl{position:absolute;bottom:40px;right:var(--rand-x);font-size:18px;
             font-weight:500;color:var(--burgund);opacity:.45;letter-spacing:.1em;z-index:6;}
 [data-chrome="aus"] .marke,[data-chrome="aus"] .seitenzahl{display:none;}
@@ -230,6 +232,26 @@ hr.strich.zart{width:100%;height:1px;background:var(--linie);margin:26px 0;opaci
   transition:opacity .5s ease,transform .5s ease;}
 .reveal .fragment.aufblende.visible{opacity:1;transform:none;}
 .reveal .fragment.abblende.visible{opacity:.24;transition:opacity .45s ease;}
+
+/* ============================================================
+   GRAFIKEN
+   Schriftgroessen fuer SVG-Text NUR ueber Klassen, nie inline:
+   Chromium verrechnet den Reveal-Zoom bei SVG-Text mit
+   Inline-Schriftgroesse doppelt, dann schrumpfen nur die
+   Beschriftungen und kleben oben links.
+   ============================================================ */
+.chart-wert{font-family:'Bodoni Moda',Georgia,serif;font-optical-sizing:none;
+  font-variation-settings:'opsz' 11,'wght' 600;font-size:34px;fill:var(--burgund);}
+.chart-wert.stark{font-size:46px;fill:var(--terra);}
+.chart-jahr{font-family:'Montserrat',sans-serif;font-size:19px;font-weight:600;
+  letter-spacing:.14em;text-transform:uppercase;fill:var(--burgund);opacity:.6;}
+.chart-nam{font-family:'Montserrat',sans-serif;font-size:24px;font-weight:400;
+  fill:var(--tinte);}
+.chart-zahl{font-family:'Bodoni Moda',Georgia,serif;font-optical-sizing:none;
+  font-variation-settings:'opsz' 11,'wght' 600;font-size:42px;fill:var(--burgund);}
+.chart-klein{font-family:'Montserrat',sans-serif;font-size:20px;font-weight:400;
+  fill:var(--tinte-weich);}
+svg.anstieg,svg.balken{flex-shrink:0;overflow:visible;}
 
 /* ============================================================
    8. EDITORIAL-BAUSTEINE
@@ -267,10 +289,9 @@ html.nofrag .reveal .fragment{opacity:1!important;visibility:visible!important;t
 <section data-chrome="aus" data-slide-id="titel">
   <div class="buehne" style="align-items:center;text-align:center;padding:74px 120px 0;">
     <div class="wortmarke" style="justify-content:center;">
-      <span class="wort">visionista</span>
-      <span class="sub" style="text-align:left;">Unternehmerinnen im<br>Herzogtum Lauenburg</span>
+      <img src="assets/logos/visionista-logo.png" alt="visionista, Unternehmerinnen im Herzogtum Lauenburg">
     </div>
-    <div class="label" style="margin-top:52px;">Ein Vormittag über gewonnene Abende</div>
+    <div class="label" style="margin-top:48px;">Ein Vormittag über gewonnene Abende</div>
     <h1 style="font-size:150px;margin-top:26px;line-height:.98;">
       KI für <span class="akz" style="font-size:158px;">Macherinnen</span>
     </h1>
@@ -449,28 +470,44 @@ html.nofrag .reveal .fragment{opacity:1!important;visibility:visible!important;t
     <div class="label">Der Stand der Dinge, Juni 2026</div>
     <h2 style="margin-top:26px;">Sie sind nicht spät dran.</h2>
     <hr class="strich breit" style="margin:52px 0 56px;">
-    <div class="spalten drei" style="align-items:start;">
-      <div>
-        <div class="zahl">51<span style="font-size:64px;">,2 %</span></div>
-        <p class="zahl-txt">der Solo-Selbstständigen und
-        Kleinstunternehmen in Deutschland
-        arbeiten heute mit KI.</p>
+    <div style="display:flex;gap:96px;align-items:flex-start;">
+      <div class="spalten zwei" style="flex:1;align-items:start;">
+        <div>
+          <div class="zahl">51<span style="font-size:64px;">,2 %</span></div>
+          <p class="zahl-txt">der Solo-Selbstständigen und
+          Kleinstunternehmen in Deutschland
+          arbeiten heute mit KI.</p>
+        </div>
+        <div>
+          <div class="zahl">2<span style="font-size:64px;"> von 3</span></div>
+          <p class="zahl-txt">Betrieben, die damit angefangen haben,
+          wollen es ausbauen. Fast niemand
+          hört wieder auf.</p>
+        </div>
       </div>
-      <div class="fragment aufblende">
-        <div class="zahl" style="opacity:.42;">30<span style="font-size:64px;">,4 %</span></div>
-        <p class="zahl-txt">waren es im Jahr davor.
-        Ein Sprung von 21 Punkten
-        in zwölf Monaten.</p>
-      </div>
-      <div class="fragment aufblende">
-        <div class="zahl">2</div>
-        <p class="zahl-txt">von drei Betrieben, die es nutzen,
-        wollen es ausbauen. Fast niemand
-        hört wieder auf.</p>
-      </div>
+
+      <!-- Der Anstieg als Bild. Die beiden Werte tragen die Aussage,
+           die Fläche darunter macht die Steigung körperlich sichtbar. -->
+      <svg class="anstieg" viewBox="0 0 520 300" width="520" height="300" aria-hidden="true">
+        <defs>
+          <linearGradient id="steig" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%" stop-color="#4C102E" stop-opacity=".22"/>
+            <stop offset="100%" stop-color="#4C102E" stop-opacity="0"/>
+          </linearGradient>
+        </defs>
+        <line x1="40" y1="248" x2="500" y2="248" stroke="#4C102E" stroke-opacity=".22"/>
+        <path d="M70 190 L450 60 L450 248 L70 248 Z" fill="url(#steig)"/>
+        <path d="M70 190 L450 60" stroke="#4C102E" stroke-width="4" fill="none" stroke-linecap="round"/>
+        <circle cx="70" cy="190" r="9" fill="#F1ECE2" stroke="#4C102E" stroke-width="4"/>
+        <circle cx="450" cy="60" r="11" fill="#C0562A"/>
+        <text class="chart-wert" x="70" y="162" text-anchor="middle">30,4 %</text>
+        <text class="chart-wert stark" x="450" y="34" text-anchor="middle">51,2 %</text>
+        <text class="chart-jahr" x="70" y="278" text-anchor="middle">2025</text>
+        <text class="chart-jahr" x="450" y="278" text-anchor="middle">Juni 2026</text>
+      </svg>
     </div>
-    <hr class="strich breit" style="margin:56px 0 34px;">
-    <p class="takeaway fragment aufblende">Nicht die Neugier ist das Risiko. Das Warten ist es.</p>
+    <hr class="strich breit" style="margin:52px 0 32px;">
+    <p class="takeaway">Nicht die Neugier ist das Risiko. Das Warten ist es.</p>
     <p class="quelle" style="margin-top:auto;">
       ifo Institut und Jimdo, Geschäftsklimaindex für Selbstständige, Erhebung Juni 2026.
       Bitkom, Künstliche Intelligenz in Deutschland 2026.
@@ -496,20 +533,32 @@ html.nofrag .reveal .fragment{opacity:1!important;visibility:visible!important;t
     <hr class="strich breit" style="margin:48px 0 50px;">
     <div class="spalten zwei" style="align-items:start;">
       <div>
-        <div style="display:flex;align-items:baseline;gap:30px;">
-          <span class="zahl">53<span style="font-size:56px;">%</span></span>
-          <span style="font-size:34px;font-weight:400;color:var(--tinte-weich);">der Männer</span>
-        </div>
-        <div style="display:flex;align-items:baseline;gap:30px;margin-top:34px;">
-          <span class="zahl">37<span style="font-size:56px;">%</span></span>
-          <span style="font-size:34px;font-weight:400;color:var(--tinte-weich);">der Frauen</span>
-        </div>
-        <p class="klein" style="margin-top:32px;max-width:640px;">
-          nutzen KI im Beruf. Auch dann noch, wenn man Alter, Bildung,
-          Einkommen und Branche herausrechnet, bleibt ein Rest.
+        <!-- Zwei Balken auf gleicher Skala. Der Abstand dazwischen
+             ist die eigentliche Aussage, deshalb ist er beschriftet. -->
+        <svg class="balken" viewBox="0 0 700 300" width="700" height="300" aria-hidden="true">
+          <text class="chart-nam" x="0" y="34">Männer</text>
+          <rect x="0" y="52" width="530" height="46" fill="#4C102E" opacity=".85"/>
+          <text class="chart-zahl" x="552" y="90">53 %</text>
+
+          <text class="chart-nam" x="0" y="168">Frauen</text>
+          <rect x="0" y="186" width="370" height="46" fill="#C0562A"/>
+          <text class="chart-zahl" x="392" y="224">37 %</text>
+
+          <!-- Die Differenz selbst markieren: senkrecht vom Ende des kürzeren
+               Balkens hoch, das Label steht frei daneben. -->
+          <line x1="370" y1="46" x2="370" y2="240" stroke="#4C102E"
+                stroke-opacity=".4" stroke-dasharray="6 6"/>
+          <path d="M382 132 L520 132" stroke="#C0562A" stroke-width="2.5"/>
+          <path d="M520 132 l-9 -6 v12 z" fill="#C0562A"/>
+          <path d="M382 132 l9 -6 v12 z" fill="#C0562A"/>
+          <text class="chart-klein" x="540" y="139">16 Punkte Abstand</text>
+        </svg>
+        <p class="klein" style="margin-top:22px;max-width:660px;">
+          nutzen KI im Beruf. Auch wenn man Alter, Bildung, Einkommen
+          und Branche herausrechnet, bleibt ein Rest, den nichts davon erklärt.
         </p>
       </div>
-      <div class="fragment aufblende">
+      <div>
         <p class="lead" style="font-size:36px;">
           Die Forschung findet dafür keinen Kompetenzunterschied.
         </p>
@@ -549,26 +598,32 @@ html.nofrag .reveal .fragment{opacity:1!important;visibility:visible!important;t
       <span class="akz">Unsinn zu produzieren</span>.
     </p>
     <hr class="strich" style="margin:56px 0 52px;">
-    <div class="fragment aufblende">
-      <h2 style="font-size:74px;max-width:1600px;">Und die gute Nachricht<br>ist eine sehr gute.</h2>
-      <div class="spalten zwei" style="margin-top:56px;align-items:start;">
-        <div>
-          <div class="zahl klein">1 Punkt</div>
-          <p class="zahl-txt" style="max-width:620px;">
-            So klein wird die Lücke, sobald jemand einmal in Ruhe zeigt,
-            wie es geht. Von sechzehn Punkten auf einen.
-          </p>
-        </div>
-        <div>
-          <div class="zahl klein">+15 zu +8</div>
-          <p class="zahl-txt" style="max-width:620px;">
-            So viel gewinnen Frauen dazu, wenn sie anfangen.
-            Fast doppelt so viel wie Männer.
-          </p>
-        </div>
+    <h2 style="font-size:74px;max-width:1600px;">Und die gute Nachricht<br>ist eine sehr gute.</h2>
+    <div class="spalten zwei" style="margin-top:48px;align-items:center;">
+      <div>
+        <!-- Nicht die Balken, sondern die Lücke selbst zeigen.
+             Das ist die Aussage: sie schrumpft auf ein Sechzehntel. -->
+        <svg class="balken" viewBox="0 0 660 240" width="660" height="240" aria-hidden="true">
+          <text class="chart-klein" x="0" y="24">Die Lücke ohne Zutun</text>
+          <rect x="0" y="42" width="480" height="52" fill="#C0562A" opacity=".9"/>
+          <text class="chart-zahl" x="502" y="84">16</text>
+
+          <text class="chart-klein" x="0" y="160">Die Lücke, sobald es einmal jemand zeigt</text>
+          <rect x="0" y="178" width="30" height="52" fill="#4C102E"/>
+          <text class="chart-zahl" x="52" y="220">1</text>
+          <text class="chart-klein" x="86" y="220">Punkt</text>
+        </svg>
+      </div>
+      <div>
+        <div class="zahl klein">+15 zu +8</div>
+        <p class="zahl-txt" style="max-width:620px;">
+          So viel gewinnen Frauen dazu, wenn sie anfangen.
+          Fast doppelt so viel wie Männer. Wer hier heute
+          zuhört, holt also überproportional auf.
+        </p>
       </div>
     </div>
-    <p class="quelle" style="margin-top:60px;">
+    <p class="quelle" style="margin-top:auto;">
       Initiative D21 und IAB, April 2026. Beide Effekte in derselben Erhebung gemessen.
     </p>
   </div>
@@ -730,8 +785,8 @@ html.nofrag .reveal .fragment{opacity:1!important;visibility:visible!important;t
      FOLIE 12  Uebergang in den Live-Teil
      ============================================================ -->
 <section data-slide-id="live-auftakt" data-chrome="aus">
-  <img src="assets/bilder/gruppe-publikum.jpg" alt="Das visionista-Netzwerk beim Sommerfest"
-       class="vollbild" style="object-position:72% 46%;">
+  <img src="assets/bilder/feb26-05.jpg" alt="Das visionista-Aufsteller bei einem Netzwerktreffen"
+       class="vollbild" style="object-position:68% 50%;">
   <div class="schleier stark"></div>
   <div class="buehne mittig auf-bild">
     <p class="label">Ab hier wird nicht mehr erklärt</p>
@@ -903,9 +958,10 @@ html.nofrag .reveal .fragment{opacity:1!important;visibility:visible!important;t
           </div>
         </div>
       </div>
-      <hr class="strich breit" style="margin:40px 0 28px;">
+      <hr class="strich breit" style="margin:36px 0 26px;">
       <p class="takeaway">Wer hat ein Foto auf dem Handy, das längst raus sollte?</p>
     </div>
+
     <aside class="notes">
       REGIE: In den Raum fragen. Eine Teilnehmerin schickt das Foto per Mail
       oder zeigt es, wir fotografieren den Bildschirm ab.
@@ -1341,9 +1397,8 @@ html.nofrag .reveal .fragment{opacity:1!important;visibility:visible!important;t
 <section data-slide-id="danke" data-chrome="aus">
   <div class="buehne" style="flex-direction:row;align-items:center;gap:92px;padding-top:0;padding-bottom:0;">
     <div style="flex:1;">
-      <div class="wortmarke" style="margin-bottom:56px;">
-        <span class="wort">visionista</span>
-        <span class="sub">Unternehmerinnen im<br>Herzogtum Lauenburg</span>
+      <div class="wortmarke" style="margin-bottom:52px;">
+        <img src="assets/logos/visionista-logo.png" alt="visionista">
       </div>
       <h1 style="font-size:112px;">Jetzt <span class="akz">Sie</span>.</h1>
       <hr class="strich" style="margin:42px 0 38px;">
@@ -1368,8 +1423,8 @@ html.nofrag .reveal .fragment{opacity:1!important;visibility:visible!important;t
       </p>
     </div>
     <div style="width:620px;flex-shrink:0;">
-      <img src="assets/bilder/lachen-vier.jpg" alt="Unternehmerinnen im Gespräch beim visionista-Sommerfest"
-           class="bogen" style="width:620px;height:860px;object-position:center 40%;">
+      <img src="assets/bilder/feb26-06.jpg" alt="Unternehmerinnen im Gespräch beim visionista-Treffen"
+           class="bogen" style="width:620px;height:860px;object-position:center 34%;">
     </div>
   </div>
   <aside class="notes">
@@ -1385,6 +1440,54 @@ html.nofrag .reveal .fragment{opacity:1!important;visibility:visible!important;t
 <script src="vendor/reveal/reveal.js"></script>
 <script src="vendor/reveal/plugin/notes/notes.js"></script>
 <script>
+/* ------------------------------------------------------------------
+   DRAMATURGIE
+
+   Eine Folie geht mit dem Titel auf, sonst nichts. Alles Inhaltliche
+   blendet danach einzeln ein: erst die Zahl mit ihrem Text, dann die
+   nächste, zuletzt das Fazit.
+
+   Das steht bewusst hier als Regel und nicht als Klasse an jedem
+   einzelnen Element. Sonst wird beim nächsten Bearbeiten irgendwo
+   eine Folie vergessen und geht mit offenem ersten Punkt auf.
+
+   Kopf der Folie (bleibt stehen): alles bis einschließlich der ersten
+   Trennlinie. Danach beginnt der Inhalt.
+   Ausnahme: data-anim="aus" zeigt die Folie sofort vollständig.
+------------------------------------------------------------------ */
+(function dramaturgie(){
+  document.querySelectorAll('.reveal .slides section').forEach(folie => {
+    if (folie.querySelector('section')) return;      // Eltern eines Stapels
+    if (folie.dataset.anim === 'aus') return;
+    const buehne = folie.querySelector('.buehne');
+    if (!buehne) return;
+
+    let imKopf = true;
+    [...buehne.children].forEach(kind => {
+      // Der Kopf endet nach der ersten Trennlinie
+      if (imKopf) {
+        if (kind.tagName === 'HR') imKopf = false;
+        return;
+      }
+      if (kind.classList.contains('quelle')) return;  // Quellenzeile steht still
+
+      // Spalten und Zeilen blenden ihre Kinder einzeln ein,
+      // damit die Aufzaehlung Schritt fuer Schritt entsteht
+      if (kind.classList.contains('spalten') || kind.classList.contains('zeilen')) {
+        [...kind.children].forEach(zelle => {
+          if (!zelle.classList.contains('fragment')) {
+            zelle.classList.add('fragment','aufblende');
+          }
+        });
+        return;
+      }
+      if (!kind.classList.contains('fragment')) {
+        kind.classList.add('fragment','aufblende');
+      }
+    });
+  });
+})();
+
 // initialize() liefert ein Promise. Ein nachtraeglich registrierter
 // 'ready'-Zuhoerer kann das Ereignis verpassen, wenn alles im Cache liegt.
 Reveal.initialize({
@@ -1402,7 +1505,9 @@ Reveal.initialize({
     if (!s.querySelector('.marke')) {
       const m = document.createElement('div');
       m.className = 'marke';
-      m.innerHTML = '<span class="wort">visionista</span>' +
+      // In der Kopfzeile nur die Wortmarke: die Unterzeile des vollen Logos
+      // wird bei dieser Groesse unleserlich.
+      m.innerHTML = '<img src="assets/logos/visionista-wortmarke.png" alt="visionista">' +
                     '<span class="sub">KI für Macherinnen</span>';
       s.appendChild(m);
     }
