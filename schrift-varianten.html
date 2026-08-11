@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<title>Headline-Schriften im Vergleich</title>
+<style>
+@font-face{font-family:'Bodoni Moda';font-weight:400 900;font-display:block;
+  src:url('assets/fonts/BodoniModa-400-latin.woff2') format('woff2');}
+@font-face{font-family:'Playfair Display';font-weight:500;font-display:block;
+  src:url('assets/fonts/PlayfairDisplay-500-latin.woff2') format('woff2');}
+@font-face{font-family:'Playfair Display';font-weight:600;font-display:block;
+  src:url('assets/fonts/PlayfairDisplay-600-latin.woff2') format('woff2');}
+@font-face{font-family:'Playfair Display';font-weight:700;font-display:block;
+  src:url('assets/fonts/PlayfairDisplay-700-latin.woff2') format('woff2');}
+@font-face{font-family:'Instrument Serif';font-weight:400;font-style:normal;font-display:block;
+  src:url('assets/fonts/InstrumentSerif-400-latin.woff2') format('woff2');}
+@font-face{font-family:'Instrument Serif';font-weight:400;font-style:italic;font-display:block;
+  src:url('assets/fonts/InstrumentSerif-400i-latin.woff2') format('woff2');}
+@font-face{font-family:'Lora';font-weight:600;font-display:block;
+  src:url('assets/fonts/Lora-600-latin.woff2') format('woff2');}
+@font-face{font-family:'Lora';font-weight:700;font-display:block;
+  src:url('assets/fonts/Lora-700-latin.woff2') format('woff2');}
+@font-face{font-family:'Montserrat';font-weight:300;font-display:block;
+  src:url('assets/fonts/Montserrat-300-latin.woff2') format('woff2');}
+@font-face{font-family:'Montserrat';font-weight:600;font-display:block;
+  src:url('assets/fonts/Montserrat-600-latin.woff2') format('woff2');}
+
+:root{--sand:#F1ECE2;--burgund:#4C102E;--tinte:#1E1E1E;--linie:rgba(76,16,46,.16);}
+*{box-sizing:border-box;}
+body{margin:0;background:var(--sand);color:var(--tinte);
+     font-family:'Montserrat',sans-serif;font-weight:300;}
+.kopf{padding:44px 80px 10px;}
+.kopf h1{font-family:'Montserrat',sans-serif;font-size:24px;font-weight:600;
+         letter-spacing:.2em;text-transform:uppercase;color:var(--burgund);margin:0;}
+.kopf p{font-size:17px;margin:12px 0 0;max-width:1100px;line-height:1.6;}
+.probe{padding:52px 80px;border-top:1px solid var(--linie);}
+.marke{display:flex;align-items:baseline;gap:24px;margin-bottom:26px;}
+.nr{font-family:'Montserrat',sans-serif;font-size:15px;font-weight:600;letter-spacing:.2em;
+    text-transform:uppercase;color:var(--burgund);opacity:.65;}
+.was{font-size:15px;color:#57504A;}
+h2{margin:0;color:var(--burgund);line-height:1.02;letter-spacing:-.012em;font-size:104px;}
+.klein{margin:22px 0 0;color:var(--burgund);font-size:46px;line-height:1.1;}
+em{font-style:italic;}
+
+/* A  Bodoni Moda, wie aktuell im Deck: opsz laeuft automatisch auf Maximum */
+.a h2,.a .klein{font-family:'Bodoni Moda',serif;font-weight:500;font-optical-sizing:auto;}
+/* B  Bodoni Moda, optische Groesse fest auf 11, Gewicht 600 */
+.b h2,.b .klein{font-family:'Bodoni Moda',serif;font-variation-settings:'opsz' 11,'wght' 600;}
+/* C  Bodoni Moda, optische Groesse fest auf 6, Gewicht 700 */
+.c h2,.c .klein{font-family:'Bodoni Moda',serif;font-variation-settings:'opsz' 6,'wght' 700;}
+/* D  Playfair Display 600 */
+.d h2,.d .klein{font-family:'Playfair Display',serif;font-weight:600;}
+/* E  Lora 600 */
+.e h2,.e .klein{font-family:'Lora',serif;font-weight:600;}
+/* F  Instrument Serif */
+.f h2,.f .klein{font-family:'Instrument Serif',serif;font-weight:400;}
+
+/* Beamer-Probe: heller Raum, schwacher Kontrast, wie um 8:30 Uhr im August */
+.beamer{filter:contrast(.62) brightness(1.16);}
+.beamer-hinweis{padding:30px 80px 10px;font-size:15px;color:#57504A;
+                border-top:3px solid var(--burgund);}
+</style>
+</head>
+<body>
+<div class="kopf">
+  <h1>Headline-Schrift für den visionista-Vortrag</h1>
+  <p>Alle sechs zeigen denselben Satz in derselben Größe. Bodoni Moda ist die Schrift der
+  visionista-Website. Sie hat eine Achse für die optische Größe: bei großen Graden werden
+  die Haarstriche automatisch feiner, genau das macht sie auf dem Beamer schwer lesbar.
+  Die Varianten B und C drehen diese Achse zurück und behalten die Marken-Schrift.
+  D, E und F sind andere Schriften.</p>
+</div>
+
+<div class="probe a">
+  <div class="marke"><span class="nr">A</span><span class="was">Bodoni Moda 500, optische Größe automatisch (der jetzige Stand)</span></div>
+  <h2>Vier Fragen.</h2>
+  <p class="klein">Der <em>zweite</em> Satz ist der, auf den es ankommt.</p>
+</div>
+
+<div class="probe b">
+  <div class="marke"><span class="nr">B</span><span class="was">Bodoni Moda, optische Größe fest auf 11, Gewicht 600 &nbsp;&middot;&nbsp; gleiche Schrift, kräftigere Striche</span></div>
+  <h2>Vier Fragen.</h2>
+  <p class="klein">Der <em>zweite</em> Satz ist der, auf den es ankommt.</p>
+</div>
+
+<div class="probe c">
+  <div class="marke"><span class="nr">C</span><span class="was">Bodoni Moda, optische Größe fest auf 6, Gewicht 700 &nbsp;&middot;&nbsp; kräftigste Fassung der Marken-Schrift</span></div>
+  <h2>Vier Fragen.</h2>
+  <p class="klein">Der <em>zweite</em> Satz ist der, auf den es ankommt.</p>
+</div>
+
+<div class="probe d">
+  <div class="marke"><span class="nr">D</span><span class="was">Playfair Display 600 &nbsp;&middot;&nbsp; andere Schrift, gleiche Eleganz, deutlich robuster</span></div>
+  <h2>Vier Fragen.</h2>
+  <p class="klein">Der <em>zweite</em> Satz ist der, auf den es ankommt.</p>
+</div>
+
+<div class="probe e">
+  <div class="marke"><span class="nr">E</span><span class="was">Lora 600 &nbsp;&middot;&nbsp; warm und ruhig, am wenigsten Kontrast zwischen dick und dünn</span></div>
+  <h2>Vier Fragen.</h2>
+  <p class="klein">Der <em>zweite</em> Satz ist der, auf den es ankommt.</p>
+</div>
+
+<div class="probe f">
+  <div class="marke"><span class="nr">F</span><span class="was">Instrument Serif &nbsp;&middot;&nbsp; modern und schmal, spart Platz in langen Zeilen</span></div>
+  <h2>Vier Fragen.</h2>
+  <p class="klein">Der <em>zweite</em> Satz ist der, auf den es ankommt.</p>
+</div>
+
+<div class="beamer-hinweis">
+  Ab hier dieselben sechs Proben, aber durch einen abgeschwächten Kontrast gelegt.
+  So ungefähr sieht es aus, wenn ein Beamer morgens um halb neun gegen Tageslicht anleuchtet.
+</div>
+
+<div class="beamer">
+  <div class="probe a"><div class="marke"><span class="nr">A</span><span class="was">Bodoni automatisch</span></div><h2>Vier Fragen.</h2></div>
+  <div class="probe b"><div class="marke"><span class="nr">B</span><span class="was">Bodoni opsz 11, Gewicht 600</span></div><h2>Vier Fragen.</h2></div>
+  <div class="probe c"><div class="marke"><span class="nr">C</span><span class="was">Bodoni opsz 6, Gewicht 700</span></div><h2>Vier Fragen.</h2></div>
+  <div class="probe d"><div class="marke"><span class="nr">D</span><span class="was">Playfair Display 600</span></div><h2>Vier Fragen.</h2></div>
+  <div class="probe e"><div class="marke"><span class="nr">E</span><span class="was">Lora 600</span></div><h2>Vier Fragen.</h2></div>
+  <div class="probe f"><div class="marke"><span class="nr">F</span><span class="was">Instrument Serif</span></div><h2>Vier Fragen.</h2></div>
+</div>
+</body>
+</html>

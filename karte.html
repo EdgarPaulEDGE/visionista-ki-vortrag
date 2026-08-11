@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<title>KI für Macherinnen | Karte zum Mitnehmen</title>
+<style>
+@font-face{font-family:'Bodoni Moda';font-style:normal;font-weight:400 900;
+  src:url('assets/fonts/BodoniModa-var-latin.woff2') format('woff2');}
+@font-face{font-family:'Bodoni Moda';font-style:italic;font-weight:400 900;
+  src:url('assets/fonts/BodoniModa-var-ital-latin.woff2') format('woff2');}
+@font-face{font-family:'Montserrat';font-weight:300;
+  src:url('assets/fonts/Montserrat-300-latin.woff2') format('woff2');}
+@font-face{font-family:'Montserrat';font-weight:400;
+  src:url('assets/fonts/Montserrat-400-latin.woff2') format('woff2');}
+@font-face{font-family:'Montserrat';font-weight:600;
+  src:url('assets/fonts/Montserrat-600-latin.woff2') format('woff2');}
+
+:root{--sand:#F1ECE2;--burgund:#4C102E;--tinte:#1E1E1E;--weich:#57504A;
+      --terra:#C0562A;--linie:rgba(76,16,46,.2);}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{background:#CFC8BC;font-family:'Montserrat',sans-serif;font-weight:300;
+     color:var(--tinte);padding:24px;display:flex;flex-direction:column;
+     align-items:center;gap:24px;}
+
+/* A5 quer: 210 x 148 mm. Zwei davon passen auf ein A4-Blatt. */
+.karte{width:210mm;height:148mm;background:var(--sand);padding:14mm 15mm;
+       display:flex;flex-direction:column;position:relative;overflow:hidden;}
+
+h1{font-family:'Bodoni Moda',serif;font-optical-sizing:none;
+   font-variation-settings:'opsz' 11,'wght' 600;
+   font-size:30pt;color:var(--burgund);line-height:1.05;letter-spacing:-.01em;}
+h2{font-family:'Bodoni Moda',serif;font-optical-sizing:none;
+   font-variation-settings:'opsz' 11,'wght' 600;
+   font-size:15pt;color:var(--burgund);line-height:1.15;}
+em{font-style:italic;}
+.marke{display:flex;align-items:center;gap:10px;margin-bottom:6mm;}
+.marke .wort{font-family:'Bodoni Moda',serif;font-optical-sizing:none;
+             font-variation-settings:'opsz' 11,'wght' 600;
+             font-size:13pt;color:var(--burgund);}
+.marke .sub{font-size:6pt;font-weight:600;letter-spacing:.18em;text-transform:uppercase;
+            color:var(--burgund);opacity:.6;border-left:1px solid var(--linie);
+            padding-left:10px;line-height:1.4;}
+.label{font-size:6.5pt;font-weight:600;letter-spacing:.2em;text-transform:uppercase;
+       color:var(--burgund);opacity:.7;}
+hr{border:none;height:1px;background:var(--linie);margin:4mm 0;}
+hr.dick{height:1.5pt;background:var(--burgund);width:22mm;opacity:.9;}
+
+.vier{display:grid;grid-template-columns:repeat(4,1fr);gap:0;margin-top:1mm;}
+.vier > div{padding:0 4mm;border-left:1px solid var(--linie);}
+.vier > div:first-child{padding-left:0;border-left:none;}
+.vier > div:last-child{padding-right:0;}
+.nr{font-family:'Bodoni Moda',serif;font-optical-sizing:none;
+    font-variation-settings:'opsz' 11,'wght' 600;
+    font-size:17pt;color:var(--burgund);line-height:1;}
+.frage{font-size:10.5pt;font-weight:600;color:var(--burgund);margin-top:2mm;line-height:1.2;}
+.bsp{font-size:8pt;color:var(--weich);margin-top:2mm;line-height:1.45;}
+
+/* Kein Kasten mit Balken. Der Beispielsatz steht als Text zwischen zwei Haarlinien. */
+.beispiel{border-top:1px solid var(--linie);border-bottom:1px solid var(--linie);
+          padding:4mm 0;font-size:9.5pt;line-height:1.6;font-weight:400;
+          color:var(--burgund);margin-top:auto;}
+.beispiel .wer{font-family:'Bodoni Moda',serif;font-style:italic;
+               font-optical-sizing:none;font-variation-settings:'opsz' 11,'wght' 600;}
+
+.saetze{display:flex;flex-direction:column;gap:0;margin-top:1mm;}
+.saetze > div{padding:2.6mm 0;border-top:1px solid var(--linie);}
+.saetze > div:first-child{border-top:none;padding-top:0;}
+.satz-titel{font-size:8.5pt;font-weight:600;color:var(--burgund);}
+.satz-text{font-size:8pt;color:var(--tinte);line-height:1.42;margin-top:.8mm;font-weight:300;}
+.saetze > div{padding:2.1mm 0;}
+
+.fuss{margin-top:auto;padding-top:3mm;border-top:1px solid var(--linie);
+      display:flex;justify-content:space-between;align-items:flex-end;gap:8mm;}
+.fuss p{font-size:7pt;color:var(--weich);line-height:1.5;}
+.regel{padding:0;font-size:8.5pt;line-height:1.55;}
+.regel strong{font-weight:600;color:var(--burgund);}
+
+@media print{
+  body{background:#fff;padding:0;gap:0;}
+  .karte{page-break-after:always;}
+  .karte:last-child{page-break-after:auto;}
+  /* A5 quer. Zwei davon passen beim Drucken auf ein A4-Blatt. */
+  @page{size:210mm 148mm;margin:0;}
+}
+</style>
+</head>
+<body>
+
+<!-- ===================== VORDERSEITE ===================== -->
+<div class="karte">
+  <div class="marke">
+    <span class="wort">visionista</span>
+    <span class="sub">KI für Macherinnen &nbsp;·&nbsp; 19. August 2026</span>
+  </div>
+
+  <h1>Vier Fragen, und Sie sind drin.</h1>
+  <hr class="dick" style="margin:4mm 0 5mm;">
+
+  <div class="vier">
+    <div>
+      <div class="nr">01</div>
+      <div class="frage">Wer bist du für mich?</div>
+      <div class="bsp">„Du bist meine Büroleiterin." „Du bist eine erfahrene Verkäuferin."</div>
+    </div>
+    <div>
+      <div class="nr">02</div>
+      <div class="frage">Was soll dabei rauskommen?</div>
+      <div class="bsp">Ein Angebot. Ein Beitrag. Eine Antwort auf diese Mail.</div>
+    </div>
+    <div>
+      <div class="nr">03</div>
+      <div class="frage">Was musst du dafür wissen?</div>
+      <div class="bsp">Wer ist die Kundin, was ist vorher passiert, was kostet es, was darf nicht vorkommen. <strong style="color:var(--burgund);font-weight:600;">Die wichtigste Frage.</strong></div>
+    </div>
+    <div>
+      <div class="nr">04</div>
+      <div class="frage">Wie soll es aussehen?</div>
+      <div class="bsp">Wie lang, wie förmlich, mit Anrede, in Stichpunkten, freundlich oder deutlich.</div>
+    </div>
+  </div>
+
+  <div class="beispiel">
+    <span class="wer">Du bist meine Büroleiterin.</span>
+    Schreib das Angebot für Frau Petersen. Sie hat Dienstag angerufen, will vier Räume
+    streichen lassen, Altbau, hohe Decken, zieht am 1. Oktober ein. Ich komme auf 2.400 Euro.
+    Sie war nett, aber preisbewusst. Freundlich, kurz, ohne Fachwörter, vier Wochen gültig.
+  </div>
+
+  <div class="fuss">
+    <p><strong style="font-weight:600;color:var(--burgund);">Und dann meckern Sie.</strong>
+       Die erste Antwort ist ein Entwurf, kein Ergebnis. „Zu förmlich." „Die Hälfte reicht."
+       „Gib mir drei Fassungen." Das Nachbessern ist die eigentliche Technik.</p>
+    <p style="text-align:right;white-space:nowrap;">Rückseite:<br>fünf fertige Sätze</p>
+  </div>
+</div>
+
+<!-- ===================== RÜCKSEITE ===================== -->
+<div class="karte">
+  <div class="label">Zum Abtippen, Anpassen und Aufheben</div>
+  <h1 style="font-size:19pt;margin-top:2mm;">Fünf Sätze für <em>fünf Abende</em>, die Sie zurückbekommen.</h1>
+  <hr style="margin:3mm 0 2mm;">
+
+  <div class="saetze">
+    <div>
+      <div class="satz-titel">Das Angebot</div>
+      <div class="satz-text">Du bist meine Büroleiterin. Schreib ein Angebot für [Leistung] an [Kundin].
+      Ausgangslage: [was besprochen wurde]. Preis: [Betrag]. Freundlich, kurz, ohne Fachwörter,
+      Gültigkeit [Zeitraum].</div>
+    </div>
+    <div>
+      <div class="satz-titel">Der Beitrag für Instagram</div>
+      <div class="satz-text">Du bist verantwortlich für unseren Auftritt. Hier ist ein Foto aus meinem Betrieb.
+      Schreib drei Bildunterschriften: eine persönliche, eine sachliche, eine mit Augenzwinkern.
+      Kurze Sätze, keine Werbesprache, am Ende eine echte Frage.</div>
+    </div>
+    <div>
+      <div class="satz-titel">Die Mahnung, die niemanden verliert</div>
+      <div class="satz-text">Du bist meine ruhigste Kollegin. Eine Stammkundin hat seit [Zeitraum] eine Rechnung
+      offen und meldet sich nicht. Ich will sie nicht verlieren. Zwei Fassungen: einmal freundlich
+      mit klarer Frist, einmal deutlich. Ohne Drohung, ohne Paragraphen.</div>
+    </div>
+    <div>
+      <div class="satz-titel">Die Absage, die freundlich bleibt</div>
+      <div class="satz-text">Du bist meine Büroleiterin. Ich muss [Anfrage] absagen, weil [Grund].
+      Kurz, warm, ohne Ausreden, und mit der Tür einen Spalt offen für später.</div>
+    </div>
+    <div>
+      <div class="satz-titel">Wenn Ihnen morgens nichts einfällt</div>
+      <div class="satz-text">Du kennst meinen Betrieb: [zwei Sätze dazu]. Gib mir zehn Ideen für [Anlass].
+      Keine allgemeinen Tipps, sondern Dinge, die zu genau diesem Betrieb passen.
+      Sortiere danach, was am wenigsten Aufwand macht.</div>
+    </div>
+  </div>
+
+  <hr style="margin:auto 0 2.5mm;">
+  <div class="regel">
+    <strong>Die einzige Regel:</strong> Beschreiben Sie die Lage, nicht die Person.
+    Statt „Frau Petersen aus der Bergstraße 12" schreiben Sie „eine Stammkundin",
+    den Namen setzen Sie beim Einfügen ein. Gesundheitsangaben, Personalakten und
+    Bewerbungsunterlagen gehören nie in eine kostenlose Fassung.
+  </div>
+  <p style="font-size:6.5pt;color:var(--weich);margin-top:2.5mm;line-height:1.5;">
+    Heben Sie die Sätze auf, die bei Ihnen funktioniert haben.
+    &nbsp;·&nbsp; visionista am 19. August 2026 bei der AWSH in Elmenhorst
+    &nbsp;·&nbsp; Edgar Paul-Ghazaryan und Emre Erdogan, EDGE Digital
+  </p>
+</div>
+
+</body>
+</html>

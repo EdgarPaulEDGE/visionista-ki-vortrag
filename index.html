@@ -1,0 +1,1424 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>KI für Macherinnen | visionista 19.08.2026</title>
+<link rel="stylesheet" href="vendor/reveal/reveal.css">
+<style>
+/* ============================================================
+   1. SCHRIFTEN (lokal, damit der Vortrag ohne WLAN laeuft)
+   ============================================================ */
+/* Bodoni Moda als variable Schrift, aufrecht und kursiv.
+   Wichtig: Die Achse "opsz" (optische Groesse) wird weiter unten fest auf 11
+   gestellt. Ueberliesse man sie dem Browser, wuerde er bei Schriftgraden ueber
+   100px auf 96 hochgehen, und genau dort werden die Haarstriche einer Didone so
+   fein, dass sie auf einem Beamer bei Tageslicht verschwinden. */
+@font-face{font-family:'Bodoni Moda';font-style:normal;font-weight:400 900;font-display:swap;
+  src:url('assets/fonts/BodoniModa-var-latin.woff2') format('woff2');
+  unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;}
+@font-face{font-family:'Bodoni Moda';font-style:normal;font-weight:400 900;font-display:swap;
+  src:url('assets/fonts/BodoniModa-var-latin-ext.woff2') format('woff2');
+  unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF;}
+@font-face{font-family:'Bodoni Moda';font-style:italic;font-weight:400 900;font-display:swap;
+  src:url('assets/fonts/BodoniModa-var-ital-latin.woff2') format('woff2');
+  unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;}
+@font-face{font-family:'Bodoni Moda';font-style:italic;font-weight:400 900;font-display:swap;
+  src:url('assets/fonts/BodoniModa-var-ital-latin-ext.woff2') format('woff2');
+  unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF;}
+
+@font-face{font-family:'Montserrat';font-style:normal;font-weight:300;font-display:swap;
+  src:url('assets/fonts/Montserrat-300-latin.woff2') format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;}
+@font-face{font-family:'Montserrat';font-style:normal;font-weight:300;font-display:swap;
+  src:url('assets/fonts/Montserrat-300-latin-ext.woff2') format('woff2');unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF;}
+@font-face{font-family:'Montserrat';font-style:normal;font-weight:400;font-display:swap;
+  src:url('assets/fonts/Montserrat-400-latin.woff2') format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;}
+@font-face{font-family:'Montserrat';font-style:normal;font-weight:400;font-display:swap;
+  src:url('assets/fonts/Montserrat-400-latin-ext.woff2') format('woff2');unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF;}
+@font-face{font-family:'Montserrat';font-style:normal;font-weight:500;font-display:swap;
+  src:url('assets/fonts/Montserrat-500-latin.woff2') format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;}
+@font-face{font-family:'Montserrat';font-style:normal;font-weight:500;font-display:swap;
+  src:url('assets/fonts/Montserrat-500-latin-ext.woff2') format('woff2');unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF;}
+@font-face{font-family:'Montserrat';font-style:normal;font-weight:600;font-display:swap;
+  src:url('assets/fonts/Montserrat-600-latin.woff2') format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;}
+@font-face{font-family:'Montserrat';font-style:normal;font-weight:600;font-display:swap;
+  src:url('assets/fonts/Montserrat-600-latin-ext.woff2') format('woff2');unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF;}
+@font-face{font-family:'Montserrat';font-style:normal;font-weight:700;font-display:swap;
+  src:url('assets/fonts/Montserrat-700-latin.woff2') format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;}
+@font-face{font-family:'Montserrat';font-style:normal;font-weight:700;font-display:swap;
+  src:url('assets/fonts/Montserrat-700-latin-ext.woff2') format('woff2');unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF;}
+
+/* ============================================================
+   2. FARBEN UND MASSE
+   Farbwelt 1:1 aus der visionista-Website uebernommen.
+   ============================================================ */
+:root{
+  --sand:        #F1ECE2;
+  --sand-tief:   #E6DFD1;
+  --sand-warm:   #EAE2D4;
+  --burgund:     #4C102E;
+  --burgund-mit: #6E2144;
+  --tinte:       #1E1E1E;
+  --tinte-weich: #57504A;
+  --terra:       #C0562A;
+  --linie:       rgba(76,16,46,.16);
+  --linie-satt:  rgba(76,16,46,.38);
+
+  --rand-x: 120px;
+  /* Oben viel Luft, damit die Titel Abstand zur Markenzeile halten. */
+  --rand-o: 146px;
+
+  /* Beamer-Tauglichkeit der Titelschrift. Kleinere optische Groesse
+     bedeutet bei einer Didone kraeftigere Haarstriche.
+     11 ist die Standardinstanz der Schrift, 6 waere die robusteste. */
+  --titel-opsz: 11;
+  --titel-wght: 600;
+}
+
+/* ============================================================
+   3. GRUNDGERUEST
+   ============================================================ */
+html,body{background:var(--sand);}
+.reveal-viewport{background:var(--sand)!important;}
+.reveal{font-family:'Montserrat',system-ui,sans-serif;color:var(--tinte);
+        font-weight:300;font-size:32px;-webkit-font-smoothing:antialiased;}
+.reveal .slides{text-align:left;}
+.reveal .slides section{box-sizing:border-box;height:1080px;padding:0;}
+
+/* Jede Folie ist eine Buehne mit festem Rand.
+   Kein Flex-Zentrieren global: dichte Folien wuerden oben UND unten abgeschnitten. */
+.buehne{
+  position:relative;box-sizing:border-box;
+  width:1920px;height:1080px;
+  padding:var(--rand-o) var(--rand-x) 84px;
+  display:flex;flex-direction:column;
+}
+.buehne.mittig{justify-content:center;}
+
+/* Alle Titelelemente greifen auf dieselbe Einstellung zu.
+   font-optical-sizing:none schaltet die automatische Verfeinerung ab,
+   font-variation-settings setzt Gewicht und optische Groesse fest. */
+.reveal h1,.reveal h2,.reveal h3,.akz,.zahl,.takeaway,
+.marke .wort,.wortmarke .wort,.riesenzahl{
+  font-family:'Bodoni Moda',Georgia,serif;
+  font-optical-sizing:none;
+  font-variation-settings:'opsz' var(--titel-opsz),'wght' var(--titel-wght);
+}
+.reveal h1,.reveal h2,.reveal h3{
+  color:var(--burgund);
+  letter-spacing:-.012em;line-height:1.02;
+  margin:0;text-transform:none;text-shadow:none;
+}
+.reveal h1{font-size:132px;}
+.reveal h2{font-size:88px;}
+.reveal h3{font-size:52px;}
+.reveal p{margin:0;line-height:1.5;}
+.reveal em{font-style:italic;color:var(--burgund);}
+.reveal strong{font-weight:600;color:var(--burgund);}
+
+/* Akzentwort: kursive Bodoni in Burgund.
+   Ersetzt den Gradient-Schimmer aus dem dunklen EDGE-Deck. */
+.akz{font-family:'Bodoni Moda',Georgia,serif;font-style:italic;
+     font-weight:500;color:var(--burgund);}
+.akz-t{color:var(--terra);}
+
+/* ============================================================
+   4. BAUSTEINE
+   ============================================================ */
+/* Trenner immer als <hr>: ein leeres <div> kollabiert im Flex-Container. */
+hr.strich{border:none;height:2px;background:var(--burgund);
+          width:96px;flex-shrink:0;margin:34px 0;opacity:.85;}
+hr.strich.breit{width:100%;height:1px;background:var(--linie);margin:36px 0;}
+hr.strich.zart{width:100%;height:1px;background:var(--linie);margin:26px 0;opacity:1;}
+
+.label{font-family:'Montserrat',sans-serif;font-weight:600;font-size:19px;
+       letter-spacing:.22em;text-transform:uppercase;color:var(--burgund);
+       opacity:.72;flex-shrink:0;}
+
+.lead{font-size:38px;font-weight:300;line-height:1.5;color:var(--tinte);max-width:1180px;}
+.lead.gross{font-size:46px;line-height:1.42;}
+.klein{font-size:26px;font-weight:400;color:var(--tinte-weich);line-height:1.5;}
+.quelle{font-size:18px;font-weight:400;color:var(--tinte-weich);opacity:.85;letter-spacing:.02em;}
+
+/* Offene Spalten mit Haarlinie statt Karten mit Rahmen. */
+.spalten{display:grid;gap:0;flex-shrink:0;}
+.spalten.zwei{grid-template-columns:1fr 1fr;}
+.spalten.drei{grid-template-columns:repeat(3,1fr);}
+.spalten.vier{grid-template-columns:repeat(4,1fr);}
+.spalten > div{padding:0 46px;border-left:1px solid var(--linie);}
+.spalten > div:first-child{padding-left:0;border-left:none;}
+.spalten > div:last-child{padding-right:0;}
+
+.zeilen{display:flex;flex-direction:column;flex-shrink:0;}
+.zeilen > div{padding:26px 0;border-top:1px solid var(--linie);display:flex;
+              align-items:baseline;gap:34px;}
+.zeilen > div:first-child{border-top:none;padding-top:0;}
+
+/* Grosse Zahl im Bodoni-Schnitt: traegt eine Aussage allein. */
+.zahl{font-family:'Bodoni Moda',Georgia,serif;font-weight:500;color:var(--burgund);
+      font-size:132px;line-height:.92;letter-spacing:-.02em;}
+.zahl.klein{font-size:88px;}
+.riesenzahl{font-size:340px;color:var(--burgund);line-height:.86;letter-spacing:-.03em;}
+.zahl-txt{font-size:27px;font-weight:400;color:var(--tinte-weich);line-height:1.45;margin-top:16px;}
+
+/* Der Bogen: Foto oben halbrund. Warmes Formelement, kein Deko-Kreis. */
+.bogen{border-radius:999px 999px 12px 12px;overflow:hidden;object-fit:cover;display:block;}
+
+.foto{display:block;object-fit:cover;}
+
+/* Ein gesagter Satz.
+   Bewusst KEIN Kasten, kein Rahmen, kein farbiger Balken an der Seite.
+   So ein Balken ist Deko, die eine fehlende Hierarchie ueberspielen soll.
+   Die Hierarchie steckt hier in Schriftgrad, Farbe und Zeilenabstand,
+   die Abgrenzung uebernimmt die Spalte, in der der Satz steht. */
+.gesagt{font-size:31px;line-height:1.62;font-weight:400;color:var(--burgund);
+        flex-shrink:0;}
+.gesagt .wer{font-family:'Bodoni Moda',Georgia,serif;font-style:italic;
+             font-optical-sizing:none;font-variation-settings:'opsz' 11,'wght' 600;}
+.gesagt.matt{color:var(--tinte-weich);font-weight:300;}
+
+/* Ein fertiger Brief. Nur Haarlinien oben und unten, keine Flaeche. */
+.brief{font-size:27px;line-height:1.62;font-weight:300;color:var(--tinte);
+       border-top:1px solid var(--linie);border-bottom:1px solid var(--linie);
+       padding:32px 0;flex-shrink:0;}
+.brief b{font-weight:600;color:var(--burgund);}
+
+.takeaway{font-family:'Bodoni Moda',Georgia,serif;font-size:56px;font-weight:500;
+          font-style:italic;color:var(--burgund);line-height:1.2;flex-shrink:0;}
+
+/* ============================================================
+   5. FUSSZEILE UND MARKE
+   ============================================================ */
+.marke,.wortmarke{display:flex;align-items:center;gap:20px;z-index:6;}
+.marke{position:absolute;top:52px;left:var(--rand-x);opacity:.72;}
+.marke .wort,.wortmarke .wort{font-family:'Bodoni Moda',Georgia,serif;font-weight:600;
+             color:var(--burgund);letter-spacing:-.01em;font-size:31px;}
+.marke .sub,.wortmarke .sub{font-family:'Montserrat',sans-serif;font-size:11px;font-weight:600;
+            letter-spacing:.2em;text-transform:uppercase;color:var(--burgund);opacity:.6;
+            border-left:1px solid var(--linie-satt);padding-left:20px;line-height:1.4;}
+/* Die Titelfolie fuehrt die Wortmarke im Textfluss, deshalb eine eigene Klasse:
+   die Chrome-Ausblendung unten greift sonst auch hier. */
+.wortmarke .wort{font-size:38px;}
+.wortmarke .sub{font-size:13px;}
+.seitenzahl{position:absolute;bottom:40px;right:var(--rand-x);font-size:18px;
+            font-weight:500;color:var(--burgund);opacity:.45;letter-spacing:.1em;z-index:6;}
+[data-chrome="aus"] .marke,[data-chrome="aus"] .seitenzahl{display:none;}
+
+/* ============================================================
+   6. VOLLBILD-FOLIEN
+   ============================================================ */
+.vollbild{position:absolute;inset:0;width:1920px;height:1080px;object-fit:cover;}
+.schleier{position:absolute;inset:0;
+  background:linear-gradient(100deg,rgba(28,8,18,.86) 0%,rgba(28,8,18,.62) 42%,rgba(28,8,18,.14) 78%);}
+.schleier.unten{background:linear-gradient(0deg,rgba(28,8,18,.9) 0%,rgba(28,8,18,.45) 40%,rgba(28,8,18,0) 72%);}
+/* Fuer Folien mit mehreren Textzeilen auf dem Bild: deckt bis zur Mitte durch. */
+.schleier.stark{background:linear-gradient(100deg,rgba(28,8,18,.94) 0%,rgba(28,8,18,.88) 46%,rgba(28,8,18,.5) 72%,rgba(28,8,18,.22) 100%);}
+/* Fuer die beiden Uhrzeit-Folien: das Bild traegt nur noch die Stimmung,
+   die Zahl steht allein. Deshalb flaechig abgedunkelt statt mit Verlauf. */
+.dunkel{position:absolute;inset:0;background:rgba(24,7,15,.9);}
+.auf-bild{position:relative;z-index:3;color:#F6F1E9;}
+.auf-bild h1,.auf-bild h2,.auf-bild h3,.auf-bild .akz,
+.auf-bild .riesenzahl,.auf-bild .takeaway{color:#F6F1E9;}
+.auf-bild .lead,.auf-bild .klein{color:rgba(246,241,233,.9);}
+.auf-bild .label{color:#F6F1E9;opacity:.8;}
+.auf-bild hr.strich{background:#F6F1E9;}
+
+/* ============================================================
+   7. EINBLENDUNGEN
+   ============================================================ */
+.reveal .fragment.aufblende{opacity:0;transform:translateY(16px);
+  transition:opacity .5s ease,transform .5s ease;}
+.reveal .fragment.aufblende.visible{opacity:1;transform:none;}
+.reveal .fragment.abblende.visible{opacity:.24;transition:opacity .45s ease;}
+
+/* ============================================================
+   8. EDITORIAL-BAUSTEINE
+   Muster aus zeitgenoessischen Editorial-Decks: Ellipse um ein
+   Wort, Geisterziffern, gemischte Roman-Kursiv-Headlines.
+   ============================================================ */
+/* Handgezogene Ellipse um ein einzelnes Wort. */
+.oval{display:inline-block;border:3px solid var(--burgund);border-radius:50%;
+      padding:.02em .34em .08em;margin:0 .04em;}
+.auf-bild .oval{border-color:#F6F1E9;}
+
+/* Riesige, fast unsichtbare Ziffer als Raumtiefe hinter dem Inhalt. */
+.geist{position:absolute;top:-30px;right:60px;z-index:0;pointer-events:none;
+       font-family:'Bodoni Moda',Georgia,serif;font-optical-sizing:none;
+       font-variation-settings:'opsz' 11,'wght' 600;
+       font-size:620px;line-height:1;color:var(--burgund);opacity:.055;}
+.buehne{z-index:1;}
+
+/* Pruefmodus ?nofrag: alle Einblendungen sofort sichtbar.
+   Ueber CSS statt ueber Klassen, sonst setzt Reveal sie beim Folienwechsel zurueck. */
+html.nofrag .reveal .fragment{opacity:1!important;visibility:visible!important;transform:none!important;}
+
+.reveal .progress{color:var(--burgund);height:3px;}
+.reveal .controls{color:var(--burgund);}
+::selection{background:var(--burgund);color:var(--sand);}
+</style>
+</head>
+<body>
+<div class="reveal">
+<div class="slides">
+
+<!-- ============================================================
+     FOLIE 1  Titel
+     ============================================================ -->
+<section data-chrome="aus" data-slide-id="titel">
+  <div class="buehne" style="align-items:center;text-align:center;padding:74px 120px 0;">
+    <div class="wortmarke" style="justify-content:center;">
+      <span class="wort">visionista</span>
+      <span class="sub" style="text-align:left;">Unternehmerinnen im<br>Herzogtum Lauenburg</span>
+    </div>
+    <div class="label" style="margin-top:52px;">Ein Vormittag über gewonnene Abende</div>
+    <h1 style="font-size:150px;margin-top:26px;line-height:.98;">
+      KI für <span class="akz" style="font-size:158px;">Macherinnen</span>
+    </h1>
+    <p class="lead" style="font-size:37px;margin-top:38px;text-align:center;max-width:1080px;">
+      Vom ersten Satz zur echten Entlastung. An dem, was heute Abend
+      noch auf Ihrem Schreibtisch liegt.
+    </p>
+    <div style="margin-top:46px;display:flex;gap:56px;align-items:baseline;justify-content:center;">
+      <span class="label">19. August 2026</span>
+      <span style="color:var(--linie-satt);font-size:22px;">&middot;</span>
+      <span class="label">AWSH, Elmenhorst/Lanken</span>
+      <span style="color:var(--linie-satt);font-size:22px;">&middot;</span>
+      <span class="label">Edgar Paul-Ghazaryan &amp; Emre Erdogan</span>
+    </div>
+  </div>
+  <img src="assets/bilder/gruppe-haus.jpg" alt="Das visionista-Netzwerk vor dem Reetdachhaus in Kittlitz"
+       style="position:absolute;left:0;bottom:0;width:1920px;height:335px;object-fit:cover;object-position:center 58%;">
+  <aside class="notes">
+    Begrüßung. Kurz, warm, kein Aufwärmen. Direkt zur nächsten Folie.
+    Optional: Michaela Bierschwall und Fanny Doll für die Einladung danken.
+  </aside>
+</section>
+
+<!-- ============================================================
+     FOLIE 2  Der Elefant im Raum
+     Der Raum denkt es sowieso. Wer es zuerst ausspricht, hat es entschaerft.
+     ============================================================ -->
+<section data-slide-id="elefant">
+  <div class="buehne mittig" style="align-items:center;text-align:center;">
+    <h2 style="font-size:92px;">
+      Zwei Männer erklären einem Raum<br>
+      voller Unternehmerinnen,<br>
+      wie <span class="akz oval">Technik</span> geht.
+    </h2>
+    <hr class="strich" style="margin:54px auto 46px;">
+    <p class="lead gross fragment aufblende" style="text-align:center;">
+      Wir wissen, wie das klingt.
+    </p>
+    <p class="lead fragment aufblende" style="max-width:1220px;margin-top:34px;text-align:center;">
+      Deshalb haben wir uns vorgenommen, in den nächsten 35 Minuten
+      kein einziges Mal zu erklären, wie etwas funktioniert.
+      Wir zeigen nur, was es tut.
+    </p>
+  </div>
+  <aside class="notes">
+    DER wichtigste Moment des Vortrags. Ruhig sprechen, kurze Pause nach dem ersten Satz.
+    Nicht entschuldigend, sondern selbstbewusst und selbstironisch.
+    Der Raum lacht hier. Danach ist die Skepsis raus und man kann arbeiten.
+    NICHT ins Rechtfertigen kippen. Ein Satz, Pause, weiter.
+  </aside>
+</section>
+
+<!-- ============================================================
+     FOLIE 3  Was wir nicht machen
+     Erwartungsmanagement als Vertrauensangebot.
+     ============================================================ -->
+<section data-slide-id="versprechen">
+  <div class="buehne">
+    <div class="label">Drei Versprechen für die nächsten 35 Minuten</div>
+    <h2 style="margin-top:26px;">Was heute <span class="akz">nicht</span> passiert.</h2>
+    <hr class="strich breit" style="margin:48px 0 8px;">
+    <div class="zeilen" style="margin-top:10px;">
+      <div class="fragment aufblende">
+        <span class="zahl klein" style="width:120px;flex-shrink:0;">01</span>
+        <div>
+          <h3 style="font-size:46px;">Keine Fachwörter.</h3>
+          <p class="klein" style="margin-top:12px;max-width:1180px;font-size:28px;">
+            Kein Modell, kein Token, kein Algorithmus. Sie brauchen davon nichts,
+            so wie Sie beim Autofahren nichts über Zündkerzen wissen müssen.
+          </p>
+        </div>
+      </div>
+      <div class="fragment aufblende">
+        <span class="zahl klein" style="width:120px;flex-shrink:0;">02</span>
+        <div>
+          <h3 style="font-size:46px;">Keine Angst.</h3>
+          <p class="klein" style="margin-top:12px;max-width:1180px;font-size:28px;">
+            Niemand wird hier abgehängt. Wer heute anfängt, ist früh dran.
+            Das ist der ehrliche Stand der Dinge.
+          </p>
+        </div>
+      </div>
+      <div class="fragment aufblende">
+        <span class="zahl klein" style="width:120px;flex-shrink:0;">03</span>
+        <div>
+          <h3 style="font-size:46px;">Kein Verkauf.</h3>
+          <p class="klein" style="margin-top:12px;max-width:1180px;font-size:28px;">
+            Wir haben die Charta dieses Netzwerks gelesen. Wir bieten Ihnen heute nichts an.
+            Alles, was Sie gleich sehen, können Sie ab heute Mittag selbst machen.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <aside class="notes">
+    Punkt 3 ist der, der im Raum ankommt. Die Charta verbietet Produktpräsentationen
+    ausdrücklich, und alle wissen das. Wer es von sich aus anspricht, gewinnt den Raum.
+    Ruhig sagen, nicht kokett.
+  </aside>
+</section>
+
+<!-- ============================================================
+     FOLIE 4  Die Abendschicht
+     Der rote Faden des Vortrags. Kommt am Ende noch einmal.
+     ============================================================ -->
+<section data-slide-id="uhrzeit" data-chrome="aus">
+  <img src="assets/bilder/gruppe-runde.jpg" alt="Runde beim visionista-Treffen im warmen Abendlicht"
+       class="vollbild" style="object-position:center 38%;">
+  <div class="dunkel"></div>
+  <div class="buehne mittig auf-bild" style="align-items:center;text-align:center;">
+    <p class="label" style="margin-bottom:44px;">Heute Abend</p>
+    <div class="riesenzahl">21:47</div>
+    <hr class="strich" style="margin:64px auto 56px;">
+    <p class="lead gross fragment aufblende" style="max-width:1240px;text-align:center;">
+      Die Uhrzeit, zu der bei vielen von Ihnen<br>
+      der <span class="akz">eigentliche</span> Arbeitstag anfängt.
+    </p>
+  </div>
+  <aside class="notes">
+    Nach der Zahl eine echte Pause machen. Zwei Sekunden.
+    Dann erst den Satz. Nicht erklären, nicht kommentieren.
+    Wer das kennt, nickt. Wer es nicht kennt, hat trotzdem verstanden.
+  </aside>
+</section>
+
+<!-- ============================================================
+     FOLIE 5  Der Zettel
+     Konkret statt abstrakt. Jede Zeile muss jemand im Raum wiedererkennen.
+     ============================================================ -->
+<section data-slide-id="zettel">
+  <div class="buehne">
+    <h2>Was um 21:47 Uhr <span class="akz">noch liegt</span>.</h2>
+    <hr class="strich breit" style="margin:44px 0 0;">
+    <div class="zeilen" style="margin-top:6px;">
+      <div class="fragment aufblende" style="justify-content:space-between;">
+        <span style="font-size:37px;font-weight:400;">Das Angebot für die Anfrage von letzter Woche</span>
+        <span class="klein" style="font-size:26px;white-space:nowrap;">seit 6 Tagen offen</span>
+      </div>
+      <div class="fragment aufblende" style="justify-content:space-between;">
+        <span style="font-size:37px;font-weight:400;">Der Beitrag für Instagram, der längst raus sein sollte</span>
+        <span class="klein" style="font-size:26px;white-space:nowrap;">seit 3 Wochen geplant</span>
+      </div>
+      <div class="fragment aufblende" style="justify-content:space-between;">
+        <span style="font-size:37px;font-weight:400;">Die Absage, die freundlich klingen muss</span>
+        <span class="klein" style="font-size:26px;white-space:nowrap;">seit Montag im Kopf</span>
+      </div>
+      <div class="fragment aufblende" style="justify-content:space-between;">
+        <span style="font-size:37px;font-weight:400;">Die Belege vom Juli</span>
+        <span class="klein" style="font-size:26px;white-space:nowrap;">in der Schublade</span>
+      </div>
+      <div class="fragment aufblende" style="justify-content:space-between;">
+        <span style="font-size:37px;font-weight:400;">Die Idee für den nächsten Newsletter</span>
+        <span class="klein" style="font-size:26px;white-space:nowrap;">nicht vorhanden</span>
+      </div>
+    </div>
+    <hr class="strich breit" style="margin:0 0 40px;">
+    <p class="takeaway fragment aufblende" style="max-width:1400px;">
+      Nichts davon ist Ihre eigentliche Arbeit.<br>
+      Alles davon macht Ihren Abend voll.
+    </p>
+  </div>
+  <aside class="notes">
+    Zeile für Zeile einblenden, jede kurz stehen lassen.
+    Bei "in der Schublade" und "nicht vorhanden" wird gelacht.
+    Das Lachen abwarten, nicht drüberreden.
+    Wenn Zeit knapp wird: die ersten drei Zeilen reichen.
+  </aside>
+</section>
+
+<!-- ============================================================
+     FOLIE 6  Die Zahl
+     Gegen das Gefuehl, spaet dran zu sein. Quelle steht auf der Folie.
+     ============================================================ -->
+<section data-slide-id="verbreitung">
+  <div class="buehne">
+    <div class="label">Der Stand der Dinge, Juni 2026</div>
+    <h2 style="margin-top:26px;">Sie sind nicht spät dran.</h2>
+    <hr class="strich breit" style="margin:52px 0 56px;">
+    <div class="spalten drei" style="align-items:start;">
+      <div>
+        <div class="zahl">51<span style="font-size:64px;">,2 %</span></div>
+        <p class="zahl-txt">der Solo-Selbstständigen und
+        Kleinstunternehmen in Deutschland
+        arbeiten heute mit KI.</p>
+      </div>
+      <div class="fragment aufblende">
+        <div class="zahl" style="opacity:.42;">30<span style="font-size:64px;">,4 %</span></div>
+        <p class="zahl-txt">waren es im Jahr davor.
+        Ein Sprung von 21 Punkten
+        in zwölf Monaten.</p>
+      </div>
+      <div class="fragment aufblende">
+        <div class="zahl">2</div>
+        <p class="zahl-txt">von drei Betrieben, die es nutzen,
+        wollen es ausbauen. Fast niemand
+        hört wieder auf.</p>
+      </div>
+    </div>
+    <hr class="strich breit" style="margin:56px 0 34px;">
+    <p class="takeaway fragment aufblende">Nicht die Neugier ist das Risiko. Das Warten ist es.</p>
+    <p class="quelle" style="margin-top:auto;">
+      ifo Institut und Jimdo, Geschäftsklimaindex für Selbstständige, Erhebung Juni 2026.
+      Bitkom, Künstliche Intelligenz in Deutschland 2026.
+    </p>
+  </div>
+  <aside class="notes">
+    Kernsatz: Die Hälfte der Leute mit genau Ihrer Betriebsgröße macht das schon.
+    Nicht Konzerne. Nicht IT-Firmen. Betriebe wie Ihrer.
+    Wenn jemand fragt, warum die Zahlen anderswo niedriger sind:
+    andere Studien zählen nur Betriebe ab 20 Beschäftigten. Bei den Kleinen geht es am schnellsten.
+  </aside>
+</section>
+
+<!-- ============================================================
+     FOLIE 7  Die Luecke
+     Heikles Thema. Loesung: die Zahl zeigen, die Deutung umdrehen,
+     die Pointe auf eigene Kosten machen.
+     ============================================================ -->
+<section data-slide-id="luecke">
+  <div class="buehne">
+    <div class="label">Und eine Zahl, die uns nicht gefällt</div>
+    <h2 style="margin-top:26px;">Es gibt eine <span class="akz">Lücke</span>.</h2>
+    <hr class="strich breit" style="margin:48px 0 50px;">
+    <div class="spalten zwei" style="align-items:start;">
+      <div>
+        <div style="display:flex;align-items:baseline;gap:30px;">
+          <span class="zahl">53<span style="font-size:56px;">%</span></span>
+          <span style="font-size:34px;font-weight:400;color:var(--tinte-weich);">der Männer</span>
+        </div>
+        <div style="display:flex;align-items:baseline;gap:30px;margin-top:34px;">
+          <span class="zahl">37<span style="font-size:56px;">%</span></span>
+          <span style="font-size:34px;font-weight:400;color:var(--tinte-weich);">der Frauen</span>
+        </div>
+        <p class="klein" style="margin-top:32px;max-width:640px;">
+          nutzen KI im Beruf. Auch dann noch, wenn man Alter, Bildung,
+          Einkommen und Branche herausrechnet, bleibt ein Rest.
+        </p>
+      </div>
+      <div class="fragment aufblende">
+        <p class="lead" style="font-size:36px;">
+          Die Forschung findet dafür keinen Kompetenzunterschied.
+        </p>
+        <p class="lead" style="font-size:36px;margin-top:30px;">
+          Sie findet einen <span class="akz">Haltungsunterschied</span>:
+          die einen wollen ein Werkzeug erst können, bevor sie es anfassen.
+          Die anderen fassen es an.
+        </p>
+        <p class="lead" style="font-size:36px;margin-top:30px;">
+          Die erste Haltung ist die klügere. Sie ist im Moment nur die teurere.
+        </p>
+      </div>
+    </div>
+    <p class="quelle" style="margin-top:auto;">
+      Initiative D21 und Institut für Arbeitsmarkt- und Berufsforschung, Digital Gender Gap, April 2026.
+    </p>
+  </div>
+  <aside class="notes">
+    HEIKELSTE FOLIE. Ton entscheidet alles.
+    Nicht belehren, nicht bedauern. Sachlich vortragen, die Deutung sofort umdrehen.
+    Der Satz "Die erste Haltung ist die klügere" ist der wichtigste des Vortrags.
+    Er muss ehrlich klingen, weil er ehrlich ist: wer ein Werkzeug erst verstehen will,
+    macht weniger Fehler. Das ist im Handwerk und in der Buchhaltung ein Vorteil.
+    Nur bei diesem einen Werkzeug kostet es gerade Zeit.
+    Danach direkt weiter, nicht ausbreiten.
+  </aside>
+</section>
+
+<!-- ============================================================
+     FOLIE 8  Die Pointe auf eigene Kosten plus die gute Nachricht
+     ============================================================ -->
+<section data-slide-id="aufloesung">
+  <div class="buehne mittig">
+    <p class="lead gross" style="max-width:1560px;">
+      Der einzige messbare Vorteil, den wir zwei beim Umgang mit
+      diesen Werkzeugen haben, ist eine gewisse Bereitschaft,
+      <span class="akz">Unsinn zu produzieren</span>.
+    </p>
+    <hr class="strich" style="margin:56px 0 52px;">
+    <div class="fragment aufblende">
+      <h2 style="font-size:74px;max-width:1600px;">Und die gute Nachricht<br>ist eine sehr gute.</h2>
+      <div class="spalten zwei" style="margin-top:56px;align-items:start;">
+        <div>
+          <div class="zahl klein">1 Punkt</div>
+          <p class="zahl-txt" style="max-width:620px;">
+            So klein wird die Lücke, sobald jemand einmal in Ruhe zeigt,
+            wie es geht. Von sechzehn Punkten auf einen.
+          </p>
+        </div>
+        <div>
+          <div class="zahl klein">+15 zu +8</div>
+          <p class="zahl-txt" style="max-width:620px;">
+            So viel gewinnen Frauen dazu, wenn sie anfangen.
+            Fast doppelt so viel wie Männer.
+          </p>
+        </div>
+      </div>
+    </div>
+    <p class="quelle" style="margin-top:60px;">
+      Initiative D21 und IAB, April 2026. Beide Effekte in derselben Erhebung gemessen.
+    </p>
+  </div>
+  <aside class="notes">
+    Der erste Satz ist der Lacher. Trocken vortragen, nicht anpreisen.
+    Dann Pause, dann die Wendung.
+    Kernaussage: Genau das, was Sie hier gerade tun, ist der Hebel.
+    Sie sitzen nicht in einem Vortrag, Sie schließen gerade eine Lücke.
+    Das darf man so sagen, es steht in der Studie.
+  </aside>
+</section>
+
+<!-- ============================================================
+     FOLIE 9  Der eine Denkfehler
+     Das zentrale Bild des Vortrags. Alles danach baut darauf auf.
+     ============================================================ -->
+<section data-slide-id="denkfehler">
+  <div class="buehne">
+    <h2>Es gibt genau <span class="akz oval">einen</span> Anfängerfehler.</h2>
+    <hr class="strich breit" style="margin:46px 0 52px;">
+    <div class="spalten zwei" style="align-items:stretch;">
+      <div>
+        <div class="label" style="opacity:.5;">So machen es fast alle</div>
+        <h3 style="margin-top:24px;color:var(--tinte-weich);font-size:48px;">
+          Man tippt wie bei Google.
+        </h3>
+        <p class="klein" style="margin-top:26px;font-size:29px;max-width:620px;">
+          Drei Wörter, dann hofft man auf einen Treffer.
+          Bekommt etwas Allgemeines zurück, denkt sich
+          <em style="font-style:italic;color:var(--tinte-weich);">nett, aber nicht meins</em>,
+          und macht es am Ende doch selbst.
+        </p>
+      </div>
+      <div class="fragment aufblende">
+        <div class="label">So funktioniert es</div>
+        <h3 style="margin-top:24px;font-size:48px;">
+          Man redet wie mit einer<br>neuen Aushilfe.
+        </h3>
+        <p class="klein" style="margin-top:26px;font-size:29px;max-width:620px;color:var(--tinte);">
+          Klug, schnell, schreibt fehlerfrei, kennt sich in erstaunlich
+          vielem aus. Und weiß nichts über Sie, Ihre Kundschaft
+          und die Art, wie bei Ihnen geredet wird.
+        </p>
+      </div>
+    </div>
+    <hr class="strich breit" style="margin:56px 0 34px;">
+    <p class="takeaway fragment aufblende" style="max-width:1520px;">
+      Einer Aushilfe sagen Sie auch nicht<br>
+      „Mach mal Angebot" und gehen dann Kaffee holen.
+    </p>
+  </div>
+  <aside class="notes">
+    Das Bild von der Aushilfe zieht sich durch den Rest des Vortrags.
+    Immer wieder daran erinnern: "Was würden Sie der Aushilfe jetzt sagen?"
+    Der Takeaway-Satz ist ein Lacher, weil ihn jede kennt.
+  </aside>
+</section>
+
+<!-- ============================================================
+     FOLIE 10  Die vier Fragen
+     Die Formel des Vortrags. Steht spaeter auch auf der Mitnehmkarte.
+     ============================================================ -->
+<section data-slide-id="vier-fragen">
+  <div class="buehne">
+    <div class="label">Was Sie sich merken müssen, ist das hier. Mehr nicht.</div>
+    <h2 style="margin-top:26px;">Vier <span class="akz">Fragen</span>.</h2>
+    <hr class="strich breit" style="margin:46px 0 48px;">
+    <div class="spalten vier" style="align-items:start;">
+      <div>
+        <div class="zahl klein" style="font-size:62px;">01</div>
+        <h3 style="font-size:38px;margin-top:20px;">Wer bist du<br>für mich?</h3>
+        <p class="klein" style="margin-top:20px;font-size:25px;">
+          „Du bist meine Büroleiterin."
+          „Du bist eine erfahrene Verkäuferin."
+        </p>
+      </div>
+      <div>
+        <div class="zahl klein" style="font-size:62px;">02</div>
+        <h3 style="font-size:38px;margin-top:20px;">Was soll dabei<br>rauskommen?</h3>
+        <p class="klein" style="margin-top:20px;font-size:25px;">
+          „Ein Angebot." „Ein Beitrag für Instagram."
+          „Eine Antwort auf diese Mail."
+        </p>
+      </div>
+      <div>
+        <div class="zahl klein" style="font-size:62px;">03</div>
+        <h3 style="font-size:38px;margin-top:20px;">Was musst du<br>dafür wissen?</h3>
+        <p class="klein" style="margin-top:20px;font-size:25px;">
+          Wer ist die Kundin, was ist vorher passiert,
+          was kostet es, was darf nicht vorkommen.
+        </p>
+      </div>
+      <div>
+        <div class="zahl klein" style="font-size:62px;">04</div>
+        <h3 style="font-size:38px;margin-top:20px;">Wie soll es<br>aussehen?</h3>
+        <p class="klein" style="margin-top:20px;font-size:25px;">
+          Wie lang, wie förmlich, mit Anrede,
+          in Stichpunkten, freundlich oder deutlich.
+        </p>
+      </div>
+    </div>
+    <hr class="strich breit" style="margin:52px 0 34px;">
+    <p class="takeaway fragment aufblende">
+      Frage drei ist die, die den Unterschied macht.
+    </p>
+  </div>
+  <aside class="notes">
+    Diese vier Fragen stehen später auf der Karte zum Mitnehmen.
+    Punkt betonen: Frage 3 ist die, die fast immer fehlt.
+    Genau da liegt der Unterschied zwischen "nett, aber nicht meins" und "das nehme ich".
+  </aside>
+</section>
+
+<!-- ============================================================
+     FOLIE 11  Der Unterschied in echt
+     Zwei Prompts nebeneinander. Ueberzeugt mehr als jede Erklaerung.
+     ============================================================ -->
+<section data-slide-id="vergleich">
+  <div class="buehne">
+    <h2>Derselbe Auftrag, <span class="akz">zweimal</span> gestellt.</h2>
+    <hr class="strich breit" style="margin:42px 0 44px;">
+    <div class="spalten zwei" style="align-items:start;gap:0;">
+      <div>
+        <div class="label" style="opacity:.5;margin-bottom:22px;">Was fast alle eingeben</div>
+        <div class="gesagt matt">
+          Schreib mir ein Angebot für eine Kundin.
+        </div>
+        <p class="klein" style="margin-top:28px;font-size:26px;max-width:600px;">
+          Ergebnis: ein Muster-Angebot aus dem Internet.
+          Höflich, korrekt, austauschbar. Sie schreiben es doch selbst.
+        </p>
+      </div>
+      <div class="fragment aufblende">
+        <div class="label" style="margin-bottom:22px;">Was Sie ab heute eingeben</div>
+        <div class="gesagt">
+          <span class="wer">Du bist meine Büroleiterin.</span>
+          Schreib das Angebot für Frau Petersen. Sie hat Dienstag angerufen,
+          will vier Räume streichen lassen, Altbau, hohe Decken, zieht am 1. Oktober ein.
+          Ich komme auf 2.400 Euro. Sie war am Telefon nett, aber preisbewusst.
+          Freundlich, kurz, ohne Fachwörter, Gültigkeit vier Wochen,
+          und ein Satz dazu, warum wir bei Altbau schneller sind als andere.
+        </div>
+      </div>
+    </div>
+    <hr class="strich breit" style="margin:38px 0 24px;">
+    <p class="takeaway fragment aufblende" style="font-size:47px;">
+      Der zweite Text dauert vierzig Sekunden länger im Schreiben.<br>
+      Und spart die Stunde, in der Sie ihn danach umschreiben.
+    </p>
+  </div>
+  <aside class="notes">
+    Rechte Spalte laut vorlesen. Das Publikum hört: das ist ja nur ein normaler Satz.
+    Genau das ist die Botschaft. Kein Fachwissen, nur Erzählen, was Sache ist.
+    Überleitung: "Und jetzt machen wir das mal wirklich."
+  </aside>
+</section>
+
+<!-- ============================================================
+     FOLIE 12  Uebergang in den Live-Teil
+     ============================================================ -->
+<section data-slide-id="live-auftakt" data-chrome="aus">
+  <img src="assets/bilder/gruppe-publikum.jpg" alt="Das visionista-Netzwerk beim Sommerfest"
+       class="vollbild" style="object-position:72% 46%;">
+  <div class="schleier stark"></div>
+  <div class="buehne mittig auf-bild">
+    <p class="label">Ab hier wird nicht mehr erklärt</p>
+    <h1 style="font-size:150px;margin-top:32px;">Machen.</h1>
+    <hr class="strich" style="margin:48px 0 44px;">
+    <p class="lead gross" style="max-width:1180px;">
+      Drei Aufgaben von Ihrer Liste. Live, mit allem was schiefgeht.
+    </p>
+  </div>
+  <aside class="notes">
+    Übergang. Laptop bereit, Fenster schon offen, Anmeldung schon erledigt.
+    Ansage an den Raum: "Wenn etwas hakt, sehen Sie das auch. Das gehört dazu."
+    Das nimmt den Druck raus und macht es glaubwürdig.
+  </aside>
+</section>
+
+<!-- ============================================================
+     FOLIE 13  Demo 1  Das Angebot
+     Vertikale Unterfolie darunter: Rueckfall ohne Internet.
+     ============================================================ -->
+<section>
+  <section data-slide-id="demo-angebot">
+    <div class="geist">01</div>
+    <div class="buehne">
+      <div class="label">Live, Aufgabe eins</div>
+      <h2 style="margin-top:26px;">Das <span class="akz">Angebot</span>,<br>das seit Dienstag wartet.</h2>
+      <hr class="strich breit" style="margin:44px 0 40px;">
+      <div class="spalten zwei" style="align-items:start;">
+        <div>
+          <p class="lead" style="font-size:33px;max-width:640px;">
+            Wir tippen nichts. Wir sprechen es einfach ins Gerät,
+            so wie Sie es einer Kollegin am Telefon erzählen würden.
+          </p>
+          <p class="klein" style="margin-top:30px;font-size:27px;max-width:640px;">
+            Diktieren kann Ihr Handy seit Jahren, kostenlos, ohne
+            zusätzliche App. Sie haben es vermutlich noch nie benutzt.
+          </p>
+        </div>
+        <div>
+          <div class="label" style="margin-bottom:20px;">Was gesprochen wird</div>
+          <div class="gesagt">
+            <span class="wer">Du bist meine Büroleiterin.</span>
+            Schreib bitte das Angebot für Frau Petersen. Vier Räume streichen,
+            Altbau, hohe Decken, sie zieht am ersten Oktober ein.
+            2.400 Euro. Freundlich, kurz, keine Fachwörter,
+            vier Wochen gültig.
+          </div>
+        </div>
+      </div>
+      <hr class="strich breit" style="margin:40px 0 28px;">
+      <p class="takeaway">Achten Sie auf die Uhr. Nicht auf den Bildschirm.</p>
+    </div>
+    <aside class="notes">
+      REGIE: Handy oder Laptop-Diktat starten, den Satz sprechen, absenden.
+      Während es läuft, in den Raum sprechen, nicht auf den Bildschirm starren.
+      Timer laufen lassen und die Zeit danach laut nennen.
+      Beim Ergebnis NICHT sagen "perfekt". Sagen: "Das ist ein Entwurf, jetzt kommt der wichtige Teil."
+      OHNE INTERNET: Pfeil nach unten, dort liegt das vorbereitete Ergebnis.
+    </aside>
+  </section>
+
+  <section data-slide-id="demo-angebot-rueckfall">
+    <div class="buehne">
+      <div class="label">Rückfall, falls das Netz hier nicht mitspielt</div>
+      <h2 style="margin-top:22px;font-size:66px;">Was dabei herauskommt.</h2>
+      <hr class="strich breit" style="margin:36px 0 32px;">
+      <div class="brief">
+        <strong style="font-weight:600;">Betreff: Ihr Angebot für die Malerarbeiten, Einzug 1. Oktober</strong><br><br>
+        Sehr geehrte Frau Petersen,<br><br>
+        vielen Dank für Ihren Anruf am Dienstag. Gern übernehmen wir das Streichen
+        Ihrer vier Räume im Altbau.<br><br>
+        Enthalten sind das Abdecken und Abkleben, das Ausbessern kleiner Risse,
+        zwei Anstriche in der Farbe Ihrer Wahl sowie die besonders sorgfältige
+        Arbeit an den hohen Decken und Stuckleisten.<br><br>
+        <strong style="font-weight:600;">Gesamtpreis: 2.400 Euro</strong><br><br>
+        Wir richten den Termin so ein, dass alles vor Ihrem Einzug am 1. Oktober
+        fertig und ausgelüftet ist. Dieses Angebot gilt vier Wochen.<br><br>
+        Herzliche Grüße
+      </div>
+      <hr class="strich breit" style="margin:32px 0 24px;">
+      <p class="klein" style="font-size:27px;">
+        Erstellt in 34 Sekunden. Der Preis und die Randbedingungen kamen von der Unternehmerin.
+        Die Formulierung kam vom Werkzeug. Genau in dieser Reihenfolge gehört es sich.
+      </p>
+    </div>
+    <aside class="notes">
+      Diese Folie nur zeigen, wenn die Live-Demo nicht läuft.
+      Sonst überspringen mit Pfeil nach rechts.
+    </aside>
+  </section>
+</section>
+
+<!-- ============================================================
+     FOLIE 14  Das Nachschaerfen
+     Der wichtigste Lerninhalt nach den vier Fragen.
+     ============================================================ -->
+<section data-slide-id="nachschaerfen">
+  <div class="buehne">
+    <h2>Der <span class="akz">zweite</span> Satz ist der,<br>auf den es ankommt.</h2>
+    <hr class="strich breit" style="margin:44px 0 42px;">
+    <p class="lead" style="max-width:1560px;">
+      Fast alle hören nach der ersten Antwort auf. Sie lesen, denken
+      <em>naja, so ganz ist das nicht meins</em>, schließen das Fenster
+      und schreiben es doch selbst. Das ist der Moment, in dem die meiste
+      Zeit verloren geht.
+    </p>
+    <div class="spalten drei" style="margin-top:52px;align-items:start;">
+      <div>
+        <div class="gesagt" style="font-size:28px;">
+          Zu förmlich. Schreib das so, wie ich mit einer Stammkundin rede.
+        </div>
+      </div>
+      <div>
+        <div class="gesagt" style="font-size:28px;">
+          Die Hälfte davon reicht. Und der letzte Absatz kann weg.
+        </div>
+      </div>
+      <div>
+        <div class="gesagt" style="font-size:28px;">
+          Gib mir drei Fassungen. Eine vorsichtige, eine klare, eine sehr deutliche.
+        </div>
+      </div>
+    </div>
+    <hr class="strich breit" style="margin:48px 0 28px;">
+    <p class="takeaway fragment aufblende" style="max-width:1560px;">
+      Sie müssen nicht wissen, wie man richtig fragt.<br>
+      Sie müssen nur sagen, was Ihnen an der Antwort nicht passt.
+    </p>
+  </div>
+  <aside class="notes">
+    Das ist die Entlastung schlechthin, besonders für alle,
+    die glauben, sie müssten es gleich richtig eingeben.
+    Man kann meckern. Meckern ist die eigentliche Technik.
+    Hier kurz live nachschärfen, an dem Ergebnis von eben.
+  </aside>
+</section>
+
+<!-- ============================================================
+     FOLIE 15  Demo 2  Der Beitrag aus einem Foto
+     Mit Beteiligung aus dem Raum. Keine Uebung, nur ein Zuruf.
+     ============================================================ -->
+<section>
+  <section data-slide-id="demo-foto">
+    <div class="geist">02</div>
+    <div class="buehne">
+      <div class="label">Live, Aufgabe zwei</div>
+      <h2 style="margin-top:26px;">Der Beitrag, den Sie seit<br>drei Wochen <span class="akz">aufschieben</span>.</h2>
+      <hr class="strich breit" style="margin:44px 0 40px;">
+      <div class="spalten zwei" style="align-items:start;">
+        <div>
+          <p class="lead" style="font-size:34px;max-width:660px;">
+            Wir brauchen ein Foto. Eines von Ihnen, aus Ihrem Betrieb,
+            von heute oder von gestern.
+          </p>
+          <p class="klein" style="margin-top:28px;font-size:28px;max-width:660px;">
+            Kein perfektes. Ein echtes. Genau das ist der Punkt:
+            das Bild bleibt Ihres, nur der Text kommt vom Werkzeug.
+            Erfundene Bilder erkennt Ihre Kundschaft sofort.
+          </p>
+        </div>
+        <div>
+          <div class="label" style="margin-bottom:20px;">Was wir eingeben</div>
+          <div class="gesagt">
+            <span class="wer">Du bist verantwortlich für unseren Instagram-Auftritt.</span>
+            Hier ist ein Foto aus meinem Betrieb. Schreib drei Bildunterschriften:
+            eine persönliche, eine sachliche, eine mit Augenzwinkern.
+            Kurze Sätze, keine Werbesprache, am Ende eine echte Frage
+            an die Leserinnen.
+          </div>
+        </div>
+      </div>
+      <hr class="strich breit" style="margin:40px 0 28px;">
+      <p class="takeaway">Wer hat ein Foto auf dem Handy, das längst raus sollte?</p>
+    </div>
+    <aside class="notes">
+      REGIE: In den Raum fragen. Eine Teilnehmerin schickt das Foto per Mail
+      oder zeigt es, wir fotografieren den Bildschirm ab.
+      FALLS NIEMAND: Wir haben zu Beginn ein Foto vom Raum gemacht. Das nehmen.
+      Immer VORHER fragen, ob das Foto gezeigt werden darf.
+      Die drei Fassungen vorlesen lassen und den Raum entscheiden lassen, welche rausgeht.
+      Das ist der Moment, in dem der Raum am lautesten wird. Zeit dafür lassen.
+    </aside>
+  </section>
+
+  <section data-slide-id="demo-foto-rueckfall">
+    <div class="buehne" style="padding-top:110px;">
+      <div class="label">Rückfall</div>
+      <h2 style="margin-top:20px;font-size:62px;">Drei Fassungen, ein Foto.</h2>
+      <hr class="strich breit" style="margin:32px 0 30px;">
+      <div class="spalten drei" style="align-items:start;">
+        <div>
+          <div class="label" style="opacity:.55;margin-bottom:16px;">Persönlich</div>
+          <p style="font-size:27px;font-weight:300;line-height:1.5;">
+            Sieben Uhr, der erste Kaffee, und die Werkstatt gehört noch mir allein.
+            Ehrlich gesagt meine liebste halbe Stunde am Tag.
+            Wann ist bei Ihnen am meisten Ruhe?
+          </p>
+        </div>
+        <div>
+          <div class="label" style="opacity:.55;margin-bottom:16px;">Sachlich</div>
+          <p style="font-size:27px;font-weight:300;line-height:1.5;">
+            Zwölf Aufträge diese Woche, alle im Kreis, alle innerhalb von drei Tagen.
+            Das geht nur, weil wir kurze Wege haben.
+            Worauf achten Sie bei einem Handwerksbetrieb zuerst?
+          </p>
+        </div>
+        <div>
+          <div class="label" style="opacity:.55;margin-bottom:16px;">Mit Augenzwinkern</div>
+          <p style="font-size:27px;font-weight:300;line-height:1.5;">
+            Man sagt uns nach, wir hätten für alles das passende Werkzeug.
+            Stimmt. Fragen Sie nur nicht, wo genau es gerade liegt.
+            Wer kennt das aus dem eigenen Betrieb?
+          </p>
+        </div>
+      </div>
+      <hr class="strich breit" style="margin:36px 0 24px;">
+      <p class="klein" style="font-size:27px;">
+        Drei Fassungen in einem Durchgang. Sie wählen aus, statt vor einem leeren Feld zu sitzen.
+        Auswählen ist ungleich leichter als anfangen.
+      </p>
+    </div>
+    <aside class="notes">Nur bei Netzproblemen zeigen.</aside>
+  </section>
+</section>
+
+<!-- ============================================================
+     FOLIE 16  Demo 3  Die unangenehme Mail
+     ============================================================ -->
+<section data-slide-id="demo-mail">
+  <div class="geist">03</div>
+  <div class="buehne">
+    <div class="label">Live, Aufgabe drei</div>
+    <h2 style="margin-top:26px;">Die Mail, die Sie seit Montag<br>im <span class="akz">Kopf</span> haben.</h2>
+    <hr class="strich breit" style="margin:44px 0 40px;">
+    <div class="spalten zwei" style="align-items:start;">
+      <div>
+        <p class="lead" style="font-size:34px;max-width:660px;">
+          Die Absage. Die Mahnung. Die Antwort auf jemanden,
+          der unhöflich war.
+        </p>
+        <p class="klein" style="margin-top:28px;font-size:28px;max-width:660px;">
+          Diese Mails dauern nicht lange, weil sie schwer zu schreiben sind.
+          Sie dauern lange, weil man sie nicht anfangen will.
+          Genau dafür ist es gut, wenn schon etwas dasteht.
+        </p>
+      </div>
+      <div>
+        <div class="label" style="margin-bottom:20px;">Was wir eingeben</div>
+        <div class="gesagt">
+          <span class="wer">Du bist meine ruhigste Kollegin.</span>
+          Ein Kunde schuldet mir seit sieben Wochen Geld und meldet sich nicht.
+          Wir arbeiten seit Jahren zusammen und ich will ihn nicht verlieren.
+          Schreib die Mail in zwei Fassungen: einmal freundlich mit klarer Frist,
+          einmal deutlich. Ohne Drohung, ohne Paragraphen.
+        </div>
+      </div>
+    </div>
+    <hr class="strich breit" style="margin:40px 0 28px;">
+    <p class="takeaway">Welche Mail schiebt hier gerade jemand vor sich her?</p>
+  </div>
+  <aside class="notes">
+    REGIE: Zuruf aus dem Raum aufnehmen und live umsetzen. Sehr wirksam.
+    WICHTIG: Beim Zuruf keine echten Namen übernehmen. Laut sagen, warum:
+    "Ich nenne den Namen bewusst nicht, ich beschreibe nur die Lage."
+    Das ist gleichzeitig die Überleitung zur Datenschutzfolie.
+    Wenn kein Zuruf kommt: die Mahnung oben nehmen, die kennt jede.
+  </aside>
+</section>
+
+<!-- ============================================================
+     Bildmoment: Uebergang vom Machen zum Absichern
+     ============================================================ -->
+<section data-slide-id="uebergang-sicher" data-chrome="aus">
+  <img src="assets/bilder/gruppe-tischrunde.jpg" alt="Tischrunde beim visionista-Sommerfest"
+       class="vollbild" style="object-position:80% 50%;">
+  <div class="schleier stark"></div>
+  <div class="buehne mittig auf-bild">
+    <p class="label">Bevor Sie damit loslegen</p>
+    <h2 style="font-size:88px;margin-top:30px;max-width:1200px;">
+      Drei Dinge, die Sie<br>einmal hören sollten.
+    </h2>
+    <hr class="strich" style="margin:44px 0 40px;">
+    <p class="lead gross" style="max-width:1080px;">
+      Und dann nie wieder darüber nachdenken müssen.
+    </p>
+  </div>
+  <aside class="notes">
+    Kurze Folie, zügig durch. Sie strukturiert nur den letzten Teil:
+    Datenschutz, Rechtslage, Kosten. Drei Minuten, dann sind wir durch.
+  </aside>
+</section>
+
+<!-- ============================================================
+     FOLIE 17  Datenschutz, praktisch statt juristisch
+     Eine einzige Regel, die man sich merken kann.
+     ============================================================ -->
+<section data-slide-id="datenschutz">
+  <div class="buehne">
+    <div class="label">Die einzige Regel, die Sie sich merken müssen</div>
+    <h2 style="margin-top:26px;">Beschreiben Sie die <span class="akz">Lage</span>.<br>Nicht die Person.</h2>
+    <hr class="strich breit" style="margin:44px 0 42px;">
+    <div class="spalten zwei" style="align-items:start;">
+      <div>
+        <div class="label" style="opacity:.5;margin-bottom:20px;">So besser nicht</div>
+        <div class="gesagt matt">
+          Frau Petersen aus der Bergstraße 12 in Mölln hat seit
+          sieben Wochen die Rechnung 2026-0431 nicht bezahlt.
+        </div>
+      </div>
+      <div>
+        <div class="label" style="margin-bottom:20px;">So</div>
+        <div class="gesagt">
+          Eine Stammkundin hat seit sieben Wochen eine Rechnung
+          offen und meldet sich nicht.
+        </div>
+      </div>
+    </div>
+    <hr class="strich breit" style="margin:44px 0 30px;">
+    <div class="spalten zwei" style="align-items:start;">
+      <div>
+        <p class="lead" style="font-size:33px;max-width:660px;">
+          Der Text wird derselbe. Den Namen setzen Sie beim Einfügen ein,
+          das dauert vier Sekunden.
+        </p>
+      </div>
+      <div>
+        <p class="klein" style="font-size:27px;max-width:660px;">
+          Was in einer kostenlosen Version nie etwas zu suchen hat:
+          Gesundheitsangaben, Personalakten, Bewerbungsunterlagen.
+          Wer regelmäßig mit Kundendaten arbeitet, nimmt die bezahlte
+          Fassung. Da gehört ein Vertrag dazu, der genau das regelt.
+        </p>
+      </div>
+    </div>
+  </div>
+  <aside class="notes">
+    Kein Paragraphenreiten. Eine Regel, die im Alltag hält.
+    Wenn jemand nach der DSGVO fragt: Auftragsverarbeitungsvertrag, gibt es ab
+    den Team-Tarifen der Anbieter, in den kostenlosen Versionen nicht.
+    Bei Gesundheitsberufen im Raum: besonders ernst nehmen, dort gilt Artikel 9.
+  </aside>
+</section>
+
+<!-- ============================================================
+     FOLIE 18  Die Rechtslage in einem Satz
+     ============================================================ -->
+<section data-slide-id="ai-act">
+  <div class="buehne mittig">
+    <div class="label">Und weil danach immer gefragt wird</div>
+    <h2 style="margin-top:28px;max-width:1620px;">
+      Seit dem 2. August gilt die neue<br>europäische Stufe. Für Sie heißt das:
+    </h2>
+    <hr class="strich" style="margin:48px 0 44px;">
+    <div class="spalten zwei" style="align-items:start;">
+      <div>
+        <h3 style="font-size:42px;">Sagen, wenn es keine Person ist.</h3>
+        <p class="klein" style="margin-top:20px;font-size:28px;max-width:660px;">
+          Wenn ein Chatfenster auf Ihrer Website antwortet, muss erkennbar sein,
+          dass da kein Mensch sitzt. Bilder, die täuschend echt wirken,
+          werden gekennzeichnet.
+        </p>
+      </div>
+      <div>
+        <h3 style="font-size:42px;">Der Rest wurde verschoben.</h3>
+        <p class="klein" style="margin-top:20px;font-size:28px;max-width:660px;">
+          Die aufwendigen Pflichten betreffen Dinge wie automatische
+          Bewerberauswahl und Bonitätsprüfung. Sie wurden im Mai auf
+          Ende 2027 verlegt und betreffen die wenigsten hier im Raum.
+        </p>
+      </div>
+    </div>
+    <hr class="strich breit" style="margin:42px 0 26px;">
+    <p class="takeaway fragment aufblende" style="max-width:1620px;font-size:50px;">
+      Nebenbei: Wer solche Werkzeuge im Betrieb einsetzt, soll dafür sorgen,
+      dass die Leute damit umgehen können. Sie sitzen hier also nicht
+      in einem Vortrag. Sie erledigen gerade eine Pflicht.
+    </p>
+  </div>
+  <aside class="notes">
+    Der Takeaway ist der Lacher dieser Folie. Trocken bringen.
+    Rechtlich sauber: Artikel 4 des EU-Rahmens verlangt seit Februar 2025
+    ausreichende KI-Kompetenz bei Anbietern und Betreibern.
+    NICHT als Rechtsberatung verkaufen. Wenn jemand tiefer fragt:
+    an die eigene Datenschutzbeauftragte oder Kanzlei verweisen.
+  </aside>
+</section>
+
+<!-- ============================================================
+     FOLIE 19  Was bei Ihnen bleibt
+     Souveraenitaet statt Ersetzungsangst. Positiv formuliert.
+     ============================================================ -->
+<section data-slide-id="bleibt" data-chrome="aus">
+  <img src="assets/bilder/gruppe-stehend.jpg" alt="Unternehmerinnen im Gespräch beim visionista-Treffen"
+       class="vollbild" style="object-position:78% 44%;">
+  <div class="schleier stark"></div>
+  <div class="buehne auf-bild" style="justify-content:center;">
+    <h2 style="font-size:82px;max-width:1080px;">Was bei <span class="akz">Ihnen</span> bleibt.</h2>
+    <hr class="strich" style="margin:44px 0 40px;">
+    <div class="zeilen" style="max-width:1020px;">
+      <div style="border-top-color:rgba(246,241,233,.28);">
+        <div>
+          <h3 style="font-size:40px;color:#F6F1E9;">Der Preis.</h3>
+          <p style="font-size:28px;font-weight:300;margin-top:10px;color:rgba(246,241,233,.86);">
+            Den kennt nur, wer den Betrieb kennt. Und weiß, was eine Stunde wert ist.
+          </p>
+        </div>
+      </div>
+      <div style="border-top-color:rgba(246,241,233,.28);">
+        <div>
+          <h3 style="font-size:40px;color:#F6F1E9;">Das Ja und das Nein.</h3>
+          <p style="font-size:28px;font-weight:300;margin-top:10px;color:rgba(246,241,233,.86);">
+            Welchen Auftrag Sie annehmen und welchen nicht, ist eine Bauchentscheidung
+            aus zwanzig Jahren Erfahrung.
+          </p>
+        </div>
+      </div>
+      <div style="border-top-color:rgba(246,241,233,.28);">
+        <div>
+          <h3 style="font-size:40px;color:#F6F1E9;">Der letzte Blick.</h3>
+          <p style="font-size:28px;font-weight:300;margin-top:10px;color:rgba(246,241,233,.86);">
+            Nichts verlässt Ihr Haus, was Sie nicht gelesen haben. Das war schon
+            immer so und ändert sich hierdurch nicht.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <aside class="notes">
+    Diese Folie beantwortet die Frage, die niemand laut stellt:
+    "Macht das mich überflüssig?"
+    Antwort ohne die Frage zu wiederholen. Ruhig, bestimmt.
+    Das Werkzeug schreibt. Entschieden wird weiter am selben Schreibtisch.
+  </aside>
+</section>
+
+<!-- ============================================================
+     FOLIE 20  Was es kostet
+     ============================================================ -->
+<section data-slide-id="kosten">
+  <div class="buehne">
+    <div class="label">Die Frage, die niemand gern zuerst stellt</div>
+    <h2 style="margin-top:26px;">Was kostet das?</h2>
+    <hr class="strich breit" style="margin:48px 0 52px;">
+    <div class="spalten drei" style="align-items:start;">
+      <div>
+        <div class="zahl">0 €</div>
+        <p class="zahl-txt" style="max-width:440px;">
+          Diktieren am Handy und eine kostenlose Fassung zum Üben.
+          Reicht für alles ohne Kundendaten. Damit fängt man an.
+        </p>
+      </div>
+      <div>
+        <div class="zahl">22 €</div>
+        <p class="zahl-txt" style="max-width:440px;">
+          Im Monat, für eine Person. Damit dürfen auch Kundendaten
+          hinein, weil ein Vertrag dabei ist. Kein Jahresabo nötig.
+        </p>
+      </div>
+      <div>
+        <div class="zahl klein" style="font-size:74px;line-height:1.06;">Eine<br>Stunde</div>
+        <p class="zahl-txt" style="max-width:440px;margin-top:22px;">
+          Ihrer eigenen Arbeitszeit. Rechnen Sie kurz nach, was die kostet.
+          Dann kennen Sie die Antwort schon.
+        </p>
+      </div>
+    </div>
+    <hr class="strich breit" style="margin:56px 0 30px;">
+    <p class="takeaway fragment aufblende">
+      Und niemand hier muss heute irgendetwas kaufen.
+    </p>
+  </div>
+  <aside class="notes">
+    Preise stehen bewusst rund. Wenn jemand nachfragt:
+    ChatGPT Plus, Claude Pro und Gemini liegen alle um die 20 Euro.
+    Microsoft Copilot lohnt sich, wenn ohnehin Microsoft 365 läuft.
+    Wer besonderen Wert auf europäische Anbieter legt: Mistral aus Frankreich.
+    Keine Empfehlung aussprechen, sonst wird es ein Verkaufsgespräch.
+  </aside>
+</section>
+
+<!-- ============================================================
+     FOLIE 21  Die erste Woche
+     Der handfeste Teil. Ohne den geht niemand ins Tun.
+     ============================================================ -->
+<section data-slide-id="erste-woche">
+  <div class="buehne">
+    <div class="label">Wenn Sie heute nur eine Sache mitnehmen</div>
+    <h2 style="margin-top:26px;">Ihre <span class="akz">erste Woche</span>.</h2>
+    <hr class="strich breit" style="margin:46px 0 0;">
+    <div class="zeilen" style="margin-top:6px;">
+      <div class="fragment aufblende">
+        <div style="width:250px;flex-shrink:0;">
+          <div class="zahl klein" style="font-size:62px;">01</div>
+          <div class="label" style="margin-top:10px;">Heute Mittag</div>
+        </div>
+        <div>
+          <h3 style="font-size:44px;">Eine Aufgabe. Nur eine.</h3>
+          <p class="klein" style="margin-top:12px;font-size:28px;max-width:1200px;">
+            Die von Ihrer Liste, die Sie am meisten nervt. Nicht die wichtigste,
+            die lästigste. Vier Fragen beantworten, absenden, schauen was passiert.
+          </p>
+        </div>
+      </div>
+      <div class="fragment aufblende">
+        <div style="width:250px;flex-shrink:0;">
+          <div class="zahl klein" style="font-size:62px;">02</div>
+          <div class="label" style="margin-top:10px;">Diese Woche</div>
+        </div>
+        <div>
+          <h3 style="font-size:44px;">Dieselbe Aufgabe noch einmal.</h3>
+          <p class="klein" style="margin-top:12px;font-size:28px;max-width:1200px;">
+            Diesmal meckern Sie. Zu lang, zu steif, zu freundlich.
+            Beim dritten Mal sitzt es, und ab da dauert es zwei Minuten.
+          </p>
+        </div>
+      </div>
+      <div class="fragment aufblende">
+        <div style="width:250px;flex-shrink:0;">
+          <div class="zahl klein" style="font-size:62px;">03</div>
+          <div class="label" style="margin-top:10px;">Ab dann</div>
+        </div>
+        <div>
+          <h3 style="font-size:44px;">Den Satz aufheben, der funktioniert hat.</h3>
+          <p class="klein" style="margin-top:12px;font-size:28px;max-width:1200px;">
+            In eine Notiz auf dem Handy. Nach vier Wochen haben Sie fünf Sätze,
+            die Ihren Betrieb kennen. Ein Werkzeug, das sonst niemand hat.
+          </p>
+        </div>
+      </div>
+    </div>
+    <hr class="strich breit" style="margin:0 0 30px;">
+    <p class="takeaway fragment aufblende">
+      Nicht zehn Werkzeuge. Eines. Nicht zwanzig Aufgaben. Eine.
+    </p>
+  </div>
+  <aside class="notes">
+    Der dritte Punkt ist der wertvollste und wird am häufigsten übersehen.
+    Wer sich die funktionierenden Sätze aufhebt, baut sich in vier Wochen
+    etwas auf, das genau auf den eigenen Betrieb passt.
+    Bild dazu: das ist die Einarbeitungsmappe für die Aushilfe.
+  </aside>
+</section>
+
+<!-- ============================================================
+     FOLIE 22  Regionaler Schluss
+     Kompliment an den Raum, mit belegbaren lokalen Fakten.
+     ============================================================ -->
+<section data-slide-id="region">
+  <div class="buehne" style="flex-direction:row;align-items:center;gap:88px;">
+    <div style="flex:1;">
+      <h2 style="font-size:70px;">
+        Aus diesem Kreis kam<br>
+        ein Achter, der zweimal<br>
+        <span class="akz">Olympiagold</span> geholt hat.
+      </h2>
+      <hr class="strich" style="margin:44px 0 40px;">
+      <p class="lead fragment aufblende" style="font-size:36px;max-width:900px;">
+        Und aus Geesthacht kam eine gezeichnete Maus, die eine ganze
+        Generation an den Briefkasten gebracht hat.
+      </p>
+      <p class="lead fragment aufblende" style="font-size:36px;max-width:900px;margin-top:36px;">
+        Was hier fehlt, ist wirklich nicht der Ehrgeiz.
+      </p>
+      <p class="takeaway fragment aufblende" style="margin-top:40px;font-size:52px;">
+        Es fehlen die Stunden.<br>Und darum ging es heute.
+      </p>
+    </div>
+    <div style="width:600px;flex-shrink:0;">
+      <img src="assets/bilder/reetdachhaus.jpg" alt="Das Reetdachhaus in Kittlitz, Gründungsort des Netzwerks"
+           class="bogen" style="width:600px;height:790px;object-position:center 55%;">
+    </div>
+  </div>
+  <aside class="notes">
+    Ratzeburger Achter unter Karl Adam: Olympiasieg 1960 in Rom und 1968 in Mexiko.
+    Die Diddl-Maus kam 1991 von Depesche in Geesthacht.
+    Beides ist im Raum bekannt und wird gern gehört.
+    Warm sprechen. Das ist ein Kompliment, kein Faktenvortrag.
+    Wenn der Kinofilm über den Achter gerade läuft: kurz erwähnen. Vorher prüfen.
+  </aside>
+</section>
+
+<!-- ============================================================
+     FOLIE 23  Der Bogen zurueck
+     ============================================================ -->
+<section data-slide-id="bogen" data-chrome="aus">
+  <img src="assets/bilder/gruppe-halle.jpg" alt="Abendliche Runde beim visionista-Sommerfest"
+       class="vollbild" style="object-position:center 45%;">
+  <div class="dunkel"></div>
+  <div class="buehne mittig auf-bild" style="align-items:center;text-align:center;">
+    <p class="label" style="margin-bottom:44px;">Heute Abend</p>
+    <div class="riesenzahl">21:47</div>
+    <hr class="strich" style="margin:64px auto 56px;">
+    <p class="lead gross fragment aufblende" style="max-width:1400px;text-align:center;">
+      Das Angebot ist raus. Der Beitrag steht.<br>
+      Und die Mahnung hat jemand anders <span class="akz">angefangen</span>.
+    </p>
+  </div>
+  <aside class="notes">
+    Ruhig. Der Bogen schließt sich.
+    Danach eine Pause, dann die letzte Folie.
+  </aside>
+</section>
+
+<!-- ============================================================
+     FOLIE 24  Danke und Fragen
+     ============================================================ -->
+<section data-slide-id="danke" data-chrome="aus">
+  <div class="buehne" style="flex-direction:row;align-items:center;gap:92px;padding-top:0;padding-bottom:0;">
+    <div style="flex:1;">
+      <div class="wortmarke" style="margin-bottom:56px;">
+        <span class="wort">visionista</span>
+        <span class="sub">Unternehmerinnen im<br>Herzogtum Lauenburg</span>
+      </div>
+      <h1 style="font-size:112px;">Jetzt <span class="akz">Sie</span>.</h1>
+      <hr class="strich" style="margin:42px 0 38px;">
+      <p class="lead" style="font-size:37px;max-width:820px;">
+        Wir bleiben noch da und gehen nirgendwohin.
+        Fragen Sie uns alles. Besonders das,
+        was Sie eben nicht laut fragen wollten.
+      </p>
+      <div style="margin-top:64px;display:flex;gap:52px;align-items:flex-start;">
+        <div>
+          <div class="label" style="margin-bottom:14px;">Edgar Paul-Ghazaryan</div>
+          <p class="klein" style="font-size:23px;">EDGE Digital, Lübeck<br>info@edge-digital.ai</p>
+        </div>
+        <div style="border-left:1px solid var(--linie);padding-left:52px;">
+          <div class="label" style="margin-bottom:14px;">Emre Erdogan</div>
+          <p class="klein" style="font-size:23px;">EDGE Digital, Lübeck</p>
+        </div>
+      </div>
+      <p class="quelle" style="margin-top:56px;">
+        Die Fotos in dieser Präsentation stammen von Franzi Schädel Fotografie
+        und aus dem Bildarchiv der WFL.
+      </p>
+    </div>
+    <div style="width:620px;flex-shrink:0;">
+      <img src="assets/bilder/lachen-vier.jpg" alt="Unternehmerinnen im Gespräch beim visionista-Sommerfest"
+           class="bogen" style="width:620px;height:860px;object-position:center 40%;">
+    </div>
+  </div>
+  <aside class="notes">
+    Franzi Schädel ist selbst Partnerin im Netzwerk. Wenn sie da ist:
+    kurz namentlich danken, das kommt gut an und ist ehrlich verdient.
+    Danach ins Gespräch übergehen, nicht noch einmal zusammenfassen.
+  </aside>
+</section>
+
+</div>
+</div>
+
+<script src="vendor/reveal/reveal.js"></script>
+<script src="vendor/reveal/plugin/notes/notes.js"></script>
+<script>
+// initialize() liefert ein Promise. Ein nachtraeglich registrierter
+// 'ready'-Zuhoerer kann das Ereignis verpassen, wenn alles im Cache liegt.
+Reveal.initialize({
+  width:1920, height:1080, margin:0,
+  center:false,            // dichte Folien wuerden sonst oben und unten beschnitten
+  hash:true, transition:'fade', transitionSpeed:'default',
+  controls:true, progress:true, slideNumber:false,
+  plugins:[RevealNotes]
+}).then(() => {
+  // Wortmarke und Seitenzahl in jede Folie schreiben, die Chrome zeigt.
+  // Zentral statt in jeder Folie: sonst driftet die Position beim Bearbeiten auseinander.
+  const folien = document.querySelectorAll('.reveal .slides > section');
+  folien.forEach((s,i) => {
+    if (s.dataset.chrome === 'aus') return;
+    if (!s.querySelector('.marke')) {
+      const m = document.createElement('div');
+      m.className = 'marke';
+      m.innerHTML = '<span class="wort">visionista</span>' +
+                    '<span class="sub">KI für Macherinnen</span>';
+      s.appendChild(m);
+    }
+    if (!s.querySelector('.seitenzahl')) {
+      const z = document.createElement('div');
+      z.className = 'seitenzahl';
+      z.textContent = String(i+1).padStart(2,'0');
+      s.appendChild(z);
+    }
+  });
+});
+
+// ?nofrag zeigt alle Einblendungen sofort (fuer die Sichtpruefung und den PDF-Export)
+if (location.search.includes('nofrag')) {
+  document.documentElement.classList.add('nofrag');
+}
+</script>
+</body>
+</html>
