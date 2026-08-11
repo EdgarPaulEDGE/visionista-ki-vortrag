@@ -234,6 +234,19 @@ hr.strich.zart{width:100%;height:1px;background:var(--linie);margin:26px 0;opaci
 .reveal .fragment.abblende.visible{opacity:.24;transition:opacity .45s ease;}
 
 /* ============================================================
+   ILLUSTRATIONEN
+   Einfarbige Strichzeichnungen in Burgund, alle im selben Stil.
+   Die PNGs sind freigestellt und traegt die Markenfarbe direkt im
+   Pixel, damit kein heller Kasten um die Zeichnung stehen bleibt.
+   ============================================================ */
+.illu{display:block;flex-shrink:0;}
+.illu.klein{width:250px;height:250px;}
+.illu.mittel{width:340px;height:340px;}
+.illu.gross{width:440px;height:440px;}
+/* Frei in die Folie gesetzt, ohne den Textfluss zu stoeren. */
+.illu.frei{position:absolute;z-index:0;pointer-events:none;}
+
+/* ============================================================
    GRAFIKEN
    Schriftgroessen fuer SVG-Text NUR ueber Klassen, nie inline:
    Chromium verrechnet den Reveal-Zoom bei SVG-Text mit
@@ -352,44 +365,38 @@ html.nofrag .reveal .fragment{opacity:1!important;visibility:visible!important;t
   <div class="buehne">
     <div class="label">Drei Versprechen für die nächsten 35 Minuten</div>
     <h2 style="margin-top:26px;">Was heute <span class="akz">nicht</span> passiert.</h2>
-    <hr class="strich breit" style="margin:48px 0 8px;">
-    <div class="zeilen" style="margin-top:10px;">
-      <div class="fragment aufblende">
-        <span class="zahl klein" style="width:120px;flex-shrink:0;">01</span>
+    <hr class="strich breit" style="margin:56px 0 0;">
+    <div class="zeilen" style="margin-top:0;">
+      <div style="padding:44px 0;">
+        <span class="zahl klein" style="width:150px;flex-shrink:0;">01</span>
         <div>
-          <h3 style="font-size:46px;">Keine Fachwörter.</h3>
-          <p class="klein" style="margin-top:12px;max-width:1180px;font-size:28px;">
-            Kein Modell, kein Token, kein Algorithmus. Sie brauchen davon nichts,
-            so wie Sie beim Autofahren nichts über Zündkerzen wissen müssen.
-          </p>
+          <h3 style="font-size:62px;">Keine Fachwörter.</h3>
         </div>
       </div>
-      <div class="fragment aufblende">
-        <span class="zahl klein" style="width:120px;flex-shrink:0;">02</span>
+      <div style="padding:44px 0;">
+        <span class="zahl klein" style="width:150px;flex-shrink:0;">02</span>
         <div>
-          <h3 style="font-size:46px;">Keine Angst.</h3>
-          <p class="klein" style="margin-top:12px;max-width:1180px;font-size:28px;">
-            Niemand wird hier abgehängt. Wer heute anfängt, ist früh dran.
-            Das ist der ehrliche Stand der Dinge.
-          </p>
+          <h3 style="font-size:62px;">Keine Angst.</h3>
         </div>
       </div>
-      <div class="fragment aufblende">
-        <span class="zahl klein" style="width:120px;flex-shrink:0;">03</span>
+      <div style="padding:44px 0;">
+        <span class="zahl klein" style="width:150px;flex-shrink:0;">03</span>
         <div>
-          <h3 style="font-size:46px;">Kein Verkauf.</h3>
-          <p class="klein" style="margin-top:12px;max-width:1180px;font-size:28px;">
-            Wir haben die Charta dieses Netzwerks gelesen. Wir bieten Ihnen heute nichts an.
-            Alles, was Sie gleich sehen, können Sie ab heute Mittag selbst machen.
-          </p>
+          <h3 style="font-size:62px;">Kein Verkauf.</h3>
         </div>
       </div>
     </div>
   </div>
   <aside class="notes">
-    Punkt 3 ist der, der im Raum ankommt. Die Charta verbietet Produktpräsentationen
-    ausdrücklich, und alle wissen das. Wer es von sich aus anspricht, gewinnt den Raum.
-    Ruhig sagen, nicht kokett.
+    Die drei Punkte sind bewusst nackt. Der Text dazu kommt von Ihnen:
+    01 Kein Modell, kein Token, kein Algorithmus. Sie brauchen davon nichts,
+       so wie Sie beim Autofahren nichts über Zündkerzen wissen müssen.
+    02 Niemand wird hier abgehängt. Wer heute anfängt, ist früh dran.
+    03 Wir haben die Charta dieses Netzwerks gelesen. Wir bieten Ihnen heute nichts an.
+       Alles, was Sie gleich sehen, können Sie ab heute Mittag selbst machen.
+    Punkt 3 ist der, der den Raum gewinnt: die Charta verbietet
+    Produktpräsentationen ausdrücklich, und alle wissen das.
+    Wer es von sich aus anspricht, hat den Raum. Ruhig sagen, nicht kokett.
   </aside>
 </section>
 
@@ -447,12 +454,13 @@ html.nofrag .reveal .fragment{opacity:1!important;visibility:visible!important;t
         <span class="klein" style="font-size:26px;white-space:nowrap;">nicht vorhanden</span>
       </div>
     </div>
-    <hr class="strich breit" style="margin:0 0 40px;">
-    <p class="takeaway fragment aufblende" style="max-width:1400px;">
-      Nichts davon ist Ihre eigentliche Arbeit.<br>
-      Alles davon macht Ihren Abend voll.
+    <hr class="strich breit" style="margin:0 0 34px;">
+    <p class="takeaway" style="max-width:1400px;">
+      Nichts davon ist Ihre eigentliche Arbeit.
     </p>
   </div>
+  <img src="assets/illu/abend.png" alt="" class="illu frei"
+       style="width:400px;height:400px;right:96px;bottom:52px;">
   <aside class="notes">
     Zeile für Zeile einblenden, jede kurz stehen lassen.
     Bei "in der Schublade" und "nicht vorhanden" wird gelacht.
@@ -650,11 +658,8 @@ html.nofrag .reveal .fragment{opacity:1!important;visibility:visible!important;t
         <h3 style="margin-top:24px;color:var(--tinte-weich);font-size:48px;">
           Man tippt wie bei Google.
         </h3>
-        <p class="klein" style="margin-top:26px;font-size:29px;max-width:620px;">
-          Drei Wörter, dann hofft man auf einen Treffer.
-          Bekommt etwas Allgemeines zurück, denkt sich
-          <em style="font-style:italic;color:var(--tinte-weich);">nett, aber nicht meins</em>,
-          und macht es am Ende doch selbst.
+        <p class="klein" style="margin-top:24px;font-size:30px;max-width:600px;">
+          Drei Wörter, und man hofft auf einen Treffer.
         </p>
       </div>
       <div class="fragment aufblende">
@@ -662,20 +667,25 @@ html.nofrag .reveal .fragment{opacity:1!important;visibility:visible!important;t
         <h3 style="margin-top:24px;font-size:48px;">
           Man redet wie mit einer<br>neuen Aushilfe.
         </h3>
-        <p class="klein" style="margin-top:26px;font-size:29px;max-width:620px;color:var(--tinte);">
-          Klug, schnell, schreibt fehlerfrei, kennt sich in erstaunlich
-          vielem aus. Und weiß nichts über Sie, Ihre Kundschaft
-          und die Art, wie bei Ihnen geredet wird.
+        <p class="klein" style="margin-top:24px;font-size:30px;max-width:600px;color:var(--tinte);">
+          Klug und schnell. Und weiß nichts über Ihren Betrieb.
         </p>
       </div>
     </div>
     <hr class="strich breit" style="margin:56px 0 34px;">
-    <p class="takeaway fragment aufblende" style="max-width:1520px;">
+    <p class="takeaway" style="max-width:1360px;">
       Einer Aushilfe sagen Sie auch nicht<br>
       „Mach mal Angebot" und gehen dann Kaffee holen.
     </p>
   </div>
+  <img src="assets/illu/dialog.png" alt="" class="illu frei"
+       style="width:330px;height:330px;right:104px;bottom:66px;">
   <aside class="notes">
+    Der Text, der von der Folie geflogen ist, gehört jetzt Ihnen:
+    Links: "Man bekommt etwas Allgemeines zurück, denkt sich nett aber nicht meins,
+    und macht es am Ende doch selbst."
+    Rechts: "Sie schreibt fehlerfrei und kennt sich in erstaunlich vielem aus.
+    Und weiß nichts über Sie, Ihre Kundschaft und die Art, wie bei Ihnen geredet wird."
     Das Bild von der Aushilfe zieht sich durch den Rest des Vortrags.
     Immer wieder daran erinnern: "Was würden Sie der Aushilfe jetzt sagen?"
     Der Takeaway-Satz ist ein Lacher, weil ihn jede kennt.
@@ -837,8 +847,10 @@ html.nofrag .reveal .fragment{opacity:1!important;visibility:visible!important;t
         </div>
       </div>
       <hr class="strich breit" style="margin:40px 0 28px;">
-      <p class="takeaway">Achten Sie auf die Uhr. Nicht auf den Bildschirm.</p>
+      <p class="takeaway" style="max-width:1400px;">Achten Sie auf die Uhr. Nicht auf den Bildschirm.</p>
     </div>
+    <img src="assets/illu/zettel.png" alt="" class="illu frei"
+         style="width:280px;height:280px;right:96px;bottom:42px;opacity:.92;">
     <aside class="notes">
       REGIE: Handy oder Laptop-Diktat starten, den Satz sprechen, absenden.
       Während es läuft, in den Raum sprechen, nicht auf den Bildschirm starren.
@@ -959,8 +971,10 @@ html.nofrag .reveal .fragment{opacity:1!important;visibility:visible!important;t
         </div>
       </div>
       <hr class="strich breit" style="margin:36px 0 26px;">
-      <p class="takeaway">Wer hat ein Foto auf dem Handy, das längst raus sollte?</p>
+      <p class="takeaway" style="max-width:1400px;">Wer hat ein Foto auf dem Handy, das längst raus sollte?</p>
     </div>
+    <img src="assets/illu/handy.png" alt="" class="illu frei"
+         style="width:280px;height:280px;right:96px;bottom:42px;opacity:.92;">
 
     <aside class="notes">
       REGIE: In den Raum fragen. Eine Teilnehmerin schickt das Foto per Mail
@@ -1046,8 +1060,10 @@ html.nofrag .reveal .fragment{opacity:1!important;visibility:visible!important;t
       </div>
     </div>
     <hr class="strich breit" style="margin:40px 0 28px;">
-    <p class="takeaway">Welche Mail schiebt hier gerade jemand vor sich her?</p>
+    <p class="takeaway" style="max-width:1400px;">Welche Mail schiebt hier gerade jemand vor sich her?</p>
   </div>
+  <img src="assets/illu/brief.png" alt="" class="illu frei"
+       style="width:280px;height:280px;right:96px;bottom:42px;opacity:.92;">
   <aside class="notes">
     REGIE: Zuruf aus dem Raum aufnehmen und live umsetzen. Sehr wirksam.
     WICHTIG: Beim Zuruf keine echten Namen übernehmen. Laut sagen, warum:
@@ -1105,25 +1121,19 @@ html.nofrag .reveal .fragment{opacity:1!important;visibility:visible!important;t
         </div>
       </div>
     </div>
-    <hr class="strich breit" style="margin:44px 0 30px;">
-    <div class="spalten zwei" style="align-items:start;">
-      <div>
-        <p class="lead" style="font-size:33px;max-width:660px;">
-          Der Text wird derselbe. Den Namen setzen Sie beim Einfügen ein,
-          das dauert vier Sekunden.
-        </p>
-      </div>
-      <div>
-        <p class="klein" style="font-size:27px;max-width:660px;">
-          Was in einer kostenlosen Version nie etwas zu suchen hat:
-          Gesundheitsangaben, Personalakten, Bewerbungsunterlagen.
-          Wer regelmäßig mit Kundendaten arbeitet, nimmt die bezahlte
-          Fassung. Da gehört ein Vertrag dazu, der genau das regelt.
-        </p>
-      </div>
-    </div>
+    <hr class="strich breit" style="margin:48px 0 34px;">
+    <p class="takeaway" style="max-width:1360px;">
+      Der Text wird derselbe.<br>
+      Den Namen setzen Sie beim Einfügen ein.
+    </p>
   </div>
+  <img src="assets/illu/schloss.png" alt="" class="illu frei"
+       style="width:300px;height:300px;right:110px;bottom:56px;opacity:.9;">
   <aside class="notes">
+    Dazusagen: "Was in einer kostenlosen Version nie etwas zu suchen hat,
+    sind Gesundheitsangaben, Personalakten und Bewerbungsunterlagen.
+    Wer regelmäßig mit Kundendaten arbeitet, nimmt die bezahlte Fassung,
+    da gehört ein Vertrag dazu, der genau das regelt."
     Kein Paragraphenreiten. Eine Regel, die im Alltag hält.
     Wenn jemand nach der DSGVO fragt: Auftragsverarbeitungsvertrag, gibt es ab
     den Team-Tarifen der Anbieter, in den kostenlosen Versionen nicht.
@@ -1143,19 +1153,15 @@ html.nofrag .reveal .fragment{opacity:1!important;visibility:visible!important;t
     <hr class="strich" style="margin:48px 0 44px;">
     <div class="spalten zwei" style="align-items:start;">
       <div>
-        <h3 style="font-size:42px;">Sagen, wenn es keine Person ist.</h3>
-        <p class="klein" style="margin-top:20px;font-size:28px;max-width:660px;">
-          Wenn ein Chatfenster auf Ihrer Website antwortet, muss erkennbar sein,
-          dass da kein Mensch sitzt. Bilder, die täuschend echt wirken,
-          werden gekennzeichnet.
+        <h3 style="font-size:46px;">Sagen, wenn<br>kein Mensch antwortet.</h3>
+        <p class="klein" style="margin-top:22px;font-size:29px;max-width:620px;">
+          Betrifft Chatfenster auf der Website und täuschend echte Bilder.
         </p>
       </div>
       <div>
-        <h3 style="font-size:42px;">Der Rest wurde verschoben.</h3>
-        <p class="klein" style="margin-top:20px;font-size:28px;max-width:660px;">
-          Die aufwendigen Pflichten betreffen Dinge wie automatische
-          Bewerberauswahl und Bonitätsprüfung. Sie wurden im Mai auf
-          Ende 2027 verlegt und betreffen die wenigsten hier im Raum.
+        <h3 style="font-size:46px;">Der Rest wurde<br>auf 2027 verschoben.</h3>
+        <p class="klein" style="margin-top:22px;font-size:29px;max-width:620px;">
+          Und betrifft die wenigsten hier im Raum.
         </p>
       </div>
     </div>
@@ -1167,6 +1173,8 @@ html.nofrag .reveal .fragment{opacity:1!important;visibility:visible!important;t
     </p>
   </div>
   <aside class="notes">
+    Dazusagen: Bei den verschobenen Pflichten geht es um automatische
+    Bewerberauswahl und Bonitätsprüfung, verlegt im Mai auf Ende 2027.
     Der Takeaway ist der Lacher dieser Folie. Trocken bringen.
     Rechtlich sauber: Artikel 4 des EU-Rahmens verlangt seit Februar 2025
     ausreichende KI-Kompetenz bei Anbietern und Betreibern.
@@ -1189,33 +1197,26 @@ html.nofrag .reveal .fragment{opacity:1!important;visibility:visible!important;t
     <div class="zeilen" style="max-width:1020px;">
       <div style="border-top-color:rgba(246,241,233,.28);">
         <div>
-          <h3 style="font-size:40px;color:#F6F1E9;">Der Preis.</h3>
-          <p style="font-size:28px;font-weight:300;margin-top:10px;color:rgba(246,241,233,.86);">
-            Den kennt nur, wer den Betrieb kennt. Und weiß, was eine Stunde wert ist.
-          </p>
+          <h3 style="font-size:52px;color:#F6F1E9;">Der Preis.</h3>
         </div>
       </div>
       <div style="border-top-color:rgba(246,241,233,.28);">
         <div>
-          <h3 style="font-size:40px;color:#F6F1E9;">Das Ja und das Nein.</h3>
-          <p style="font-size:28px;font-weight:300;margin-top:10px;color:rgba(246,241,233,.86);">
-            Welchen Auftrag Sie annehmen und welchen nicht, ist eine Bauchentscheidung
-            aus zwanzig Jahren Erfahrung.
-          </p>
+          <h3 style="font-size:52px;color:#F6F1E9;">Das Ja und das Nein.</h3>
         </div>
       </div>
       <div style="border-top-color:rgba(246,241,233,.28);">
         <div>
-          <h3 style="font-size:40px;color:#F6F1E9;">Der letzte Blick.</h3>
-          <p style="font-size:28px;font-weight:300;margin-top:10px;color:rgba(246,241,233,.86);">
-            Nichts verlässt Ihr Haus, was Sie nicht gelesen haben. Das war schon
-            immer so und ändert sich hierdurch nicht.
-          </p>
+          <h3 style="font-size:52px;color:#F6F1E9;">Der letzte Blick.</h3>
         </div>
       </div>
     </div>
   </div>
   <aside class="notes">
+    Die drei Zeilen stehen bewusst nackt. Der Inhalt kommt von Ihnen:
+    Den Preis kennt nur, wer den Betrieb kennt und weiß, was eine Stunde wert ist.
+    Welchen Auftrag Sie annehmen, ist eine Bauchentscheidung aus zwanzig Jahren.
+    Und nichts verlässt Ihr Haus, was Sie nicht gelesen haben.
     Diese Folie beantwortet die Frage, die niemand laut stellt:
     "Macht das mich überflüssig?"
     Antwort ohne die Frage zu wiederholen. Ruhig, bestimmt.
@@ -1285,9 +1286,8 @@ html.nofrag .reveal .fragment{opacity:1!important;visibility:visible!important;t
         </div>
         <div>
           <h3 style="font-size:44px;">Eine Aufgabe. Nur eine.</h3>
-          <p class="klein" style="margin-top:12px;font-size:28px;max-width:1200px;">
-            Die von Ihrer Liste, die Sie am meisten nervt. Nicht die wichtigste,
-            die lästigste. Vier Fragen beantworten, absenden, schauen was passiert.
+          <p class="klein" style="margin-top:12px;font-size:29px;max-width:1000px;">
+            Nicht die wichtigste. Die lästigste.
           </p>
         </div>
       </div>
@@ -1298,9 +1298,8 @@ html.nofrag .reveal .fragment{opacity:1!important;visibility:visible!important;t
         </div>
         <div>
           <h3 style="font-size:44px;">Dieselbe Aufgabe noch einmal.</h3>
-          <p class="klein" style="margin-top:12px;font-size:28px;max-width:1200px;">
-            Diesmal meckern Sie. Zu lang, zu steif, zu freundlich.
-            Beim dritten Mal sitzt es, und ab da dauert es zwei Minuten.
+          <p class="klein" style="margin-top:12px;font-size:29px;max-width:1000px;">
+            Diesmal meckern Sie. Beim dritten Mal sitzt es.
           </p>
         </div>
       </div>
@@ -1311,19 +1310,23 @@ html.nofrag .reveal .fragment{opacity:1!important;visibility:visible!important;t
         </div>
         <div>
           <h3 style="font-size:44px;">Den Satz aufheben, der funktioniert hat.</h3>
-          <p class="klein" style="margin-top:12px;font-size:28px;max-width:1200px;">
-            In eine Notiz auf dem Handy. Nach vier Wochen haben Sie fünf Sätze,
-            die Ihren Betrieb kennen. Ein Werkzeug, das sonst niemand hat.
+          <p class="klein" style="margin-top:12px;font-size:29px;max-width:1000px;">
+            Nach vier Wochen haben Sie fünf, die Ihren Betrieb kennen.
           </p>
         </div>
       </div>
     </div>
     <hr class="strich breit" style="margin:0 0 30px;">
-    <p class="takeaway fragment aufblende">
+    <p class="takeaway">
       Nicht zehn Werkzeuge. Eines. Nicht zwanzig Aufgaben. Eine.
     </p>
   </div>
+  <img src="assets/illu/kalender.png" alt="" class="illu frei"
+       style="width:270px;height:270px;right:104px;top:150px;opacity:.85;">
   <aside class="notes">
+    Dazusagen: Bei Schritt eins die vier Fragen beantworten, absenden, schauen was passiert.
+    Bei Schritt zwei meckern: zu lang, zu steif, zu freundlich. Ab dem dritten Mal
+    dauert es zwei Minuten. Bei Schritt drei die Sätze in eine Notiz auf dem Handy.
     Der dritte Punkt ist der wertvollste und wird am häufigsten übersehen.
     Wer sich die funktionierenden Sätze aufhebt, baut sich in vier Wochen
     etwas auf, das genau auf den eigenen Betrieb passt.
@@ -1423,8 +1426,8 @@ html.nofrag .reveal .fragment{opacity:1!important;visibility:visible!important;t
       </p>
     </div>
     <div style="width:620px;flex-shrink:0;">
-      <img src="assets/bilder/feb26-06.jpg" alt="Unternehmerinnen im Gespräch beim visionista-Treffen"
-           class="bogen" style="width:620px;height:860px;object-position:center 34%;">
+      <img src="assets/bilder/gruppe-farbig.jpg" alt="Unternehmerinnen im Gespräch beim visionista-Treffen"
+           class="bogen" style="width:620px;height:860px;object-position:58% 38%;">
     </div>
   </div>
   <aside class="notes">
@@ -1470,6 +1473,9 @@ html.nofrag .reveal .fragment{opacity:1!important;visibility:visible!important;t
         return;
       }
       if (kind.classList.contains('quelle')) return;  // Quellenzeile steht still
+      // Trennlinien gehoeren zum Raster, nicht zum Inhalt. Als eigener Schritt
+      // waere das ein Klick, bei dem sichtbar nur eine Haarlinie aufgeht.
+      if (kind.tagName === 'HR') return;
 
       // Spalten und Zeilen blenden ihre Kinder einzeln ein,
       // damit die Aufzaehlung Schritt fuer Schritt entsteht
