@@ -25,9 +25,23 @@ await seite.goto(`${adresse}/?nofrag`, { waitUntil: "networkidle0" });
 await seite.evaluate(() => document.fonts.ready);
 await new Promise((r) => setTimeout(r, 1500));
 
-const ergebnis = await seite.evaluate((HOEHE) => {
+// Anteil der tatsächlich bezeichneten Fläche je Zeichnung. Die PNGs haben
+// viel transparenten Rand, ihr Bildkasten sagt also nichts darüber aus,
+// wo wirklich Striche liegen.
+const STRICHFLAECHE = {
+  abend: { l: 0.171, r: 0.828, o: 0.236, u: 0.762 },
+  brief: { l: 0.259, r: 0.740, o: 0.238, u: 0.761 },
+  dialog: { l: 0.171, r: 0.828, o: 0.246, u: 0.752 },
+  handy: { l: 0.361, r: 0.658, o: 0.154, u: 0.845 },
+  kalender: { l: 0.309, r: 0.690, o: 0.319, u: 0.680 },
+  schloss: { l: 0.329, r: 0.768, o: 0.242, u: 0.750 },
+  zettel: { l: 0.216, r: 0.782, o: 0.246, u: 0.752 },
+};
+
+const ergebnis = await seite.evaluate((HOEHE, STRICHFLAECHE) => {
   const ueberlauf = [];
   const leer = [];
+  const kollision = [];
 
   document.querySelectorAll(".reveal .slides section").forEach((s) => {
     if (s.querySelector("section")) return; // Eltern eines Stapels überspringen
@@ -82,6 +96,41 @@ const ergebnis = await seite.evaluate((HOEHE) => {
           });
         }
       });
+
+      // Liegt eine Zeichnung auf echtem Text? Gemessen wird die Strichfläche
+      // gegen die Zeilenkästen der Textknoten. Elementkästen taugen dafür
+      // nicht: ein kurzer Absatz belegt die volle Spaltenbreite und meldet
+      // dann Kollisionen, die man gar nicht sieht.
+      const illu = s.querySelector(".illu.frei");
+      if (illu) {
+        const name = (illu.getAttribute("src").match(/illu\/(\w+)\.png/) || [])[1];
+        const k = STRICHFLAECHE[name];
+        if (k) {
+          const b = illu.getBoundingClientRect();
+          const ir = {
+            left: b.left + b.width * k.l, right: b.left + b.width * k.r,
+            top: b.top + b.height * k.o, bottom: b.top + b.height * k.u,
+          };
+          const lauf = document.createTreeWalker(buehne, NodeFilter.SHOW_TEXT);
+          let n;
+          while ((n = lauf.nextNode())) {
+            if (!n.textContent.trim()) continue;
+            const rg = document.createRange();
+            rg.selectNodeContents(n);
+            for (const r of rg.getClientRects()) {
+              if (r.width < 2 || r.height < 2) continue;
+              const x = Math.max(0, Math.min(ir.right, r.right) - Math.max(ir.left, r.left));
+              const y = Math.max(0, Math.min(ir.bottom, r.bottom) - Math.max(ir.top, r.top));
+              if (x > 3 && y > 3) {
+                kollision.push({
+                  id, zeichnung: name,
+                  text: n.textContent.trim().replace(/\s+/g, " ").slice(0, 40),
+                });
+              }
+            }
+          }
+        }
+      }
     }
 
     merk.forEach(([el, d, v, o]) => {
@@ -91,8 +140,9 @@ const ergebnis = await seite.evaluate((HOEHE) => {
     });
   });
 
-  return { ueberlauf, leer, folien: document.querySelectorAll(".reveal .slides section:not(:has(section))").length };
-}, HOEHE);
+  return { ueberlauf, leer, kollision,
+           folien: document.querySelectorAll(".reveal .slides section:not(:has(section))").length };
+}, HOEHE, STRICHFLAECHE);
 
 await browser.close();
 
@@ -110,6 +160,16 @@ if (ergebnis.ueberlauf.length) {
     console.error(`  ${f.id}: ${f.raus}px über den ${f.wo}en Rand  "${f.text}"`)
   );
 }
-if (ergebnis.leer.length || ergebnis.ueberlauf.length) process.exit(1);
+if (ergebnis.kollision.length) {
+  console.error("\nZEICHNUNG LIEGT AUF TEXT:");
+  const gesehen = new Set();
+  ergebnis.kollision.forEach((f) => {
+    const schluessel = f.id + f.text;
+    if (gesehen.has(schluessel)) return;
+    gesehen.add(schluessel);
+    console.error(`  ${f.id}: ${f.zeichnung} über "${f.text}"`);
+  });
+}
+if (ergebnis.leer.length || ergebnis.ueberlauf.length || ergebnis.kollision.length) process.exit(1);
 
-console.log("Keine Folie läuft über, keine Einblendung liegt im Nichts.");
+console.log("Sauber: kein Überlauf, keine tote Einblendung, keine Zeichnung auf Text.");
