@@ -3,7 +3,7 @@
 Vortrag beim Unternehmerinnen-Netzwerk **visionista** der Wirtschaftsförderung
 Herzogtum Lauenburg, am 19. August 2026 bei der AWSH in Elmenhorst/Lanken.
 
-**Live: https://edgarpauledge.github.io/visionista-ki-vortrag/**
+**Live: https://visionista.edge-digital.ai/**
 
 28 Folien, etwa 35 Minuten, mit drei Live-Teilen.
 Referenten: Edgar Paul-Ghazaryan und Emre Erdogan, EDGE Digital.
@@ -29,7 +29,7 @@ Referenten: Edgar Paul-Ghazaryan und Emre Erdogan, EDGE Digital.
 - `FRAGEN.md` — die absehbaren Publikumsfragen mit kurzen Antworten
 
 **Für die Teilnehmerinnen**
-- `nachlesen.html` — [alles zum Nachlesen](https://edgarpauledge.github.io/visionista-ki-vortrag/nachlesen.html),
+- `nachlesen.html` — [alles zum Nachlesen](https://visionista.edge-digital.ai/nachlesen.html),
   mobil lesbar. Der QR-Code auf Karte und Schlussfolie führt hierher, nicht auf
   die Folien: eine 16:9-Präsentation ist auf einem Handy unlesbar.
 - `karte.html` und `karte-zum-mitnehmen.pdf` — Karte zum Mitnehmen, A5 quer,

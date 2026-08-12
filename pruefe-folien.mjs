@@ -45,12 +45,32 @@ const ergebnis = await seite.evaluate((HOEHE) => {
     const id = s.dataset.slideId || "(ohne Kennung)";
 
     if (buehne) {
-      const ueber = buehne.scrollHeight - HOEHE;
-      if (ueber > 2) ueberlauf.push({ id, ueber });
-
-      // Einblendungen, die ganz oder teilweise unter dem Rand liegen
       const bt = buehne.getBoundingClientRect();
       const zoom = bt.height / HOEHE;
+
+      // Jedes sichtbare Element prüfen, nicht nur die direkten Kinder:
+      // eine Fußzeile, die zwei Pixel unter den Rand rutscht, wird sonst
+      // vom scrollHeight der Bühne verschluckt. Der obere Rand zählt
+      // genauso, dort schneidet Reveal ebenfalls ab.
+      let schlimmster = null;
+      buehne.querySelectorAll("*").forEach((el) => {
+        const r = el.getBoundingClientRect();
+        if (r.height < 1) return;
+        const oben = (r.top - bt.top) / zoom;
+        const unten = (r.bottom - bt.top) / zoom;
+        const raus = Math.max(unten - HOEHE, -oben);
+        if (raus > 0.5 && (!schlimmster || raus > schlimmster.raus)) {
+          schlimmster = {
+            id,
+            raus: Math.round(raus),
+            wo: oben < 0 ? "oben" : "unten",
+            text: (el.textContent || "").trim().replace(/\s+/g, " ").slice(0, 46),
+          };
+        }
+      });
+      if (schlimmster) ueberlauf.push(schlimmster);
+
+      // Einblendungen, die ganz oder teilweise unter dem Rand liegen
       s.querySelectorAll(".fragment").forEach((f) => {
         const r = f.getBoundingClientRect();
         const oben = (r.top - bt.top) / zoom;
@@ -85,8 +105,10 @@ if (ergebnis.leer.length) {
   );
 }
 if (ergebnis.ueberlauf.length) {
-  console.error("\nFOLIEN MIT ÜBERLAUF:");
-  ergebnis.ueberlauf.forEach((f) => console.error(`  ${f.id}: ${f.ueber}px zu hoch`));
+  console.error("\nINHALT AUSSERHALB DER FOLIE (wird kommentarlos abgeschnitten):");
+  ergebnis.ueberlauf.forEach((f) =>
+    console.error(`  ${f.id}: ${f.raus}px über den ${f.wo}en Rand  "${f.text}"`)
+  );
 }
 if (ergebnis.leer.length || ergebnis.ueberlauf.length) process.exit(1);
 
