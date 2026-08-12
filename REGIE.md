@@ -36,14 +36,19 @@ fünf sind der Moment, die Streichliste zu benutzen.
 | 13 min | Die vier Fragen | 10 |
 | 15 min | „Machen." | 12 |
 | **16 min** | **Demo 1, das Angebot** | 13 |
-| 19 min | Der zweite Satz | 14 |
-| **21 min** | **Demo 2, der Beitrag** | 15 |
-| **24 min** | **Demo 3, die Mail** | 16 |
-| 27 min | Drei Dinge vorab | 17 |
-| 30 min | Was bei Ihnen bleibt | 20 |
-| 32 min | Ihre erste Woche | 22 |
-| 34 min | 21:47, der Bogen schließt sich | 24 |
-| 35 min | Jetzt Sie | 25 |
+| 17 min | Der Satz dazu, groß | 14 |
+| 19 min | Der zweite Satz | 15 |
+| **21 min** | **Demo 2, der Beitrag** | 16 |
+| **24 min** | **Demo 3, die Mail** | 18 |
+| 27 min | Drei Dinge vorab | 20 |
+| 30 min | Was bei Ihnen bleibt | 23 |
+| 32 min | Ihre erste Woche | 25 |
+| 34 min | 21:47, der Bogen schließt sich | 27 |
+| 35 min | Jetzt Sie | 28 |
+
+Jede Demo besteht aus drei Folien: die Aufgabe, der gesprochene Satz in groß,
+und darunter per Pfeil nach unten das fertige Ergebnis für den Fall,
+dass das Netz streikt.
 
 **Der wichtigste Wert in dieser Tabelle ist die 16.** Wenn Sie nach sechzehn
 Minuten noch nicht bei der ersten Demo sind, war der Vorlauf zu lang.
