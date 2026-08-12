@@ -719,6 +719,7 @@ html.nofrag .reveal .fragment{opacity:1!important;visibility:visible!important;t
     <div class="spalten vier" style="align-items:start;">
       <div>
         <div class="zahl klein" style="font-size:62px;">01</div>
+        <div class="label" style="margin-top:12px;">Die Rolle</div>
         <h3 style="font-size:40px;margin-top:20px;">Wer bist du<br>für mich?</h3>
         <p class="klein" style="margin-top:20px;font-size:34px;">
           „Du bist meine Büroleiterin."
@@ -726,6 +727,7 @@ html.nofrag .reveal .fragment{opacity:1!important;visibility:visible!important;t
       </div>
       <div>
         <div class="zahl klein" style="font-size:62px;">02</div>
+        <div class="label" style="margin-top:12px;">Das Ergebnis</div>
         <h3 style="font-size:40px;margin-top:20px;">Was soll dabei<br>rauskommen?</h3>
         <p class="klein" style="margin-top:20px;font-size:34px;">
           „Ein Angebot." „Ein Beitrag."
@@ -733,6 +735,7 @@ html.nofrag .reveal .fragment{opacity:1!important;visibility:visible!important;t
       </div>
       <div>
         <div class="zahl klein" style="font-size:62px;">03</div>
+        <div class="label" style="margin-top:12px;">Das Wissen</div>
         <h3 style="font-size:40px;margin-top:20px;">Was musst du<br>dafür wissen?</h3>
         <p class="klein" style="margin-top:20px;font-size:34px;">
           Wer, was vorher war, was es kostet.
@@ -740,6 +743,7 @@ html.nofrag .reveal .fragment{opacity:1!important;visibility:visible!important;t
       </div>
       <div>
         <div class="zahl klein" style="font-size:62px;">04</div>
+        <div class="label" style="margin-top:12px;">Die Form</div>
         <h3 style="font-size:40px;margin-top:20px;">Wie soll es<br>aussehen?</h3>
         <p class="klein" style="margin-top:20px;font-size:34px;">
           Wie lang, wie förmlich, wie deutlich.
@@ -862,6 +866,10 @@ html.nofrag .reveal .fragment{opacity:1!important;visibility:visible!important;t
         hohe Decken, Einzug am ersten Oktober. 2.400 Euro.
         Freundlich, kurz, keine Fachwörter.
       </p>
+      <p class="label fragment aufblende" style="margin-top:52px;">
+        Rolle &middot; Ergebnis &middot; Wissen &middot; Form.
+        Alle vier Fragen stecken in diesem einen Satz.
+      </p>
       <hr class="strich breit" style="margin:auto 0 0;">
     </div>
     <aside class="notes">
@@ -981,6 +989,10 @@ html.nofrag .reveal .fragment{opacity:1!important;visibility:visible!important;t
         eine persönliche, eine sachliche, eine mit Augenzwinkern.
         Am Ende eine echte Frage.
       </p>
+      <p class="label fragment aufblende" style="margin-top:52px;">
+        Rolle &middot; Ergebnis &middot; Wissen &middot; Form.
+        Alle vier Fragen stecken in diesem einen Satz.
+      </p>
       <hr class="strich breit" style="margin:auto 0 0;">
     </div>
     <aside class="notes">
@@ -1063,6 +1075,10 @@ html.nofrag .reveal .fragment{opacity:1!important;visibility:visible!important;t
         Eine Stammkundin hat seit sieben Wochen eine Rechnung offen.
         Ich will sie nicht verlieren. Schreib zwei Fassungen:
         einmal freundlich mit Frist, einmal deutlich.
+      </p>
+      <p class="label fragment aufblende" style="margin-top:52px;">
+        Rolle &middot; Ergebnis &middot; Wissen &middot; Form.
+        Alle vier Fragen stecken in diesem einen Satz.
       </p>
       <hr class="strich breit" style="margin:auto 0 0;">
     </div>
@@ -1569,16 +1585,23 @@ Reveal.initialize({
 }).then(() => {
   // Wortmarke und Seitenzahl in jede Folie schreiben, die Chrome zeigt.
   // Zentral statt in jeder Folie: sonst driftet die Position beim Bearbeiten auseinander.
+  // Die Unterzeile nennt den aktuellen Teil, damit der Raum weiss, wo im
+  // Vortrag er sich befindet: erst verstehen, dann machen, dann absichern.
   const folien = document.querySelectorAll('.reveal .slides > section');
+  let teil = 1;
   folien.forEach((s,i) => {
+    const kennung = s.dataset.slideId || '';
+    if (kennung === 'live-auftakt') teil = 2;
+    if (kennung === 'uebergang-sicher') teil = 3;
     if (s.dataset.chrome === 'aus') return;
     if (!s.querySelector('.marke')) {
+      const name = ['Verstehen','Machen','Absichern'][teil-1];
       const m = document.createElement('div');
       m.className = 'marke';
       // In der Kopfzeile nur die Wortmarke: die Unterzeile des vollen Logos
       // wird bei dieser Groesse unleserlich.
       m.innerHTML = '<img src="assets/logos/visionista-wortmarke.png" alt="visionista">' +
-                    '<span class="sub">KI für Macherinnen</span>';
+                    `<span class="sub">Teil ${teil} von 3 &middot; ${name}</span>`;
       s.appendChild(m);
     }
     if (!s.querySelector('.seitenzahl')) {
