@@ -64,6 +64,18 @@ Wenn Sie ihn anpassen, bis er nach Ihnen klingt: nein.
 Genau dafür ist das Nachschärfen da. Und deshalb gehört Ihr eigenes Foto
 unter den Beitrag und kein erfundenes Bild.
 
+**„Und was ist mit meinen Belegen und der Buchhaltung?"**
+
+*Diese Frage kommt mit einiger Wahrscheinlichkeit, denn die Einladung
+verspricht sie ausdrücklich. Im Vortrag lösen wir sie aus Zeitgründen nicht,
+also nicht überrascht tun.*
+
+Belege abfotografieren und daraus eine Tabelle machen lassen: Datum, Betrag,
+Anbieter, Kategorie. Was nicht eindeutig lesbar ist, kommt in eine eigene Spalte,
+statt geraten zu werden. Das ersetzt keine Buchhaltung und keine Steuerberaterin.
+Aber Sie gehen mit einer sortierten Liste hin statt mit einem Schuhkarton.
+Der fertige Satz dafür steht auf der Nachlese-Seite hinter dem QR-Code.
+
 **„Meine Branche ist sehr speziell, funktioniert das da auch?"**
 
 Für Fachwissen ist die KI die falsche Adresse, da sind Sie die Expertin.

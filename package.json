@@ -6,7 +6,8 @@
   "scripts": {
     "build": "node pruefe.mjs",
     "serve": "npx http-server -p 8123 -c-1",
-    "pdf": "npx decktape reveal --size 1920x1080 --pause 2500 --load-pause 2500 \"http://localhost:8123/?nofrag\" visionista-ki-vortrag.pdf"
+    "pdf": "npx decktape reveal --size 1920x1080 --pause 2500 --load-pause 2500 \"http://localhost:8123/?nofrag\" visionista-ki-vortrag.pdf",
+    "pruefe-folien": "node pruefe-folien.mjs"
   },
   "devDependencies": {
     "decktape": "^3.15.0"
