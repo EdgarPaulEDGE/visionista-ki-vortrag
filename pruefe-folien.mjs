@@ -5,11 +5,20 @@
  * Scrollleiste, der Inhalt ist einfach unsichtbar. Eine Einblendung, die
  * unterhalb des Rands liegt, sieht im Vortrag aus wie ein toter Klick.
  *
- * Wichtig, und genau daran ist eine frühere Fassung dieser Prüfung
- * gescheitert: Bei vertikalen Stapeln muss AUCH das Eltern-Section
- * sichtbar gemacht werden. Sonst misst man in einem display:none-Baum
- * und bekommt lauter Nullen zurück, also ein grünes Ergebnis für eine
- * Folie, die in Wahrheit überläuft.
+ * Drei Fallen, an denen frühere Fassungen dieser Prüfung gescheitert sind:
+ *
+ * 1. NICHT display:block erzwingen, um an eine versteckte Folie zu kommen.
+ *    Reveal positioniert die aktive Folie anders als eine, die man von Hand
+ *    sichtbar schaltet. Auf der Schlussfolie ergab dasselbe Element einmal
+ *    +13,7px und einmal -62,1px: einmal grün, einmal oben abgeschnitten.
+ *    Deshalb navigiert diese Prüfung zu jeder Folie und misst sie dort.
+ *
+ * 2. Genau in Foliengröße messen (1920x1080). Bei abweichender
+ *    Fenstergröße brechen Zeilen anders um.
+ *
+ * 3. Beide Ränder prüfen, und jedes Element, nicht nur direkte Kinder.
+ *    Eine Fußzeile, die zwei Pixel rausrutscht, verschwindet sonst im
+ *    scrollHeight der Bühne.
  *
  * Aufruf: node pruefe-folien.mjs [http://localhost:8140]
  */
@@ -17,13 +26,6 @@ import puppeteer from "puppeteer";
 
 const adresse = process.argv[2] || "http://localhost:8140";
 const HOEHE = 1080;
-
-const browser = await puppeteer.launch();
-const seite = await browser.newPage();
-await seite.setViewport({ width: 1600, height: 900 });
-await seite.goto(`${adresse}/?nofrag`, { waitUntil: "networkidle0" });
-await seite.evaluate(() => document.fonts.ready);
-await new Promise((r) => setTimeout(r, 1500));
 
 // Anteil der tatsächlich bezeichneten Fläche je Zeichnung. Die PNGs haben
 // viel transparenten Rand, ihr Bildkasten sagt also nichts darüber aus,
@@ -38,69 +40,69 @@ const STRICHFLAECHE = {
   zettel: { l: 0.216, r: 0.782, o: 0.246, u: 0.752 },
 };
 
-const ergebnis = await seite.evaluate((HOEHE, STRICHFLAECHE) => {
-  const ueberlauf = [];
-  const leer = [];
-  const kollision = [];
+const browser = await puppeteer.launch();
+const seite = await browser.newPage();
+await seite.setViewport({ width: 1920, height: 1080 });
+await seite.goto(`${adresse}/?nofrag`, { waitUntil: "networkidle0" });
+await seite.evaluate(() => document.fonts.ready);
+await new Promise((r) => setTimeout(r, 1800));
 
-  document.querySelectorAll(".reveal .slides section").forEach((s) => {
-    if (s.querySelector("section")) return; // Eltern eines Stapels überspringen
+const wegpunkte = await seite.evaluate(() => {
+  const liste = [];
+  document.querySelectorAll(".reveal .slides > section").forEach((s, h) => {
+    const unter = s.querySelectorAll("section");
+    if (unter.length) unter.forEach((_, v) => liste.push([h, v]));
+    else liste.push([h, 0]);
+  });
+  return liste;
+});
 
-    const eltern = s.parentElement.tagName === "SECTION" ? s.parentElement : null;
-    const merk = [];
-    [eltern, s].filter(Boolean).forEach((el) => {
-      merk.push([el, el.style.display, el.style.visibility, el.style.opacity]);
-      el.style.display = "block";
-      el.style.visibility = "visible";
-      el.style.opacity = "1";
-    });
+const ueberlauf = [];
+const leer = [];
+const kollision = [];
 
-    const buehne = s.querySelector(".buehne");
-    const id = s.dataset.slideId || "(ohne Kennung)";
+for (const [h, v] of wegpunkte) {
+  await seite.evaluate((h, v) => Reveal.slide(h, v), h, v);
+  await new Promise((r) => setTimeout(r, 240));
 
-    if (buehne) {
+  const fund = await seite.evaluate(
+    (HOEHE, STRICHFLAECHE) => {
+      const s =
+        document.querySelector("section.present section.present") ||
+        document.querySelector("section.present");
+      const buehne = s && s.querySelector(".buehne");
+      if (!buehne) return null;
+
+      const id = s.dataset.slideId || "(ohne Kennung)";
       const bt = buehne.getBoundingClientRect();
       const zoom = bt.height / HOEHE;
+      const ergebnis = { id, raus: null, tot: [], deckung: [] };
 
-      // Jedes sichtbare Element prüfen, nicht nur die direkten Kinder:
-      // eine Fußzeile, die zwei Pixel unter den Rand rutscht, wird sonst
-      // vom scrollHeight der Bühne verschluckt. Der obere Rand zählt
-      // genauso, dort schneidet Reveal ebenfalls ab.
-      let schlimmster = null;
       buehne.querySelectorAll("*").forEach((el) => {
         const r = el.getBoundingClientRect();
         if (r.height < 1) return;
-        const oben = (r.top - bt.top) / zoom;
-        const unten = (r.bottom - bt.top) / zoom;
-        const raus = Math.max(unten - HOEHE, -oben);
-        if (raus > 0.5 && (!schlimmster || raus > schlimmster.raus)) {
-          schlimmster = {
-            id,
-            raus: Math.round(raus),
-            wo: oben < 0 ? "oben" : "unten",
+        const o = (r.top - bt.top) / zoom;
+        const u = (r.bottom - bt.top) / zoom;
+        const raus = Math.max(u - HOEHE, -o);
+        if (raus > 0.5 && (!ergebnis.raus || raus > ergebnis.raus.px)) {
+          ergebnis.raus = {
+            px: Math.round(raus),
+            wo: o < 0 ? "oben" : "unten",
             text: (el.textContent || "").trim().replace(/\s+/g, " ").slice(0, 46),
           };
         }
       });
-      if (schlimmster) ueberlauf.push(schlimmster);
 
-      // Einblendungen, die ganz oder teilweise unter dem Rand liegen
       s.querySelectorAll(".fragment").forEach((f) => {
         const r = f.getBoundingClientRect();
-        const oben = (r.top - bt.top) / zoom;
-        if (oben > HOEHE - 20) {
-          leer.push({
-            id,
-            oben: Math.round(oben),
-            text: (f.textContent || "").trim().replace(/\s+/g, " ").slice(0, 50),
-          });
+        if ((r.top - bt.top) / zoom > HOEHE - 20) {
+          ergebnis.tot.push((f.textContent || "").trim().replace(/\s+/g, " ").slice(0, 50));
         }
       });
 
-      // Liegt eine Zeichnung auf echtem Text? Gemessen wird die Strichfläche
-      // gegen die Zeilenkästen der Textknoten. Elementkästen taugen dafür
-      // nicht: ein kurzer Absatz belegt die volle Spaltenbreite und meldet
-      // dann Kollisionen, die man gar nicht sieht.
+      // Liegt eine Zeichnung auf echtem Text? Strichfläche gegen die
+      // Zeilenkästen der Textknoten. Elementkästen taugen nicht: ein kurzer
+      // Absatz spannt die volle Spalte und meldet unsichtbare Kollisionen.
       const illu = s.querySelector(".illu.frei");
       if (illu) {
         const name = (illu.getAttribute("src").match(/illu\/(\w+)\.png/) || [])[1];
@@ -122,8 +124,8 @@ const ergebnis = await seite.evaluate((HOEHE, STRICHFLAECHE) => {
               const x = Math.max(0, Math.min(ir.right, r.right) - Math.max(ir.left, r.left));
               const y = Math.max(0, Math.min(ir.bottom, r.bottom) - Math.max(ir.top, r.top));
               if (x > 3 && y > 3) {
-                kollision.push({
-                  id, zeichnung: name,
+                ergebnis.deckung.push({
+                  zeichnung: name,
                   text: n.textContent.trim().replace(/\s+/g, " ").slice(0, 40),
                 });
               }
@@ -131,45 +133,42 @@ const ergebnis = await seite.evaluate((HOEHE, STRICHFLAECHE) => {
           }
         }
       }
-    }
+      return ergebnis;
+    },
+    HOEHE,
+    STRICHFLAECHE
+  );
 
-    merk.forEach(([el, d, v, o]) => {
-      el.style.display = d;
-      el.style.visibility = v;
-      el.style.opacity = o;
-    });
-  });
-
-  return { ueberlauf, leer, kollision,
-           folien: document.querySelectorAll(".reveal .slides section:not(:has(section))").length };
-}, HOEHE, STRICHFLAECHE);
+  if (!fund) continue;
+  if (fund.raus) ueberlauf.push({ id: fund.id, ...fund.raus });
+  fund.tot.forEach((t) => leer.push({ id: fund.id, text: t }));
+  fund.deckung.forEach((d) => kollision.push({ id: fund.id, ...d }));
+}
 
 await browser.close();
 
-console.log(`Geprüft: ${ergebnis.folien} Folien`);
+console.log(`Geprüft: ${wegpunkte.length} Folien`);
 
-if (ergebnis.leer.length) {
+if (leer.length) {
   console.error("\nEINBLENDUNGEN UNTERHALB DES RANDS (wirken wie ein toter Klick):");
-  ergebnis.leer.forEach((f) =>
-    console.error(`  ${f.id}: beginnt bei ${f.oben}px  "${f.text}"`)
-  );
+  leer.forEach((f) => console.error(`  ${f.id}: "${f.text}"`));
 }
-if (ergebnis.ueberlauf.length) {
+if (ueberlauf.length) {
   console.error("\nINHALT AUSSERHALB DER FOLIE (wird kommentarlos abgeschnitten):");
-  ergebnis.ueberlauf.forEach((f) =>
-    console.error(`  ${f.id}: ${f.raus}px über den ${f.wo}en Rand  "${f.text}"`)
+  ueberlauf.forEach((f) =>
+    console.error(`  ${f.id}: ${f.px}px über den ${f.wo}en Rand  "${f.text}"`)
   );
 }
-if (ergebnis.kollision.length) {
+if (kollision.length) {
   console.error("\nZEICHNUNG LIEGT AUF TEXT:");
   const gesehen = new Set();
-  ergebnis.kollision.forEach((f) => {
+  kollision.forEach((f) => {
     const schluessel = f.id + f.text;
     if (gesehen.has(schluessel)) return;
     gesehen.add(schluessel);
     console.error(`  ${f.id}: ${f.zeichnung} über "${f.text}"`);
   });
 }
-if (ergebnis.leer.length || ergebnis.ueberlauf.length || ergebnis.kollision.length) process.exit(1);
+if (leer.length || ueberlauf.length || kollision.length) process.exit(1);
 
 console.log("Sauber: kein Überlauf, keine tote Einblendung, keine Zeichnung auf Text.");
