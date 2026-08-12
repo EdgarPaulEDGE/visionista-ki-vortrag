@@ -22,11 +22,20 @@ Referenten: Edgar Paul-Ghazaryan und Emre Erdogan, EDGE Digital.
 
 ## Dateien
 
+**Für den Vortrag**
 - `index.html` — die Präsentation, eine Datei, läuft ohne Internet
-- `karte.html` — Karte zum Mitnehmen, A5 quer, Vorder- und Rückseite
-- `karte-zum-mitnehmen.pdf` — dieselbe Karte, druckfertig
 - `visionista-ki-vortrag.pdf` — der Notnagel, falls vor Ort nichts anderes läuft
-- `REGIE.md` — Zeitplan, Rollenverteilung, Checkliste, Streichliste
+- `REGIE.md` — Zeitplan mit Marken, Rollenverteilung, Checkliste, Streichliste
+- `FRAGEN.md` — die absehbaren Publikumsfragen mit kurzen Antworten
+
+**Für die Teilnehmerinnen**
+- `nachlesen.html` — [alles zum Nachlesen](https://edgarpauledge.github.io/visionista-ki-vortrag/nachlesen.html),
+  mobil lesbar. Der QR-Code auf Karte und Schlussfolie führt hierher, nicht auf
+  die Folien: eine 16:9-Präsentation ist auf einem Handy unlesbar.
+- `karte.html` und `karte-zum-mitnehmen.pdf` — Karte zum Mitnehmen, A5 quer,
+  beidseitig, mit den vier Fragen und fünf fertigen Sätzen
+
+**Nebenakten**
 - `schrift-varianten.html` — Entscheidungshilfe zur Headline-Schrift
 
 ## Lokal starten
