@@ -16,8 +16,38 @@ visionista, das Unternehmerinnen-Netzwerk der WFL Herzogtum Lauenburg
 | ab 09:25 | Sitzen bleiben, Gespräche, Networking |
 
 **35 Minuten sind knapp.** Die drei Live-Teile fressen davon etwa 13 Minuten.
-Für die restlichen 24 Folien bleiben also rund 55 Sekunden pro Folie.
+Für die restlichen Folien bleiben also rund 50 Sekunden pro Folie.
 Wo gekürzt werden kann, steht unten.
+
+### Wo Sie wann sein sollten
+
+Die Redneransicht (Taste **S**) zeigt eine mitlaufende Uhr. Diese Marken
+sagen Ihnen, ob Sie im Plan liegen. Drei Minuten Abweichung sind egal,
+fünf sind der Moment, die Streichliste zu benutzen.
+
+| Nach | Sie sind bei | Folie |
+|---|---|---|
+| 0 min | Begrüßung, Titel | 1 |
+| 1 min | „Zwei Männer erklären…" | 2 |
+| 3 min | 21:47 Uhr | 4 |
+| 6 min | Sie sind nicht spät dran | 6 |
+| 9 min | Die gute Nachricht | 8 |
+| 11 min | Der eine Anfängerfehler | 9 |
+| 13 min | Die vier Fragen | 10 |
+| 15 min | „Machen." | 12 |
+| **16 min** | **Demo 1, das Angebot** | 13 |
+| 19 min | Der zweite Satz | 14 |
+| **21 min** | **Demo 2, der Beitrag** | 15 |
+| **24 min** | **Demo 3, die Mail** | 16 |
+| 27 min | Drei Dinge vorab | 17 |
+| 30 min | Was bei Ihnen bleibt | 20 |
+| 32 min | Ihre erste Woche | 22 |
+| 34 min | 21:47, der Bogen schließt sich | 24 |
+| 35 min | Jetzt Sie | 25 |
+
+**Der wichtigste Wert in dieser Tabelle ist die 16.** Wenn Sie nach sechzehn
+Minuten noch nicht bei der ersten Demo sind, war der Vorlauf zu lang.
+Dann die Folien 7 und 8 zusammenziehen und direkt weiter.
 
 ---
 
@@ -98,6 +128,21 @@ Zuruf aus dem Raum aufnehmen. Beim Eintippen laut sagen:
 Das ist gleichzeitig die Überleitung zur Datenschutzfolie.
 
 **Wenn kein Zuruf kommt:** die Mahnung von der Folie nehmen, die kennt jede.
+**Ohne Netz:** Pfeil nach unten, dort stehen beide Fassungen fertig.
+Dann den Raum abstimmen lassen, welche er rausschicken würde.
+
+---
+
+## Wenn gefragt wird
+
+Die zehn Minuten danach entscheiden mit darüber, wie der Vormittag in
+Erinnerung bleibt. In `FRAGEN.md` stehen die absehbaren Fragen mit kurzen
+Antworten, sortiert nach Sorge um Daten, Qualität, Menschen, Recht und Einstieg.
+Einmal vorher durchlesen reicht.
+
+Die Frage, die garantiert kommt: „Welches Tool soll ich denn nehmen?"
+Antwort: das, was ohnehin schon im Betrieb läuft. Keine Empfehlung aussprechen,
+die wie ein Verkauf klingt.
 
 ---
 
