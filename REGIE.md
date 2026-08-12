@@ -11,7 +11,7 @@ visionista, das Unternehmerinnen-Netzwerk der WFL Herzogtum Lauenburg
 | Uhrzeit | Was |
 |---|---|
 | 08:30 bis 08:40 | Ankommen, Kaffee, Begrüßung durch die WFL |
-| 08:40 bis 09:15 | Vortrag, 35 Minuten, 27 Folien |
+| 08:40 bis 09:15 | Vortrag, 35 Minuten, 28 Folien |
 | 09:15 bis 09:25 | Fragen |
 | ab 09:25 | Sitzen bleiben, Gespräche, Networking |
 
@@ -65,7 +65,7 @@ So entsteht in den Live-Teilen keine Pause, in der alle auf einen Bildschirm sta
 mit dem Raum weiter, statt auf den Bildschirm zu schauen.
 
 **Emre macht.** Er sitzt am Laptop, tippt die Prompts, führt vor. Er kommentiert nur,
-wenn etwas Interessantes passiert, und übernimmt die Folien 15 bis 18
+wenn etwas Interessantes passiert, und übernimmt die Folien 21 bis 24
 (Datenschutz, Rechtslage, Kosten), weil das seine Ecke ist.
 
 Der wichtigste Effekt: Wenn Emre tippt und Edgar spricht, wirkt es wie ein Gespräch
@@ -87,7 +87,7 @@ und nicht wie ein Vortrag.
 
 **Am Vorabend**
 - [ ] Beide KI-Fenster geöffnet und angemeldet, damit vor Ort keine Anmeldung nötig ist
-- [ ] Handy-Diktat einmal durchspielen, mit genau dem Satz von Folie 13
+- [ ] Handy-Diktat einmal durchspielen, mit genau dem Satz von Folie 14
 - [ ] `pruefung.pdf` auf beide Laptops laden, als Notnagel ohne Internet
 - [ ] Beide Laptops geladen, Netzteil eingepackt, HDMI-Adapter eingepackt
 
@@ -96,7 +96,7 @@ und nicht wie ein Vortrag.
 - [ ] Mit dem Handy ein Foto vom Raum machen. Das ist der Rückfall für Demo zwei,
       falls aus dem Publikum kein Foto kommt
 - [ ] Netz testen. Wenn es hakt: die Rückfallfolien nutzen (Pfeil nach unten
-      auf den Folien 13 und 16)
+      auf den Folien 14, 17 und 19)
 - [ ] Karten auf den Tischen verteilen
 
 ---
@@ -105,16 +105,16 @@ und nicht wie ein Vortrag.
 
 ### Demo 1, Folie 13: Das Angebot
 
-Emre startet das Diktat und spricht den Satz von der Folie. Absenden.
+Emre startet das Diktat und spricht den Satz, der auf Folie 14 groß zu sehen ist. Absenden.
 Edgar nennt die Zeit laut, sobald das Ergebnis steht.
 
 **Nicht sagen:** „Perfekt."
 **Sagen:** „Das ist ein Entwurf. Jetzt kommt der Teil, auf den es ankommt."
-Direkt weiter zu Folie 14 und dort einmal live nachschärfen.
+Direkt weiter zum Nachschärfen auf Folie 15 und dort einmal live meckern.
 
 **Ohne Netz:** Pfeil nach unten, dort liegt das fertige Angebot.
 
-### Demo 2, Folie 15: Der Beitrag aus einem Foto
+### Demo 2, Folie 16: Der Beitrag aus einem Foto
 
 Edgar fragt in den Raum: „Wer hat gerade ein Foto auf dem Handy, das längst raus sollte?"
 Immer vorher fragen, ob es gezeigt werden darf.
@@ -126,7 +126,7 @@ der Raum entscheidet per Handzeichen, welche rausgeht.
 **Wenn niemand etwas hat:** das Foto vom Raum nehmen, das vorher gemacht wurde.
 **Ohne Netz:** Pfeil nach unten.
 
-### Demo 3, Folie 16: Die unangenehme Mail
+### Demo 3, Folie 18: Die unangenehme Mail
 
 Zuruf aus dem Raum aufnehmen. Beim Eintippen laut sagen:
 „Den Namen lasse ich bewusst weg, ich beschreibe nur die Lage."
@@ -174,13 +174,13 @@ und genau deshalb funktioniert er.
 
 In dieser Reihenfolge streichen:
 
-1. Folie 17, die Rückfallfolie mit den drei Fassungen (nur bei Netzproblemen nötig)
-2. Folie 25, der Achter und die Diddl-Maus (schön, aber verzichtbar)
+1. Folie 26, der Achter und die Diddl-Maus (schön, aber verzichtbar)
+2. Folie 20, die Zwischenfolie vor dem Schlussteil
 3. Folie 5, die Liste auf drei Zeilen kürzen statt fünf
-4. Folie 21, die Rechtslage in zwei Sätzen statt mit Folie
+4. Folie 22, die Rechtslage in zwei Sätzen sagen statt mit Folie
 
-**Niemals streichen:** Folie 2, die vier Fragen (Folie 10), Demo 1, Folie 14
-(das Nachschärfen), die erste Woche (Folie 24).
+**Niemals streichen:** Folie 2, die vier Fragen (Folie 10), Demo 1 mit ihrem
+Satz (Folien 13 und 14), das Nachschärfen (Folie 15), die erste Woche (Folie 25).
 
 ---
 
@@ -231,7 +231,7 @@ die der europäische Rahmen inzwischen erwartet.
 
 - `index.html` im Browser öffnen, F für Vollbild, Pfeiltasten zum Blättern
 - **S** öffnet die Redneransicht mit allen Notizen und der Uhr
-- **Pfeil nach unten** auf den Folien 13 und 16 führt zu den Rückfallfolien
+- **Pfeil nach unten** auf den Folien 14, 17 und 19 führt zu den Rückfallfolien
 - `?nofrag` an die Adresse hängen zeigt alle Einblendungen sofort
 - `pruefung.pdf` ist der Notnagel, falls der Browser streikt
 

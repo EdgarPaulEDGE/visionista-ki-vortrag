@@ -5,7 +5,7 @@ Herzogtum Lauenburg, am 19. August 2026 bei der AWSH in Elmenhorst/Lanken.
 
 **Live: https://edgarpauledge.github.io/visionista-ki-vortrag/**
 
-27 Folien, etwa 35 Minuten, mit drei Live-Teilen.
+28 Folien, etwa 35 Minuten, mit drei Live-Teilen.
 Referenten: Edgar Paul-Ghazaryan und Emre Erdogan, EDGE Digital.
 
 ## Bedienung
@@ -13,7 +13,7 @@ Referenten: Edgar Paul-Ghazaryan und Emre Erdogan, EDGE Digital.
 | Taste | Wirkung |
 |---|---|
 | Pfeil rechts / links | Blättern |
-| **Pfeil nach unten** | Rückfall-Folie (nur auf den Demo-Folien 13 und 16) |
+| **Pfeil nach unten** | Rückfall-Folie (auf den Prompt-Folien 14, 17 und 19) |
 | **S** | Redneransicht mit allen Notizen und Uhr |
 | **F** | Vollbild |
 | **O** | Übersicht über alle Folien |
