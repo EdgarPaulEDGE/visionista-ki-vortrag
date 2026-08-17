@@ -341,7 +341,7 @@ svg.anstieg,svg.balken{flex-shrink:0;overflow:visible;}
 .oval{display:inline-block;border:3px solid var(--burgund);border-radius:50%;
       padding:.10em .62em .14em;margin:0 -.18em;}
 .auf-bild .oval{border-color:#F6F1E9;}
-html.bildrand,html.bildrand body,html.bildrand .reveal-viewport{background:#14060D;}
+
 
 /* Bildnachweis sitzt im Rand, nicht im Textfluss: sonst kaempft er mit der
    Mittelachse und schiebt den ganzen Block nach oben. */
@@ -1452,31 +1452,29 @@ html.nofrag .reveal .fragment{opacity:1!important;visibility:visible!important;t
      FOLIE 22  Regionaler Schluss
      Kompliment an den Raum, mit belegbaren lokalen Fakten.
      ============================================================ -->
-<section data-slide-id="region" data-chrome="aus" data-anim="aus">
+<section data-slide-id="region" data-chrome="aus">
   <img src="assets/bilder/ratzeburg.jpg" alt="Ratzeburg von oben, die Inselstadt im Kreis Herzogtum Lauenburg"
        class="vollbild" style="object-position:center 46%;">
-  <div class="dunkel" style="background:linear-gradient(180deg,rgba(30,10,20,.82) 0%,rgba(30,10,20,.62) 46%,rgba(30,10,20,.30) 100%);"></div>
+  <div class="dunkel" style="background:linear-gradient(180deg,rgba(30,10,20,.84) 0%,rgba(30,10,20,.60) 48%,rgba(30,10,20,.28) 100%);"></div>
   <div class="buehne mittig auf-bild" style="align-items:center;text-align:center;">
-    <h2 style="font-size:74px;max-width:1420px;">
-      Aus diesem Kreis kam ein Achter,<br>
-      der zweimal <span class="akz">Olympiagold</span> geholt hat.
-    </h2>
-    <hr class="strich" style="margin:46px auto 40px;">
-    <p class="lead gross" style="text-align:center;">Und aus Geesthacht kam die Diddl-Maus.</p>
-    <p class="takeaway" style="margin-top:56px;text-align:center;">
-      Es fehlen die Stunden.<br>Und darum ging es heute.
+    <h2 style="font-size:88px;">An <span class="akz">Ideen</span> fehlt es hier nicht.</h2>
+    <hr class="strich" style="margin:44px auto 40px;">
+    <p class="lead gross" style="text-align:center;max-width:1500px;">
+      Ein Ruder-Achter mit zweimal Olympiagold.<br>
+      Und die Diddl-Maus aus Geesthacht.
     </p>
-    
+    <p class="takeaway" style="margin-top:52px;text-align:center;font-size:64px;">
+      An <span class="akz">Stunden</span> schon.<br>Und darum ging es heute.
+    </p>
   </div>
   <p class="foto-quelle">Foto: Oliver Essing, Ratzeburg-Tourismus</p>
 <aside class="notes">
-    Dazusagen: Eine gezeichnete Maus, die eine ganze Generation an den
-    Briefkasten gebracht hat. Was hier fehlt, ist nicht der Ehrgeiz.
-    Ratzeburger Achter unter Karl Adam: Olympiasieg 1960 in Rom und 1968 in Mexiko.
-    Die Diddl-Maus kam 1991 von Depesche in Geesthacht.
-    Beides ist im Raum bekannt und wird gern gehört.
-    Warm sprechen. Das ist ein Kompliment, kein Faktenvortrag.
-    Wenn der Kinofilm über den Achter gerade läuft: kurz erwähnen. Vorher prüfen.
+    Die Pointe braucht die Reihenfolge: erst der Stolz, dann der Haken.
+    Der Ratzeburger Achter hat 1960 und 1968 Olympiagold geholt,
+    die Diddl-Maus hat Thomas Goletz in Geesthacht erfunden.
+    Dazusagen: „Was hier fehlt, ist ganz sicher nicht das Können.
+    Was fehlt, sind die Stunden. Und genau darum ging es heute Morgen."
+    Ruhig sprechen, das ist die Landung des ganzen Vortrags.
   </aside>
 </section>
 
@@ -1677,7 +1675,12 @@ Reveal.initialize({
   const rand = () => {
     const jetzt = Reveal.getCurrentSlide();
     const bild = jetzt && jetzt.querySelector('.vollbild');
-    document.documentElement.classList.toggle('bildrand', !!bild);
+    const farbe = bild ? '#14060D' : '#F1ECE2';
+    // Reveal setzt den Hintergrund als Inline-Stil auf das Viewport-Element.
+    // Eine CSS-Regel kommt dagegen nicht an, egal wie spezifisch sie ist.
+    const vp = document.querySelector('.reveal-viewport') || document.body;
+    vp.style.background = farbe;
+    document.documentElement.style.background = farbe;
   };
   Reveal.on('slidechanged', rand);
   rand();
