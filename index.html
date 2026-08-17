@@ -115,18 +115,19 @@ html,body{background:var(--sand);}
 .reveal h1,.zahl,.riesenzahl{font-weight:700;}
 /* Akzentwoerter: Avenir hat keine Kursive im Satz, der Akzent
    kommt stattdessen ueber die Terrakotta aus der Palette. */
-.akz{font-style:normal;color:var(--terra);}
+.akz{font-style:normal;color:var(--terra);font-size:inherit;}
 .reveal h1,.reveal h2,.reveal h3{
   color:var(--burgund);
   letter-spacing:-.012em;line-height:1.1;
-  /* Bricht mehrzeilige Titel ausgeglichen statt lang-dann-kurz.
-     Ein manuelles <br> hat weiterhin Vorrang. */
-  text-wrap:balance;
+  /* Kein text-wrap:balance. Umbrueche werden von Hand gesetzt, an
+     Sinngrenzen. Der Browser wuerde nach Breite brechen und Zeilen auf
+     Artikeln oder Praepositionen enden lassen. messe.mjs meldet jede
+     Ueberschrift, die trotzdem automatisch umbricht. */
   margin:0;text-transform:none;text-shadow:none;
 }
 .reveal h1{font-size:132px;}
 .reveal h2{font-size:88px;}
-.reveal h3{font-size:52px;}
+.reveal h3{font-size:56px;}
 .reveal p{margin:0;line-height:1.5;}
 .reveal em{font-style:italic;color:var(--burgund);}
 .reveal strong{font-weight:600;color:var(--burgund);}
@@ -149,9 +150,9 @@ hr.strich.zart{width:100%;height:1px;background:var(--linie);margin:26px 0;opaci
        letter-spacing:.22em;text-transform:uppercase;color:var(--burgund);
        opacity:.72;flex-shrink:0;}
 
-.lead{font-size:41px;font-weight:300;line-height:1.5;color:var(--tinte);max-width:1180px;}
+.lead{font-size:46px;font-weight:400;line-height:1.5;color:var(--tinte);max-width:1180px;}
 .lead.gross{font-size:46px;line-height:1.42;}
-.klein{font-size:40px;font-weight:400;color:var(--tinte-weich);line-height:1.5;}
+.klein{font-size:42px;font-weight:400;color:var(--tinte-weich);line-height:1.5;}
 .quelle{font-size:21px;font-weight:400;color:var(--tinte-weich);opacity:.85;letter-spacing:.02em;}
 
 /* Offene Spalten mit Haarlinie statt Karten mit Rahmen. */
@@ -173,7 +174,7 @@ hr.strich.zart{width:100%;height:1px;background:var(--linie);margin:26px 0;opaci
       font-size:132px;line-height:.92;letter-spacing:-.02em;}
 .zahl.klein{font-size:88px;}
 .riesenzahl{font-size:340px;color:var(--burgund);line-height:.86;letter-spacing:-.03em;}
-.zahl-txt{font-size:40px;font-weight:400;color:var(--tinte-weich);line-height:1.45;margin-top:16px;}
+.zahl-txt{font-size:42px;font-weight:400;color:var(--tinte-weich);line-height:1.45;margin-top:16px;}
 
 /* Der Bogen: Foto oben halbrund. Warmes Formelement, kein Deko-Kreis. */
 .bogen{border-radius:999px 999px 12px 12px;overflow:hidden;object-fit:cover;display:block;}
@@ -196,7 +197,7 @@ hr.strich.zart{width:100%;height:1px;background:var(--linie);margin:26px 0;opaci
        padding:32px 0;flex-shrink:0;}
 .brief b{font-weight:600;color:var(--burgund);}
 
-.takeaway{font-size:52px;font-weight:600;color:var(--burgund);
+.takeaway{font-size:56px;font-weight:600;color:var(--burgund);
           line-height:1.25;flex-shrink:0;}
 
 /* ============================================================
@@ -249,7 +250,7 @@ hr.strich.zart{width:100%;height:1px;background:var(--linie);margin:26px 0;opaci
 
 
 /* Eine Folie, die nur einen gesagten Satz zeigt. Gross, ruhig, vorlesbar. */
-.prompt-gross{font-size:52px;line-height:1.42;font-weight:400;color:var(--burgund);
+.prompt-gross{font-size:60px;line-height:1.38;font-weight:400;color:var(--burgund);
               max-width:1560px;}
 .prompt-gross .wer{font-weight:700;}
 
@@ -272,6 +273,11 @@ hr.strich.zart{width:100%;height:1px;background:var(--linie);margin:26px 0;opaci
    liegen. Leere Felder zeigen nur das Label und eine Haarlinie,
    damit die Folie auch halbvoll ordentlich aussieht.
    ============================================================ */
+/* Neun Bilder, drei Reihen. Feste Kachelhoehe, damit die Reihen
+   auf gleicher Linie sitzen, unabhaengig vom Seitenverhaeltnis. */
+.collage{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:30px;}
+.collage img{width:384px;height:214px;object-fit:cover;display:block;}
+
 .marken-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:34px;
              align-items:stretch;flex-shrink:0;}
 .marken-grid figure{margin:0;display:flex;flex-direction:column;gap:16px;
@@ -373,21 +379,26 @@ html.nofrag .reveal .fragment{opacity:1!important;visibility:visible!important;t
      ============================================================ -->
 <section data-slide-id="team">
   <div class="buehne" style="align-items:center;text-align:center;">
-    <h2 style="font-size:96px;">Moin.</h2>
-    <div style="display:grid;grid-template-columns:1fr 1fr;gap:22px;margin-top:38px;">
-      <img src="assets/bilder/collage/02.jpg" alt="EDGE Digital unterwegs" style="width:548px;height:318px;object-fit:cover;display:block;">
-      <img src="assets/bilder/collage/04.jpg" alt="EDGE Digital im Einsatz" style="width:548px;height:318px;object-fit:cover;display:block;">
-      <img src="assets/bilder/collage/05.jpg" alt="EDGE Digital auf der Messe" style="width:548px;height:318px;object-fit:cover;display:block;">
-      <img src="assets/bilder/collage/09.jpg" alt="EDGE Digital im Workshop" style="width:548px;height:318px;object-fit:cover;display:block;">
+    <h2 style="font-size:84px;">Moin.</h2>
+    <div class="collage">
+      <img src="assets/bilder/collage/01.jpg" alt="EDGE Digital">
+      <img src="assets/bilder/collage/02.jpg" alt="EDGE Digital">
+      <img src="assets/bilder/collage/03.jpg" alt="EDGE Digital">
+      <img src="assets/bilder/collage/04.jpg" alt="EDGE Digital">
+      <img src="assets/bilder/collage/05.jpg" alt="EDGE Digital">
+      <img src="assets/bilder/collage/06.jpg" alt="EDGE Digital">
+      <img src="assets/bilder/collage/07.jpg" alt="EDGE Digital">
+      <img src="assets/bilder/collage/08.jpg" alt="EDGE Digital">
+      <img src="assets/bilder/collage/09.jpg" alt="EDGE Digital">
     </div>
-    <h3 style="font-size:40px;margin-top:32px;">Edgar Paul-Ghazaryan &nbsp;&middot;&nbsp; Emre Erdogan</h3>
-    <div class="label" style="margin-top:14px;">EDGE Digital, Lübeck</div>
+    <h3 style="font-size:42px;margin-top:26px;">Edgar Paul-Ghazaryan &nbsp;&middot;&nbsp; Emre Erdogan</h3>
+    <div class="label" style="margin-top:12px;">EDGE Digital, Lübeck</div>
   </div>
   <aside class="notes">
     Vorstellung live, Länge nach Gefühl: eine Minute reicht, mehr geht.
     Wer wir sind, was EDGE macht, warum ausgerechnet wir zwei hier stehen.
     Ein Satz Selbstironie funktioniert besser als eine Referenzliste.
-    Direkt danach kommt die Wunsch-Folie, dort werden die drei Zurufe geholt.
+    Direkt danach kommt die Wunsch-Folie mit den drei Zurufen.
   </aside>
 </section>
 
@@ -416,7 +427,7 @@ html.nofrag .reveal .fragment{opacity:1!important;visibility:visible!important;t
       </div>
     </div>
     <hr class="strich breit" style="margin:auto 0 26px;">
-    <p class="takeaway">Merken Sie sich den. Wir sehen uns am Ende wieder.</p>
+    <p class="takeaway">Wir sehen uns am Ende wieder.</p>
   </div>
   <aside class="notes">
     Drei Fragen an drei verschiedene Frauen, jede gibt nur ein Teil.
@@ -527,24 +538,24 @@ html.nofrag .reveal .fragment{opacity:1!important;visibility:visible!important;t
     <hr class="strich breit" style="margin:44px 0 0;">
     <div class="zeilen" style="margin-top:6px;">
       <div style="justify-content:space-between;">
-        <span style="font-size:40px;font-weight:400;">Das Angebot für die Anfrage von letzter Woche</span>
-        <span class="klein" style="font-size:40px;white-space:nowrap;">seit 6 Tagen offen</span>
+        <span style="font-size:44px;font-weight:600;">Das Angebot</span>
+        <span class="klein" style="font-size:42px;white-space:nowrap;">seit 6 Tagen offen</span>
       </div>
       <div style="justify-content:space-between;">
-        <span style="font-size:40px;font-weight:400;">Der Beitrag für Instagram, der längst raus sein sollte</span>
-        <span class="klein" style="font-size:40px;white-space:nowrap;">seit 3 Wochen geplant</span>
+        <span style="font-size:44px;font-weight:600;">Der Beitrag für Instagram</span>
+        <span class="klein" style="font-size:42px;white-space:nowrap;">seit 3 Wochen geplant</span>
       </div>
       <div style="justify-content:space-between;">
-        <span style="font-size:40px;font-weight:400;">Die Absage, die freundlich klingen muss</span>
-        <span class="klein" style="font-size:40px;white-space:nowrap;">seit Montag im Kopf</span>
+        <span style="font-size:44px;font-weight:600;">Die Absage</span>
+        <span class="klein" style="font-size:42px;white-space:nowrap;">seit Montag im Kopf</span>
       </div>
       <div style="justify-content:space-between;">
-        <span style="font-size:40px;font-weight:400;">Die Belege vom Juli</span>
-        <span class="klein" style="font-size:40px;white-space:nowrap;">in der Schublade</span>
+        <span style="font-size:44px;font-weight:600;">Die Belege vom Juli</span>
+        <span class="klein" style="font-size:42px;white-space:nowrap;">in der Schublade</span>
       </div>
       <div style="justify-content:space-between;">
-        <span style="font-size:40px;font-weight:400;">Die Idee für den nächsten Newsletter</span>
-        <span class="klein" style="font-size:40px;white-space:nowrap;">nicht vorhanden</span>
+        <span style="font-size:44px;font-weight:600;">Die Idee für den Newsletter</span>
+        <span class="klein" style="font-size:42px;white-space:nowrap;">nicht vorhanden</span>
       </div>
     </div>
     <hr class="strich breit" style="margin:0 0 34px;">
@@ -584,11 +595,11 @@ html.nofrag .reveal .fragment{opacity:1!important;visibility:visible!important;t
       <div class="spalten zwei" style="flex:1;align-items:start;">
         <div>
           <div class="zahl">51<span style="font-size:64px;">,2 %</span></div>
-          <p class="zahl-txt">Solo-Selbstständige und<br>Kleinstbetriebe: heute mit KI</p>
+          <p class="zahl-txt">Solo-Selbstständige<br>nutzen KI</p>
         </div>
         <div>
           <div class="zahl">2<span style="font-size:64px;"> von 3</span></div>
-          <p class="zahl-txt">die angefangen haben,<br>bauen aus</p>
+          <p class="zahl-txt">bauen aus</p>
         </div>
       </div>
 
@@ -615,8 +626,7 @@ html.nofrag .reveal .fragment{opacity:1!important;visibility:visible!important;t
     <hr class="strich breit" style="margin:52px 0 32px;">
     <p class="takeaway">Nicht die Neugier ist das Risiko. Das Warten ist es.</p>
     <p class="quelle" style="margin-top:auto;">
-      ifo Institut und Jimdo, Geschäftsklimaindex für Selbstständige, Erhebung Juni 2026.
-      Bitkom, Künstliche Intelligenz in Deutschland 2026.
+      ifo Institut und Jimdo, Juni 2026. Bitkom 2026.
     </p>
   </div>
   <aside class="notes">
@@ -660,21 +670,20 @@ html.nofrag .reveal .fragment{opacity:1!important;visibility:visible!important;t
           <path d="M382 132 l9 -6 v12 z" fill="#C0562A"/>
           <text class="chart-klein" x="540" y="139">16 Punkte Abstand</text>
         </svg>
-        <p class="klein" style="margin-top:22px;max-width:660px;">
-          nutzen KI im Beruf. Auch bereinigt bleibt ein Rest.
-        </p>
+        <p class="klein" style="margin-top:24px;">nutzen KI im Beruf.</p>
       </div>
       <div>
-        <p class="lead" style="font-size:44px;">Kein Unterschied im Können.</p>
-        <p class="lead" style="font-size:44px;margin-top:36px;">Ein Unterschied in der <span class="akz">Haltung</span>.</p>
-        <p class="lead" style="font-size:44px;margin-top:36px;">Die klügere ist gerade die teurere.</p>
+        <p class="lead" style="font-size:52px;">Kein Unterschied<br>im Können.</p>
+        <p class="lead" style="font-size:52px;margin-top:44px;">Ein Unterschied<br>in der <span class="akz">Haltung</span>.</p>
       </div>
     </div>
     <p class="quelle" style="margin-top:auto;">
-      Initiative D21 und Institut für Arbeitsmarkt- und Berufsforschung, Digital Gender Gap, April 2026.
+      Initiative D21 und IAB, Digital Gender Gap, April 2026.
     </p>
   </div>
   <aside class="notes">
+    Dazusagen: „Die klügere Hälfte des Marktes ist gerade die teurere."
+
     Dazusagen: Die einen wollen ein Werkzeug erst können, bevor sie es
     anfassen. Die anderen fassen es an. Erst können wollen ist die klügere
     Haltung, sie kostet nur gerade Zeit.
@@ -717,12 +726,12 @@ html.nofrag .reveal .fragment{opacity:1!important;visibility:visible!important;t
       <div>
         <div class="zahl klein">+15 zu +8</div>
         <p class="zahl-txt" style="max-width:620px;">
-          Frauen, die anfangen.<br>Fast doppelt so viel wie Männer.
+          Frauen, die anfangen.<br>Fast doppelt so viele<br>wie Männer.
         </p>
       </div>
     </div>
     <p class="quelle" style="margin-top:auto;">
-      Initiative D21 und IAB, April 2026. Beide Effekte in derselben Erhebung gemessen.
+      Initiative D21 und IAB, April 2026.
     </p>
   </div>
   <aside class="notes">
@@ -745,19 +754,19 @@ html.nofrag .reveal .fragment{opacity:1!important;visibility:visible!important;t
     <div class="spalten zwei" style="align-items:stretch;">
       <div>
         <div class="label" style="opacity:.5;">So machen es fast alle</div>
-        <h3 style="margin-top:24px;color:var(--tinte-weich);font-size:48px;">
+        <h3 style="margin-top:26px;color:var(--tinte-weich);">
           Man tippt wie bei Google.
         </h3>
-        <p class="klein" style="margin-top:24px;font-size:40px;max-width:600px;">
+        <p class="klein" style="margin-top:26px;">
           Drei Wörter. Hoffen.
         </p>
       </div>
       <div>
         <div class="label">So funktioniert es</div>
-        <h3 style="margin-top:24px;font-size:48px;">
+        <h3 style="margin-top:26px;">
           Man redet wie mit einer<br>neuen Aushilfe.
         </h3>
-        <p class="klein" style="margin-top:24px;font-size:40px;max-width:600px;color:var(--tinte);">
+        <p class="klein" style="margin-top:26px;color:var(--tinte);">
           Klug. Schnell.<br>Ahnungslos über Ihren Betrieb.
         </p>
       </div>
@@ -789,49 +798,38 @@ html.nofrag .reveal .fragment{opacity:1!important;visibility:visible!important;t
      ============================================================ -->
 <section data-slide-id="vier-fragen">
   <div class="buehne">
-    <div class="label">Was Sie sich merken müssen, ist das hier. Mehr nicht.</div>
+    <div class="label">Was Sie sich merken müssen. Mehr nicht.</div>
     <h2 style="margin-top:26px;">Vier <span class="akz">Fragen</span>.</h2>
-    <hr class="strich breit" style="margin:46px 0 48px;">
+    <hr class="strich breit" style="margin:52px 0 64px;">
     <div class="spalten vier" style="align-items:start;">
       <div>
-        <div class="zahl klein" style="font-size:62px;">1</div>
-        <div class="label" style="margin-top:12px;">Die Rolle</div>
-        <h3 style="font-size:40px;margin-top:20px;">Wer bist du<br>für mich?</h3>
-        <p class="klein" style="margin-top:20px;font-size:40px;">
-          „Du bist meine Büroleiterin."
-        </p>
+        <div class="zahl klein" style="font-size:104px;">1</div>
+        <div class="label" style="margin-top:18px;">Die Rolle</div>
+        <h3 style="margin-top:30px;font-size:46px;">Wer bist du<br>für mich?</h3>
       </div>
       <div>
-        <div class="zahl klein" style="font-size:62px;">2</div>
-        <div class="label" style="margin-top:12px;">Das Ergebnis</div>
-        <h3 style="font-size:40px;margin-top:20px;">Was soll dabei<br>rauskommen?</h3>
-        <p class="klein" style="margin-top:20px;font-size:40px;">
-          „Ein Angebot." „Ein Beitrag."
-        </p>
+        <div class="zahl klein" style="font-size:104px;">2</div>
+        <div class="label" style="margin-top:18px;">Das Ergebnis</div>
+        <h3 style="margin-top:30px;font-size:46px;">Was soll dabei<br>rauskommen?</h3>
       </div>
       <div>
-        <div class="zahl klein" style="font-size:62px;">3</div>
-        <div class="label" style="margin-top:12px;">Das Wissen</div>
-        <h3 style="font-size:40px;margin-top:20px;">Was musst du<br>dafür wissen?</h3>
-        <p class="klein" style="margin-top:20px;font-size:40px;">
-          Wer, was vorher war, was es kostet.
-        </p>
+        <div class="zahl klein" style="font-size:104px;">3</div>
+        <div class="label" style="margin-top:18px;">Das Wissen</div>
+        <h3 style="margin-top:30px;font-size:46px;">Was musst du<br>dafür wissen?</h3>
       </div>
       <div>
-        <div class="zahl klein" style="font-size:62px;">4</div>
-        <div class="label" style="margin-top:12px;">Die Form</div>
-        <h3 style="font-size:40px;margin-top:20px;">Wie soll es<br>aussehen?</h3>
-        <p class="klein" style="margin-top:20px;font-size:40px;">
-          Wie lang, wie förmlich, wie deutlich.
-        </p>
+        <div class="zahl klein" style="font-size:104px;">4</div>
+        <div class="label" style="margin-top:18px;">Die Form</div>
+        <h3 style="margin-top:30px;font-size:46px;">Wie soll es<br>aussehen?</h3>
       </div>
     </div>
-    <hr class="strich breit" style="margin:52px 0 34px;">
-    <p class="takeaway">
-      Frage drei ist die, die den Unterschied macht.
-    </p>
+    <hr class="strich breit" style="margin:auto 0 30px;">
+    <p class="takeaway">Frage <span class="akz">drei</span> macht den Unterschied.</p>
   </div>
-  <aside class="notes">
+<aside class="notes">
+    Beispiele mündlich dazugeben: zu 1 „Du bist meine Büroleiterin",
+    zu 2 „ein Angebot, ein Beitrag", zu 3 „wer die Kundin ist, was es kostet",
+    zu 4 „wie lang, wie förmlich, wie deutlich".
     Diese vier Fragen stehen später auf der Karte zum Mitnehmen.
     Punkt betonen: Frage 3 ist die, die fast immer fehlt.
     Genau da liegt der Unterschied zwischen "nett, aber nicht meins" und "das nehme ich".
@@ -850,18 +848,19 @@ html.nofrag .reveal .fragment{opacity:1!important;visibility:visible!important;t
       <div>
         <div class="label" style="opacity:.5;margin-bottom:22px;">Was fast alle eingeben</div>
         <div class="gesagt matt">
-          Schreib mir ein Angebot für eine Kundin.
+          Schreib mir ein Angebot<br>für eine Kundin.
         </div>
-        <p class="klein" style="margin-top:34px;font-size:40px;max-width:620px;">
+        <p class="klein" style="margin-top:34px;">
           Ergebnis: höflich, korrekt, austauschbar.
         </p>
       </div>
       <div>
         <div class="label" style="margin-bottom:22px;">Was Sie ab heute eingeben</div>
-        <div class="gesagt" style="font-size:40px;">
-          <span class="wer">Du bist meine Büroleiterin.</span>
-          Schreib das Angebot für Frau Petersen. Vier Räume, Altbau,
-          Einzug am ersten Oktober. 2.400 Euro. Freundlich und kurz.
+        <div class="gesagt" style="font-size:38px;">
+          <span class="wer">Du bist meine Büroleiterin.</span><br>
+          Schreib das Angebot für Frau Petersen.<br>
+          Vier Räume, Altbau, Einzug im Oktober.<br>
+          2.400 Euro. Freundlich und kurz.
         </div>
       </div>
     </div>
@@ -933,9 +932,10 @@ html.nofrag .reveal .fragment{opacity:1!important;visibility:visible!important;t
       <div class="label">Was gesprochen wird</div>
       <hr class="strich breit" style="margin:34px 0 auto;">
       <p class="prompt-gross">
-        <span class="wer">Du bist meine Büroleiterin.</span>
-        Schreib das Angebot für Frau Petersen. Vier Räume streichen, Altbau,
-        hohe Decken, Einzug am ersten Oktober. 2.400 Euro.
+        <span class="wer">Du bist meine Büroleiterin.</span><br>
+        Schreib das Angebot für Frau Petersen.<br>
+        Vier Räume streichen, Altbau, hohe Decken,<br>
+        Einzug am ersten Oktober. 2.400 Euro.<br>
         Freundlich, kurz, keine Fachwörter.
       </p>
       <p class="label" style="margin-top:52px;">
@@ -961,18 +961,18 @@ html.nofrag .reveal .fragment{opacity:1!important;visibility:visible!important;t
     <p class="lead" style="font-size:52px;"><em>Naja, nicht ganz meins.</em></p>
     <div class="spalten drei" style="margin-top:52px;align-items:start;">
       <div>
-        <div class="gesagt" style="font-size:40px;">
-          Zu förmlich. Schreib das so, wie ich mit einer Stammkundin rede.
+        <div class="gesagt" style="font-size:36px;">
+          Zu förmlich.<br>Schreib wie zu einer Kundin.
         </div>
       </div>
       <div>
-        <div class="gesagt" style="font-size:40px;">
-          Die Hälfte davon reicht. Und der letzte Absatz kann weg.
+        <div class="gesagt" style="font-size:36px;">
+          Die Hälfte reicht.<br>Letzter Absatz weg.
         </div>
       </div>
       <div>
-        <div class="gesagt" style="font-size:40px;">
-          Gib mir drei Fassungen. Eine vorsichtige, eine klare, eine sehr deutliche.
+        <div class="gesagt" style="font-size:36px;">
+          Gib mir drei Fassungen:<br>vorsichtig, klar,<br>sehr deutlich.
         </div>
       </div>
     </div>
@@ -1025,9 +1025,11 @@ html.nofrag .reveal .fragment{opacity:1!important;visibility:visible!important;t
       <div class="label">Was wir eingeben</div>
       <hr class="strich breit" style="margin:34px 0 auto;">
       <p class="prompt-gross">
-        <span class="wer">Du machst unseren Instagram-Auftritt.</span>
-        Hier ist ein Foto aus meinem Betrieb. Schreib drei Bildunterschriften:
-        eine persönliche, eine sachliche, eine mit Augenzwinkern.
+        <span class="wer">Du machst unseren Instagram-Auftritt.</span><br>
+        Hier ist ein Foto aus meinem Betrieb.<br>
+        Schreib drei Bildunterschriften:<br>
+        eine persönliche, eine sachliche,<br>
+        eine mit Augenzwinkern.<br>
         Am Ende eine echte Frage.
       </p>
       <p class="label" style="margin-top:52px;">
@@ -1075,9 +1077,11 @@ html.nofrag .reveal .fragment{opacity:1!important;visibility:visible!important;t
       <div class="label">Was wir eingeben</div>
       <hr class="strich breit" style="margin:34px 0 auto;">
       <p class="prompt-gross">
-        <span class="wer">Du bist meine ruhigste Kollegin.</span>
-        Eine Stammkundin hat seit sieben Wochen eine Rechnung offen.
-        Ich will sie nicht verlieren. Schreib zwei Fassungen:
+        <span class="wer">Du bist meine ruhigste Kollegin.</span><br>
+        Eine Stammkundin hat seit sieben Wochen<br>
+        eine Rechnung offen.<br>
+        Ich will sie nicht verlieren.<br>
+        Schreib zwei Fassungen:<br>
         einmal freundlich mit Frist, einmal deutlich.
       </p>
       <p class="label" style="margin-top:52px;">
@@ -1103,9 +1107,11 @@ html.nofrag .reveal .fragment{opacity:1!important;visibility:visible!important;t
       <hr class="strich breit" style="margin:34px 0 auto;">
       <p class="prompt-gross">
         <span class="wer">Du kennst meinen Betrieb:</span>
-        <span style="color:var(--terra);">[&hairsp;drei Worte von Ihnen&hairsp;]</span>.
-        Gib mir zehn Ideen für Instagram. Keine allgemeinen Tipps,
-        nur was zu genau diesem Betrieb passt. Das Leichteste zuerst.
+        <span style="color:var(--terra);">[&hairsp;drei Worte von Ihnen&hairsp;]</span>.<br>
+        Gib mir zehn Ideen für Instagram.<br>
+        Keine allgemeinen Tipps,<br>
+        nur was zu genau diesem Betrieb passt.<br>
+        Das Leichteste zuerst.
       </p>
       <hr class="strich breit" style="margin:auto 0 26px;">
       <p class="takeaway">Handzeichen: Was würden Sie posten?</p>
@@ -1157,15 +1163,13 @@ html.nofrag .reveal .fragment{opacity:1!important;visibility:visible!important;t
       <div>
         <div class="label" style="opacity:.5;margin-bottom:20px;">So besser nicht</div>
         <div class="gesagt matt">
-          Frau Petersen aus der Bergstraße 12 in Mölln hat seit
-          sieben Wochen die Rechnung 2026-0431 nicht bezahlt.
+          Frau Petersen aus der<br>Bergstraße 12 in Mölln<br>hat Rechnung 2026-0431<br>nicht bezahlt.
         </div>
       </div>
       <div>
         <div class="label" style="margin-bottom:20px;">So</div>
         <div class="gesagt">
-          Eine Stammkundin hat seit sieben Wochen eine Rechnung
-          offen und meldet sich nicht.
+          Eine Stammkundin hat<br>eine Rechnung offen<br>und meldet sich nicht.
         </div>
       </div>
     </div>
@@ -1196,18 +1200,18 @@ html.nofrag .reveal .fragment{opacity:1!important;visibility:visible!important;t
   <div class="buehne mittig">
     <div class="label">Und weil danach immer gefragt wird</div>
     <h2 style="margin-top:30px;">Was seit dem 2. August gilt.</h2>
-    <hr class="strich" style="margin:56px 0 52px;">
+    <hr class="strich" style="margin:60px 0 66px;">
     <div class="spalten zwei" style="align-items:start;">
       <div>
-        <h3 style="font-size:48px;">Sagen, wenn kein Mensch antwortet.</h3>
-        <p class="klein" style="margin-top:22px;font-size:40px;">Chatfenster. Täuschend echte Bilder.</p>
+        <h3>Sagen, dass die KI<br>geantwortet hat.</h3>
+        <p class="klein" style="margin-top:30px;">Chatfenster. Täuschend echte Bilder.</p>
       </div>
       <div>
-        <h3 style="font-size:48px;">Der Rest wurde auf 2027 verschoben.</h3>
-        <p class="klein" style="margin-top:22px;font-size:40px;">Betrifft die wenigsten hier.</p>
+        <h3>Der Rest kommt<br>erst 2027.</h3>
+        <p class="klein" style="margin-top:30px;">Betrifft die wenigsten hier.</p>
       </div>
     </div>
-    <hr class="strich breit" style="margin:42px 0 26px;">
+    <hr class="strich breit" style="margin:auto 0 28px;">
     <p class="takeaway" style="margin-top:auto;">Nebenbei: Sie erledigen hier gerade eine Pflicht.</p>
   </div>
   <aside class="notes">
@@ -1280,7 +1284,7 @@ html.nofrag .reveal .fragment{opacity:1!important;visibility:visible!important;t
       </div>
       <div>
         <div class="zahl">22 €</div>
-        <p class="zahl-txt" style="max-width:440px;">Im Monat. Mit Kundendaten.</p>
+        <p class="zahl-txt" style="max-width:440px;">Im Monat.<br>Mit Kundendaten.</p>
       </div>
       <div>
         <div class="zahl klein" style="font-size:74px;line-height:1.06;">Eine<br>Stunde</div>
@@ -1306,68 +1310,44 @@ html.nofrag .reveal .fragment{opacity:1!important;visibility:visible!important;t
   <div class="buehne">
     <div class="label">Wenn Sie heute nur eine Sache mitnehmen</div>
     <h2 style="margin-top:26px;">Ihre <span class="akz">erste Woche</span>.</h2>
-    <hr class="strich breit" style="margin:34px 0 0;">
+    <hr class="strich breit" style="margin:44px 0 0;">
     <div class="zeilen" style="margin-top:6px;">
-      <!-- Niemand faengt gern bei null an. Der erste Schritt ist bereits getan,
-           und das gehoert sichtbar auf die Folie. -->
-      <div style="opacity:.5;">
-        <div style="width:250px;flex-shrink:0;">
-          <div class="zahl klein" style="font-size:44px;">✓</div>
+      <div style="opacity:.45;padding:34px 0;">
+        <div style="width:290px;flex-shrink:0;">
+          <div class="zahl klein" style="font-size:46px;">&#10003;</div>
           <div class="label" style="margin-top:10px;">Gerade eben</div>
         </div>
-        <div>
-          <h3 style="font-size:48px;text-decoration:line-through;text-decoration-thickness:2px;">
-            Herausfinden, wie es geht.</h3>
-          <p class="klein" style="margin-top:6px;font-size:40px;max-width:1000px;">
-            Sie fangen nicht bei null an.
-          </p>
-        </div>
+        <h3 style="font-size:48px;text-decoration:line-through;text-decoration-thickness:3px;">
+          Herausfinden, wie es geht.</h3>
       </div>
-      <div>
-        <div style="width:250px;flex-shrink:0;">
-          <div class="zahl klein" style="font-size:44px;">1</div>
+      <div style="padding:34px 0;">
+        <div style="width:290px;flex-shrink:0;">
+          <div class="zahl klein" style="font-size:46px;">1</div>
           <div class="label" style="margin-top:10px;">Heute Mittag</div>
         </div>
-        <div>
-          <h3 style="font-size:42px;">Eine Aufgabe. Nur eine.</h3>
-          <p class="klein" style="margin-top:6px;font-size:40px;max-width:1000px;">
-            Nicht die wichtigste. Die lästigste.
-          </p>
-        </div>
+        <h3 style="font-size:48px;">Die <span class="akz">lästigste</span> Aufgabe. Eine.</h3>
       </div>
-      <div>
-        <div style="width:250px;flex-shrink:0;">
-          <div class="zahl klein" style="font-size:44px;">2</div>
+      <div style="padding:34px 0;">
+        <div style="width:290px;flex-shrink:0;">
+          <div class="zahl klein" style="font-size:46px;">2</div>
           <div class="label" style="margin-top:10px;">Diese Woche</div>
         </div>
-        <div>
-          <h3 style="font-size:42px;">Dieselbe Aufgabe noch einmal.</h3>
-          <p class="klein" style="margin-top:6px;font-size:40px;max-width:1000px;">
-            Diesmal meckern Sie.
-          </p>
-        </div>
+        <h3 style="font-size:48px;">Dieselbe noch einmal. Und meckern.</h3>
       </div>
-      <div>
-        <div style="width:250px;flex-shrink:0;">
-          <div class="zahl klein" style="font-size:44px;">3</div>
+      <div style="padding:34px 0;">
+        <div style="width:290px;flex-shrink:0;">
+          <div class="zahl klein" style="font-size:46px;">3</div>
           <div class="label" style="margin-top:10px;">Ab dann</div>
         </div>
-        <div>
-          <h3 style="font-size:42px;">Den Satz aufheben, der funktioniert hat.</h3>
-          <p class="klein" style="margin-top:6px;font-size:40px;max-width:1000px;">
-            Nach vier Wochen sind es fünf.
-          </p>
-        </div>
+        <h3 style="font-size:48px;">Den Satz aufheben, der ging.</h3>
       </div>
     </div>
-    <hr class="strich breit" style="margin:0 0 22px;">
-    <p class="takeaway" style="font-size:48px;">
-      Nicht zehn Werkzeuge. Eines. Nicht zwanzig Aufgaben. Eine.
-    </p>
+    <hr class="strich breit" style="margin:0 0 26px;">
+    <p class="takeaway">Ein Werkzeug. Eine Aufgabe.</p>
   </div>
-  <img src="assets/illu/kalender.png" alt="" class="illu frei"
-       style="width:270px;height:270px;right:104px;top:150px;opacity:.85;">
-  <aside class="notes">
+<aside class="notes">
+    Dazusagen zu 1: „Nicht die wichtigste Aufgabe. Die lästigste."
+    Zu 3: „Nach vier Wochen sind es fünf Sätze, und die gehören Ihnen."
     Dazusagen: Bei Schritt eins die vier Fragen beantworten, absenden, schauen was passiert.
     Bei Schritt zwei meckern: zu lang, zu steif, zu freundlich. Ab dem dritten Mal
     dauert es zwei Minuten. Bei Schritt drei die Sätze in eine Notiz auf dem Handy.
@@ -1523,8 +1503,7 @@ html.nofrag .reveal .fragment{opacity:1!important;visibility:visible!important;t
         <div>
           <div class="label" style="margin-bottom:10px;">Zum Nachlesen</div>
           <p class="klein" style="font-size:34px;line-height:1.5;max-width:400px;">
-            Alle Sätze zum Nachlesen.
-            Kein Konto nötig.
+            Alle Sätze.<br>Kein Konto nötig.
           </p>
         </div>
         <div style="border-left:1px solid var(--linie);padding-left:44px;">
