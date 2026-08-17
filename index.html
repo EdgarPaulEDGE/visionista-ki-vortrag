@@ -1670,7 +1670,7 @@ Reveal.initialize({
     if (!s.querySelector('.seitenzahl')) {
       const z = document.createElement('div');
       z.className = 'seitenzahl';
-      z.textContent = String(i+1).padStart(2,'0');
+      z.textContent = String(i+1);
       s.appendChild(z);
     }
   });
