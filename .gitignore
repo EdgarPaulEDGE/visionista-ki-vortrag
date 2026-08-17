@@ -1,3 +1,5 @@
 node_modules/
 .DS_Store
 pruefung.pdf
+assets/live/*.png
+assets/live/*.jpg

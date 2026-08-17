@@ -1,0 +1,15 @@
+Dieser Ordner ist der Briefkasten für den Marken-Reveal (Folie „Ihre Marke").
+
+Emre legt während des Vortrags die vier generierten Bilder hier ab,
+mit GENAU diesen Dateinamen:
+
+  logo.png     das Logo
+  farben.png   das CI-Board
+  post.png     der Instagram-Post
+  schild.png   das Ladenschild
+
+Die Folie schaut alle vier Sekunden nach und blendet ein, was da ist.
+Reihenfolge egal, es darf auch nur ein Teil ankommen.
+
+WICHTIG: Funktioniert nur in der lokalen Fassung (npm run serve),
+nicht über die Live-URL im Netz.

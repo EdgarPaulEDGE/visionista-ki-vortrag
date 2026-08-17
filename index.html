@@ -260,6 +260,19 @@ hr.strich.zart{width:100%;height:1px;background:var(--linie);margin:26px 0;opaci
 .illu.frei{position:absolute;z-index:0;pointer-events:none;}
 
 /* ============================================================
+   MARKEN-REVEAL
+   Vier Felder, die sich fuellen, sobald in assets/live/ Dateien
+   liegen. Leere Felder zeigen nur das Label und eine Haarlinie,
+   damit die Folie auch halbvoll ordentlich aussieht.
+   ============================================================ */
+.marken-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:34px;
+             align-items:stretch;flex-shrink:0;}
+.marken-grid figure{margin:0;display:flex;flex-direction:column;gap:16px;
+                    min-height:480px;border-top:1px solid var(--linie);padding-top:18px;}
+.marken-grid img{width:100%;height:440px;object-fit:contain;display:block;}
+.marken-grid figure:not(:has(img)){opacity:.45;}
+
+/* ============================================================
    GRAFIKEN
    Schriftgroessen fuer SVG-Text NUR ueber Klassen, nie inline:
    Chromium verrechnet den Reveal-Zoom bei SVG-Text mit
@@ -377,6 +390,11 @@ html.nofrag .reveal .fragment{opacity:1!important;visibility:visible!important;t
     <div class="label" style="margin-top:24px;">EDGE Digital, Lübeck</div>
   </div>
   <aside class="notes">
+    DANACH DER SETUP-MOMENT für den Marken-Reveal: Edgar fragt
+    "Wer hier trägt eine Idee mit sich herum? Etwas, das Sie irgendwann
+    mal aufmachen wollen?" Drei Worte reichen, z.B. Hofcafé in Büchen.
+    Edgar: "Merken Sie sich das. Wir sehen uns am Ende wieder."
+    Emre notiert die drei Worte, mehr passiert hier nicht.
     Vorstellung live, Länge nach Gefühl: eine Minute reicht, mehr geht.
     Wer wir sind, was EDGE macht, warum ausgerechnet wir zwei hier stehen.
     Ein Satz Selbstironie funktioniert hier besser als eine Referenzliste.
@@ -1519,6 +1537,73 @@ html.nofrag .reveal .fragment{opacity:1!important;visibility:visible!important;t
 </section>
 
 <!-- ============================================================
+     ZUGABE  Der Marken-Reveal. Der Wunsch von Minute zwei kommt als
+     Marke zurueck. Die Folie schaut in assets/live/ und blendet ein,
+     was Emre dort ablegt. Rueckfall darunter: das Hofcafé von der Probe.
+     ============================================================ -->
+<section>
+  <section data-slide-id="marke">
+    <div class="buehne">
+      <div class="label">Der Wunsch von vorhin</div>
+      <h2 style="margin-top:26px;">Und nebenbei ist das hier <span class="akz">entstanden</span>.</h2>
+      <hr class="strich breit" style="margin:36px 0 34px;">
+      <div class="marken-grid">
+        <figure data-live="logo"><figcaption class="label">Das Logo</figcaption></figure>
+        <figure data-live="farben"><figcaption class="label">Die Farben</figcaption></figure>
+        <figure data-live="post"><figcaption class="label">Der erste Beitrag</figcaption></figure>
+        <figure data-live="schild"><figcaption class="label">Das Schild</figcaption></figure>
+      </div>
+      <hr class="strich breit" style="margin:auto 0 26px;">
+      <p class="takeaway">Ein erster Aufschlag. Ab hier wird gemeckert.</p>
+    </div>
+    <aside class="notes">
+      REGIE: Der Wunsch wird bei Folie 2 eingesammelt ("Wer trägt eine Idee mit
+      sich herum?"). Emre stößt in einer ruhigen Minute die vier Bilder an und
+      legt die fertigen Dateien in assets/live/ ab: logo.png, farben.png,
+      post.png, schild.png. Die Folie füllt sich von selbst.
+      Die vier Sätze für Emre, [BETRIEB] ersetzen:
+      1. "Gestalte ein Logo für [BETRIEB]: warme, handgemachte Marke,
+         schlichtes Zeichen plus Schriftzug, zwei gedeckte Farben,
+         flächig, auf Cremeweiß."
+      2. "Baue ein Markenboard für [BETRIEB]: Logo oben links, fünf
+         Farbfelder mit Hex-Codes, zwei Schriftmuster, drei kleine
+         Anwendungen. Beschriftung auf Deutsch."
+      3. "Ein Instagram-Beitrag für [BETRIEB]: warmes, echtes Foto passend
+         zum Betrieb, dazu eine kleine handgeschriebene Karte mit einem
+         kurzen Satz."
+      4. "Ein Ladenschild für [BETRIEB] an der passenden Fassade,
+         fotorealistisch, warmes Licht."
+      FRAMING, wichtig wegen der Charta: "Das ist ein erster Aufschlag,
+      kein fertiges Branding. Und das können Sie ab morgen selbst."
+      Kein Wort darüber, dass wir so etwas beruflich machen.
+      KOMMT NICHTS AN: Pfeil nach unten, dort liegt das Hofcafé von der Probe.
+      Funktioniert nur in der lokalen Fassung, nicht über die Web-Adresse.
+    </aside>
+  </section>
+
+  <section data-slide-id="marke-rueckfall">
+    <div class="buehne">
+      <div class="label">Rückfall: die Probe von dieser Woche</div>
+      <h2 style="margin-top:20px;font-size:62px;">Hofcafé Morgenluft, Büchen.</h2>
+      <hr class="strich breit" style="margin:30px 0 30px;">
+      <div class="marken-grid">
+        <figure><img src="assets/bilder/marke-logo.jpg" alt="Logo Hofcafé Morgenluft"></figure>
+        <figure><img src="assets/bilder/marke-farben.jpg" alt="CI-Board"></figure>
+        <figure><img src="assets/bilder/marke-post.jpg" alt="Instagram-Beitrag"></figure>
+        <figure><img src="assets/bilder/marke-schild.jpg" alt="Ladenschild"></figure>
+      </div>
+      <hr class="strich breit" style="margin:auto 0 26px;">
+      <p class="takeaway">Vier Sätze. Sechzig Sekunden.</p>
+    </div>
+    <aside class="notes">
+      Nur zeigen, wenn live nichts ankommt. Ehrlich ansagen:
+      "Das hier ist bei der Probe diese Woche entstanden, mit einem
+      erfundenen Betrieb. Live sähe es genauso aus, nur mit Ihrem."
+    </aside>
+  </section>
+</section>
+
+<!-- ============================================================
      ZUGABE  Der Raum als Zeichnung. Das Foto vom Anfang, waehrend
      der Fragerunde in den Stil des Decks uebersetzt.
      ============================================================ -->
@@ -1677,6 +1762,29 @@ Reveal.initialize({
     }
   });
 });
+
+// Marken-Reveal: alle vier Sekunden nach assets/live/ schauen.
+// Ein Bild, das einmal geladen ist, bleibt stehen.
+(function markenReveal(){
+  const felder = document.querySelectorAll('.marken-grid figure[data-live]');
+  if (!felder.length) return;
+  const geladen = new Set();
+  setInterval(() => {
+    felder.forEach(f => {
+      const name = f.dataset.live;
+      if (geladen.has(name)) return;
+      const probe = new Image();
+      probe.onload = () => {
+        if (geladen.has(name)) return;
+        geladen.add(name);
+        probe.style.cssText = 'width:100%;height:440px;object-fit:contain;display:block;';
+        f.appendChild(probe);
+        f.style.opacity = '1';
+      };
+      probe.src = 'assets/live/' + name + '.png?v=' + Date.now();
+    });
+  }, 4000);
+})();
 
 // ?nofrag zeigt alle Einblendungen sofort (fuer die Sichtpruefung und den PDF-Export)
 if (location.search.includes('nofrag')) {

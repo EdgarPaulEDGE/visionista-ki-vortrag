@@ -11,7 +11,7 @@ visionista, das Unternehmerinnen-Netzwerk der WFL Herzogtum Lauenburg
 | Uhrzeit | Was |
 |---|---|
 | 08:30 bis 08:40 | Ankommen, Kaffee, Begrüßung durch die WFL |
-| 08:40 bis 09:15 | Vortrag, 35 Minuten, 31 Folien |
+| 08:40 bis 09:15 | Vortrag, 35 Minuten, 32 Folien |
 | 09:15 bis 09:25 | Fragen |
 | ab 09:25 | Sitzen bleiben, Gespräche, Networking |
 
@@ -44,9 +44,10 @@ fünf sind der Moment, die Streichliste zu benutzen.
 | 29 min | Drei Dinge vorab | 22 |
 | 31 min | Was bei Ihnen bleibt | 25 |
 | 32 min | Ihre erste Woche | 27 |
-| 34 min | 21:47, der Bogen schließt sich | 29 |
-| 34,5 min | Das sind Sie | 30 |
-| 35 min | Jetzt Sie | 31 |
+| 33 min | 21:47, der Bogen schließt sich | 29 |
+| **33,5 min** | **Zugabe: Ihre Marke** | 30 |
+| 34,5 min | Das sind Sie | 31 |
+| 35 min | Jetzt Sie | 32 |
 
 Jede Demo besteht aus drei Folien: die Aufgabe, der gesprochene Satz in groß,
 und darunter per Pfeil nach unten das fertige Ergebnis für den Fall,
@@ -98,7 +99,7 @@ und nicht wie ein Vortrag.
 - [ ] Mit dem Handy ein Foto vom Raum machen. Das ist der Rückfall für Demo zwei,
       falls aus dem Publikum kein Foto kommt
 - [ ] Netz testen. Wenn es hakt: die Rückfallfolien nutzen (Pfeil nach unten
-      auf den Folien 15, 18, 20 und 21)
+      auf den Folien 15, 18, 20, 21 und 30)
 - [ ] Karten auf den Tischen verteilen
 
 ---
@@ -151,7 +152,16 @@ heute Morgen um sechs gehabt?" Meldet sich niemand, wird die Gastgeberin
 eingetippt, und bei Netzausfall liegt genau diese AWSH-Liste als Rückfall
 unter der Folie. Budget: zweieinhalb Minuten.
 
-**Das sind Sie (Folie 30, vor dem Schluss).** Das Raumfoto vom Anfang wird
+**Ihre Marke (Folie 30, der große Bogen).** Der Wunsch aus Minute zwei
+kommt als Marke zurück: Logo, Farben, erster Beitrag, Ladenschild. Emre
+stößt die vier Bilder in einer ruhigen Minute an (die Sätze stehen in den
+Sprechernotizen der Folie) und legt die fertigen Dateien in `assets/live/`
+ab, die Folie füllt sich von selbst. Geprobt am 17.08.: 60 Sekunden für
+alle vier parallel. Framing wegen der Charta: „Ein erster Aufschlag, und
+das können Sie ab morgen selbst." Rückfall darunter: das Hofcafé
+Morgenluft aus der Probe. Funktioniert nur lokal, nicht über die Web-Adresse.
+
+**Das sind Sie (Folie 31, das Abschiedsbild).** Das Raumfoto vom Anfang wird
 während der Fragerunde zur Strichzeichnung im Stil des Decks. Emre stößt die
 Umwandlung nach Demo 2 an (dauert etwa eine Minute, der genaue Satz steht in
 den Sprechernotizen der Folie), gezeigt wird im Werkzeugfenster. Geprobt am
@@ -255,7 +265,7 @@ die der europäische Rahmen inzwischen erwartet.
 
 - `index.html` im Browser öffnen, F für Vollbild, Pfeiltasten zum Blättern
 - **S** öffnet die Redneransicht mit allen Notizen und der Uhr
-- **Pfeil nach unten** auf den Folien 15, 18, 20 und 21 führt zu den Rückfallfolien
+- **Pfeil nach unten** auf den Folien 15, 18, 20, 21 und 30 führt zu den Rückfallfolien
 - `?nofrag` an die Adresse hängen zeigt alle Einblendungen sofort
 - `pruefung.pdf` ist der Notnagel, falls der Browser streikt
 
