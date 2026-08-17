@@ -157,10 +157,12 @@ wird aus drei Zurufen gebaut, jede gibt ein Teil: eine sagt WAS
 (Café, Werkstatt, Laden), die nächste WO, die dritte den NAMEN.
 Die absurde Kombination ist gewollt, sie gehört dem ganzen Raum und
 niemand muss allein kreativ sein. Am Ende kommt sie als Marke zurück: Logo, Farben, erster Beitrag, Ladenschild. Emre
-stößt die vier Bilder in einer ruhigen Minute an (die Sätze stehen in den
+wartet, bis ALLE DREI Teile da sind, und stößt die vier Bilder dann in
+einer ruhigen Minute an (die Sätze stehen in den
 Sprechernotizen der Folie) und legt die fertigen Dateien in `assets/live/`
-ab, die Folie füllt sich von selbst. Geprobt am 17.08.: 60 Sekunden für
-alle vier parallel. Framing wegen der Charta: „Ein erster Aufschlag, und
+ab, die Folie füllt sich von selbst. Geprobt am 17.08. als kompletter Durchlauf mit Umschwenk-Test: ein zu früh
+gefeuerter Satz wurde verworfen und neu gefeuert, Mehrkosten dreißig
+Sekunden, der Ablauf hat es geschluckt. 60 Sekunden für alle vier parallel. Framing wegen der Charta: „Ein erster Aufschlag, und
 das können Sie ab morgen selbst." Rückfall darunter: das Hofcafé
 Morgenluft aus der Probe. Funktioniert nur lokal, nicht über die Web-Adresse.
 
