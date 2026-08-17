@@ -69,7 +69,10 @@
   --burgund-mit: #6E2144;
   --tinte:       #1E1E1E;
   --tinte-weich: #57504A;
-  --terra:       #C0562A;
+  /* Terrakotta ist raus: sie war nie Teil der visionista-CI, sondern
+     eine Diagrammfarbe, die ich beim Wechsel auf Avenir versehentlich
+     zur Schlagzeilenfarbe befoerdert habe. Der Vortrag laeuft jetzt
+     zweifarbig: Burgund auf Sand, Abstufungen ueber Deckkraft. */
   --linie:       rgba(76,16,46,.16);
   --linie-satt:  rgba(76,16,46,.38);
 
@@ -112,10 +115,13 @@ html,body{background:var(--sand);}
   font-family:"Avenir Next LT","Avenir Next",Avenir,sans-serif;
   font-weight:600;
 }
-.reveal h1,.zahl,.riesenzahl{font-weight:700;}
-/* Akzentwoerter: Avenir hat keine Kursive im Satz, der Akzent
-   kommt stattdessen ueber die Terrakotta aus der Palette. */
-.akz{font-style:normal;color:var(--terra);font-size:inherit;}
+.reveal h1,.reveal h2,.zahl,.riesenzahl,.takeaway{font-weight:700;}
+/* Akzentwoerter tragen KEINE eigene Farbe. Bis zur Umstellung auf Avenir
+   waren sie kursive Bodoni in Burgund; die Terrakotta war nur eine
+   Diagrammfarbe und hat als Schlagzeilenfarbe nichts zu suchen.
+   Der Akzent kommt jetzt ueber das Gewicht, in derselben Farbe. */
+.akz{font-style:normal;font-size:inherit;font-weight:700;
+     letter-spacing:-.02em;}
 .reveal h1,.reveal h2,.reveal h3{
   color:var(--burgund);
   letter-spacing:-.012em;line-height:1.1;
@@ -135,7 +141,7 @@ html,body{background:var(--sand);}
 /* Akzentwort: kursive Bodoni in Burgund.
    Ersetzt den Gradient-Schimmer aus dem dunklen EDGE-Deck. */
 
-.akz-t{color:var(--terra);}
+
 
 /* ============================================================
    4. BAUSTEINE
@@ -146,7 +152,7 @@ hr.strich{border:none;height:2px;background:var(--burgund);
 hr.strich.breit{width:100%;height:1px;background:var(--linie);margin:36px 0;}
 hr.strich.zart{width:100%;height:1px;background:var(--linie);margin:26px 0;opacity:1;}
 
-.label{font-family:"Avenir Next LT",sans-serif;font-weight:600;font-size:22px;
+.label{font-family:"Avenir Next LT",sans-serif;font-weight:700;font-size:22px;
        letter-spacing:.22em;text-transform:uppercase;color:var(--burgund);
        opacity:.72;flex-shrink:0;}
 
@@ -262,10 +268,21 @@ hr.strich.zart{width:100%;height:1px;background:var(--linie);margin:26px 0;opaci
    ============================================================ */
 .illu{display:block;flex-shrink:0;}
 .illu.klein{width:250px;height:250px;}
-.illu.mittel{width:340px;height:340px;}
+.illu.mittel{width:450px;height:450px;}
 .illu.gross{width:440px;height:440px;}
 /* Frei in die Folie gesetzt, ohne den Textfluss zu stoeren. */
 .illu.frei{position:absolute;z-index:0;pointer-events:none;}
+
+/* ============================================================
+   ICONS
+   Lucide, als Sprite eingebettet. Sie ersetzen keine Aussage,
+   sie geben der Liste eine Spalte, an der das Auge entlanglaeuft.
+   Strichstaerke 1.6 passt zu den Zeichnungen im selben Deck.
+   ============================================================ */
+.ik{width:72px;height:72px;flex-shrink:0;stroke:var(--burgund);
+    stroke-width:1.9;fill:none;stroke-linecap:round;stroke-linejoin:round;}
+.ik.gross{width:104px;height:104px;}
+.ik.matt{opacity:.4;}
 
 /* ============================================================
    MARKEN-REVEAL
@@ -296,7 +313,7 @@ hr.strich.zart{width:100%;height:1px;background:var(--linie);margin:26px 0;opaci
    Beschriftungen und kleben oben links.
    ============================================================ */
 .chart-wert{font-family:"Avenir Next LT",sans-serif;font-weight:600;font-size:34px;fill:var(--burgund);}
-.chart-wert.stark{font-size:46px;fill:var(--terra);}
+.chart-wert.stark{font-size:46px;font-weight:700;fill:var(--burgund);}
 .chart-jahr{font-family:'Montserrat',sans-serif;font-size:22px;font-weight:600;
   letter-spacing:.14em;text-transform:uppercase;fill:var(--burgund);opacity:.6;}
 .chart-nam{font-family:'Montserrat',sans-serif;font-size:28px;font-weight:400;
@@ -332,6 +349,30 @@ html.nofrag .reveal .fragment{opacity:1!important;visibility:visible!important;t
 </style>
 </head>
 <body>
+
+<svg xmlns="http://www.w3.org/2000/svg" style="display:none" aria-hidden="true">
+  <symbol id="i-file-text" viewBox="0 0 24 24"><path d="M6 22a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h8a2.4 2.4 0 0 1 1.704.706l3.588 3.588A2.4 2.4 0 0 1 20 8v12a2 2 0 0 1-2 2z" /> <path d="M14 2v5a1 1 0 0 0 1 1h5" /> <path d="M10 9H8" /> <path d="M16 13H8" /> <path d="M16 17H8" /></symbol>
+  <symbol id="i-megaphone" viewBox="0 0 24 24"><path d="M11 6a13 13 0 0 0 8.4-2.8A1 1 0 0 1 21 4v12a1 1 0 0 1-1.6.8A13 13 0 0 0 11 14H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2z" /> <path d="M6 14a12 12 0 0 0 2.4 7.2 2 2 0 0 0 3.2-2.4A8 8 0 0 1 10 14" /> <path d="M8 6v8" /></symbol>
+  <symbol id="i-mail" viewBox="0 0 24 24"><path d="m22 7-8.991 5.727a2 2 0 0 1-2.009 0L2 7" /> <rect x="2" y="4" width="20" height="16" rx="2" /></symbol>
+  <symbol id="i-receipt" viewBox="0 0 24 24"><path d="M12 17V7" /> <path d="M16 8h-6a2 2 0 0 0 0 4h4a2 2 0 0 1 0 4H8" /> <path d="M4 3a1 1 0 0 1 1-1 1.3 1.3 0 0 1 .7.2l.933.6a1.3 1.3 0 0 0 1.4 0l.934-.6a1.3 1.3 0 0 1 1.4 0l.933.6a1.3 1.3 0 0 0 1.4 0l.933-.6a1.3 1.3 0 0 1 1.4 0l.934.6a1.3 1.3 0 0 0 1.4 0l.933-.6A1.3 1.3 0 0 1 19 2a1 1 0 0 1 1 1v18a1 1 0 0 1-1 1 1.3 1.3 0 0 1-.7-.2l-.933-.6a1.3 1.3 0 0 0-1.4 0l-.934.6a1.3 1.3 0 0 1-1.4 0l-.933-.6a1.3 1.3 0 0 0-1.4 0l-.933.6a1.3 1.3 0 0 1-1.4 0l-.934-.6a1.3 1.3 0 0 0-1.4 0l-.933.6a1.3 1.3 0 0 1-.7.2 1 1 0 0 1-1-1z" /></symbol>
+  <symbol id="i-lightbulb" viewBox="0 0 24 24"><path d="M15 14c.2-1 .7-1.7 1.5-2.5 1-.9 1.5-2.2 1.5-3.5A6 6 0 0 0 6 8c0 1 .2 2.2 1.5 3.5.7.7 1.3 1.5 1.5 2.5" /> <path d="M9 18h6" /> <path d="M10 22h4" /></symbol>
+  <symbol id="i-user-round" viewBox="0 0 24 24"><circle cx="12" cy="8" r="5" /> <path d="M20 21a8 8 0 0 0-16 0" /></symbol>
+  <symbol id="i-target" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" /> <circle cx="12" cy="12" r="6" /> <circle cx="12" cy="12" r="2" /></symbol>
+  <symbol id="i-brain" viewBox="0 0 24 24"><path d="M12 18V5" /> <path d="M15 13a4.17 4.17 0 0 1-3-4 4.17 4.17 0 0 1-3 4" /> <path d="M17.598 6.5A3 3 0 1 0 12 5a3 3 0 1 0-5.598 1.5" /> <path d="M17.997 5.125a4 4 0 0 1 2.526 5.77" /> <path d="M18 18a4 4 0 0 0 2-7.464" /> <path d="M19.967 17.483A4 4 0 1 1 12 18a4 4 0 1 1-7.967-.517" /> <path d="M6 18a4 4 0 0 1-2-7.464" /> <path d="M6.003 5.125a4 4 0 0 0-2.526 5.77" /></symbol>
+  <symbol id="i-shapes" viewBox="0 0 24 24"><path d="M8.3 10a.7.7 0 0 1-.626-1.079L11.4 3a.7.7 0 0 1 1.198-.043L16.3 8.9a.7.7 0 0 1-.572 1.1Z" /> <rect x="3" y="14" width="7" height="7" rx="1" /> <circle cx="17.5" cy="17.5" r="3.5" /></symbol>
+  <symbol id="i-calendar" viewBox="0 0 24 24"><path d="M8 2v3" /> <path d="M16 2v3" /> <rect x="3" y="3" width="18" height="18" rx="2" /> <path d="M3 9h18" /></symbol>
+  <symbol id="i-repeat" viewBox="0 0 24 24"><path d="m17 2 4 4-4 4" /> <path d="M3 11v-1a4 4 0 0 1 4-4h14" /> <path d="m7 22-4-4 4-4" /> <path d="M21 13v1a4 4 0 0 1-4 4H3" /></symbol>
+  <symbol id="i-bookmark" viewBox="0 0 24 24"><path d="M17 3a2 2 0 0 1 2 2v15a1 1 0 0 1-1.496.868l-4.512-2.578a2 2 0 0 0-1.984 0l-4.512 2.578A1 1 0 0 1 5 20V5a2 2 0 0 1 2-2z" /></symbol>
+  <symbol id="i-hand" viewBox="0 0 24 24"><path d="M18 11V6a2 2 0 0 0-2-2a2 2 0 0 0-2 2" /> <path d="M14 10V4a2 2 0 0 0-2-2a2 2 0 0 0-2 2v2" /> <path d="M10 10.5V6a2 2 0 0 0-2-2a2 2 0 0 0-2 2v8" /> <path d="M18 8a2 2 0 1 1 4 0v6a8 8 0 0 1-8 8h-2c-2.8 0-4.5-.86-5.99-2.34l-3.6-3.6a2 2 0 0 1 2.83-2.82L7 15" /></symbol>
+  <symbol id="i-scale" viewBox="0 0 24 24"><path d="M12 3v18" /> <path d="m19 8 3 8a5 5 0 0 1-6 0zV7" /> <path d="M3 7h1a17 17 0 0 0 8-2 17 17 0 0 0 8 2h1" /> <path d="m5 8 3 8a5 5 0 0 1-6 0zV7" /> <path d="M7 21h10" /></symbol>
+  <symbol id="i-wallet" viewBox="0 0 24 24"><path d="M19 7V4a1 1 0 0 0-1-1H5a2 2 0 0 0 0 4h15a1 1 0 0 1 1 1v4h-3a2 2 0 0 0 0 4h3a1 1 0 0 0 1-1v-2a1 1 0 0 0-1-1" /> <path d="M3 5v14a2 2 0 0 0 2 2h15a1 1 0 0 0 1-1v-4" /></symbol>
+  <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" /> <path d="M12 6v6l4 2" /></symbol>
+  <symbol id="i-circle-check" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" /> <path d="m9 12 2 2 4-4" /></symbol>
+  <symbol id="i-message-circle" viewBox="0 0 24 24"><path d="M2.992 16.342a2 2 0 0 1 .094 1.167l-1.065 3.29a1 1 0 0 0 1.236 1.168l3.413-.998a2 2 0 0 1 1.099.092 10 10 0 1 0-4.777-4.719" /></symbol>
+  <symbol id="i-pen-line" viewBox="0 0 24 24"><path d="M13 21h8" /> <path d="M21.174 6.812a1 1 0 0 0-3.986-3.987L3.842 16.174a2 2 0 0 0-.5.83l-1.321 4.352a.5.5 0 0 0 .623.622l4.353-1.32a2 2 0 0 0 .83-.497z" /></symbol>
+  <symbol id="i-sparkles" viewBox="0 0 24 24"><path d="M11.017 2.814a1 1 0 0 1 1.966 0l1.051 5.558a2 2 0 0 0 1.594 1.594l5.558 1.051a1 1 0 0 1 0 1.966l-5.558 1.051a2 2 0 0 0-1.594 1.594l-1.051 5.558a1 1 0 0 1-1.966 0l-1.051-5.558a2 2 0 0 0-1.594-1.594l-5.558-1.051a1 1 0 0 1 0-1.966l5.558-1.051a2 2 0 0 0 1.594-1.594z" /> <path d="M20 2v4" /> <path d="M22 4h-4" /> <circle cx="4" cy="20" r="2" /></symbol>
+</svg>
+
 <div class="reveal">
 <div class="slides">
 
@@ -537,35 +578,41 @@ html.nofrag .reveal .fragment{opacity:1!important;visibility:visible!important;t
     <h2>Was um 21:47 Uhr <span class="akz">noch liegt</span>.</h2>
     <hr class="strich breit" style="margin:44px 0 0;">
     <div class="zeilen" style="margin-top:6px;">
-      <div style="justify-content:space-between;">
-        <span style="font-size:44px;font-weight:600;">Das Angebot</span>
-        <span class="klein" style="font-size:42px;white-space:nowrap;">seit 6 Tagen offen</span>
+      <div style="justify-content:space-between;padding:20px 0;">
+        <span style="display:flex;align-items:center;gap:34px;">
+          <svg class="ik"><use href="#i-file-text"></use></svg>
+          <span style="font-size:44px;font-weight:600;">Das Angebot</span></span>
+        <span class="klein" style="white-space:nowrap;">seit 6 Tagen offen</span>
       </div>
-      <div style="justify-content:space-between;">
-        <span style="font-size:44px;font-weight:600;">Der Beitrag für Instagram</span>
-        <span class="klein" style="font-size:42px;white-space:nowrap;">seit 3 Wochen geplant</span>
+      <div style="justify-content:space-between;padding:20px 0;">
+        <span style="display:flex;align-items:center;gap:34px;">
+          <svg class="ik"><use href="#i-megaphone"></use></svg>
+          <span style="font-size:44px;font-weight:600;">Der Beitrag</span></span>
+        <span class="klein" style="white-space:nowrap;">seit 3 Wochen geplant</span>
       </div>
-      <div style="justify-content:space-between;">
-        <span style="font-size:44px;font-weight:600;">Die Absage</span>
-        <span class="klein" style="font-size:42px;white-space:nowrap;">seit Montag im Kopf</span>
+      <div style="justify-content:space-between;padding:20px 0;">
+        <span style="display:flex;align-items:center;gap:34px;">
+          <svg class="ik"><use href="#i-mail"></use></svg>
+          <span style="font-size:44px;font-weight:600;">Die Absage</span></span>
+        <span class="klein" style="white-space:nowrap;">seit Montag im Kopf</span>
       </div>
-      <div style="justify-content:space-between;">
-        <span style="font-size:44px;font-weight:600;">Die Belege vom Juli</span>
-        <span class="klein" style="font-size:42px;white-space:nowrap;">in der Schublade</span>
+      <div style="justify-content:space-between;padding:20px 0;">
+        <span style="display:flex;align-items:center;gap:34px;">
+          <svg class="ik"><use href="#i-receipt"></use></svg>
+          <span style="font-size:44px;font-weight:600;">Die Belege</span></span>
+        <span class="klein" style="white-space:nowrap;">in der Schublade</span>
       </div>
-      <div style="justify-content:space-between;">
-        <span style="font-size:44px;font-weight:600;">Die Idee für den Newsletter</span>
-        <span class="klein" style="font-size:42px;white-space:nowrap;">nicht vorhanden</span>
+      <div style="justify-content:space-between;padding:20px 0;">
+        <span style="display:flex;align-items:center;gap:34px;">
+          <svg class="ik"><use href="#i-lightbulb"></use></svg>
+          <span style="font-size:44px;font-weight:600;">Die Idee</span></span>
+        <span class="klein" style="white-space:nowrap;">nicht vorhanden</span>
       </div>
     </div>
     <hr class="strich breit" style="margin:0 0 34px;">
-    <p class="takeaway" style="max-width:1400px;">
-      Nichts davon ist Ihre eigentliche Arbeit.
-    </p>
+    <p class="takeaway">Nichts davon ist Ihre eigentliche Arbeit.</p>
   </div>
-  <img src="assets/illu/abend.png" alt="" class="illu frei"
-       style="width:330px;height:330px;right:104px;bottom:14px;">
-  <aside class="notes">
+<aside class="notes">
     ACHTUNG, offenes Versprechen aus der Einladung: Dort stehen die Belege
     für die Buchhaltung ausdrücklich drin. Auf dieser Folie tauchen sie als
     Problem auf, gelöst werden sie im Vortrag nicht, dafür fehlt die Zeit.
@@ -616,7 +663,7 @@ html.nofrag .reveal .fragment{opacity:1!important;visibility:visible!important;t
         <path d="M70 190 L450 60 L450 248 L70 248 Z" fill="url(#steig)"/>
         <path d="M70 190 L450 60" stroke="#4C102E" stroke-width="4" fill="none" stroke-linecap="round"/>
         <circle cx="70" cy="190" r="9" fill="#F1ECE2" stroke="#4C102E" stroke-width="4"/>
-        <circle cx="450" cy="60" r="11" fill="#C0562A"/>
+        <circle cx="450" cy="60" r="11" fill="#4C102E"/>
         <text class="chart-wert" x="70" y="162" text-anchor="middle">30,4 %</text>
         <text class="chart-wert stark" x="450" y="34" text-anchor="middle">51,2 %</text>
         <text class="chart-jahr" x="70" y="278" text-anchor="middle">2025</text>
@@ -652,22 +699,22 @@ html.nofrag .reveal .fragment{opacity:1!important;visibility:visible!important;t
       <div>
         <!-- Zwei Balken auf gleicher Skala. Der Abstand dazwischen
              ist die eigentliche Aussage, deshalb ist er beschriftet. -->
-        <svg class="balken" viewBox="0 0 700 300" width="700" height="300" aria-hidden="true">
+        <svg class="balken" viewBox="0 0 700 300" width="820" height="352" aria-hidden="true">
           <text class="chart-nam" x="0" y="34">Männer</text>
           <rect x="0" y="52" width="530" height="46" fill="#4C102E" opacity=".85"/>
           <text class="chart-zahl" x="552" y="90">53 %</text>
 
           <text class="chart-nam" x="0" y="168">Frauen</text>
-          <rect x="0" y="186" width="370" height="46" fill="#C0562A"/>
+          <rect x="0" y="186" width="370" height="46" fill="#4C102E" opacity=".38"/>
           <text class="chart-zahl" x="392" y="224">37 %</text>
 
           <!-- Die Differenz selbst markieren: senkrecht vom Ende des kürzeren
                Balkens hoch, das Label steht frei daneben. -->
           <line x1="370" y1="46" x2="370" y2="240" stroke="#4C102E"
                 stroke-opacity=".4" stroke-dasharray="6 6"/>
-          <path d="M382 132 L520 132" stroke="#C0562A" stroke-width="2.5"/>
-          <path d="M520 132 l-9 -6 v12 z" fill="#C0562A"/>
-          <path d="M382 132 l9 -6 v12 z" fill="#C0562A"/>
+          <path d="M382 132 L520 132" stroke="#4C102E" stroke-width="2.5"/>
+          <path d="M520 132 l-9 -6 v12 z" fill="#4C102E"/>
+          <path d="M382 132 l9 -6 v12 z" fill="#4C102E"/>
           <text class="chart-klein" x="540" y="139">16 Punkte Abstand</text>
         </svg>
         <p class="klein" style="margin-top:24px;">nutzen KI im Beruf.</p>
@@ -712,9 +759,9 @@ html.nofrag .reveal .fragment{opacity:1!important;visibility:visible!important;t
       <div>
         <!-- Nicht die Balken, sondern die Lücke selbst zeigen.
              Das ist die Aussage: sie schrumpft auf ein Sechzehntel. -->
-        <svg class="balken" viewBox="0 0 660 240" width="660" height="240" aria-hidden="true">
+        <svg class="balken" viewBox="0 0 660 240" width="760" height="276" aria-hidden="true">
           <text class="chart-klein" x="0" y="24">Die Lücke ohne Zutun</text>
-          <rect x="0" y="42" width="480" height="52" fill="#C0562A" opacity=".9"/>
+          <rect x="0" y="42" width="480" height="52" fill="#4C102E" opacity=".38"/>
           <text class="chart-zahl" x="502" y="84">16</text>
 
           <text class="chart-klein" x="0" y="160">Die Lücke, sobald es einmal jemand zeigt</text>
@@ -778,7 +825,7 @@ html.nofrag .reveal .fragment{opacity:1!important;visibility:visible!important;t
     </p>
   </div>
   <img src="assets/illu/dialog.png" alt="" class="illu frei"
-       style="width:330px;height:330px;right:104px;bottom:66px;">
+       style="width:450px;height:450px;right:104px;bottom:66px;">
   <aside class="notes">
     Der Text, der von der Folie geflogen ist, gehört jetzt Ihnen:
     Links: "Man bekommt etwas Allgemeines zurück, denkt sich nett aber nicht meins,
@@ -800,27 +847,27 @@ html.nofrag .reveal .fragment{opacity:1!important;visibility:visible!important;t
   <div class="buehne">
     <div class="label">Was Sie sich merken müssen. Mehr nicht.</div>
     <h2 style="margin-top:26px;">Vier <span class="akz">Fragen</span>.</h2>
-    <hr class="strich breit" style="margin:52px 0 64px;">
+    <hr class="strich breit" style="margin:50px 0 56px;">
     <div class="spalten vier" style="align-items:start;">
       <div>
-        <div class="zahl klein" style="font-size:104px;">1</div>
-        <div class="label" style="margin-top:18px;">Die Rolle</div>
-        <h3 style="margin-top:30px;font-size:46px;">Wer bist du<br>für mich?</h3>
+        <svg class="ik" style="width:132px;height:132px;"><use href="#i-user-round"></use></svg>
+        <div class="label" style="margin-top:34px;">1 &nbsp;·&nbsp; Die Rolle</div>
+        <h3 style="margin-top:22px;font-size:46px;">Wer bist du<br>für mich?</h3>
       </div>
       <div>
-        <div class="zahl klein" style="font-size:104px;">2</div>
-        <div class="label" style="margin-top:18px;">Das Ergebnis</div>
-        <h3 style="margin-top:30px;font-size:46px;">Was soll dabei<br>rauskommen?</h3>
+        <svg class="ik" style="width:132px;height:132px;"><use href="#i-target"></use></svg>
+        <div class="label" style="margin-top:34px;">2 &nbsp;·&nbsp; Das Ergebnis</div>
+        <h3 style="margin-top:22px;font-size:46px;">Was soll dabei<br>rauskommen?</h3>
       </div>
       <div>
-        <div class="zahl klein" style="font-size:104px;">3</div>
-        <div class="label" style="margin-top:18px;">Das Wissen</div>
-        <h3 style="margin-top:30px;font-size:46px;">Was musst du<br>dafür wissen?</h3>
+        <svg class="ik" style="width:132px;height:132px;"><use href="#i-brain"></use></svg>
+        <div class="label" style="margin-top:34px;">3 &nbsp;·&nbsp; Das Wissen</div>
+        <h3 style="margin-top:22px;font-size:46px;">Was musst du<br>dafür wissen?</h3>
       </div>
       <div>
-        <div class="zahl klein" style="font-size:104px;">4</div>
-        <div class="label" style="margin-top:18px;">Die Form</div>
-        <h3 style="margin-top:30px;font-size:46px;">Wie soll es<br>aussehen?</h3>
+        <svg class="ik" style="width:132px;height:132px;"><use href="#i-shapes"></use></svg>
+        <div class="label" style="margin-top:34px;">4 &nbsp;·&nbsp; Die Form</div>
+        <h3 style="margin-top:22px;font-size:46px;">Wie soll es<br>aussehen?</h3>
       </div>
     </div>
     <hr class="strich breit" style="margin:auto 0 30px;">
@@ -846,7 +893,8 @@ html.nofrag .reveal .fragment{opacity:1!important;visibility:visible!important;t
     <hr class="strich breit" style="margin:42px 0 44px;">
     <div class="spalten zwei" style="align-items:start;gap:0;">
       <div>
-        <div class="label" style="opacity:.5;margin-bottom:22px;">Was fast alle eingeben</div>
+        <svg class="ik matt"><use href="#i-message-circle"></use></svg>
+        <div class="label" style="opacity:.5;margin:22px 0;">Was fast alle eingeben</div>
         <div class="gesagt matt">
           Schreib mir ein Angebot<br>für eine Kundin.
         </div>
@@ -855,7 +903,8 @@ html.nofrag .reveal .fragment{opacity:1!important;visibility:visible!important;t
         </p>
       </div>
       <div>
-        <div class="label" style="margin-bottom:22px;">Was Sie ab heute eingeben</div>
+        <svg class="ik"><use href="#i-pen-line"></use></svg>
+        <div class="label" style="margin:22px 0;">Was Sie ab heute eingeben</div>
         <div class="gesagt" style="font-size:38px;">
           <span class="wer">Du bist meine Büroleiterin.</span><br>
           Schreib das Angebot für Frau Petersen.<br>
@@ -918,7 +967,7 @@ html.nofrag .reveal .fragment{opacity:1!important;visibility:visible!important;t
     <p class="takeaway">Ab hier läuft die Uhr.</p>
   </div>
   <img src="assets/illu/zettel.png" alt="" class="illu frei"
-       style="width:280px;height:280px;right:96px;bottom:42px;opacity:.92;">
+       style="width:430px;height:430px;right:110px;bottom:150px;opacity:.92;">
   <aside class="notes">
     REGIE: Diktat starten, den Satz von der nächsten Folie sprechen, absenden.
     Während es läuft in den Raum sprechen, nicht auf den Bildschirm starren.
@@ -961,16 +1010,19 @@ html.nofrag .reveal .fragment{opacity:1!important;visibility:visible!important;t
     <p class="lead" style="font-size:52px;"><em>Naja, nicht ganz meins.</em></p>
     <div class="spalten drei" style="margin-top:52px;align-items:start;">
       <div>
+        <svg class="ik" style="width:52px;height:52px;margin-bottom:22px;"><use href="#i-scale"></use></svg>
         <div class="gesagt" style="font-size:36px;">
           Zu förmlich.<br>Schreib wie zu einer Kundin.
         </div>
       </div>
       <div>
+        <svg class="ik" style="width:52px;height:52px;margin-bottom:22px;"><use href="#i-target"></use></svg>
         <div class="gesagt" style="font-size:36px;">
           Die Hälfte reicht.<br>Letzter Absatz weg.
         </div>
       </div>
       <div>
+        <svg class="ik" style="width:52px;height:52px;margin-bottom:22px;"><use href="#i-shapes"></use></svg>
         <div class="gesagt" style="font-size:36px;">
           Gib mir drei Fassungen:<br>vorsichtig, klar,<br>sehr deutlich.
         </div>
@@ -1010,7 +1062,7 @@ html.nofrag .reveal .fragment{opacity:1!important;visibility:visible!important;t
     <p class="takeaway">Wer hat gerade so ein Foto auf dem Handy?</p>
   </div>
   <img src="assets/illu/handy.png" alt="" class="illu frei"
-       style="width:265px;height:265px;right:96px;bottom:36px;opacity:.92;">
+       style="width:430px;height:430px;right:110px;bottom:150px;opacity:.92;">
   <aside class="notes">
     Dazusagen: Das Bild bleibt Ihres, nur der Text kommt vom Werkzeug. Erfundene Bilder erkennt die Kundschaft sofort.
     REGIE: In den Raum fragen. Immer vorher fragen, ob das Foto gezeigt werden darf.
@@ -1061,7 +1113,7 @@ html.nofrag .reveal .fragment{opacity:1!important;visibility:visible!important;t
     <p class="takeaway">Welche Mail schiebt hier gerade jemand vor sich her?</p>
   </div>
   <img src="assets/illu/brief.png" alt="" class="illu frei"
-       style="width:280px;height:280px;right:96px;bottom:42px;opacity:.92;">
+       style="width:430px;height:430px;right:110px;bottom:150px;opacity:.92;">
   <aside class="notes">
     Dazusagen: Diese Mails dauern nicht, weil sie schwer sind, sondern weil man sie nicht anfangen will.
     REGIE: Zuruf aus dem Raum aufnehmen und live umsetzen.
@@ -1107,7 +1159,7 @@ html.nofrag .reveal .fragment{opacity:1!important;visibility:visible!important;t
       <hr class="strich breit" style="margin:34px 0 auto;">
       <p class="prompt-gross">
         <span class="wer">Du kennst meinen Betrieb:</span>
-        <span style="color:var(--terra);">[&hairsp;drei Worte von Ihnen&hairsp;]</span>.<br>
+        <span style="opacity:.55;">[&hairsp;drei Worte von Ihnen&hairsp;]</span>.<br>
         Gib mir zehn Ideen für Instagram.<br>
         Keine allgemeinen Tipps,<br>
         nur was zu genau diesem Betrieb passt.<br>
@@ -1179,7 +1231,7 @@ html.nofrag .reveal .fragment{opacity:1!important;visibility:visible!important;t
     </p>
   </div>
   <img src="assets/illu/schloss.png" alt="" class="illu frei"
-       style="width:300px;height:300px;right:110px;bottom:56px;opacity:.9;">
+       style="width:420px;height:420px;right:110px;bottom:56px;opacity:.9;">
   <aside class="notes">
     Dazusagen: "Was in einer kostenlosen Version nie etwas zu suchen hat,
     sind Gesundheitsangaben, Personalakten und Bewerbungsunterlagen.
@@ -1200,21 +1252,23 @@ html.nofrag .reveal .fragment{opacity:1!important;visibility:visible!important;t
   <div class="buehne mittig">
     <div class="label">Und weil danach immer gefragt wird</div>
     <h2 style="margin-top:30px;">Was seit dem 2. August gilt.</h2>
-    <hr class="strich" style="margin:60px 0 66px;">
+    <hr class="strich" style="margin:56px 0 64px;">
     <div class="spalten zwei" style="align-items:start;">
       <div>
-        <h3>Sagen, dass die KI<br>geantwortet hat.</h3>
-        <p class="klein" style="margin-top:30px;">Chatfenster. Täuschend echte Bilder.</p>
+        <svg class="ik gross"><use href="#i-message-circle"></use></svg>
+        <h3 style="margin-top:34px;">Sagen, dass die KI<br>geantwortet hat.</h3>
+        <p class="klein" style="margin-top:28px;">Chatfenster.<br>Täuschend echte Bilder.</p>
       </div>
       <div>
-        <h3>Der Rest kommt<br>erst 2027.</h3>
-        <p class="klein" style="margin-top:30px;">Betrifft die wenigsten hier.</p>
+        <svg class="ik gross"><use href="#i-calendar"></use></svg>
+        <h3 style="margin-top:34px;">Der Rest kommt<br>erst 2027.</h3>
+        <p class="klein" style="margin-top:28px;">Betrifft die<br>wenigsten hier.</p>
       </div>
     </div>
     <hr class="strich breit" style="margin:auto 0 28px;">
-    <p class="takeaway" style="margin-top:auto;">Nebenbei: Sie erledigen hier gerade eine Pflicht.</p>
+    <p class="takeaway">Nebenbei: Sie erledigen hier gerade eine Pflicht.</p>
   </div>
-  <aside class="notes">
+<aside class="notes">
     Dazusagen: Bei den verschobenen Pflichten geht es um automatische
     Bewerberauswahl und Bonitätsprüfung, verlegt im Mai auf Ende 2027.
     Dazusagen: Wer solche Werkzeuge im Betrieb einsetzt, soll dafür sorgen,
@@ -1276,23 +1330,31 @@ html.nofrag .reveal .fragment{opacity:1!important;visibility:visible!important;t
   <div class="buehne">
     <div class="label">Die Frage, die niemand gern zuerst stellt</div>
     <h2 style="margin-top:26px;">Was kostet das?</h2>
-    <hr class="strich breit" style="margin:48px 0 52px;">
+    <hr class="strich breit" style="margin:52px 0 62px;">
     <div class="spalten drei" style="align-items:start;">
       <div>
-        <div class="zahl">0 €</div>
-        <p class="zahl-txt" style="max-width:440px;">Üben. Ohne Kundendaten.</p>
+        <svg class="ik gross matt"><use href="#i-sparkles"></use></svg>
+        <div class="zahl" style="margin-top:26px;">0 €</div>
+        <p class="zahl-txt">Üben.<br>Ohne Kundendaten.</p>
       </div>
       <div>
-        <div class="zahl">22 €</div>
-        <p class="zahl-txt" style="max-width:440px;">Im Monat.<br>Mit Kundendaten.</p>
+        <svg class="ik gross"><use href="#i-wallet"></use></svg>
+        <div class="zahl" style="margin-top:26px;">22 €</div>
+        <p class="zahl-txt">Im Monat.<br>Mit Kundendaten.</p>
       </div>
       <div>
-        <div class="zahl klein" style="font-size:74px;line-height:1.06;">Eine<br>Stunde</div>
-        <p class="zahl-txt" style="max-width:440px;margin-top:22px;">Rechnen Sie kurz nach.</p>
+        <svg class="ik gross"><use href="#i-clock"></use></svg>
+        <div class="zahl" style="margin-top:26px;font-size:96px;line-height:1.02;">Eine<br>Stunde</div>
+        <p class="zahl-txt" style="margin-top:22px;">Ihre eigene.<br>Rechnen Sie nach.</p>
       </div>
     </div>
+    <hr class="strich breit" style="margin:auto 0 28px;">
+    <p class="takeaway">Die teuerste Variante ist die dritte.</p>
   </div>
-  <aside class="notes">
+<aside class="notes">
+    Dazusagen: „Und die dritte Spalte ist die, die Sie heute schon zahlen,
+    nur eben in Ihrer Zeit." Das Fazit erst nach dieser Zeile stehen lassen.
+
     Mündlich, nicht auf der Folie: niemand muss heute etwas kaufen.
     Preise stehen bewusst rund. Wenn jemand nachfragt:
     ChatGPT Plus, Claude Pro und Gemini liegen alle um die 20 Euro.
@@ -1310,36 +1372,35 @@ html.nofrag .reveal .fragment{opacity:1!important;visibility:visible!important;t
   <div class="buehne">
     <div class="label">Wenn Sie heute nur eine Sache mitnehmen</div>
     <h2 style="margin-top:26px;">Ihre <span class="akz">erste Woche</span>.</h2>
-    <hr class="strich breit" style="margin:44px 0 0;">
+    <hr class="strich breit" style="margin:42px 0 0;">
     <div class="zeilen" style="margin-top:6px;">
-      <div style="opacity:.45;padding:34px 0;">
-        <div style="width:290px;flex-shrink:0;">
-          <div class="zahl klein" style="font-size:46px;">&#10003;</div>
-          <div class="label" style="margin-top:10px;">Gerade eben</div>
+      <div style="padding:34px 0;opacity:.4;">
+        <div style="width:340px;flex-shrink:0;display:flex;align-items:center;gap:30px;">
+          <svg class="ik"><use href="#i-circle-check"></use></svg>
+          <div class="label">Gerade eben</div>
         </div>
-        <h3 style="font-size:48px;text-decoration:line-through;text-decoration-thickness:3px;">
-          Herausfinden, wie es geht.</h3>
+        <h3 style="font-size:50px;text-decoration:line-through;text-decoration-thickness:3px;">Herausfinden, wie es geht.</h3>
       </div>
       <div style="padding:34px 0;">
-        <div style="width:290px;flex-shrink:0;">
-          <div class="zahl klein" style="font-size:46px;">1</div>
-          <div class="label" style="margin-top:10px;">Heute Mittag</div>
+        <div style="width:340px;flex-shrink:0;display:flex;align-items:center;gap:30px;">
+          <svg class="ik"><use href="#i-hand"></use></svg>
+          <div class="label">Heute Mittag</div>
         </div>
-        <h3 style="font-size:48px;">Die <span class="akz">lästigste</span> Aufgabe. Eine.</h3>
+        <h3 style="font-size:50px;">Die <span class="akz">lästigste</span> Aufgabe. Eine.</h3>
       </div>
       <div style="padding:34px 0;">
-        <div style="width:290px;flex-shrink:0;">
-          <div class="zahl klein" style="font-size:46px;">2</div>
-          <div class="label" style="margin-top:10px;">Diese Woche</div>
+        <div style="width:340px;flex-shrink:0;display:flex;align-items:center;gap:30px;">
+          <svg class="ik"><use href="#i-repeat"></use></svg>
+          <div class="label">Diese Woche</div>
         </div>
-        <h3 style="font-size:48px;">Dieselbe noch einmal. Und meckern.</h3>
+        <h3 style="font-size:50px;">Dieselbe noch einmal. Und meckern.</h3>
       </div>
       <div style="padding:34px 0;">
-        <div style="width:290px;flex-shrink:0;">
-          <div class="zahl klein" style="font-size:46px;">3</div>
-          <div class="label" style="margin-top:10px;">Ab dann</div>
+        <div style="width:340px;flex-shrink:0;display:flex;align-items:center;gap:30px;">
+          <svg class="ik"><use href="#i-bookmark"></use></svg>
+          <div class="label">Ab dann</div>
         </div>
-        <h3 style="font-size:48px;">Den Satz aufheben, der ging.</h3>
+        <h3 style="font-size:50px;">Den Satz aufheben, der ging.</h3>
       </div>
     </div>
     <hr class="strich breit" style="margin:0 0 26px;">

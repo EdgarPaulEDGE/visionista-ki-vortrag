@@ -51,13 +51,18 @@ sammelt alle lokalen Verweise und meldet fehlende Dateien.
 
 ## Gestaltung
 
-Die Farben kommen von der visionista-Website: Sand `#F1ECE2`, Burgund
-`#4C102E`, Terrakotta `#C0562A`. Alle Schriften liegen lokal in
-`assets/fonts/`, damit der Vortrag ohne WLAN läuft.
+Der Vortrag ist **zweifarbig**: Sand `#F1ECE2` und Burgund `#4C102E`.
+Abstufungen entstehen über Deckkraft, nicht über weitere Farben. Betonte
+Wörter tragen keine eigene Farbe, sondern mehr Gewicht.
+
+Icons kommen von Lucide und liegen als SVG-Sprite direkt in der Datei.
+Sie ersetzen keine Aussage, sie geben Listen eine Spalte, an der das Auge
+entlangläuft. Alle Schriften liegen lokal in `assets/fonts/`, damit der
+Vortrag ohne WLAN läuft.
 
 Titel, Zahlen und Beschriftungen laufen in **Avenir Next LT**, der Hausschrift
 von EDGE. Die visionista-Anmutung kommt über Farben, Logo und die gedruckte
-Karte. Betonte Wörter stehen nicht mehr kursiv, sondern in Terrakotta.
+Karte. Betonte Wörter stehen nicht mehr kursiv, sondern in Bold.
 
 Zeilenumbrüche in Überschriften sind **von Hand gesetzt**, an Sinngrenzen, und
 `text-wrap: balance` ist abgeschaltet. Eine Zeile endet nie auf einem Artikel,
