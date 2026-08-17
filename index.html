@@ -275,9 +275,9 @@ hr.strich.zart{width:100%;height:1px;background:var(--linie);margin:26px 0;opaci
 
 /* Verbotsliste: Icon und Sache auf einer Zeile, gleichmaessiger Rhythmus.
    Kein Kasten, keine Kreuze. Die Ueberschrift sagt schon, dass es Tabus sind. */
-.tabu-liste{display:flex;flex-direction:column;gap:40px;}
-.tabu-liste > div{display:flex;align-items:center;gap:30px;
-                  font-size:42px;font-weight:600;color:var(--burgund);}
+.tabu-liste{display:flex;flex-direction:column;gap:56px;}
+.tabu-liste > div{display:flex;align-items:center;gap:32px;
+                  font-size:44px;font-weight:600;color:var(--burgund);}
 
 /* ============================================================
    ICONS
@@ -335,9 +335,19 @@ svg.anstieg,svg.balken{flex-shrink:0;overflow:visible;}
    Wort, Geisterziffern, gemischte Roman-Kursiv-Headlines.
    ============================================================ */
 /* Handgezogene Ellipse um ein einzelnes Wort. */
+/* Die Ellipse braucht seitlich viel mehr Luft als ein Rechteck: sie schneidet
+   sonst durch den ersten und letzten Buchstaben, weil sie an den Ecken einfaellt.
+   Der negative Rand holt den Platz optisch zurueck, damit der Satz nicht auseinanderfaellt. */
 .oval{display:inline-block;border:3px solid var(--burgund);border-radius:50%;
-      padding:.02em .34em .08em;margin:0 .04em;}
+      padding:.10em .62em .14em;margin:0 -.18em;}
 .auf-bild .oval{border-color:#F6F1E9;}
+html.bildrand,html.bildrand body,html.bildrand .reveal-viewport{background:#14060D;}
+
+/* Bildnachweis sitzt im Rand, nicht im Textfluss: sonst kaempft er mit der
+   Mittelachse und schiebt den ganzen Block nach oben. */
+.foto-quelle{position:absolute;left:var(--rand-x);bottom:34px;z-index:4;
+             font-size:21px;font-weight:400;letter-spacing:.02em;
+             color:rgba(246,241,233,.7);}
 
 /* Riesige, fast unsichtbare Ziffer als Raumtiefe hinter dem Inhalt. */
 .geist{position:absolute;top:-30px;right:60px;z-index:0;pointer-events:none;
@@ -839,7 +849,7 @@ html.nofrag .reveal .fragment{opacity:1!important;visibility:visible!important;t
     </p>
   </div>
   <img src="assets/illu/dialog.png" alt="" class="illu frei"
-       style="width:450px;height:450px;right:104px;bottom:66px;">
+       style="width:340px;height:340px;right:96px;bottom:34px;opacity:.9;">
   <aside class="notes">
     Der Text, der von der Folie geflogen ist, gehört jetzt Ihnen:
     Links: "Man bekommt etwas Allgemeines zurück, denkt sich nett aber nicht meins,
@@ -1270,7 +1280,7 @@ html.nofrag .reveal .fragment{opacity:1!important;visibility:visible!important;t
   <div class="buehne">
     <div class="label">Und das bleibt ganz draußen</div>
     <h2 style="margin-top:26px;">Das gehört in kein KI-Fenster.</h2>
-    <hr class="strich breit" style="margin:46px 0 44px;">
+    <hr class="strich breit" style="margin:50px 0 56px;">
     <div class="spalten zwei" style="align-items:start;gap:0 96px;">
       <div style="border:none;padding:0;">
         <div class="tabu-liste">
@@ -1393,28 +1403,28 @@ html.nofrag .reveal .fragment{opacity:1!important;visibility:visible!important;t
     <h2 style="margin-top:26px;">Ihre <span class="akz">erste Woche</span>.</h2>
     <hr class="strich breit" style="margin:42px 0 0;">
     <div class="zeilen" style="margin-top:6px;">
-      <div style="padding:34px 0;opacity:.4;">
+      <div style="padding:28px 0;opacity:.4;">
         <div style="width:340px;flex-shrink:0;display:flex;align-items:center;gap:30px;">
           <svg class="ik"><use href="#i-circle-check"></use></svg>
           <div class="label">Gerade eben</div>
         </div>
         <h3 style="font-size:50px;text-decoration:line-through;text-decoration-thickness:3px;">Herausfinden, wie es geht.</h3>
       </div>
-      <div style="padding:34px 0;">
+      <div style="padding:28px 0;">
         <div style="width:340px;flex-shrink:0;display:flex;align-items:center;gap:30px;">
           <svg class="ik"><use href="#i-hand"></use></svg>
           <div class="label">Heute Mittag</div>
         </div>
         <h3 style="font-size:50px;">Die <span class="akz">lästigste</span> Aufgabe. Eine.</h3>
       </div>
-      <div style="padding:34px 0;">
+      <div style="padding:28px 0;">
         <div style="width:340px;flex-shrink:0;display:flex;align-items:center;gap:30px;">
           <svg class="ik"><use href="#i-repeat"></use></svg>
           <div class="label">Diese Woche</div>
         </div>
         <h3 style="font-size:50px;">Dieselbe noch einmal. Und meckern.</h3>
       </div>
-      <div style="padding:34px 0;">
+      <div style="padding:28px 0;">
         <div style="width:340px;flex-shrink:0;display:flex;align-items:center;gap:30px;">
           <svg class="ik"><use href="#i-bookmark"></use></svg>
           <div class="label">Ab dann</div>
@@ -1423,7 +1433,7 @@ html.nofrag .reveal .fragment{opacity:1!important;visibility:visible!important;t
       </div>
     </div>
     <hr class="strich breit" style="margin:0 0 26px;">
-    <p class="takeaway">Ein Werkzeug. Eine Aufgabe.</p>
+    <p class="takeaway" style="font-size:76px;">Ein Werkzeug. Eine Aufgabe.</p>
   </div>
 <aside class="notes">
     Dazusagen zu 1: „Nicht die wichtigste Aufgabe. Die lästigste."
@@ -1456,8 +1466,9 @@ html.nofrag .reveal .fragment{opacity:1!important;visibility:visible!important;t
     <p class="takeaway" style="margin-top:56px;text-align:center;">
       Es fehlen die Stunden.<br>Und darum ging es heute.
     </p>
-    <p class="quelle" style="margin-top:auto;color:rgba(246,241,233,.75);">Foto: Oliver Essing, Ratzeburg-Tourismus</p>
+    
   </div>
+  <p class="foto-quelle">Foto: Oliver Essing, Ratzeburg-Tourismus</p>
 <aside class="notes">
     Dazusagen: Eine gezeichnete Maus, die eine ganze Generation an den
     Briefkasten gebracht hat. Was hier fehlt, ist nicht der Ehrgeiz.
@@ -1636,6 +1647,11 @@ html.nofrag .reveal .fragment{opacity:1!important;visibility:visible!important;t
     // Schliesst die Folie mit einem Fazit ab, sitzt dieses am unteren Rand.
     // Der freie Raum liegt dann in der Mitte und wirkt als Atem,
     // statt unten als Loch zu klaffen.
+    // Ausnahme: Folien mit .mittig sind als zusammenhaengender Block
+    // gesetzt und zentriert. Dort wuerde die Verankerung das Fazit
+    // vom Rest abreissen und genau das Loch erzeugen, das sie
+    // eigentlich verhindern soll.
+    if (buehne.classList.contains('mittig')) return;
     const letzte = [...buehne.children];
     const fazit = letzte[letzte.length - 1];
     if (fazit && fazit.classList.contains('takeaway')) {
@@ -1654,6 +1670,18 @@ Reveal.initialize({
   controls:true, progress:true, slideNumber:false,
   plugins:[RevealNotes]
 }).then(() => {
+  /* Ist das Fenster nicht exakt 16:9, laesst Reveal oben und unten einen Rand.
+     In Sandfarbe sieht der auf einer Vollbildfolie wie eine abgeschnittene
+     Bildkante aus. Deshalb faerbt sich der Rand mit, sobald ein Bild die
+     ganze Folie fuellt. */
+  const rand = () => {
+    const jetzt = Reveal.getCurrentSlide();
+    const bild = jetzt && jetzt.querySelector('.vollbild');
+    document.documentElement.classList.toggle('bildrand', !!bild);
+  };
+  Reveal.on('slidechanged', rand);
+  rand();
+
   // Wortmarke und Seitenzahl in jede Folie schreiben, die Chrome zeigt.
   // Zentral statt in jeder Folie: sonst driftet die Position beim Bearbeiten auseinander.
   // Die Unterzeile nennt den aktuellen Teil, damit der Raum weiss, wo im
