@@ -55,6 +55,12 @@ Der Vortrag ist **zweifarbig**: Sand `#F1ECE2` und Burgund `#4C102E`.
 Abstufungen entstehen über Deckkraft, nicht über weitere Farben. Betonte
 Wörter tragen keine eigene Farbe, sondern mehr Gewicht.
 
+Vollbild-Folien laufen randlos über das ganze Fenster. Die Folie selbst ist
+immer 1920x1080; ist das Fenster nicht exakt 16:9, bliebe oben und unten ein
+Streifen, und ein Foto endete dort mit sichtbarer Kante. Deshalb liegen Bild und
+Abdunklung zusätzlich als feste Schichten hinter der Präsentation, gefüllt beim
+Folienwechsel. Der PDF-Export übernimmt das unverändert.
+
 Icons kommen von Lucide und liegen als SVG-Sprite direkt in der Datei.
 Sie ersetzen keine Aussage, sie geben Listen eine Spalte, an der das Auge
 entlangläuft. Alle Schriften liegen lokal in `assets/fonts/`, damit der

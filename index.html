@@ -234,6 +234,20 @@ hr.strich.zart{width:100%;height:1px;background:var(--linie);margin:26px 0;opaci
    6. VOLLBILD-FOLIEN
    ============================================================ */
 .vollbild{position:absolute;inset:0;width:1920px;height:1080px;object-fit:cover;}
+
+/* Vollbild heisst wirklich Vollbild.
+   Die Folie ist immer 1920x1080 und wird von Reveal skaliert. Ist das Fenster
+   nicht exakt 16:9, bleibt oben und unten ein Rand, und ein Foto endet dort
+   mit einer sichtbaren Kante. Deshalb liegen Bild und Schleier zusaetzlich
+   als feste Schichten hinter der Praesentation, ueber das ganze Fenster.
+   Die Folie selbst behaelt ihre Kopie, nur unsichtbar: so bleibt der
+   PDF-Export unveraendert und der Aufbau der Folie lesbar. */
+#bildschicht,#bildschleier{position:fixed;inset:0;z-index:0;pointer-events:none;
+  opacity:0;transition:opacity .25s ease;}
+#bildschicht{background-position:center;background-size:cover;background-repeat:no-repeat;}
+html.hatbild #bildschicht,html.hatbild #bildschleier{opacity:1;}
+html.hatbild .vollbild,html.hatbild .dunkel,html.hatbild .schleier{visibility:hidden;}
+.reveal{position:relative;z-index:1;}
 .schleier{position:absolute;inset:0;
   background:linear-gradient(100deg,rgba(28,8,18,.86) 0%,rgba(28,8,18,.62) 42%,rgba(28,8,18,.14) 78%);}
 .schleier.unten{background:linear-gradient(0deg,rgba(28,8,18,.9) 0%,rgba(28,8,18,.45) 40%,rgba(28,8,18,0) 72%);}
@@ -1675,11 +1689,32 @@ Reveal.initialize({
      In Sandfarbe sieht der auf einer Vollbildfolie wie eine abgeschnittene
      Bildkante aus. Deshalb faerbt sich der Rand mit, sobald ein Bild die
      ganze Folie fuellt. */
+  const schicht = document.createElement('div'); schicht.id = 'bildschicht';
+  const schleier = document.createElement('div'); schleier.id = 'bildschleier';
+  document.body.prepend(schleier); document.body.prepend(schicht);
+
   const rand = () => {
     const jetzt = Reveal.getCurrentSlide();
     const bild = jetzt && jetzt.querySelector('.vollbild');
-    // Umschaltung ueber die Variable, die die !important-Regel ausliest.
+    // Die Randfarbe laeuft ueber die Variable, weil die Regel !important traegt.
     document.documentElement.style.setProperty('--randfarbe', bild ? '#14060D' : '');
+    document.documentElement.classList.toggle('hatbild', !!bild);
+    if (!bild) return;
+    const st = getComputedStyle(bild);
+    schicht.style.backgroundImage = `url("${bild.getAttribute('src')}")`;
+    schicht.style.backgroundPosition = st.objectPosition;
+    // Den Schleier der Folie uebernehmen, damit jede Folie ihre eigene
+    // Abdunklung behaelt statt einer pauschalen.
+    const s2 = jetzt.querySelector('.dunkel,.schleier');
+    if (s2) {
+      const cs = getComputedStyle(s2);
+      // Achtung: backgroundImage liefert bei einfarbigen Schleiern den String
+      // "none", und der ist wahr. Also explizit dagegen pruefen.
+      schleier.style.background = cs.backgroundImage !== 'none'
+        ? cs.backgroundImage : cs.backgroundColor;
+    } else {
+      schleier.style.background = 'none';
+    }
   };
   Reveal.on('slidechanged', rand);
   rand();
