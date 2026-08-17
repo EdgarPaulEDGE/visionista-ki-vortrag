@@ -198,6 +198,7 @@ hr.strich.zart{width:100%;height:1px;background:var(--linie);margin:26px 0;opaci
    i-Punkte sind ein Markenzeichen, das sich mit Schrift nicht treffen laesst. */
 .marke,.wortmarke{display:flex;align-items:center;gap:20px;z-index:6;}
 .marke{position:absolute;top:46px;left:var(--rand-x);opacity:.8;}
+.marke-edge{position:absolute;top:44px;right:var(--rand-x);z-index:6;height:42px;width:auto;opacity:.9;}
 .marke img{height:28px;width:auto;display:block;}
 .wortmarke img{height:104px;width:auto;display:block;}
 .marke .sub,.wortmarke .sub{font-family:'Montserrat',sans-serif;font-size:11px;font-weight:600;
@@ -310,31 +311,65 @@ html.nofrag .reveal .fragment{opacity:1!important;visibility:visible!important;t
      FOLIE 1  Titel
      ============================================================ -->
 <section data-chrome="aus" data-slide-id="titel">
-  <div class="buehne" style="align-items:center;text-align:center;padding:74px 120px 34px;">
-    <div class="wortmarke" style="justify-content:center;">
-      <img src="assets/logos/visionista-logo.png" alt="visionista, Unternehmerinnen im Herzogtum Lauenburg">
+  <div class="buehne" style="align-items:center;text-align:center;padding:110px 120px 34px;">
+    <div style="display:flex;align-items:center;justify-content:center;gap:44px;">
+      <img src="assets/logos/visionista-logo.png" alt="visionista"
+           style="height:120px;width:auto;display:block;">
+      <span style="font-family:'Montserrat',sans-serif;font-weight:300;font-size:44px;
+                   color:var(--burgund);opacity:.45;">&times;</span>
+      <img src="assets/logos/edge-logo-dark.png" alt="EDGE Digital"
+           style="height:96px;width:auto;display:block;">
     </div>
-    <div class="label" style="margin-top:48px;">Ein Vormittag über gewonnene Abende</div>
-    <h1 style="font-size:150px;margin-top:26px;line-height:.98;">
-      KI für <span class="akz" style="font-size:158px;">Macherinnen</span>
+    <h1 style="font-size:164px;margin-top:96px;line-height:.98;">
+      KI für <span class="akz" style="font-size:172px;">Macherinnen</span>
     </h1>
-    <p class="lead" style="font-size:40px;margin-top:38px;text-align:center;max-width:1080px;">
-      Vom ersten Satz zur echten Entlastung. An dem, was heute Abend
-      noch auf Ihrem Schreibtisch liegt.
+    <p class="lead" style="font-size:46px;margin-top:44px;text-align:center;">
+      Vom ersten Satz zur echten Entlastung.
     </p>
-    <div style="margin-top:46px;display:flex;gap:56px;align-items:baseline;justify-content:center;">
-      <span class="label">19. August 2026</span>
-      <span style="color:var(--linie-satt);font-size:40px;">&middot;</span>
-      <span class="label">AWSH, Elmenhorst/Lanken</span>
-      <span style="color:var(--linie-satt);font-size:40px;">&middot;</span>
-      <span class="label">Edgar Paul-Ghazaryan &amp; Emre Erdogan</span>
-    </div>
   </div>
   <img src="assets/bilder/gruppe-haus.jpg" alt="Das visionista-Netzwerk vor dem Reetdachhaus in Kittlitz"
        style="position:absolute;left:0;bottom:0;width:1920px;height:335px;object-fit:cover;object-position:center 58%;">
+  <div style="position:absolute;left:0;bottom:0;width:1920px;height:335px;
+              background:linear-gradient(0deg,rgba(28,8,18,.55) 0%,rgba(28,8,18,.12) 60%,rgba(28,8,18,0) 100%);"></div>
+  <div style="position:absolute;left:120px;bottom:30px;z-index:3;font-family:'Montserrat',sans-serif;
+              font-size:19px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;
+              color:rgba(246,241,233,.92);">19. August 2026 &nbsp;&middot;&nbsp; AWSH, Elmenhorst</div>
+  <div style="position:absolute;right:120px;bottom:30px;z-index:3;font-family:'Montserrat',sans-serif;
+              font-size:19px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;
+              color:rgba(246,241,233,.92);">Edgar Paul-Ghazaryan &nbsp;&middot;&nbsp; Emre Erdogan</div>
   <aside class="notes">
-    Begrüßung. Kurz, warm, kein Aufwärmen. Direkt zur nächsten Folie.
+    Begrüßung. Kurz, warm, kein Aufwärmen.
     Optional: Michaela Bierschwall und Fanny Doll für die Einladung danken.
+    Dann direkt zur Vorstellungsfolie.
+  </aside>
+</section>
+
+<!-- ============================================================
+     FOLIE 2  Wer vorne steht. Pflicht am Anfang jedes Vortrags.
+     Die Folie zeigt nur Gesichter und Namen, die Vorstellung
+     selbst kommt live und ist in der Laenge variabel.
+     ============================================================ -->
+<section data-slide-id="team">
+  <div class="buehne" style="align-items:center;text-align:center;">
+    <h2 style="font-size:110px;">Moin.</h2>
+    <div style="display:flex;gap:120px;justify-content:center;align-items:flex-end;margin-top:44px;">
+      <div>
+        <img src="assets/bilder/team-edgar.png" alt="Edgar Paul-Ghazaryan"
+             style="height:540px;width:auto;display:block;margin:0 auto;">
+        <h3 style="font-size:44px;margin-top:26px;">Edgar Paul-Ghazaryan</h3>
+      </div>
+      <div>
+        <img src="assets/bilder/team-emre.png" alt="Emre Erdogan"
+             style="height:540px;width:auto;display:block;margin:0 auto;">
+        <h3 style="font-size:44px;margin-top:26px;">Emre Erdogan</h3>
+      </div>
+    </div>
+    <div class="label" style="margin-top:30px;">EDGE Digital, Lübeck</div>
+  </div>
+  <aside class="notes">
+    Vorstellung live, Länge nach Gefühl: eine Minute reicht, mehr geht.
+    Wer wir sind, was EDGE macht, warum ausgerechnet wir zwei hier stehen.
+    Ein Satz Selbstironie funktioniert hier besser als eine Referenzliste.
   </aside>
 </section>
 
@@ -350,14 +385,7 @@ html.nofrag .reveal .fragment{opacity:1!important;visibility:visible!important;t
       wie <span class="akz oval">Technik</span> geht.
     </h2>
     <hr class="strich" style="margin:54px auto 46px;">
-    <p class="lead gross fragment aufblende" style="text-align:center;">
-      Wir wissen, wie das klingt.
-    </p>
-    <p class="lead fragment aufblende" style="max-width:1220px;margin-top:34px;text-align:center;">
-      Deshalb haben wir uns vorgenommen, in den nächsten 35 Minuten
-      kein einziges Mal zu erklären, wie etwas funktioniert.
-      Wir zeigen nur, was es tut.
-    </p>
+    <p class="lead gross">Wir wissen, wie das klingt.</p>
   </div>
   <aside class="notes">
     DER wichtigste Moment des Vortrags. Ruhig sprechen, kurze Pause nach dem ersten Satz.
@@ -422,7 +450,7 @@ html.nofrag .reveal .fragment{opacity:1!important;visibility:visible!important;t
     <p class="label" style="margin-bottom:44px;">Heute Abend</p>
     <div class="riesenzahl">21:47</div>
     <hr class="strich" style="margin:64px auto 56px;">
-    <p class="lead gross fragment aufblende" style="max-width:1240px;text-align:center;">
+    <p class="lead gross" style="max-width:1240px;text-align:center;">
       Die Uhrzeit, zu der bei vielen von Ihnen<br>
       der <span class="akz">eigentliche</span> Arbeitstag anfängt.
     </p>
@@ -443,23 +471,23 @@ html.nofrag .reveal .fragment{opacity:1!important;visibility:visible!important;t
     <h2>Was um 21:47 Uhr <span class="akz">noch liegt</span>.</h2>
     <hr class="strich breit" style="margin:44px 0 0;">
     <div class="zeilen" style="margin-top:6px;">
-      <div class="fragment aufblende" style="justify-content:space-between;">
+      <div style="justify-content:space-between;">
         <span style="font-size:40px;font-weight:400;">Das Angebot für die Anfrage von letzter Woche</span>
         <span class="klein" style="font-size:40px;white-space:nowrap;">seit 6 Tagen offen</span>
       </div>
-      <div class="fragment aufblende" style="justify-content:space-between;">
+      <div style="justify-content:space-between;">
         <span style="font-size:40px;font-weight:400;">Der Beitrag für Instagram, der längst raus sein sollte</span>
         <span class="klein" style="font-size:40px;white-space:nowrap;">seit 3 Wochen geplant</span>
       </div>
-      <div class="fragment aufblende" style="justify-content:space-between;">
+      <div style="justify-content:space-between;">
         <span style="font-size:40px;font-weight:400;">Die Absage, die freundlich klingen muss</span>
         <span class="klein" style="font-size:40px;white-space:nowrap;">seit Montag im Kopf</span>
       </div>
-      <div class="fragment aufblende" style="justify-content:space-between;">
+      <div style="justify-content:space-between;">
         <span style="font-size:40px;font-weight:400;">Die Belege vom Juli</span>
         <span class="klein" style="font-size:40px;white-space:nowrap;">in der Schublade</span>
       </div>
-      <div class="fragment aufblende" style="justify-content:space-between;">
+      <div style="justify-content:space-between;">
         <span style="font-size:40px;font-weight:400;">Die Idee für den nächsten Newsletter</span>
         <span class="klein" style="font-size:40px;white-space:nowrap;">nicht vorhanden</span>
       </div>
@@ -677,7 +705,7 @@ html.nofrag .reveal .fragment{opacity:1!important;visibility:visible!important;t
           Drei Wörter, und man hofft auf einen Treffer.
         </p>
       </div>
-      <div class="fragment aufblende">
+      <div>
         <div class="label">So funktioniert es</div>
         <h3 style="margin-top:24px;font-size:48px;">
           Man redet wie mit einer<br>neuen Aushilfe.
@@ -751,7 +779,7 @@ html.nofrag .reveal .fragment{opacity:1!important;visibility:visible!important;t
       </div>
     </div>
     <hr class="strich breit" style="margin:52px 0 34px;">
-    <p class="takeaway fragment aufblende">
+    <p class="takeaway">
       Frage drei ist die, die den Unterschied macht.
     </p>
   </div>
@@ -780,7 +808,7 @@ html.nofrag .reveal .fragment{opacity:1!important;visibility:visible!important;t
           Ergebnis: höflich, korrekt, austauschbar.
         </p>
       </div>
-      <div class="fragment aufblende">
+      <div>
         <div class="label" style="margin-bottom:22px;">Was Sie ab heute eingeben</div>
         <div class="gesagt" style="font-size:40px;">
           <span class="wer">Du bist meine Büroleiterin.</span>
@@ -790,7 +818,7 @@ html.nofrag .reveal .fragment{opacity:1!important;visibility:visible!important;t
       </div>
     </div>
     <hr class="strich breit" style="margin:38px 0 24px;">
-    <p class="takeaway fragment aufblende" style="font-size:48px;">
+    <p class="takeaway" style="font-size:48px;">
       Vierzig Sekunden mehr Aufwand.<br>Eine Stunde weniger Arbeit.
     </p>
   </div>
@@ -866,7 +894,7 @@ html.nofrag .reveal .fragment{opacity:1!important;visibility:visible!important;t
         hohe Decken, Einzug am ersten Oktober. 2.400 Euro.
         Freundlich, kurz, keine Fachwörter.
       </p>
-      <p class="label fragment aufblende" style="margin-top:52px;">
+      <p class="label" style="margin-top:52px;">
         Rolle &middot; Ergebnis &middot; Wissen &middot; Form.
         Alle vier Fragen stecken in diesem einen Satz.
       </p>
@@ -933,7 +961,7 @@ html.nofrag .reveal .fragment{opacity:1!important;visibility:visible!important;t
       </div>
     </div>
     <hr class="strich breit" style="margin:48px 0 28px;">
-    <p class="takeaway fragment aufblende" style="max-width:1560px;">
+    <p class="takeaway" style="max-width:1560px;">
       Sie müssen nicht wissen, wie man richtig fragt.<br>
       Sie müssen nur sagen, was Ihnen an der Antwort nicht passt.
     </p>
@@ -989,7 +1017,7 @@ html.nofrag .reveal .fragment{opacity:1!important;visibility:visible!important;t
         eine persönliche, eine sachliche, eine mit Augenzwinkern.
         Am Ende eine echte Frage.
       </p>
-      <p class="label fragment aufblende" style="margin-top:52px;">
+      <p class="label" style="margin-top:52px;">
         Rolle &middot; Ergebnis &middot; Wissen &middot; Form.
         Alle vier Fragen stecken in diesem einen Satz.
       </p>
@@ -1076,7 +1104,7 @@ html.nofrag .reveal .fragment{opacity:1!important;visibility:visible!important;t
         Ich will sie nicht verlieren. Schreib zwei Fassungen:
         einmal freundlich mit Frist, einmal deutlich.
       </p>
-      <p class="label fragment aufblende" style="margin-top:52px;">
+      <p class="label" style="margin-top:52px;">
         Rolle &middot; Ergebnis &middot; Wissen &middot; Form.
         Alle vier Fragen stecken in diesem einen Satz.
       </p>
@@ -1213,7 +1241,7 @@ html.nofrag .reveal .fragment{opacity:1!important;visibility:visible!important;t
       </div>
     </div>
     <hr class="strich breit" style="margin:42px 0 26px;">
-    <p class="takeaway fragment aufblende" style="max-width:1620px;font-size:48px;">
+    <p class="takeaway" style="max-width:1620px;font-size:48px;">
       Nebenbei: Wer solche Werkzeuge im Betrieb einsetzt, soll dafür sorgen,
       dass die Leute damit umgehen können. Sie sitzen hier also nicht
       in einem Vortrag. Sie erledigen gerade eine Pflicht.
@@ -1301,12 +1329,9 @@ html.nofrag .reveal .fragment{opacity:1!important;visibility:visible!important;t
         </p>
       </div>
     </div>
-    <hr class="strich breit" style="margin:56px 0 30px;">
-    <p class="takeaway fragment aufblende">
-      Und niemand hier muss heute irgendetwas kaufen.
-    </p>
   </div>
   <aside class="notes">
+    Mündlich, nicht auf der Folie: niemand muss heute etwas kaufen.
     Preise stehen bewusst rund. Wenn jemand nachfragt:
     ChatGPT Plus, Claude Pro und Gemini liegen alle um die 20 Euro.
     Microsoft Copilot lohnt sich, wenn ohnehin Microsoft 365 läuft.
@@ -1340,7 +1365,7 @@ html.nofrag .reveal .fragment{opacity:1!important;visibility:visible!important;t
           </p>
         </div>
       </div>
-      <div class="fragment aufblende">
+      <div>
         <div style="width:250px;flex-shrink:0;">
           <div class="zahl klein" style="font-size:44px;">01</div>
           <div class="label" style="margin-top:10px;">Heute Mittag</div>
@@ -1352,7 +1377,7 @@ html.nofrag .reveal .fragment{opacity:1!important;visibility:visible!important;t
           </p>
         </div>
       </div>
-      <div class="fragment aufblende">
+      <div>
         <div style="width:250px;flex-shrink:0;">
           <div class="zahl klein" style="font-size:44px;">02</div>
           <div class="label" style="margin-top:10px;">Diese Woche</div>
@@ -1364,7 +1389,7 @@ html.nofrag .reveal .fragment{opacity:1!important;visibility:visible!important;t
           </p>
         </div>
       </div>
-      <div class="fragment aufblende">
+      <div>
         <div style="width:250px;flex-shrink:0;">
           <div class="zahl klein" style="font-size:44px;">03</div>
           <div class="label" style="margin-top:10px;">Ab dann</div>
@@ -1408,14 +1433,14 @@ html.nofrag .reveal .fragment{opacity:1!important;visibility:visible!important;t
         <span class="akz">Olympiagold</span> geholt hat.
       </h2>
       <hr class="strich" style="margin:44px 0 40px;">
-      <p class="lead fragment aufblende" style="font-size:40px;max-width:900px;">
+      <p class="lead" style="font-size:40px;max-width:900px;">
         Und aus Geesthacht kam eine gezeichnete Maus, die eine ganze
         Generation an den Briefkasten gebracht hat.
       </p>
-      <p class="lead fragment aufblende" style="font-size:40px;max-width:900px;margin-top:36px;">
+      <p class="lead" style="font-size:40px;max-width:900px;margin-top:36px;">
         Was hier fehlt, ist wirklich nicht der Ehrgeiz.
       </p>
-      <p class="takeaway fragment aufblende" style="margin-top:40px;font-size:48px;">
+      <p class="takeaway" style="margin-top:40px;font-size:48px;">
         Es fehlen die Stunden.<br>Und darum ging es heute.
       </p>
     </div>
@@ -1444,7 +1469,7 @@ html.nofrag .reveal .fragment{opacity:1!important;visibility:visible!important;t
     <p class="label" style="margin-bottom:44px;">Heute Abend</p>
     <div class="riesenzahl">21:47</div>
     <hr class="strich" style="margin:64px auto 56px;">
-    <p class="lead gross fragment aufblende" style="max-width:1400px;text-align:center;">
+    <p class="lead gross" style="max-width:1400px;text-align:center;">
       Das Angebot ist raus. Der Beitrag steht.<br>
       Und die Mahnung hat jemand anders <span class="akz">angefangen</span>.
     </p>
@@ -1482,9 +1507,8 @@ html.nofrag .reveal .fragment{opacity:1!important;visibility:visible!important;t
           </p>
         </div>
         <div style="border-left:1px solid var(--linie);padding-left:44px;">
-          <img src="assets/logos/edge-logo-dark.png" alt="EDGE Digital"
-               style="height:60px;width:auto;display:block;margin-bottom:16px;">
           <p class="klein" style="font-size:30px;line-height:1.55;white-space:nowrap;">
+            <strong>EDGE Digital</strong><br>
             Fischstraße 16, 23552 Lübeck<br>
             info@edge-digital.ai
           </p>
@@ -1593,6 +1617,17 @@ Reveal.initialize({
     const kennung = s.dataset.slideId || '';
     if (kennung === 'live-auftakt') teil = 2;
     if (kennung === 'uebergang-sicher') teil = 3;
+    // EDGE-Logo oben rechts, immer, auch auf Bildfolien. Nur der Titel
+    // traegt es gross in der Mitte und braucht es nicht doppelt.
+    if (s.dataset.slideId !== 'titel' && !s.querySelector('.marke-edge')) {
+      const e = document.createElement('img');
+      e.className = 'marke-edge';
+      e.alt = 'EDGE Digital';
+      e.src = s.querySelector('.auf-bild')
+        ? 'assets/logos/edge-logo-white.png'
+        : 'assets/logos/edge-logo-dark.png';
+      s.appendChild(e);
+    }
     if (s.dataset.chrome === 'aus') return;
     if (!s.querySelector('.marke')) {
       const name = ['Verstehen','Machen','Absichern'][teil-1];

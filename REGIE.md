@@ -11,7 +11,7 @@ visionista, das Unternehmerinnen-Netzwerk der WFL Herzogtum Lauenburg
 | Uhrzeit | Was |
 |---|---|
 | 08:30 bis 08:40 | Ankommen, Kaffee, Begrüßung durch die WFL |
-| 08:40 bis 09:15 | Vortrag, 35 Minuten, 28 Folien |
+| 08:40 bis 09:15 | Vortrag, 35 Minuten, 29 Folien |
 | 09:15 bis 09:25 | Fragen |
 | ab 09:25 | Sitzen bleiben, Gespräche, Networking |
 
@@ -27,32 +27,33 @@ fünf sind der Moment, die Streichliste zu benutzen.
 
 | Nach | Sie sind bei | Folie |
 |---|---|---|
-| 0 min | Begrüßung, Titel | 1 |
-| 1 min | „Zwei Männer erklären…" | 2 |
-| 3 min | 21:47 Uhr | 4 |
-| 6 min | Sie sind nicht spät dran | 6 |
-| 9 min | Die gute Nachricht | 8 |
-| 11 min | Der eine Anfängerfehler | 9 |
-| 13 min | Die vier Fragen | 10 |
-| 15 min | „Machen." | 12 |
-| **16 min** | **Demo 1, das Angebot** | 13 |
-| 17 min | Der Satz dazu, groß | 14 |
-| 19 min | Der zweite Satz | 15 |
-| **21 min** | **Demo 2, der Beitrag** | 16 |
-| **24 min** | **Demo 3, die Mail** | 18 |
-| 27 min | Drei Dinge vorab | 20 |
-| 30 min | Was bei Ihnen bleibt | 23 |
-| 32 min | Ihre erste Woche | 25 |
-| 34 min | 21:47, der Bogen schließt sich | 27 |
-| 35 min | Jetzt Sie | 28 |
+| 0 min | Titel | 1 |
+| 1 min | Moin, Vorstellung | 2 |
+| 2 min | „Zwei Männer erklären…" | 3 |
+| 4 min | 21:47 Uhr | 5 |
+| 7 min | Sie sind nicht spät dran | 7 |
+| 10 min | Die gute Nachricht | 9 |
+| 12 min | Der eine Anfängerfehler | 10 |
+| 14 min | Die vier Fragen | 11 |
+| 16 min | „Machen." | 13 |
+| **17 min** | **Demo 1, das Angebot** | 14 |
+| 18 min | Der Satz dazu, groß | 15 |
+| 20 min | Der zweite Satz | 16 |
+| **22 min** | **Demo 2, der Beitrag** | 17 |
+| **25 min** | **Demo 3, die Mail** | 19 |
+| 28 min | Drei Dinge vorab | 21 |
+| 30 min | Was bei Ihnen bleibt | 24 |
+| 32 min | Ihre erste Woche | 26 |
+| 34 min | 21:47, der Bogen schließt sich | 28 |
+| 35 min | Jetzt Sie | 29 |
 
 Jede Demo besteht aus drei Folien: die Aufgabe, der gesprochene Satz in groß,
 und darunter per Pfeil nach unten das fertige Ergebnis für den Fall,
 dass das Netz streikt.
 
-**Der wichtigste Wert in dieser Tabelle ist die 16.** Wenn Sie nach sechzehn
+**Der wichtigste Wert in dieser Tabelle ist die 17.** Wenn Sie nach siebzehn
 Minuten noch nicht bei der ersten Demo sind, war der Vorlauf zu lang.
-Dann die Folien 7 und 8 zusammenziehen und direkt weiter.
+Dann die Folien 8 und 9 zusammenziehen und direkt weiter.
 
 ---
 
@@ -65,7 +66,7 @@ So entsteht in den Live-Teilen keine Pause, in der alle auf einen Bildschirm sta
 mit dem Raum weiter, statt auf den Bildschirm zu schauen.
 
 **Emre macht.** Er sitzt am Laptop, tippt die Prompts, führt vor. Er kommentiert nur,
-wenn etwas Interessantes passiert, und übernimmt die Folien 21 bis 24
+wenn etwas Interessantes passiert, und übernimmt die Folien 22 bis 25
 (Datenschutz, Rechtslage, Kosten), weil das seine Ecke ist.
 
 Der wichtigste Effekt: Wenn Emre tippt und Edgar spricht, wirkt es wie ein Gespräch
@@ -87,8 +88,8 @@ und nicht wie ein Vortrag.
 
 **Am Vorabend**
 - [ ] Beide KI-Fenster geöffnet und angemeldet, damit vor Ort keine Anmeldung nötig ist
-- [ ] Handy-Diktat einmal durchspielen, mit genau dem Satz von Folie 14
-- [ ] `pruefung.pdf` auf beide Laptops laden, als Notnagel ohne Internet
+- [ ] Handy-Diktat einmal durchspielen, mit genau dem Satz von Folie 15
+- [ ] `visionista-ki-vortrag.pdf` auf beide Laptops laden, als Notnagel ohne Internet
 - [ ] Beide Laptops geladen, Netzteil eingepackt, HDMI-Adapter eingepackt
 
 **Vor Ort, ab 08:15**
@@ -96,25 +97,25 @@ und nicht wie ein Vortrag.
 - [ ] Mit dem Handy ein Foto vom Raum machen. Das ist der Rückfall für Demo zwei,
       falls aus dem Publikum kein Foto kommt
 - [ ] Netz testen. Wenn es hakt: die Rückfallfolien nutzen (Pfeil nach unten
-      auf den Folien 14, 17 und 19)
+      auf den Folien 15, 18 und 20)
 - [ ] Karten auf den Tischen verteilen
 
 ---
 
 ## Die drei Live-Teile
 
-### Demo 1, Folie 13: Das Angebot
+### Demo 1, Folie 14: Das Angebot
 
-Emre startet das Diktat und spricht den Satz, der auf Folie 14 groß zu sehen ist. Absenden.
+Emre startet das Diktat und spricht den Satz, der auf Folie 15 groß zu sehen ist. Absenden.
 Edgar nennt die Zeit laut, sobald das Ergebnis steht.
 
 **Nicht sagen:** „Perfekt."
 **Sagen:** „Das ist ein Entwurf. Jetzt kommt der Teil, auf den es ankommt."
-Direkt weiter zum Nachschärfen auf Folie 15 und dort einmal live meckern.
+Direkt weiter zum Nachschärfen auf Folie 16 und dort einmal live meckern.
 
 **Ohne Netz:** Pfeil nach unten, dort liegt das fertige Angebot.
 
-### Demo 2, Folie 16: Der Beitrag aus einem Foto
+### Demo 2, Folie 17: Der Beitrag aus einem Foto
 
 Edgar fragt in den Raum: „Wer hat gerade ein Foto auf dem Handy, das längst raus sollte?"
 Immer vorher fragen, ob es gezeigt werden darf.
@@ -126,7 +127,7 @@ der Raum entscheidet per Handzeichen, welche rausgeht.
 **Wenn niemand etwas hat:** das Foto vom Raum nehmen, das vorher gemacht wurde.
 **Ohne Netz:** Pfeil nach unten.
 
-### Demo 3, Folie 18: Die unangenehme Mail
+### Demo 3, Folie 19: Die unangenehme Mail
 
 Zuruf aus dem Raum aufnehmen. Beim Eintippen laut sagen:
 „Den Namen lasse ich bewusst weg, ich beschreibe nur die Lage."
@@ -153,18 +154,18 @@ die wie ein Verkauf klingt.
 
 ## Die drei Stellen, an denen der Ton alles entscheidet
 
-**Folie 2, „Zwei Männer erklären einem Raum voller Unternehmerinnen, wie Technik geht."**
+**Folie 3, „Zwei Männer erklären einem Raum voller Unternehmerinnen, wie Technik geht."**
 Ruhig, selbstbewusst, mit Pause danach. Nicht entschuldigend.
 Der Raum denkt es ohnehin. Wer es zuerst ausspricht, hat es entschärft.
 Danach ist die Skepsis raus.
 
-**Folie 7, die Lücke zwischen 53 und 37 Prozent.**
+**Folie 8, die Lücke zwischen 53 und 37 Prozent.**
 Sachlich vortragen, die Deutung sofort umdrehen. Nicht bedauern, nicht belehren.
 Der Satz, auf den es ankommt: „Die erste Haltung ist die klügere. Sie ist im Moment
 nur die teurere." Das ist ehrlich gemeint, wer ein Werkzeug erst versteht,
 macht weniger Fehler.
 
-**Folie 8, „eine gewisse Bereitschaft, Unsinn zu produzieren."**
+**Folie 9, „eine gewisse Bereitschaft, Unsinn zu produzieren."**
 Trocken bringen, nicht anpreisen. Der Witz geht auf unsere Kosten,
 und genau deshalb funktioniert er.
 
@@ -174,13 +175,14 @@ und genau deshalb funktioniert er.
 
 In dieser Reihenfolge streichen:
 
-1. Folie 26, der Achter und die Diddl-Maus (schön, aber verzichtbar)
-2. Folie 20, die Zwischenfolie vor dem Schlussteil
-3. Folie 5, die Liste auf drei Zeilen kürzen statt fünf
-4. Folie 22, die Rechtslage in zwei Sätzen sagen statt mit Folie
+1. Folie 27, der Achter und die Diddl-Maus (schön, aber verzichtbar)
+2. Folie 21, die Zwischenfolie vor dem Schlussteil
+3. Folie 6, die Liste auf drei Zeilen kürzen statt fünf
+4. Folie 23, die Rechtslage in zwei Sätzen sagen statt mit Folie
 
-**Niemals streichen:** Folie 2, die vier Fragen (Folie 10), Demo 1 mit ihrem
-Satz (Folien 13 und 14), das Nachschärfen (Folie 15), die erste Woche (Folie 25).
+**Niemals streichen:** die Vorstellung (Folie 2), „Zwei Männer" (Folie 3),
+die vier Fragen (Folie 11), Demo 1 mit ihrem Satz (Folien 14 und 15),
+das Nachschärfen (Folie 16), die erste Woche (Folie 26).
 
 ---
 
@@ -188,7 +190,7 @@ Satz (Folien 13 und 14), das Nachschärfen (Folie 15), die erste Woche (Folie 25
 
 **Kein Verkauf.** Die Charta des Netzwerks schließt Produktpräsentationen und
 kommerzielle Interessen ausdrücklich aus, und alle im Raum kennen diese Regel.
-Deshalb steht sie auch auf Folie 3, als Versprechen. Wenn jemand nach Zusammenarbeit
+Deshalb steht sie auch auf Folie 4, als Versprechen. Wenn jemand nach Zusammenarbeit
 fragt, ist das eine Frage aus dem Publikum und keine Ansage von der Bühne.
 Der Unterschied ist dem Raum sehr wohl bewusst.
 
