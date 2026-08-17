@@ -1538,54 +1538,21 @@ html.nofrag .reveal .fragment{opacity:1!important;visibility:visible!important;t
 <script src="vendor/reveal/plugin/notes/notes.js"></script>
 <script>
 /* ------------------------------------------------------------------
-   DRAMATURGIE
+   DRAMATURGIE (Emres QS vom 17.08.2026)
 
-   Eine Folie geht mit dem Titel auf, sonst nichts. Alles Inhaltliche
-   blendet danach einzeln ein: erst die Zahl mit ihrem Text, dann die
-   nächste, zuletzt das Fazit.
+   Ein Folienwechsel zeigt sofort die finale Folie. Das frühere
+   schrittweise Einblenden jedes Inhaltsblocks ist bewusst entfernt:
+   solange noch etwas aufploppen könnte, schaut der ganze Raum gebannt
+   auf die Leinwand und wartet, ob noch etwas kommt. Das bremst die
+   Dynamik des Vortrags mehr, als die Staffelung je gebracht hat.
 
-   Das steht bewusst hier als Regel und nicht als Klasse an jedem
-   einzelnen Element. Sonst wird beim nächsten Bearbeiten irgendwo
-   eine Folie vergessen und geht mit offenem ersten Punkt auf.
-
-   Kopf der Folie (bleibt stehen): alles bis einschließlich der ersten
-   Trennlinie. Danach beginnt der Inhalt.
-   Ausnahme: data-anim="aus" zeigt die Folie sofort vollständig.
+   Geblieben ist nur die Layout-Regel für das Fazit am Folienende.
 ------------------------------------------------------------------ */
 (function dramaturgie(){
   document.querySelectorAll('.reveal .slides section').forEach(folie => {
     if (folie.querySelector('section')) return;      // Eltern eines Stapels
-    if (folie.dataset.anim === 'aus') return;
     const buehne = folie.querySelector('.buehne');
     if (!buehne) return;
-
-    let imKopf = true;
-    [...buehne.children].forEach(kind => {
-      // Der Kopf endet nach der ersten Trennlinie
-      if (imKopf) {
-        if (kind.tagName === 'HR') imKopf = false;
-        return;
-      }
-      if (kind.classList.contains('quelle')) return;  // Quellenzeile steht still
-      // Trennlinien gehoeren zum Raster, nicht zum Inhalt. Als eigener Schritt
-      // waere das ein Klick, bei dem sichtbar nur eine Haarlinie aufgeht.
-      if (kind.tagName === 'HR') return;
-
-      // Spalten und Zeilen blenden ihre Kinder einzeln ein,
-      // damit die Aufzaehlung Schritt fuer Schritt entsteht
-      if (kind.classList.contains('spalten') || kind.classList.contains('zeilen')) {
-        [...kind.children].forEach(zelle => {
-          if (!zelle.classList.contains('fragment')) {
-            zelle.classList.add('fragment','aufblende');
-          }
-        });
-        return;
-      }
-      if (!kind.classList.contains('fragment')) {
-        kind.classList.add('fragment','aufblende');
-      }
-    });
-
     // Schliesst die Folie mit einem Fazit ab, sitzt dieses am unteren Rand.
     // Der freie Raum liegt dann in der Mitte und wirkt als Atem,
     // statt unten als Loch zu klaffen.
