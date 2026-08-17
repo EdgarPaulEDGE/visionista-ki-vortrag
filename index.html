@@ -91,7 +91,10 @@
    3. GRUNDGERUEST
    ============================================================ */
 html,body{background:var(--sand);}
-.reveal-viewport{background:var(--sand)!important;}
+/* Reveal setzt hier sonst Weiss, deshalb !important. Die Randfarbe laeuft
+   ueber eine Variable, sonst waere sie von aussen nicht mehr aenderbar:
+   ein !important schlaegt auch jeden Inline-Wert. */
+.reveal-viewport{background:var(--randfarbe,var(--sand))!important;}
 .reveal{font-family:'Montserrat',system-ui,sans-serif;color:var(--tinte);
         font-weight:300;font-size:32px;-webkit-font-smoothing:antialiased;}
 .reveal .slides{text-align:left;}
@@ -1675,12 +1678,8 @@ Reveal.initialize({
   const rand = () => {
     const jetzt = Reveal.getCurrentSlide();
     const bild = jetzt && jetzt.querySelector('.vollbild');
-    const farbe = bild ? '#14060D' : '#F1ECE2';
-    // Reveal setzt den Hintergrund als Inline-Stil auf das Viewport-Element.
-    // Eine CSS-Regel kommt dagegen nicht an, egal wie spezifisch sie ist.
-    const vp = document.querySelector('.reveal-viewport') || document.body;
-    vp.style.background = farbe;
-    document.documentElement.style.background = farbe;
+    // Umschaltung ueber die Variable, die die !important-Regel ausliest.
+    document.documentElement.style.setProperty('--randfarbe', bild ? '#14060D' : '');
   };
   Reveal.on('slidechanged', rand);
   rand();
