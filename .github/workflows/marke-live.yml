@@ -1,0 +1,75 @@
+# Briefkasten-Zusteller fuer den Marken-Reveal (Folie "Ihre Marke").
+#
+# Die Praesentation kann die vier Bilder nicht selbst erzeugen; Claude
+# generiert sie und uebergibt hier nur die vier Download-URLs. Dieser
+# Workflow laedt sie herunter und committet sie nach assets/live/ --
+# auf genau dem Branch, von dem er gestartet wurde. Liegt das auf dem
+# Pages-Branch, tauchen die Bilder kurz darauf auf der Live-URL auf,
+# wo Folie 29 alle vier Sekunden nachschaut.
+#
+# Eine leere URL laesst das jeweilige Feld aus (die Folie dimmt es).
+name: Marken-Reveal befuellen
+
+on:
+  workflow_dispatch:
+    inputs:
+      logo:
+        description: "URL fuer logo.png"
+        required: false
+        default: ""
+      farben:
+        description: "URL fuer farben.png"
+        required: false
+        default: ""
+      post:
+        description: "URL fuer post.png"
+        required: false
+        default: ""
+      schild:
+        description: "URL fuer schild.png"
+        required: false
+        default: ""
+
+permissions:
+  contents: write
+
+jobs:
+  zustellen:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Bilder laden
+        env:
+          URL_LOGO: ${{ inputs.logo }}
+          URL_FARBEN: ${{ inputs.farben }}
+          URL_POST: ${{ inputs.post }}
+          URL_SCHILD: ${{ inputs.schild }}
+        run: |
+          mkdir -p assets/live
+          laden() {
+            local name="$1" url="$2"
+            [ -z "$url" ] && { echo "::notice::$name uebersprungen (keine URL)"; return 0; }
+            curl -fSL --retry 3 --retry-delay 2 -o "assets/live/$name.png" "$url"
+            # Nur echte Bilder zustellen -- eine HTML-Fehlerseite soll
+            # nicht als logo.png auf der Folie landen.
+            file --mime-type "assets/live/$name.png" | grep -q 'image/' \
+              || { echo "::error::$name ist kein Bild"; rm -f "assets/live/$name.png"; return 1; }
+          }
+          fehler=0
+          laden logo   "$URL_LOGO"   || fehler=1
+          laden farben "$URL_FARBEN" || fehler=1
+          laden post   "$URL_POST"   || fehler=1
+          laden schild "$URL_SCHILD" || fehler=1
+          ls -lh assets/live/
+          # Teillieferung ist okay -- die Folie dimmt fehlende Felder.
+          exit 0
+
+      - name: Committen
+        run: |
+          git config user.name "marke-live-bot"
+          git config user.email "actions@github.com"
+          git add assets/live/*.png || true
+          git diff --cached --quiet && { echo "nichts zu committen"; exit 0; }
+          git commit -m "Marken-Reveal: Bilder zustellen"
+          git push
