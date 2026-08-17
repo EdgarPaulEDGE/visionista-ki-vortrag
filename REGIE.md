@@ -43,12 +43,13 @@ fünf sind der Moment, die Streichliste zu benutzen.
 | **24 min** | **Demo 3, die Mail** | 20 |
 | **26 min** | **Zugabe: Zehn Ideen** | 22 |
 | 29 min | Drei Dinge vorab | 23 |
-| 31 min | Was bei Ihnen bleibt | 26 |
-| 32 min | Ihre erste Woche | 28 |
-| 33,5 min | 21:47, der Bogen schließt sich | 30 |
-| **34 min** | **Zugabe: Ihre Marke** | 31 |
-| 34,5 min | Das sind Sie | 32 |
-| 35 min | Jetzt Sie | 33 |
+| 30 min | Die Lage, nicht die Person | 24 |
+| 31 min | Das gehört in kein KI-Fenster | 25 |
+| 32 min | Was bei Ihnen bleibt | 27 |
+| 33 min | Ihre erste Woche | 28 |
+| 34 min | Ratzeburg, es fehlen die Stunden | 29 |
+| **34,5 min** | **Zugabe: Ihre Marke** | 31 |
+| 35 min | Das sind Sie, jetzt Sie | 32, 33 |
 
 **Der wichtigste Wert in dieser Tabelle ist die 18.** Wenn Sie nach achtzehn
 Minuten noch nicht bei der ersten Demo sind, war der Vorlauf zu lang.
@@ -66,7 +67,7 @@ mit dem Raum weiter, statt auf den Bildschirm zu schauen.
 
 **Emre macht.** Er sitzt am Laptop, tippt die Prompts, führt vor. Er kommentiert nur,
 wenn etwas Interessantes passiert, und übernimmt die Folien 24 bis 27
-(Datenschutz, Rechtslage, Kosten), weil das seine Ecke ist.
+(Datenschutz, Tabuliste, Rechtslage), weil das seine Ecke ist.
 
 Der wichtigste Effekt: Wenn Emre tippt und Edgar spricht, wirkt es wie ein Gespräch
 und nicht wie ein Vortrag.

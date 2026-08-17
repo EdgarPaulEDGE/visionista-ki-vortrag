@@ -273,6 +273,12 @@ hr.strich.zart{width:100%;height:1px;background:var(--linie);margin:26px 0;opaci
 /* Frei in die Folie gesetzt, ohne den Textfluss zu stoeren. */
 .illu.frei{position:absolute;z-index:0;pointer-events:none;}
 
+/* Verbotsliste: Icon und Sache auf einer Zeile, gleichmaessiger Rhythmus.
+   Kein Kasten, keine Kreuze. Die Ueberschrift sagt schon, dass es Tabus sind. */
+.tabu-liste{display:flex;flex-direction:column;gap:40px;}
+.tabu-liste > div{display:flex;align-items:center;gap:30px;
+                  font-size:42px;font-weight:600;color:var(--burgund);}
+
 /* ============================================================
    ICONS
    Lucide, als Sprite eingebettet. Sie ersetzen keine Aussage,
@@ -351,6 +357,11 @@ html.nofrag .reveal .fragment{opacity:1!important;visibility:visible!important;t
 <body>
 
 <svg xmlns="http://www.w3.org/2000/svg" style="display:none" aria-hidden="true">
+  <symbol id="i-contact" viewBox="0 0 24 24"><path d="M16 2v2" /> <path d="M7 21v-2a2 2 0 012-2h6a2 2 0 012 2v2" /> <path d="M8 2v2" /> <circle cx="12" cy="10" r="3" /> <rect x="3" y="3" width="18" height="18" rx="2" /></symbol>
+  <symbol id="i-folder-lock" viewBox="0 0 24 24"><rect width="8" height="5" x="14" y="17" rx="1" /> <path d="M10 20H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h3.9a2 2 0 0 1 1.69.9l.81 1.2a2 2 0 0 0 1.67.9H20a2 2 0 0 1 2 2v2.5" /> <path d="M20 17v-2a2 2 0 1 0-4 0v2" /></symbol>
+  <symbol id="i-heart-pulse" viewBox="0 0 24 24"><path d="M2 9.5a5.5 5.5 0 0 1 9.591-3.676.56.56 0 0 0 .818 0A5.49 5.49 0 0 1 22 9.5c0 2.29-1.5 4-3 5.5l-5.492 5.313a2 2 0 0 1-3 .019L5 15c-1.5-1.5-3-3.2-3-5.5" /> <path d="M3.22 13H9.5l.5-1 2 4.5 2-7 1.5 3.5h5.27" /></symbol>
+  <symbol id="i-credit-card" viewBox="0 0 24 24"><rect width="20" height="14" x="2" y="5" rx="2" /> <line x1="2" x2="22" y1="10" y2="10" /></symbol>
+  <symbol id="i-list" viewBox="0 0 24 24"><path d="M3 5h.01" /> <path d="M3 12h.01" /> <path d="M3 19h.01" /> <path d="M8 5h13" /> <path d="M8 12h13" /> <path d="M8 19h13" /></symbol>
   <symbol id="i-file-text" viewBox="0 0 24 24"><path d="M6 22a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h8a2.4 2.4 0 0 1 1.704.706l3.588 3.588A2.4 2.4 0 0 1 20 8v12a2 2 0 0 1-2 2z" /> <path d="M14 2v5a1 1 0 0 0 1 1h5" /> <path d="M10 9H8" /> <path d="M16 13H8" /> <path d="M16 17H8" /></symbol>
   <symbol id="i-megaphone" viewBox="0 0 24 24"><path d="M11 6a13 13 0 0 0 8.4-2.8A1 1 0 0 1 21 4v12a1 1 0 0 1-1.6.8A13 13 0 0 0 11 14H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2z" /> <path d="M6 14a12 12 0 0 0 2.4 7.2 2 2 0 0 0 3.2-2.4A8 8 0 0 1 10 14" /> <path d="M8 6v8" /></symbol>
   <symbol id="i-mail" viewBox="0 0 24 24"><path d="m22 7-8.991 5.727a2 2 0 0 1-2.009 0L2 7" /> <rect x="2" y="4" width="20" height="16" rx="2" /></symbol>
@@ -708,14 +719,17 @@ html.nofrag .reveal .fragment{opacity:1!important;visibility:visible!important;t
           <rect x="0" y="186" width="370" height="46" fill="#4C102E" opacity=".38"/>
           <text class="chart-zahl" x="392" y="224">37 %</text>
 
-          <!-- Die Differenz selbst markieren: senkrecht vom Ende des kürzeren
-               Balkens hoch, das Label steht frei daneben. -->
-          <line x1="370" y1="46" x2="370" y2="240" stroke="#4C102E"
-                stroke-opacity=".4" stroke-dasharray="6 6"/>
-          <path d="M382 132 L520 132" stroke="#4C102E" stroke-width="2.5"/>
-          <path d="M520 132 l-9 -6 v12 z" fill="#4C102E"/>
-          <path d="M382 132 l9 -6 v12 z" fill="#4C102E"/>
-          <text class="chart-klein" x="540" y="139">16 Punkte Abstand</text>
+          <!-- Die Differenz misst genau die Strecke zwischen den beiden
+               Balkenenden. Beide Enden bekommen eine Hilfslinie, sonst haengt
+               der Pfeil im Raum und misst optisch nichts. -->
+          <line x1="370" y1="180" x2="370" y2="118" stroke="#4C102E"
+                stroke-opacity=".35" stroke-dasharray="5 5"/>
+          <line x1="530" y1="104" x2="530" y2="118" stroke="#4C102E"
+                stroke-opacity=".35" stroke-dasharray="5 5"/>
+          <path d="M370 132 L530 132" stroke="#4C102E" stroke-width="2"/>
+          <path d="M370 132 l10 -6 v12 z" fill="#4C102E"/>
+          <path d="M530 132 l-10 -6 v12 z" fill="#4C102E"/>
+          <text class="chart-klein" x="552" y="139">16 Punkte</text>
         </svg>
         <p class="klein" style="margin-top:24px;">nutzen KI im Beruf.</p>
       </div>
@@ -771,7 +785,7 @@ html.nofrag .reveal .fragment{opacity:1!important;visibility:visible!important;t
         </svg>
       </div>
       <div>
-        <div class="zahl klein">+15 zu +8</div>
+        <div class="zahl klein" style="font-weight:700;">+15 zu +8</div>
         <p class="zahl-txt" style="max-width:620px;">
           Frauen, die anfangen.<br>Fast doppelt so viele<br>wie Männer.
         </p>
@@ -1246,6 +1260,44 @@ html.nofrag .reveal .fragment{opacity:1!important;visibility:visible!important;t
 </section>
 
 <!-- ============================================================
+     Was gar nicht erst hineingehoert. Die Folie davor zeigt, WIE man
+     umschreibt; diese zeigt, WAS auch umgeschrieben nichts zu suchen hat.
+     ============================================================ -->
+<section data-slide-id="tabu">
+  <div class="buehne">
+    <div class="label">Und das bleibt ganz draußen</div>
+    <h2 style="margin-top:26px;">Das gehört in kein KI-Fenster.</h2>
+    <hr class="strich breit" style="margin:46px 0 44px;">
+    <div class="spalten zwei" style="align-items:start;gap:0 96px;">
+      <div style="border:none;padding:0;">
+        <div class="tabu-liste">
+          <div><svg class="ik"><use href="#i-contact"></use></svg>Namen und Adressen</div>
+          <div><svg class="ik"><use href="#i-folder-lock"></use></svg>Personalakten, Bewerbungen</div>
+          <div><svg class="ik"><use href="#i-heart-pulse"></use></svg>Krankmeldungen</div>
+        </div>
+      </div>
+      <div style="border-left:1px solid var(--linie);padding-left:96px;">
+        <div class="tabu-liste">
+          <div><svg class="ik"><use href="#i-file-text"></use></svg>Verträge und Konditionen</div>
+          <div><svg class="ik"><use href="#i-credit-card"></use></svg>Kontodaten</div>
+          <div><svg class="ik"><use href="#i-list"></use></svg>Kundenlisten</div>
+        </div>
+      </div>
+    </div>
+    <hr class="strich breit" style="margin:auto 0 26px;">
+    <p class="takeaway">„Frau B." reicht. Der Text wird genauso gut.</p>
+  </div>
+  <aside class="notes">
+    Dazusagen: „Umschreiben löst fast alles. Sechs Dinge bleiben trotzdem
+    draußen, egal wie gut man sie umschreibt." Kurz halten, nicht dozieren.
+    Wenn jemand fragt, wo die Daten landen: die Anbieter sind amerikanisch,
+    und der Cloud Act erlaubt US-Behörden den Zugriff auch auf Server in
+    Europa. Deshalb ist das hier keine Frage des Bezahltarifs.
+    Das Positive zuletzt: der Satz „Frau B." ist die ganze Technik.
+  </aside>
+</section>
+
+<!-- ============================================================
      FOLIE 18  Die Rechtslage in einem Satz
      ============================================================ -->
 <section data-slide-id="ai-act">
@@ -1326,43 +1378,7 @@ html.nofrag .reveal .fragment{opacity:1!important;visibility:visible!important;t
 <!-- ============================================================
      FOLIE 20  Was es kostet
      ============================================================ -->
-<section data-slide-id="kosten">
-  <div class="buehne">
-    <div class="label">Die Frage, die niemand gern zuerst stellt</div>
-    <h2 style="margin-top:26px;">Was kostet das?</h2>
-    <hr class="strich breit" style="margin:52px 0 62px;">
-    <div class="spalten drei" style="align-items:start;">
-      <div>
-        <svg class="ik gross matt"><use href="#i-sparkles"></use></svg>
-        <div class="zahl" style="margin-top:26px;">0 €</div>
-        <p class="zahl-txt">Üben.<br>Ohne Kundendaten.</p>
-      </div>
-      <div>
-        <svg class="ik gross"><use href="#i-wallet"></use></svg>
-        <div class="zahl" style="margin-top:26px;">22 €</div>
-        <p class="zahl-txt">Im Monat.<br>Mit Kundendaten.</p>
-      </div>
-      <div>
-        <svg class="ik gross"><use href="#i-clock"></use></svg>
-        <div class="zahl" style="margin-top:26px;font-size:96px;line-height:1.02;">Eine<br>Stunde</div>
-        <p class="zahl-txt" style="margin-top:22px;">Ihre eigene.<br>Rechnen Sie nach.</p>
-      </div>
-    </div>
-    <hr class="strich breit" style="margin:auto 0 28px;">
-    <p class="takeaway">Die teuerste Variante ist die dritte.</p>
-  </div>
-<aside class="notes">
-    Dazusagen: „Und die dritte Spalte ist die, die Sie heute schon zahlen,
-    nur eben in Ihrer Zeit." Das Fazit erst nach dieser Zeile stehen lassen.
 
-    Mündlich, nicht auf der Folie: niemand muss heute etwas kaufen.
-    Preise stehen bewusst rund. Wenn jemand nachfragt:
-    ChatGPT Plus, Claude Pro und Gemini liegen alle um die 20 Euro.
-    Microsoft Copilot lohnt sich, wenn ohnehin Microsoft 365 läuft.
-    Wer besonderen Wert auf europäische Anbieter legt: Mistral aus Frankreich.
-    Keine Empfehlung aussprechen, sonst wird es ein Verkaufsgespräch.
-  </aside>
-</section>
 
 <!-- ============================================================
      FOLIE 21  Die erste Woche
@@ -1423,26 +1439,23 @@ html.nofrag .reveal .fragment{opacity:1!important;visibility:visible!important;t
      FOLIE 22  Regionaler Schluss
      Kompliment an den Raum, mit belegbaren lokalen Fakten.
      ============================================================ -->
-<section data-slide-id="region">
-  <div class="buehne" style="flex-direction:row;align-items:center;gap:88px;">
-    <div style="flex:1;">
-      <h2 style="font-size:70px;">
-        Aus diesem Kreis kam<br>
-        ein Achter, der zweimal<br>
-        <span class="akz">Olympiagold</span> geholt hat.
-      </h2>
-      <hr class="strich" style="margin:44px 0 40px;">
-      <p class="lead fragment aufblende" style="font-size:44px;">Und aus Geesthacht kam die Diddl-Maus.</p>
-      <p class="takeaway" style="margin-top:40px;font-size:48px;">
-        Es fehlen die Stunden.<br>Und darum ging es heute.
-      </p>
-    </div>
-    <div style="width:600px;flex-shrink:0;">
-      <img src="assets/bilder/reetdachhaus.jpg" alt="Das Reetdachhaus in Kittlitz, Gründungsort des Netzwerks"
-           class="bogen" style="width:600px;height:790px;object-position:center 55%;">
-    </div>
+<section data-slide-id="region" data-chrome="aus" data-anim="aus">
+  <img src="assets/bilder/ratzeburg.jpg" alt="Ratzeburg von oben, die Inselstadt im Kreis Herzogtum Lauenburg"
+       class="vollbild" style="object-position:center 46%;">
+  <div class="dunkel" style="background:linear-gradient(180deg,rgba(30,10,20,.82) 0%,rgba(30,10,20,.62) 46%,rgba(30,10,20,.30) 100%);"></div>
+  <div class="buehne mittig auf-bild" style="align-items:center;text-align:center;">
+    <h2 style="font-size:74px;max-width:1420px;">
+      Aus diesem Kreis kam ein Achter,<br>
+      der zweimal <span class="akz">Olympiagold</span> geholt hat.
+    </h2>
+    <hr class="strich" style="margin:46px auto 40px;">
+    <p class="lead gross" style="text-align:center;">Und aus Geesthacht kam die Diddl-Maus.</p>
+    <p class="takeaway" style="margin-top:56px;text-align:center;">
+      Es fehlen die Stunden.<br>Und darum ging es heute.
+    </p>
+    <p class="quelle" style="margin-top:auto;color:rgba(246,241,233,.75);">Foto: Oliver Essing, Ratzeburg-Tourismus</p>
   </div>
-  <aside class="notes">
+<aside class="notes">
     Dazusagen: Eine gezeichnete Maus, die eine ganze Generation an den
     Briefkasten gebracht hat. Was hier fehlt, ist nicht der Ehrgeiz.
     Ratzeburger Achter unter Karl Adam: Olympiasieg 1960 in Rom und 1968 in Mexiko.
@@ -1563,7 +1576,7 @@ html.nofrag .reveal .fragment{opacity:1!important;visibility:visible!important;t
              style="width:150px;height:150px;display:block;">
         <div>
           <div class="label" style="margin-bottom:10px;">Zum Nachlesen</div>
-          <p class="klein" style="font-size:34px;line-height:1.5;max-width:400px;">
+          <p class="klein" style="font-size:32px;line-height:1.5;max-width:none;white-space:nowrap;">
             Alle Sätze.<br>Kein Konto nötig.
           </p>
         </div>
@@ -1576,7 +1589,8 @@ html.nofrag .reveal .fragment{opacity:1!important;visibility:visible!important;t
         </div>
       </div>
       <p class="quelle" style="margin-top:28px;">
-        Fotos: Franzi Schädel Fotografie und Bildarchiv der WFL.
+        Fotos: Franzi Schädel Fotografie und Bildarchiv der WFL.<br>
+        Luftbild Ratzeburg: Oliver Essing, Ratzeburg-Tourismus.<br>
         Die Zeichnungen sind mit KI entstanden.
       </p>
     </div>

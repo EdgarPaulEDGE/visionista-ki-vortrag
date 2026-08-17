@@ -123,9 +123,15 @@ oder reale Personen im Bild auftauchen.
 
 **„Was kostet das jetzt wirklich?"**
 
-Zum Ausprobieren nichts. Sobald echte Kundendaten im Spiel sind,
-rund 20 bis 25 Euro im Monat pro Person. Bei mehreren Leuten im Betrieb
-rechnet man dieselbe Größenordnung pro Kopf.
+Zum Ausprobieren nichts. Für den täglichen Einsatz liegen die gängigen Anbieter
+in derselben Größenordnung, rund zwanzig bis fünfundzwanzig Euro im Monat pro
+Person. Wichtig ist die Klarstellung dahinter: **Der Bezahltarif ist keine
+Erlaubnis für Kundendaten.** Die großen Anbieter sind amerikanische Unternehmen,
+und der US-Cloud-Act erlaubt amerikanischen Behörden den Zugriff auf deren Daten,
+auch wenn die Server in Europa stehen. Deshalb bleibt die Regel dieselbe, egal
+was man zahlt: die Lage beschreiben, nicht die Person.
+Die Preisfrage kommt im Vortrag bewusst nicht vor, die Charta verbietet Verkauf.
+Wenn sie gestellt wird, kurz und sachlich antworten und weitergehen.
 
 ---
 
