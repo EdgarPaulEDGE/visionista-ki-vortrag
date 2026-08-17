@@ -69,7 +69,9 @@ jobs:
         run: |
           git config user.name "marke-live-bot"
           git config user.email "actions@github.com"
-          git add assets/live/*.png || true
+          # -f, weil .gitignore assets/live/*.png fuer die lokale Fassung
+          # ausblendet -- fuer die Live-Zustellung sollen sie ins Repo.
+          git add -f assets/live/*.png || true
           git diff --cached --quiet && { echo "nichts zu committen"; exit 0; }
           git commit -m "Marken-Reveal: Bilder zustellen"
           git push
