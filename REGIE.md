@@ -11,7 +11,7 @@ visionista, das Unternehmerinnen-Netzwerk der WFL Herzogtum Lauenburg
 | Uhrzeit | Was |
 |---|---|
 | 08:30 bis 08:40 | Ankommen, Kaffee, Begrüßung durch die WFL |
-| 08:40 bis 09:15 | Vortrag, 35 Minuten, 33 Folien |
+| 08:40 bis 09:15 | Vortrag, 35 Minuten, 31 Folien |
 | 09:15 bis 09:25 | Fragen |
 | ab 09:25 | Sitzen bleiben, Gespräche, Networking |
 
@@ -33,27 +33,26 @@ fünf sind der Moment, die Streichliste zu benutzen.
 | 3 min | „Zwei Männer erklären…" | 4 |
 | 5 min | 21:47 Uhr | 6 |
 | 8 min | Sie sind nicht spät dran | 8 |
-| 11 min | Die gute Nachricht | 10 |
-| 13 min | Der eine Anfängerfehler | 11 |
-| 15 min | Die vier Fragen | 12 |
-| 17 min | „Machen." | 14 |
-| **18 min** | **Demo 1, das Angebot** | 15 |
-| 20 min | Der zweite Satz | 17 |
-| **22 min** | **Demo 2, der Beitrag** | 18 |
-| **24 min** | **Demo 3, die Mail** | 20 |
-| **26 min** | **Zugabe: Zehn Ideen** | 22 |
-| 29 min | Drei Dinge vorab | 23 |
-| 30 min | Die Lage, nicht die Person | 24 |
-| 31 min | Das gehört in kein KI-Fenster | 25 |
-| 32 min | Was bei Ihnen bleibt | 27 |
-| 33 min | Ihre erste Woche | 28 |
-| 34 min | Ratzeburg, es fehlen die Stunden | 29 |
-| **34,5 min** | **Zugabe: Ihre Marke** | 31 |
-| 35 min | Das sind Sie, jetzt Sie | 32, 33 |
+| 10 min | Der eine Anfängerfehler | 9 |
+| 12 min | Die vier Fragen | 10 |
+| 15 min | „Machen." | 12 |
+| **16 min** | **Demo 1, das Angebot** | 13 |
+| 19 min | Der zweite Satz | 15 |
+| **21 min** | **Demo 2, der Beitrag** | 16 |
+| **23 min** | **Demo 3, die Mail** | 18 |
+| **26 min** | **Zugabe: Zehn Ideen** | 20 |
+| 29 min | Drei Dinge vorab | 21 |
+| 30 min | Die Lage, nicht die Person | 22 |
+| 31 min | Das gehört in kein KI-Fenster | 23 |
+| 32 min | Was bei Ihnen bleibt | 25 |
+| 33 min | Ihre erste Woche | 26 |
+| 34 min | Ratzeburg, an Stunden fehlt es | 27 |
+| **34,5 min** | **Zugabe: Ihre Marke** | 29 |
+| 35 min | Das sind Sie, jetzt Sie | 30, 31 |
 
-**Der wichtigste Wert in dieser Tabelle ist die 18.** Wenn Sie nach achtzehn
+**Der wichtigste Wert in dieser Tabelle ist die 16.** Wenn Sie nach sechzehn
 Minuten noch nicht bei der ersten Demo sind, war der Vorlauf zu lang.
-Dann die Folien 9 und 10 zusammenziehen und direkt weiter.
+Dann die Folien 8 und 9 zusammenziehen und direkt weiter.
 
 ---
 
@@ -88,7 +87,7 @@ und nicht wie ein Vortrag.
 
 **Am Vorabend**
 - [ ] Beide KI-Fenster geöffnet und angemeldet, damit vor Ort keine Anmeldung nötig ist
-- [ ] Handy-Diktat einmal durchspielen, mit genau dem Satz von Folie 16
+- [ ] Handy-Diktat einmal durchspielen, mit genau dem Satz von Folie 14
 - [ ] `visionista-ki-vortrag.pdf` auf beide Laptops laden, als Notnagel ohne Internet
 - [ ] Beide Laptops geladen, Netzteil eingepackt, HDMI-Adapter eingepackt
 
@@ -104,18 +103,18 @@ und nicht wie ein Vortrag.
 
 ## Die drei Live-Teile
 
-### Demo 1, Folie 15: Das Angebot
+### Demo 1, Folie 13: Das Angebot
 
-Emre startet das Diktat und spricht den Satz, der auf Folie 16 groß zu sehen ist. Absenden.
+Emre startet das Diktat und spricht den Satz, der auf Folie 14 groß zu sehen ist. Absenden.
 Edgar nennt die Zeit laut, sobald das Ergebnis steht.
 
 **Nicht sagen:** „Perfekt."
 **Sagen:** „Das ist ein Entwurf. Jetzt kommt der Teil, auf den es ankommt."
-Direkt weiter zum Nachschärfen auf Folie 17 und dort einmal live meckern.
+Direkt weiter zum Nachschärfen auf Folie 15 und dort einmal live meckern.
 
 **Ohne Netz:** mündlich auflösen und weiter.
 
-### Demo 2, Folie 18: Der Beitrag aus einem Foto
+### Demo 2, Folie 16: Der Beitrag aus einem Foto
 
 Edgar fragt in den Raum: „Wer hat gerade ein Foto auf dem Handy, das längst raus sollte?"
 Immer vorher fragen, ob es gezeigt werden darf.
@@ -126,7 +125,7 @@ der Raum entscheidet per Handzeichen, welche rausgeht.
 
 **Wenn niemand etwas hat:** das Foto vom Raum nehmen, das vorher gemacht wurde.
 
-### Demo 3, Folie 20: Die unangenehme Mail
+### Demo 3, Folie 18: Die unangenehme Mail
 
 Zuruf aus dem Raum aufnehmen. Beim Eintippen laut sagen:
 „Den Namen lasse ich bewusst weg, ich beschreibe nur die Lage."
@@ -138,14 +137,14 @@ Das ist gleichzeitig die Überleitung zur Datenschutzfolie.
 
 ## Die zwei Zugaben
 
-**Zehn Ideen gegen den Raum (Folie 22, nach der Mail-Demo).** Eine Teilnehmerin
+**Zehn Ideen gegen den Raum (Folie 20, nach der Mail-Demo).** Eine Teilnehmerin
 nennt ihren Betrieb in drei Worten, Emre setzt sie in den Stammsatz auf der
 Folie ein. Edgar liest die zehn Ideen einzeln vor, der Raum hebt die Hand bei
 „würde ich posten". Nicht kommentieren. Ist eine Idee Quatsch: „Die streichen
 wir", das ist die Meckern-Lektion live. Pointe: „Wie viele davon hätten Sie
 heute Morgen um sechs gehabt?" Meldet sich niemand, wird die Gastgeberin eingetippt. Budget: zweieinhalb Minuten.
 
-**Ihre Marke (Folie 31, der große Bogen).** Der Betrieb aus Minute zwei
+**Ihre Marke (Folie 29, der große Bogen).** Der Betrieb aus Minute zwei
 wird aus drei Zurufen gebaut, jede gibt ein Teil: eine sagt WAS
 (Café, Werkstatt, Laden), die nächste WO, die dritte den NAMEN.
 Die absurde Kombination ist gewollt, sie gehört dem ganzen Raum und
@@ -158,7 +157,7 @@ gefeuerter Satz wurde verworfen und neu gefeuert, Mehrkosten dreißig
 Sekunden, der Ablauf hat es geschluckt. 60 Sekunden für alle vier parallel. Framing wegen der Charta: „Ein erster Aufschlag, und
 das können Sie ab morgen selbst." Funktioniert nur lokal, nicht über die Web-Adresse.
 
-**Das sind Sie (Folie 32, das Abschiedsbild).** Das Raumfoto vom Anfang wird
+**Das sind Sie (Folie 30, das Abschiedsbild).** Das Raumfoto vom Anfang wird
 während der Fragerunde zur Strichzeichnung im Stil des Decks. Emre stößt die
 Umwandlung nach Demo 2 an (dauert etwa eine Minute, der genaue Satz steht in
 den Sprechernotizen der Folie), gezeigt wird im Werkzeugfenster. Geprobt am
@@ -188,15 +187,15 @@ Ruhig, selbstbewusst, mit Pause danach. Nicht entschuldigend.
 Der Raum denkt es ohnehin. Wer es zuerst ausspricht, hat es entschärft.
 Danach ist die Skepsis raus.
 
-**Folie 8, die Lücke zwischen 53 und 37 Prozent.**
-Sachlich vortragen, die Deutung sofort umdrehen. Nicht bedauern, nicht belehren.
-Der Satz, auf den es ankommt: „Die erste Haltung ist die klügere. Sie ist im Moment
-nur die teurere." Das ist ehrlich gemeint, wer ein Werkzeug erst versteht,
-macht weniger Fehler.
+**Folie 8, „Sie sind nicht spät dran."**
+Sachlich vortragen, ohne Drohton. Die Zahl ist keine Mahnung, sondern eine
+Entlastung: mehr als die Hälfte hat angefangen, niemand ist zu spät.
 
-**Folie 9, „eine gewisse Bereitschaft, Unsinn zu produzieren."**
-Trocken bringen, nicht anpreisen. Der Witz geht auf unsere Kosten,
-und genau deshalb funktioniert er.
+**Der Gender-Gap ist bewusst NICHT im Vortrag.** Zwei Männer, die einem Raum
+voller Unternehmerinnen vorrechnen, dass Frauen seltener KI nutzen, spalten den
+Raum, statt ihn mitzunehmen. Wenn die Frage von selbst kommt: kurz sagen, dass
+es Unterschiede in der Nutzung gibt, dass sie nichts mit Können zu tun haben,
+und weitergehen. Keine Zahlen, keine Folie, keine Debatte.
 
 ---
 
@@ -204,14 +203,14 @@ und genau deshalb funktioniert er.
 
 In dieser Reihenfolge streichen:
 
-1. Folie 29, der Achter und die Diddl-Maus (schön, aber verzichtbar)
-2. Folie 23, die Zwischenfolie vor dem Schlussteil
+1. Folie 27, Ratzeburg und die Diddl-Maus (schön, aber verzichtbar)
+2. Folie 21, die Zwischenfolie vor dem Schlussteil
 3. Folie 7, die Liste auf drei Zeilen kürzen statt fünf
-4. Folie 25, die Rechtslage in zwei Sätzen sagen statt mit Folie
+4. Folie 24, die Rechtslage in zwei Sätzen sagen statt mit Folie
 
 **Niemals streichen:** die Vorstellung (Folie 2), „Zwei Männer" (Folie 3),
-die vier Fragen (Folie 11), Demo 1 mit ihrem Satz (Folien 14 und 15),
-das Nachschärfen (Folie 16), die erste Woche (Folie 27).
+die vier Fragen (Folie 10), Demo 1 mit ihrem Satz (Folien 13 und 14),
+das Nachschärfen (Folie 15), die erste Woche (Folie 26).
 
 ---
 
