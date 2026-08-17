@@ -152,8 +152,11 @@ heute Morgen um sechs gehabt?" Meldet sich niemand, wird die Gastgeberin
 eingetippt, und bei Netzausfall liegt genau diese AWSH-Liste als Rückfall
 unter der Folie. Budget: zweieinhalb Minuten.
 
-**Ihre Marke (Folie 30, der große Bogen).** Der Wunsch aus Minute zwei
-kommt als Marke zurück: Logo, Farben, erster Beitrag, Ladenschild. Emre
+**Ihre Marke (Folie 30, der große Bogen).** Der Betrieb aus Minute zwei
+wird aus drei Zurufen gebaut, jede gibt ein Teil: eine sagt WAS
+(Café, Werkstatt, Laden), die nächste WO, die dritte den NAMEN.
+Die absurde Kombination ist gewollt, sie gehört dem ganzen Raum und
+niemand muss allein kreativ sein. Am Ende kommt sie als Marke zurück: Logo, Farben, erster Beitrag, Ladenschild. Emre
 stößt die vier Bilder in einer ruhigen Minute an (die Sätze stehen in den
 Sprechernotizen der Folie) und legt die fertigen Dateien in `assets/live/`
 ab, die Folie füllt sich von selbst. Geprobt am 17.08.: 60 Sekunden für
