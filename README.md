@@ -40,6 +40,16 @@ Referenten: Edgar Paul-Ghazaryan und Emre Erdogan, EDGE Digital.
 - `messe.mjs` — misst Wortzahl, Lücken und schlechte Zeilenumbrüche je Folie
 - `pruefe-folien.mjs` — sucht abgeschnittenen Inhalt und tote Klicks
 
+## Vom Handy steuern
+
+```bash
+claude remote-control
+```
+
+Leertaste zeigt einen QR-Code. Danach steuert die Claude-App auf dem Handy
+diese Sitzung auf dem Mac. Der Befehl `/marke Name, Betriebsart, Ort`
+erzeugt den Marken-Reveal und legt die vier Bilder in `assets/live/` ab.
+
 ## Lokal starten
 
 ```bash

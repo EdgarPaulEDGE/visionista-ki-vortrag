@@ -135,6 +135,39 @@ Das ist gleichzeitig die Überleitung zur Datenschutzfolie.
 
 ---
 
+## Der Marken-Reveal vom Handy aus
+
+Damit auf der Bühne niemand am Laptop tippt, läuft der Reveal über
+**Remote Control**: Der Mac arbeitet weiter mit allen Werkzeugen, das Handy
+ist nur das Eingabefeld.
+
+**Am Abend vorher, einmal einrichten**
+1. Claude-App auf dem Handy installieren und mit demselben Konto anmelden,
+   das auch im Terminal angemeldet ist.
+2. Am Mac im Projektordner `claude remote-control` starten.
+3. Leertaste drücken, den QR-Code mit dem Handy scannen. Fertig.
+   Der Befehl muss die ganze Zeit laufen, das Terminal also nicht schließen.
+
+**Auf der Bühne, wenn die drei Zurufe da sind**
+Edgar tippt ins Handy, mehr nicht:
+
+```
+/marke Nähkästchen, Nähladen, Ratzeburg
+```
+
+Der Mac erzeugt die vier Bilder und legt sie in `assets/live/` ab.
+Folie 29 schaut alle vier Sekunden nach und füllt sich von selbst.
+Geprobt am 17.08.: rund eine Minute von der Eingabe bis zum vollen Raster.
+
+**Was das braucht:** Internet am Veranstaltungsort, für die Bildgenerierung
+sowieso. Fällt es aus, fällt der Reveal aus, und die Folie wird
+übersprungen. Sie hängt an nichts.
+
+**Wenn Remote Control zickt:** Emre tippt denselben Befehl am Laptop.
+Der Ablauf ist identisch, nur unbequemer.
+
+---
+
 ## Die zwei Zugaben
 
 **Zehn Ideen gegen den Raum (Folie 20, nach der Mail-Demo).** Eine Teilnehmerin
