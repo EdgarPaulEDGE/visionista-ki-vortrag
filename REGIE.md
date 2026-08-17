@@ -11,7 +11,7 @@ visionista, das Unternehmerinnen-Netzwerk der WFL Herzogtum Lauenburg
 | Uhrzeit | Was |
 |---|---|
 | 08:30 bis 08:40 | Ankommen, Kaffee, Begrüßung durch die WFL |
-| 08:40 bis 09:15 | Vortrag, 35 Minuten, 32 Folien |
+| 08:40 bis 09:15 | Vortrag, 35 Minuten, 33 Folien |
 | 09:15 bis 09:25 | Fragen |
 | ab 09:25 | Sitzen bleiben, Gespräche, Networking |
 
@@ -29,33 +29,30 @@ fünf sind der Moment, die Streichliste zu benutzen.
 |---|---|---|
 | 0 min | Titel | 1 |
 | 1 min | Moin, Vorstellung | 2 |
-| 2 min | „Zwei Männer erklären…" | 3 |
-| 4 min | 21:47 Uhr | 5 |
-| 7 min | Sie sind nicht spät dran | 7 |
-| 10 min | Die gute Nachricht | 9 |
-| 12 min | Der eine Anfängerfehler | 10 |
-| 14 min | Die vier Fragen | 11 |
-| 16 min | „Machen." | 13 |
-| **17 min** | **Demo 1, das Angebot** | 14 |
-| 19 min | Der zweite Satz | 16 |
-| **21 min** | **Demo 2, der Beitrag** | 17 |
-| **23 min** | **Demo 3, die Mail** | 19 |
-| **26 min** | **Zugabe: Zehn Ideen** | 21 |
-| 29 min | Drei Dinge vorab | 22 |
-| 31 min | Was bei Ihnen bleibt | 25 |
-| 32 min | Ihre erste Woche | 27 |
-| 33 min | 21:47, der Bogen schließt sich | 29 |
-| **33,5 min** | **Zugabe: Ihre Marke** | 30 |
-| 34,5 min | Das sind Sie | 31 |
-| 35 min | Jetzt Sie | 32 |
+| 2 min | Drei Zurufe, der Wunsch | 3 |
+| 3 min | „Zwei Männer erklären…" | 4 |
+| 5 min | 21:47 Uhr | 6 |
+| 8 min | Sie sind nicht spät dran | 8 |
+| 11 min | Die gute Nachricht | 10 |
+| 13 min | Der eine Anfängerfehler | 11 |
+| 15 min | Die vier Fragen | 12 |
+| 17 min | „Machen." | 14 |
+| **18 min** | **Demo 1, das Angebot** | 15 |
+| 20 min | Der zweite Satz | 17 |
+| **22 min** | **Demo 2, der Beitrag** | 18 |
+| **24 min** | **Demo 3, die Mail** | 20 |
+| **26 min** | **Zugabe: Zehn Ideen** | 22 |
+| 29 min | Drei Dinge vorab | 23 |
+| 31 min | Was bei Ihnen bleibt | 26 |
+| 32 min | Ihre erste Woche | 28 |
+| 33,5 min | 21:47, der Bogen schließt sich | 30 |
+| **34 min** | **Zugabe: Ihre Marke** | 31 |
+| 34,5 min | Das sind Sie | 32 |
+| 35 min | Jetzt Sie | 33 |
 
-Jede Demo besteht aus drei Folien: die Aufgabe, der gesprochene Satz in groß,
-und darunter per Pfeil nach unten das fertige Ergebnis für den Fall,
-dass das Netz streikt.
-
-**Der wichtigste Wert in dieser Tabelle ist die 17.** Wenn Sie nach siebzehn
+**Der wichtigste Wert in dieser Tabelle ist die 18.** Wenn Sie nach achtzehn
 Minuten noch nicht bei der ersten Demo sind, war der Vorlauf zu lang.
-Dann die Folien 8 und 9 zusammenziehen und direkt weiter.
+Dann die Folien 9 und 10 zusammenziehen und direkt weiter.
 
 ---
 
@@ -68,7 +65,7 @@ So entsteht in den Live-Teilen keine Pause, in der alle auf einen Bildschirm sta
 mit dem Raum weiter, statt auf den Bildschirm zu schauen.
 
 **Emre macht.** Er sitzt am Laptop, tippt die Prompts, führt vor. Er kommentiert nur,
-wenn etwas Interessantes passiert, und übernimmt die Folien 23 bis 26
+wenn etwas Interessantes passiert, und übernimmt die Folien 24 bis 27
 (Datenschutz, Rechtslage, Kosten), weil das seine Ecke ist.
 
 Der wichtigste Effekt: Wenn Emre tippt und Edgar spricht, wirkt es wie ein Gespräch
@@ -90,34 +87,34 @@ und nicht wie ein Vortrag.
 
 **Am Vorabend**
 - [ ] Beide KI-Fenster geöffnet und angemeldet, damit vor Ort keine Anmeldung nötig ist
-- [ ] Handy-Diktat einmal durchspielen, mit genau dem Satz von Folie 15
+- [ ] Handy-Diktat einmal durchspielen, mit genau dem Satz von Folie 16
 - [ ] `visionista-ki-vortrag.pdf` auf beide Laptops laden, als Notnagel ohne Internet
 - [ ] Beide Laptops geladen, Netzteil eingepackt, HDMI-Adapter eingepackt
 
 **Vor Ort, ab 08:15**
 - [ ] Beamer testen, Auflösung auf 1920x1080
-- [ ] Mit dem Handy ein Foto vom Raum machen. Das ist der Rückfall für Demo zwei,
+- [ ] Mit dem Handy ein Foto vom Raum machen. Das ist die Reserve für Demo zwei,
       falls aus dem Publikum kein Foto kommt
-- [ ] Netz testen. Wenn es hakt: die Rückfallfolien nutzen (Pfeil nach unten
-      auf den Folien 15, 18, 20, 21 und 30)
+- [ ] Netz testen. Es gibt keine Rückfall-Folien: hakt es, wird mündlich
+      aufgelöst und übersprungen
 - [ ] Karten auf den Tischen verteilen
 
 ---
 
 ## Die drei Live-Teile
 
-### Demo 1, Folie 14: Das Angebot
+### Demo 1, Folie 15: Das Angebot
 
-Emre startet das Diktat und spricht den Satz, der auf Folie 15 groß zu sehen ist. Absenden.
+Emre startet das Diktat und spricht den Satz, der auf Folie 16 groß zu sehen ist. Absenden.
 Edgar nennt die Zeit laut, sobald das Ergebnis steht.
 
 **Nicht sagen:** „Perfekt."
 **Sagen:** „Das ist ein Entwurf. Jetzt kommt der Teil, auf den es ankommt."
-Direkt weiter zum Nachschärfen auf Folie 16 und dort einmal live meckern.
+Direkt weiter zum Nachschärfen auf Folie 17 und dort einmal live meckern.
 
-**Ohne Netz:** Pfeil nach unten, dort liegt das fertige Angebot.
+**Ohne Netz:** mündlich auflösen und weiter.
 
-### Demo 2, Folie 17: Der Beitrag aus einem Foto
+### Demo 2, Folie 18: Der Beitrag aus einem Foto
 
 Edgar fragt in den Raum: „Wer hat gerade ein Foto auf dem Handy, das längst raus sollte?"
 Immer vorher fragen, ob es gezeigt werden darf.
@@ -127,32 +124,27 @@ der Raum entscheidet per Handzeichen, welche rausgeht.
 **Das ist der lauteste Moment des Vormittags.** Zeit dafür lassen, nicht drüberreden.
 
 **Wenn niemand etwas hat:** das Foto vom Raum nehmen, das vorher gemacht wurde.
-**Ohne Netz:** Pfeil nach unten.
 
-### Demo 3, Folie 19: Die unangenehme Mail
+### Demo 3, Folie 20: Die unangenehme Mail
 
 Zuruf aus dem Raum aufnehmen. Beim Eintippen laut sagen:
 „Den Namen lasse ich bewusst weg, ich beschreibe nur die Lage."
 Das ist gleichzeitig die Überleitung zur Datenschutzfolie.
 
 **Wenn kein Zuruf kommt:** die Mahnung von der Folie nehmen, die kennt jede.
-**Ohne Netz:** Pfeil nach unten, dort stehen beide Fassungen fertig.
-Dann den Raum abstimmen lassen, welche er rausschicken würde.
 
 ---
 
 ## Die zwei Zugaben
 
-**Zehn Ideen gegen den Raum (Folie 21, nach der Mail-Demo).** Eine Teilnehmerin
+**Zehn Ideen gegen den Raum (Folie 22, nach der Mail-Demo).** Eine Teilnehmerin
 nennt ihren Betrieb in drei Worten, Emre setzt sie in den Stammsatz auf der
 Folie ein. Edgar liest die zehn Ideen einzeln vor, der Raum hebt die Hand bei
 „würde ich posten". Nicht kommentieren. Ist eine Idee Quatsch: „Die streichen
 wir", das ist die Meckern-Lektion live. Pointe: „Wie viele davon hätten Sie
-heute Morgen um sechs gehabt?" Meldet sich niemand, wird die Gastgeberin
-eingetippt, und bei Netzausfall liegt genau diese AWSH-Liste als Rückfall
-unter der Folie. Budget: zweieinhalb Minuten.
+heute Morgen um sechs gehabt?" Meldet sich niemand, wird die Gastgeberin eingetippt. Budget: zweieinhalb Minuten.
 
-**Ihre Marke (Folie 30, der große Bogen).** Der Betrieb aus Minute zwei
+**Ihre Marke (Folie 31, der große Bogen).** Der Betrieb aus Minute zwei
 wird aus drei Zurufen gebaut, jede gibt ein Teil: eine sagt WAS
 (Café, Werkstatt, Laden), die nächste WO, die dritte den NAMEN.
 Die absurde Kombination ist gewollt, sie gehört dem ganzen Raum und
@@ -163,10 +155,9 @@ Sprechernotizen der Folie) und legt die fertigen Dateien in `assets/live/`
 ab, die Folie füllt sich von selbst. Geprobt am 17.08. als kompletter Durchlauf mit Umschwenk-Test: ein zu früh
 gefeuerter Satz wurde verworfen und neu gefeuert, Mehrkosten dreißig
 Sekunden, der Ablauf hat es geschluckt. 60 Sekunden für alle vier parallel. Framing wegen der Charta: „Ein erster Aufschlag, und
-das können Sie ab morgen selbst." Rückfall darunter: das Hofcafé
-Morgenluft aus der Probe. Funktioniert nur lokal, nicht über die Web-Adresse.
+das können Sie ab morgen selbst." Funktioniert nur lokal, nicht über die Web-Adresse.
 
-**Das sind Sie (Folie 31, das Abschiedsbild).** Das Raumfoto vom Anfang wird
+**Das sind Sie (Folie 32, das Abschiedsbild).** Das Raumfoto vom Anfang wird
 während der Fragerunde zur Strichzeichnung im Stil des Decks. Emre stößt die
 Umwandlung nach Demo 2 an (dauert etwa eine Minute, der genaue Satz steht in
 den Sprechernotizen der Folie), gezeigt wird im Werkzeugfenster. Geprobt am
@@ -212,10 +203,10 @@ und genau deshalb funktioniert er.
 
 In dieser Reihenfolge streichen:
 
-1. Folie 28, der Achter und die Diddl-Maus (schön, aber verzichtbar)
-2. Folie 22, die Zwischenfolie vor dem Schlussteil
-3. Folie 6, die Liste auf drei Zeilen kürzen statt fünf
-4. Folie 24, die Rechtslage in zwei Sätzen sagen statt mit Folie
+1. Folie 29, der Achter und die Diddl-Maus (schön, aber verzichtbar)
+2. Folie 23, die Zwischenfolie vor dem Schlussteil
+3. Folie 7, die Liste auf drei Zeilen kürzen statt fünf
+4. Folie 25, die Rechtslage in zwei Sätzen sagen statt mit Folie
 
 **Niemals streichen:** die Vorstellung (Folie 2), „Zwei Männer" (Folie 3),
 die vier Fragen (Folie 11), Demo 1 mit ihrem Satz (Folien 14 und 15),
@@ -227,7 +218,7 @@ das Nachschärfen (Folie 16), die erste Woche (Folie 27).
 
 **Kein Verkauf.** Die Charta des Netzwerks schließt Produktpräsentationen und
 kommerzielle Interessen ausdrücklich aus, und alle im Raum kennen diese Regel.
-Deshalb steht sie auch auf Folie 4, als Versprechen. Wenn jemand nach Zusammenarbeit
+Deshalb steht sie auch auf Folie 5, als Versprechen. Wenn jemand nach Zusammenarbeit
 fragt, ist das eine Frage aus dem Publikum und keine Ansage von der Bühne.
 Der Unterschied ist dem Raum sehr wohl bewusst.
 
@@ -270,7 +261,7 @@ die der europäische Rahmen inzwischen erwartet.
 
 - `index.html` im Browser öffnen, F für Vollbild, Pfeiltasten zum Blättern
 - **S** öffnet die Redneransicht mit allen Notizen und der Uhr
-- **Pfeil nach unten** auf den Folien 15, 18, 20, 21 und 30 führt zu den Rückfallfolien
+- Es gibt keine versteckten Unterfolien, alles liegt auf einer Ebene
 - `?nofrag` an die Adresse hängen zeigt alle Einblendungen sofort
 - `pruefung.pdf` ist der Notnagel, falls der Browser streikt
 

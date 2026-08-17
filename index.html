@@ -11,6 +11,13 @@
 /* ============================================================
    1. SCHRIFTEN (lokal, damit der Vortrag ohne WLAN laeuft)
    ============================================================ */
+/* Avenir Next LT, die EDGE-Hausschrift. Traegt alle Titel und Labels,
+   die visionista-Anmutung bleibt ueber Farben, Logo und die Karte erhalten. */
+@font-face{font-family:"Avenir Next LT";src:url("assets/fonts/AvenirNext-Regular.ttf") format("truetype");font-weight:400;font-display:swap;}
+@font-face{font-family:"Avenir Next LT";src:url("assets/fonts/AvenirNext-Medium.ttf") format("truetype");font-weight:500;font-display:swap;}
+@font-face{font-family:"Avenir Next LT";src:url("assets/fonts/AvenirNext-DemiBold.ttf") format("truetype");font-weight:600;font-display:swap;}
+@font-face{font-family:"Avenir Next LT";src:url("assets/fonts/AvenirNext-Bold.ttf") format("truetype");font-weight:700;font-display:swap;}
+
 /* Bodoni Moda als variable Schrift, aufrecht und kursiv.
    Wichtig: Die Achse "opsz" (optische Groesse) wird weiter unten fest auf 11
    gestellt. Ueberliesse man sie dem Browser, wuerde er bei Schriftgraden ueber
@@ -102,10 +109,13 @@ html,body{background:var(--sand);}
    font-variation-settings setzt Gewicht und optische Groesse fest. */
 .reveal h1,.reveal h2,.reveal h3,.akz,.zahl,.takeaway,
 .marke .wort,.wortmarke .wort,.riesenzahl{
-  font-family:'Bodoni Moda',Georgia,serif;
-  font-optical-sizing:none;
-  font-variation-settings:'opsz' var(--titel-opsz),'wght' var(--titel-wght);
+  font-family:"Avenir Next LT","Avenir Next",Avenir,sans-serif;
+  font-weight:600;
 }
+.reveal h1,.zahl,.riesenzahl{font-weight:700;}
+/* Akzentwoerter: Avenir hat keine Kursive im Satz, der Akzent
+   kommt stattdessen ueber die Terrakotta aus der Palette. */
+.akz{font-style:normal;color:var(--terra);}
 .reveal h1,.reveal h2,.reveal h3{
   color:var(--burgund);
   letter-spacing:-.012em;line-height:1.1;
@@ -123,8 +133,7 @@ html,body{background:var(--sand);}
 
 /* Akzentwort: kursive Bodoni in Burgund.
    Ersetzt den Gradient-Schimmer aus dem dunklen EDGE-Deck. */
-.akz{font-family:'Bodoni Moda',Georgia,serif;font-style:italic;
-     font-weight:500;color:var(--burgund);}
+
 .akz-t{color:var(--terra);}
 
 /* ============================================================
@@ -136,7 +145,7 @@ hr.strich{border:none;height:2px;background:var(--burgund);
 hr.strich.breit{width:100%;height:1px;background:var(--linie);margin:36px 0;}
 hr.strich.zart{width:100%;height:1px;background:var(--linie);margin:26px 0;opacity:1;}
 
-.label{font-family:'Montserrat',sans-serif;font-weight:600;font-size:22px;
+.label{font-family:"Avenir Next LT",sans-serif;font-weight:600;font-size:22px;
        letter-spacing:.22em;text-transform:uppercase;color:var(--burgund);
        opacity:.72;flex-shrink:0;}
 
@@ -159,8 +168,8 @@ hr.strich.zart{width:100%;height:1px;background:var(--linie);margin:26px 0;opaci
               align-items:baseline;gap:34px;}
 .zeilen > div:first-child{border-top:none;padding-top:0;}
 
-/* Grosse Zahl im Bodoni-Schnitt: traegt eine Aussage allein. */
-.zahl{font-family:'Bodoni Moda',Georgia,serif;font-weight:500;color:var(--burgund);
+/* Grosse Zahl: traegt eine Aussage allein. */
+.zahl{color:var(--burgund);
       font-size:132px;line-height:.92;letter-spacing:-.02em;}
 .zahl.klein{font-size:88px;}
 .riesenzahl{font-size:340px;color:var(--burgund);line-height:.86;letter-spacing:-.03em;}
@@ -178,8 +187,7 @@ hr.strich.zart{width:100%;height:1px;background:var(--linie);margin:26px 0;opaci
    die Abgrenzung uebernimmt die Spalte, in der der Satz steht. */
 .gesagt{font-size:40px;line-height:1.62;font-weight:400;color:var(--burgund);
         flex-shrink:0;}
-.gesagt .wer{font-family:'Bodoni Moda',Georgia,serif;font-style:italic;
-             font-optical-sizing:none;font-variation-settings:'opsz' 11,'wght' 600;}
+.gesagt .wer{font-weight:700;}
 .gesagt.matt{color:var(--tinte-weich);font-weight:300;}
 
 /* Ein fertiger Brief. Nur Haarlinien oben und unten, keine Flaeche. */
@@ -188,8 +196,8 @@ hr.strich.zart{width:100%;height:1px;background:var(--linie);margin:26px 0;opaci
        padding:32px 0;flex-shrink:0;}
 .brief b{font-weight:600;color:var(--burgund);}
 
-.takeaway{font-family:'Bodoni Moda',Georgia,serif;font-size:56px;font-weight:500;
-          font-style:italic;color:var(--burgund);line-height:1.2;flex-shrink:0;}
+.takeaway{font-size:52px;font-weight:600;color:var(--burgund);
+          line-height:1.25;flex-shrink:0;}
 
 /* ============================================================
    5. FUSSZEILE UND MARKE
@@ -243,8 +251,7 @@ hr.strich.zart{width:100%;height:1px;background:var(--linie);margin:26px 0;opaci
 /* Eine Folie, die nur einen gesagten Satz zeigt. Gross, ruhig, vorlesbar. */
 .prompt-gross{font-size:52px;line-height:1.42;font-weight:400;color:var(--burgund);
               max-width:1560px;}
-.prompt-gross .wer{font-family:'Bodoni Moda',Georgia,serif;font-style:italic;
-              font-optical-sizing:none;font-variation-settings:'opsz' 11,'wght' 600;}
+.prompt-gross .wer{font-weight:700;}
 
 /* ============================================================
    ILLUSTRATIONEN
@@ -271,6 +278,9 @@ hr.strich.zart{width:100%;height:1px;background:var(--linie);margin:26px 0;opaci
                     min-height:480px;border-top:1px solid var(--linie);padding-top:18px;}
 .marken-grid img{width:100%;height:440px;object-fit:contain;display:block;}
 .marken-grid figure:not(:has(img)){opacity:.45;}
+.marken-grid figure:not(:has(img))::after{content:"entsteht gerade …";
+  font-family:'Montserrat',sans-serif;font-size:24px;font-weight:300;
+  color:var(--tinte-weich);margin-top:180px;text-align:center;}
 
 /* ============================================================
    GRAFIKEN
@@ -279,15 +289,13 @@ hr.strich.zart{width:100%;height:1px;background:var(--linie);margin:26px 0;opaci
    Inline-Schriftgroesse doppelt, dann schrumpfen nur die
    Beschriftungen und kleben oben links.
    ============================================================ */
-.chart-wert{font-family:'Bodoni Moda',Georgia,serif;font-optical-sizing:none;
-  font-variation-settings:'opsz' 11,'wght' 600;font-size:34px;fill:var(--burgund);}
+.chart-wert{font-family:"Avenir Next LT",sans-serif;font-weight:600;font-size:34px;fill:var(--burgund);}
 .chart-wert.stark{font-size:46px;fill:var(--terra);}
 .chart-jahr{font-family:'Montserrat',sans-serif;font-size:22px;font-weight:600;
   letter-spacing:.14em;text-transform:uppercase;fill:var(--burgund);opacity:.6;}
 .chart-nam{font-family:'Montserrat',sans-serif;font-size:28px;font-weight:400;
   fill:var(--tinte);}
-.chart-zahl{font-family:'Bodoni Moda',Georgia,serif;font-optical-sizing:none;
-  font-variation-settings:'opsz' 11,'wght' 600;font-size:42px;fill:var(--burgund);}
+.chart-zahl{font-family:"Avenir Next LT",sans-serif;font-weight:700;font-size:42px;fill:var(--burgund);}
 .chart-klein{font-family:'Montserrat',sans-serif;font-size:24px;font-weight:400;
   fill:var(--tinte-weich);}
 svg.anstieg,svg.balken{flex-shrink:0;overflow:visible;}
@@ -304,8 +312,7 @@ svg.anstieg,svg.balken{flex-shrink:0;overflow:visible;}
 
 /* Riesige, fast unsichtbare Ziffer als Raumtiefe hinter dem Inhalt. */
 .geist{position:absolute;top:-30px;right:60px;z-index:0;pointer-events:none;
-       font-family:'Bodoni Moda',Georgia,serif;font-optical-sizing:none;
-       font-variation-settings:'opsz' 11,'wght' 600;
+       font-family:"Avenir Next LT",sans-serif;font-weight:700;
        font-size:620px;line-height:1;color:var(--burgund);opacity:.055;}
 .buehne{z-index:1;}
 
@@ -366,41 +373,58 @@ html.nofrag .reveal .fragment{opacity:1!important;visibility:visible!important;t
      ============================================================ -->
 <section data-slide-id="team">
   <div class="buehne" style="align-items:center;text-align:center;">
-    <h2 style="font-size:110px;">Moin.</h2>
-    <div style="display:flex;gap:110px;justify-content:center;align-items:flex-end;margin-top:36px;">
-      <div>
-        <img src="assets/bilder/team-edgar.png" alt="Edgar Paul-Ghazaryan"
-             style="height:430px;width:auto;display:block;margin:0 auto;">
-        <h3 style="font-size:40px;margin-top:22px;">Edgar Paul-Ghazaryan</h3>
-      </div>
-      <div>
-        <img src="assets/bilder/team-emre.png" alt="Emre Erdogan"
-             style="height:430px;width:auto;display:block;margin:0 auto;">
-        <h3 style="font-size:40px;margin-top:22px;">Emre Erdogan</h3>
-      </div>
+    <h2 style="font-size:96px;">Moin.</h2>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:22px;margin-top:38px;">
+      <img src="assets/bilder/collage/02.jpg" alt="EDGE Digital unterwegs" style="width:548px;height:318px;object-fit:cover;display:block;">
+      <img src="assets/bilder/collage/04.jpg" alt="EDGE Digital im Einsatz" style="width:548px;height:318px;object-fit:cover;display:block;">
+      <img src="assets/bilder/collage/05.jpg" alt="EDGE Digital auf der Messe" style="width:548px;height:318px;object-fit:cover;display:block;">
+      <img src="assets/bilder/collage/09.jpg" alt="EDGE Digital im Workshop" style="width:548px;height:318px;object-fit:cover;display:block;">
     </div>
-    <!-- Echte Momente statt zwei Freisteller allein: dieselben Fotos,
-         mit denen sich EDGE auch im K64 vorstellt. -->
-    <div style="display:flex;gap:14px;justify-content:center;margin-top:34px;">
-      <img src="assets/bilder/collage/02.jpg" alt="" style="height:150px;aspect-ratio:3/2;object-fit:cover;border-radius:10px;">
-      <img src="assets/bilder/collage/04.jpg" alt="" style="height:150px;aspect-ratio:3/2;object-fit:cover;border-radius:10px;">
-      <img src="assets/bilder/collage/05.jpg" alt="" style="height:150px;aspect-ratio:3/2;object-fit:cover;border-radius:10px;">
-      <img src="assets/bilder/collage/09.jpg" alt="" style="height:150px;aspect-ratio:3/2;object-fit:cover;border-radius:10px;">
-    </div>
-    <div class="label" style="margin-top:24px;">EDGE Digital, Lübeck</div>
+    <h3 style="font-size:40px;margin-top:32px;">Edgar Paul-Ghazaryan &nbsp;&middot;&nbsp; Emre Erdogan</h3>
+    <div class="label" style="margin-top:14px;">EDGE Digital, Lübeck</div>
   </div>
   <aside class="notes">
-    DANACH DER SETUP-MOMENT für den Marken-Reveal, drei Fragen an
-    drei verschiedene Frauen, jede gibt nur ein Puzzleteil:
-    1. "Rufen Sie mir irgendeinen Betrieb zu. Café, Werkstatt, Laden, egal."
-    2. An eine andere: "Und wo steht der?"
-    3. An eine dritte: "Und wie soll er heißen?"
-    Die Kombination darf absurd sein, genau das ist der Witz.
-    Edgar: "Merken Sie sich das. Wir sehen uns am Ende wieder."
-    Emre notiert die drei Teile, mehr passiert hier nicht.
     Vorstellung live, Länge nach Gefühl: eine Minute reicht, mehr geht.
     Wer wir sind, was EDGE macht, warum ausgerechnet wir zwei hier stehen.
-    Ein Satz Selbstironie funktioniert hier besser als eine Referenzliste.
+    Ein Satz Selbstironie funktioniert besser als eine Referenzliste.
+    Direkt danach kommt die Wunsch-Folie, dort werden die drei Zurufe geholt.
+  </aside>
+</section>
+
+<!-- ============================================================
+     FOLIE 3  Der Wunsch. Drei Zurufe bauen einen Betrieb,
+     der am Ende als Marke zurueckkommt. Sichtbarer Anker
+     fuer den Magic Moment, nicht nur Regie.
+     ============================================================ -->
+<section data-slide-id="wunsch">
+  <div class="buehne">
+    <div class="label">Bevor wir anfangen, bauen wir einen Betrieb</div>
+    <h2 style="margin-top:26px;">Drei Zurufe.</h2>
+    <hr class="strich breit" style="margin:52px 0 0;">
+    <div class="zeilen">
+      <div style="padding:52px 0;">
+        <span class="zahl klein" style="width:150px;flex-shrink:0;">1</span>
+        <h3 style="font-size:64px;">Was für ein Laden?</h3>
+      </div>
+      <div style="padding:52px 0;">
+        <span class="zahl klein" style="width:150px;flex-shrink:0;">2</span>
+        <h3 style="font-size:64px;">Wo steht er?</h3>
+      </div>
+      <div style="padding:52px 0;">
+        <span class="zahl klein" style="width:150px;flex-shrink:0;">3</span>
+        <h3 style="font-size:64px;">Wie heißt er?</h3>
+      </div>
+    </div>
+    <hr class="strich breit" style="margin:auto 0 26px;">
+    <p class="takeaway">Merken Sie sich den. Wir sehen uns am Ende wieder.</p>
+  </div>
+  <aside class="notes">
+    Drei Fragen an drei verschiedene Frauen, jede gibt nur ein Teil.
+    Die absurde Kombination ist gewollt, der Betrieb gehört dem ganzen Raum.
+    Emre notiert die drei Teile und wartet, bis ALLE DREI da sind.
+    In einer ruhigen Minute feuert er die vier Bildaufträge
+    (die Sätze stehen in den Notizen der Marken-Folie am Ende).
+    Mehr passiert hier nicht, keine dreißig Sekunden.
   </aside>
 </section>
 
@@ -904,8 +928,7 @@ html.nofrag .reveal .fragment{opacity:1!important;visibility:visible!important;t
   </aside>
 </section>
 
-<section>
-  <section data-slide-id="demo-angebot-prompt">
+<section data-slide-id="demo-angebot-prompt">
     <div class="buehne">
       <div class="label">Was gesprochen wird</div>
       <hr class="strich breit" style="margin:34px 0 auto;">
@@ -924,32 +947,8 @@ html.nofrag .reveal .fragment{opacity:1!important;visibility:visible!important;t
     <aside class="notes">
       Diesen Satz laut und in normalem Tempo sprechen, während er auf der Folie steht.
       Das Publikum liest mit und merkt: das ist nur ein normaler Satz, kein Befehl.
-      Danach mit Pfeil nach unten das Ergebnis zeigen, falls kein Netz da ist.
     </aside>
   </section>
-
-  <section data-slide-id="demo-angebot-rueckfall">
-    <div class="buehne">
-      <div class="label">Rückfall, falls das Netz hier nicht mitspielt</div>
-      <h2 style="margin-top:20px;font-size:62px;">Was dabei herauskommt.</h2>
-      <hr class="strich breit" style="margin:36px 0 30px;">
-      <div class="brief" style="font-size:40px;line-height:1.5;padding:34px 0;">
-        <p style="font-weight:600;color:var(--burgund);">Sehr geehrte Frau Petersen,</p>
-        <p style="margin-top:18px;">gern übernehmen wir das Streichen Ihrer vier Räume.
-        Enthalten sind Abdecken, Ausbessern und zwei Anstriche in Ihrer Wunschfarbe.</p>
-        <p style="margin-top:18px;font-weight:600;color:var(--burgund);">Gesamtpreis: 2.400 Euro</p>
-        <p style="margin-top:18px;">Alles ist vor Ihrem Einzug fertig und ausgelüftet.
-        Das Angebot gilt vier Wochen.</p>
-      </div>
-      <hr class="strich breit" style="margin:auto 0 26px;">
-      <p class="takeaway">Der Preis kam von Ihnen. Die Worte vom Werkzeug.</p>
-    </div>
-    <aside class="notes">
-      Nur zeigen, wenn die Live-Demo nicht läuft.
-      Der Brief ist gekürzt, die Anrede und die Grußformel kann man dazusagen.
-    </aside>
-  </section>
-</section>
 
 <!-- ============================================================
      FOLIE 14  Das Nachschaerfen
@@ -1021,8 +1020,7 @@ html.nofrag .reveal .fragment{opacity:1!important;visibility:visible!important;t
   </aside>
 </section>
 
-<section>
-  <section data-slide-id="demo-foto-prompt">
+<section data-slide-id="demo-foto-prompt">
     <div class="buehne">
       <div class="label">Was wir eingeben</div>
       <hr class="strich breit" style="margin:34px 0 auto;">
@@ -1043,38 +1041,6 @@ html.nofrag .reveal .fragment{opacity:1!important;visibility:visible!important;t
       Auswählen fällt jedem leichter als anfangen.
     </aside>
   </section>
-
-  <section data-slide-id="demo-foto-rueckfall">
-    <div class="buehne">
-      <div class="label">Rückfall</div>
-      <h2 style="margin-top:20px;font-size:62px;">Drei Fassungen, ein Foto.</h2>
-      <hr class="strich breit" style="margin:40px 0 36px;">
-      <div class="zeilen">
-        <div>
-          <div style="width:280px;flex-shrink:0;"><div class="label">Persönlich</div></div>
-          <p style="font-size:40px;font-weight:300;line-height:1.5;">
-            Sieben Uhr, der erste Kaffee, und die Werkstatt gehört noch mir allein.
-            Wann ist bei Ihnen am meisten Ruhe?</p>
-        </div>
-        <div>
-          <div style="width:280px;flex-shrink:0;"><div class="label">Sachlich</div></div>
-          <p style="font-size:40px;font-weight:300;line-height:1.5;">
-            Zwölf Aufträge diese Woche, alle im Kreis, alle in drei Tagen.
-            Das geht nur mit kurzen Wegen.</p>
-        </div>
-        <div>
-          <div style="width:280px;flex-shrink:0;"><div class="label">Mit Augenzwinkern</div></div>
-          <p style="font-size:40px;font-weight:300;line-height:1.5;">
-            Man sagt uns nach, wir hätten für alles das passende Werkzeug.
-            Stimmt. Fragen Sie nur nicht, wo es gerade liegt.</p>
-        </div>
-      </div>
-      <hr class="strich breit" style="margin:auto 0 26px;">
-      <p class="takeaway">Auswählen ist leichter als anfangen.</p>
-    </div>
-    <aside class="notes">Nur bei Netzproblemen zeigen.</aside>
-  </section>
-</section>
 
 <!-- ============================================================
      FOLIE 16  Demo 3  Die unangenehme Mail
@@ -1104,8 +1070,7 @@ html.nofrag .reveal .fragment{opacity:1!important;visibility:visible!important;t
   </aside>
 </section>
 
-<section>
-  <section data-slide-id="demo-mail-prompt">
+<section data-slide-id="demo-mail-prompt">
     <div class="buehne">
       <div class="label">Was wir eingeben</div>
       <hr class="strich breit" style="margin:34px 0 auto;">
@@ -1127,46 +1092,11 @@ html.nofrag .reveal .fragment{opacity:1!important;visibility:visible!important;t
     </aside>
   </section>
 
-  <section data-slide-id="demo-mail-rueckfall">
-    <div class="buehne">
-      <div class="label">Rückfall</div>
-      <h2 style="margin-top:20px;font-size:62px;">Zwei Fassungen, eine Mahnung.</h2>
-      <hr class="strich breit" style="margin:40px 0 36px;">
-      <div class="spalten zwei" style="align-items:start;">
-        <div>
-          <div class="label" style="opacity:.6;margin-bottom:20px;">Freundlich</div>
-          <p style="font-size:40px;font-weight:300;line-height:1.55;">
-            Wir arbeiten seit Jahren zusammen, deshalb frage ich lieber direkt nach.
-            Die Rechnung von Anfang Juli ist noch offen.
-            Wenn Sie bis zum 25. anweisen, ist die Sache erledigt.
-          </p>
-        </div>
-        <div>
-          <div class="label" style="margin-bottom:20px;">Deutlich</div>
-          <p style="font-size:40px;font-weight:300;line-height:1.55;">
-            Unsere Rechnung vom 3. Juli ist seit sieben Wochen offen.
-            Ich bitte Sie, den Betrag bis zum 25. August auszugleichen.
-            Gibt es einen Grund, rufen Sie mich an.
-          </p>
-        </div>
-      </div>
-      <hr class="strich breit" style="margin:auto 0 26px;">
-      <p class="takeaway">Sie entscheiden, welche rausgeht.</p>
-    </div>
-    <aside class="notes">
-      Nur bei Netzproblemen zeigen. Wenn Zeit ist, den Raum abstimmen lassen.
-      Meistens gewinnt die freundliche, und genau das ist die Erkenntnis:
-      die hätte man abends um zehn nicht mehr hinbekommen.
-    </aside>
-  </section>
-</section>
-
 <!-- ============================================================
      ZUGABE  Zehn Ideen gegen den Raum. Eine Teilnehmerin nennt ihren
      Betrieb, die Liste entsteht live, der Raum stimmt per Hand ab.
      ============================================================ -->
-<section>
-  <section data-slide-id="zehn-ideen">
+<section data-slide-id="zehn-ideen">
     <div class="buehne">
       <div class="label">Eine noch. Die schnellste.</div>
       <h2 style="margin-top:26px;">Zehn Ideen. <span class="akz">Ihr Betrieb.</span></h2>
@@ -1189,45 +1119,10 @@ html.nofrag .reveal .fragment{opacity:1!important;visibility:visible!important;t
       Pointe am Ende: "Wie viele davon hätten Sie heute Morgen um sechs gehabt?"
       Danach: "Der Satz dafür liegt vor Ihnen auf dem Tisch, Nummer sechs."
       MELDET SICH NIEMAND: "Dann nehmen wir unsere Gastgeberin" und die AWSH
-      eintippen. Bei Netzausfall: Pfeil nach unten, dort liegt genau diese Liste.
+      eintippen. Bei Netzausfall: den Moment überspringen, er hängt an nichts.
       Zeitbudget: zweieinhalb Minuten. Gegenfinanzierung steht in der Streichliste.
     </aside>
   </section>
-
-  <section data-slide-id="zehn-ideen-rueckfall">
-    <div class="buehne">
-      <div class="label">Rückfall: zehn für die Gastgeberin</div>
-      <h2 style="margin-top:20px;font-size:62px;">Die AWSH auf Instagram.</h2>
-      <hr class="strich breit" style="margin:30px 0 0;">
-      <div class="spalten zwei" style="align-items:start;margin-top:26px;gap:0 80px;">
-        <div style="border-left:none;padding:0 40px 0 0;">
-          <ol style="font-size:31px;font-weight:300;line-height:1.9;padding-left:44px;">
-            <li>Mythos der Woche: Was darf wirklich in die gelbe Tonne?</li>
-            <li>Die drei häufigsten Fehlwürfe, kurz erklärt</li>
-            <li>Tonnen-Quiz in der Story: Wohin damit?</li>
-            <li>Kinderfrage der Woche: Wohin fährt der Müll nachts?</li>
-            <li>Zahl zum Staunen: 525.000 geleerte Tonnen</li>
-          </ol>
-        </div>
-        <div style="border-left:1px solid var(--linie);padding:0 0 0 40px;">
-          <ol start="6" style="font-size:31px;font-weight:300;line-height:1.9;padding-left:44px;">
-            <li>Sperrmüll-Schatz der Woche</li>
-            <li>Gesicht des Monats vom Recyclinghof</li>
-            <li>30 Sekunden im Müllwagen mitfahren</li>
-            <li>Vorher-nachher: ein Fund bekommt ein zweites Leben</li>
-            <li>Blick hinter die Waage: was nach der Anlieferung passiert</li>
-          </ol>
-        </div>
-      </div>
-      <hr class="strich breit" style="margin:auto 0 26px;">
-      <p class="takeaway">Handzeichen: Was würden Sie posten?</p>
-    </div>
-    <aside class="notes">
-      Nur bei Netzausfall zeigen. Die Abstimmung funktioniert genauso,
-      der Raum hebt bei jeder Idee die Hand.
-    </aside>
-  </section>
-</section>
 
 <!-- ============================================================
      Bildmoment: Uebergang vom Machen zum Absichern
@@ -1544,8 +1439,7 @@ html.nofrag .reveal .fragment{opacity:1!important;visibility:visible!important;t
      Marke zurueck. Die Folie schaut in assets/live/ und blendet ein,
      was Emre dort ablegt. Rueckfall darunter: das Hofcafé von der Probe.
      ============================================================ -->
-<section>
-  <section data-slide-id="marke">
+<section data-slide-id="marke">
     <div class="buehne">
       <div class="label">Der Wunsch von vorhin</div>
       <h2 style="margin-top:26px;">Und nebenbei ist das hier <span class="akz">entstanden</span>.</h2>
@@ -1579,32 +1473,10 @@ html.nofrag .reveal .fragment{opacity:1!important;visibility:visible!important;t
       FRAMING, wichtig wegen der Charta: "Das ist ein erster Aufschlag,
       kein fertiges Branding. Und das können Sie ab morgen selbst."
       Kein Wort darüber, dass wir so etwas beruflich machen.
-      KOMMT NICHTS AN: Pfeil nach unten, dort liegt das Hofcafé von der Probe.
+      KOMMT NICHTS AN: Folie überspringen und mündlich auflösen, sie hängt an nichts.
       Funktioniert nur in der lokalen Fassung, nicht über die Web-Adresse.
     </aside>
   </section>
-
-  <section data-slide-id="marke-rueckfall">
-    <div class="buehne">
-      <div class="label">Rückfall: die Probe von dieser Woche</div>
-      <h2 style="margin-top:20px;font-size:62px;">Hofcafé Morgenluft, Büchen.</h2>
-      <hr class="strich breit" style="margin:30px 0 30px;">
-      <div class="marken-grid">
-        <figure><img src="assets/bilder/marke-logo.jpg" alt="Logo Hofcafé Morgenluft"></figure>
-        <figure><img src="assets/bilder/marke-farben.jpg" alt="CI-Board"></figure>
-        <figure><img src="assets/bilder/marke-post.jpg" alt="Instagram-Beitrag"></figure>
-        <figure><img src="assets/bilder/marke-schild.jpg" alt="Ladenschild"></figure>
-      </div>
-      <hr class="strich breit" style="margin:auto 0 26px;">
-      <p class="takeaway">Vier Sätze. Sechzig Sekunden.</p>
-    </div>
-    <aside class="notes">
-      Nur zeigen, wenn live nichts ankommt. Ehrlich ansagen:
-      "Das hier ist bei der Probe diese Woche entstanden, mit einem
-      erfundenen Betrieb. Live sähe es genauso aus, nur mit Ihrem."
-    </aside>
-  </section>
-</section>
 
 <!-- ============================================================
      ZUGABE  Der Raum als Zeichnung. Das Foto vom Anfang, waehrend
