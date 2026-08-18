@@ -290,6 +290,19 @@ html.hatbild .vollbild,html.hatbild .dunkel,html.hatbild .schleier{visibility:hi
 /* Frei in die Folie gesetzt, ohne den Textfluss zu stoeren. */
 .illu.frei{position:absolute;z-index:0;pointer-events:none;}
 
+/* Agenda als horizontale Reihe: gefuellte Kreis-Badges auf einer
+   durchgehenden Linie, die Ziffer weiss im Kreis. */
+.timeline{display:flex;justify-content:space-between;align-items:flex-start;
+  position:relative;padding:40px 90px 0;}
+.timeline::before{content:"";position:absolute;left:150px;right:150px;top:104px;
+  height:2px;background:var(--linie);}
+.timeline > div{display:flex;flex-direction:column;align-items:center;gap:38px;
+  position:relative;z-index:1;}
+.timeline .kreis{width:128px;height:128px;border-radius:50%;background:var(--burgund);
+  color:#F6F1E9;display:flex;align-items:center;justify-content:center;
+  font-family:"Avenir Next LT",sans-serif;font-weight:700;font-size:60px;}
+.timeline h3{font-size:56px;}
+
 /* Versus-Aufbau: zwei Lager, dazwischen ein Kreis-Badge.
    Der Kontrast kommt aus Deckkraft und Gewicht, nicht aus neuen Farben. */
 .clash{position:relative;}
@@ -517,7 +530,6 @@ html.nofrag .reveal .fragment{opacity:1!important;visibility:visible!important;t
      ============================================================ -->
 <section data-slide-id="wunsch">
   <div class="buehne">
-    <div class="label">Bevor wir anfangen, bauen wir einen Betrieb</div>
     <h2 style="margin-top:26px;">Drei Zurufe.</h2>
     <hr class="strich breit" style="margin:52px 0 0;">
     <div class="zeilen">
@@ -611,35 +623,16 @@ html.nofrag .reveal .fragment{opacity:1!important;visibility:visible!important;t
      ============================================================ -->
 <section data-slide-id="agenda">
   <div class="buehne">
-    <div class="label">Die nächsten 35 Minuten</div>
     <h2 style="margin-top:26px;">Drei Teile.</h2>
     <hr class="strich breit" style="margin:48px 0 0;">
-    <div class="zeilen" style="margin-top:6px;">
-      <div style="padding:38px 0;">
-        <span class="zahl klein" style="width:150px;flex-shrink:0;">1</span>
-        <div>
-          <h3 style="font-size:56px;">Verstehen.</h3>
-          <p class="klein" style="margin-top:10px;">Warum jetzt der richtige Moment ist.</p>
-        </div>
-      </div>
-      <div style="padding:38px 0;">
-        <span class="zahl klein" style="width:150px;flex-shrink:0;">2</span>
-        <div>
-          <h3 style="font-size:56px;">Machen.</h3>
-          <p class="klein" style="margin-top:10px;">Drei Aufgaben, live erledigt.</p>
-        </div>
-      </div>
-      <div style="padding:38px 0;">
-        <span class="zahl klein" style="width:150px;flex-shrink:0;">3</span>
-        <div>
-          <h3 style="font-size:56px;">Absichern.</h3>
-          <p class="klein" style="margin-top:10px;">Daten, Recht, Ruhe.</p>
-        </div>
-      </div>
+    <div class="timeline" style="margin:auto 0;">
+      <div><span class="kreis">1</span><h3>Verstehen.</h3></div>
+      <div><span class="kreis">2</span><h3>Machen.</h3></div>
+      <div><span class="kreis">3</span><h3>Absichern.</h3></div>
     </div>
     <hr class="strich breit" style="margin:auto 0 26px;">
   </div>
-  <aside class="notes">
+<aside class="notes">
     Zügig, keine Minute. Die drei Teile stehen auch in der Kopfzeile jeder
     Folie, hier bekommen sie einmal ein Gesicht.
   </aside>
@@ -790,18 +783,18 @@ html.nofrag .reveal .fragment{opacity:1!important;visibility:visible!important;t
 <section data-slide-id="denkfehler">
   <div class="buehne">
     <h2>Es gibt genau <span class="akz oval">einen</span> Anfängerfehler.</h2>
-    <hr class="strich breit" style="margin:46px 0 60px;">
-    <div class="spalten zwei clash" style="align-items:stretch;margin:auto 0;">
-      <div style="padding-right:130px;">
+    <hr class="strich breit" style="margin:46px 0 56px;">
+    <div class="spalten zwei clash" style="align-items:stretch;margin:auto 0;gap:0;">
+      <div style="text-align:center;display:flex;flex-direction:column;align-items:center;gap:26px;padding-right:120px;">
         <svg class="ik gross"><use href="#i-message-circle"></use></svg>
-        <div class="label" style="margin:28px 0 0;">&#10005;&nbsp;&nbsp;So machen es fast alle</div>
-        <h3 style="margin-top:20px;">Man tippt<br>wie bei Google.</h3>
+        <div class="label">&#10005;&nbsp;&nbsp;So machen es fast alle</div>
+        <h3>Man tippt<br>wie bei Google.</h3>
       </div>
       <div class="vs">VS</div>
-      <div style="border-left:1px solid var(--linie);padding-left:130px;">
+      <div style="text-align:center;display:flex;flex-direction:column;align-items:center;gap:26px;border-left:1px solid var(--linie);padding-left:120px;">
         <svg class="ik gross"><use href="#i-folder-open"></use></svg>
-        <div class="label" style="margin:28px 0 0;">&#10003;&nbsp;&nbsp;So funktioniert es</div>
-        <h3 style="margin-top:20px;">Man redet wie mit<br>einer neuen Aushilfe.</h3>
+        <div class="label">&#10003;&nbsp;&nbsp;So funktioniert es</div>
+        <h3>Man redet wie mit<br>einer neuen Aushilfe.</h3>
       </div>
     </div>
     <hr class="strich breit" style="margin:auto 0 34px;">
@@ -854,7 +847,6 @@ html.nofrag .reveal .fragment{opacity:1!important;visibility:visible!important;t
       </div>
     </div>
     <hr class="strich breit" style="margin:auto 0 30px;">
-    <p class="takeaway">Frage <span class="akz">drei</span> macht den Unterschied.</p>
   </div>
 <aside class="notes">
     Beispiele mündlich dazugeben: zu 1 „Du bist meine Büroleiterin",
@@ -873,22 +865,19 @@ html.nofrag .reveal .fragment{opacity:1!important;visibility:visible!important;t
 <section data-slide-id="vergleich">
   <div class="buehne">
     <h2>Derselbe Auftrag, <span class="akz">zweimal</span> gestellt.</h2>
-    <hr class="strich breit" style="margin:42px 0 44px;">
-    <div class="spalten zwei" style="align-items:start;gap:0;">
-      <div>
-        <svg class="ik matt"><use href="#i-message-circle"></use></svg>
-        <div class="label" style="opacity:.5;margin:22px 0;">Was fast alle eingeben</div>
-        <div class="gesagt matt">
+    <hr class="strich breit" style="margin:42px 0 52px;">
+    <div class="spalten zwei" style="align-items:start;margin:auto 0;">
+      <div style="padding-right:90px;">
+        <svg class="ik"><use href="#i-message-circle"></use></svg>
+        <div class="label" style="margin:24px 0;">&#10005;&nbsp;&nbsp;Was fast alle eingeben</div>
+        <div class="gesagt" style="font-size:36px;">
           Schreib mir ein Angebot<br>für eine Kundin.
         </div>
-        <p class="klein" style="margin-top:34px;">
-          Ergebnis: höflich, korrekt, austauschbar.
-        </p>
       </div>
-      <div>
+      <div style="border-left:1px solid var(--linie);padding-left:90px;">
         <svg class="ik"><use href="#i-pen-line"></use></svg>
-        <div class="label" style="margin:22px 0;">Was Sie ab heute eingeben</div>
-        <div class="gesagt" style="font-size:38px;">
+        <div class="label" style="margin:24px 0;">&#10003;&nbsp;&nbsp;Was Sie ab heute eingeben</div>
+        <div class="gesagt" style="font-size:36px;">
           Du bist meine Büroleiterin.<br>
           Schreib das Angebot für Frau Petersen.<br>
           Vier Räume, Altbau, Einzug im Oktober.<br>
@@ -896,12 +885,12 @@ html.nofrag .reveal .fragment{opacity:1!important;visibility:visible!important;t
         </div>
       </div>
     </div>
-    <hr class="strich breit" style="margin:38px 0 24px;">
+    <hr class="strich breit" style="margin:auto 0 24px;">
     <p class="takeaway" style="font-size:46px;">
       Vierzig Sekunden mehr Aufwand. Eine Stunde weniger Arbeit.
     </p>
   </div>
-  <aside class="notes">
+<aside class="notes">
     Rechte Spalte laut vorlesen. Das Publikum hört: das ist ja nur ein normaler Satz.
     Genau das ist die Botschaft. Kein Fachwissen, nur Erzählen, was Sache ist.
     Überleitung: "Und jetzt machen wir das mal wirklich."
@@ -947,7 +936,8 @@ html.nofrag .reveal .fragment{opacity:1!important;visibility:visible!important;t
     <p class="klein" style="margin-top:34px;">Ihr Handy kann das seit Jahren. Kostenlos.</p>
     <hr class="strich breit" style="margin:auto 0 30px;">
   </div>
-  <svg class="ik" style="position:absolute;width:300px;height:300px;right:170px;bottom:230px;stroke-width:1.1;opacity:.9;"><use href="#i-smartphone"></use></svg>
+  <img src="assets/illu/diktat.png" alt="" class="illu frei"
+       style="width:430px;height:430px;right:120px;bottom:170px;opacity:.92;">
 <aside class="notes">
     REGIE: Diktat starten, den Satz von der nächsten Folie sprechen, absenden.
     Während es läuft in den Raum sprechen, nicht auf den Bildschirm starren.
@@ -1082,7 +1072,7 @@ html.nofrag .reveal .fragment{opacity:1!important;visibility:visible!important;t
 <section data-slide-id="demo-mail">
   <div class="geist">3</div>
   <div class="buehne">
-    <h2 style="margin-top:26px;">Die Mail, die Sie seit Montag<br>im <span class="akz">Kopf</span> haben.</h2>
+    <h2 style="margin-top:26px;">Die Mail, die Sie seit<br>Montag im <span class="akz">Kopf</span> haben.</h2>
     <hr class="strich breit" style="margin:52px 0 46px;">
     <p class="lead" style="font-size:52px;">Die Absage. Die Mahnung.<br>Die Antwort auf den unhöflichen Kunden.</p>
     <hr class="strich breit" style="margin:auto 0 30px;">
