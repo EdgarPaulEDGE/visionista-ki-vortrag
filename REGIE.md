@@ -193,7 +193,12 @@ feuert Emre direkt nach den drei Zurufen, nicht erst in einer ruhigen
 Minute. Geprobt am 17.08. als kompletter Durchlauf mit Umschwenk-Test: ein zu früh
 gefeuerter Satz wurde verworfen und neu gefeuert, Mehrkosten dreißig
 Sekunden, der Ablauf hat es geschluckt. 60 Sekunden für alle vier parallel. Framing wegen der Charta: „Ein erster Aufschlag, und
-das können Sie ab morgen selbst." Funktioniert nur lokal, nicht über die Web-Adresse.
+das können Sie ab morgen selbst." Zwei Zustellwege: Auf der Bühne läuft die lokale Fassung, dort landen
+die Dateien direkt im Ordner, sofort sichtbar. Für die Live-URL gibt es
+eine GitHub-Action (`marke-live.yml`), die die Bilder ins Repo legt,
+das dauert aber zwei bis vier Minuten Deploy plus CDN und ist der
+Notweg, nicht der Plan. Nach jedem Live-Test die vier PNGs wieder aus
+dem Repo nehmen, sonst zeigt die öffentliche Seite den Testlauf.
 
 ---
 

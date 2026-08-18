@@ -54,6 +54,19 @@ parallel abschicken, je `resolution: "2k"`:
   Dateigrößen melden, maximal zwei Zeilen. Auf der Bühne wird
   nicht gelesen.
 
+## Zustellung: lokal oder live
+
+- Läuft die Präsentation LOKAL (`npm run serve`, der Plan für die Bühne):
+  Dateien einfach in `assets/live/` legen, fertig. NICHTS committen,
+  NICHTS pushen, die .gitignore hält sie absichtlich aus dem Repo.
+- Läuft die Präsentation über die LIVE-URL (visionista.edge-digital.ai):
+  die vier rawUrls an die GitHub-Action übergeben:
+  `gh workflow run marke-live.yml -f logo=<url> -f farben=<url> -f post=<url> -f schild=<url>`
+  Die Action lädt und committet sie, Pages deployt. Rechne mit zwei bis
+  vier Minuten Deploy plus CDN, das ist der langsamere und wackligere
+  Weg. NACH DEM VORTRAG aufräumen: die vier PNGs wieder aus dem Repo
+  entfernen, sonst zeigt die öffentliche Seite dauerhaft den Testlauf.
+
 Braucht insgesamt etwa drei Minuten. Schlägt ein Folgebild fehl: die
 übrigen trotzdem abliefern und in einem Satz sagen, welches fehlt,
 die Folie dimmt leere Felder von selbst.
