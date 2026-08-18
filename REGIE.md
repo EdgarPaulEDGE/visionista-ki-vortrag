@@ -11,7 +11,7 @@ visionista, das Unternehmerinnen-Netzwerk der WFL Herzogtum Lauenburg
 | Uhrzeit | Was |
 |---|---|
 | 08:30 bis 08:40 | Ankommen, Kaffee, Begrüßung durch die WFL |
-| 08:40 bis 09:15 | Vortrag, 35 Minuten, 30 Folien |
+| 08:40 bis 09:15 | Vortrag, 35 Minuten, 32 Folien |
 | 09:15 bis 09:25 | Fragen |
 | ab 09:25 | Sitzen bleiben, Gespräche, Networking |
 
@@ -31,24 +31,27 @@ fünf sind der Moment, die Streichliste zu benutzen.
 | 1 min | Moin, Vorstellung | 2 |
 | 2 min | Drei Zurufe, der Wunsch | 3 |
 | 3 min | „Zwei Männer erklären…" | 4 |
-| 5 min | 21:47 Uhr | 6 |
-| 8 min | Sie sind nicht spät dran | 8 |
-| 10 min | Der eine Anfängerfehler | 9 |
-| 12 min | Die vier Fragen | 10 |
-| 15 min | „Machen." | 12 |
-| **16 min** | **Demo 1, das Angebot** | 13 |
-| 19 min | Der zweite Satz | 15 |
-| **21 min** | **Demo 2, der Beitrag** | 16 |
-| **23 min** | **Demo 3, die Mail** | 18 |
-| **26 min** | **Zugabe: Zehn Ideen** | 20 |
-| 29 min | Drei Dinge vorab | 21 |
-| 30 min | Die Lage, nicht die Person | 22 |
-| 31 min | Das gehört in kein KI-Fenster | 23 |
-| 32 min | Was bei Ihnen bleibt | 25 |
-| 33 min | Ihre erste Woche | 26 |
-| 34 min | Ratzeburg, an Stunden fehlt es | 27 |
-| **34,5 min** | **Zugabe: Ihre Marke** | 29 |
-| 35 min | Jetzt Sie | 30 |
+| 4 min | Was heute nicht passiert | 5 |
+| 5 min | Agenda, drei Teile | 6 |
+| 6 min | 21:47 Uhr | 7 |
+| 9 min | Sie sind nicht spät dran | 9 |
+| 11 min | Der eine Anfängerfehler | 10 |
+| 13 min | Die vier Fragen | 11 |
+| 15 min | „Machen." | 13 |
+| **16 min** | **Demo 1, das Angebot** | 14 |
+| 19 min | Der zweite Satz | 16 |
+| **21 min** | **Demo 2, der Beitrag** | 17 |
+| **23 min** | **Demo 3, die Mail** | 19 |
+| **26 min** | **Zugabe: Zehn Ideen** | 21 |
+| 29 min | Drei Dinge vorab | 22 |
+| 30 min | Die Lage, nicht die Person | 23 |
+| 31 min | Das gehört in kein KI-Fenster | 24 |
+| 31,5 min | Das Geheimnis | 25 |
+| 32 min | Was seit dem 2. August gilt | 26 |
+| 33 min | Sie wissen jetzt, wie es geht | 28 |
+| 34 min | Ratzeburg, an Ideen fehlt es nicht | 29 |
+| **34,5 min** | **Zugabe: Ihre Marke** | 31 |
+| 35 min | Jetzt Sie | 32 |
 
 **Der wichtigste Wert in dieser Tabelle ist die 16.** Wenn Sie nach sechzehn
 Minuten noch nicht bei der ersten Demo sind, war der Vorlauf zu lang.
@@ -97,6 +100,7 @@ und nicht wie ein Vortrag.
       falls aus dem Publikum kein Foto kommt
 - [ ] Netz testen. Es gibt keine Rückfall-Folien: hakt es, wird mündlich
       aufgelöst und übersprungen
+- [ ] Einmal F drücken und den kompletten Durchlauf im Vollbild testen
 - [ ] Karten auf den Tischen verteilen
 
 ---
@@ -123,7 +127,11 @@ der Raum entscheidet per Handzeichen, welche rausgeht.
 
 **Das ist der lauteste Moment des Vormittags.** Zeit dafür lassen, nicht drüberreden.
 
-**Wenn niemand etwas hat:** das Foto vom Raum nehmen, das vorher gemacht wurde.
+**Wenn niemand etwas hat:** NICHT auf AirDrop von einer Teilnehmerin warten,
+das kostet drei bis vier Minuten. Stattdessen liegt ein vorbereitetes Foto
+eines echten, kleinen, möglichst überraschenden Betriebs auf dem Handy
+(kein Betrieb aus dem Raum). Die Überraschung ersetzt den Wow-Effekt des
+Einsendens. Wer doch spontan schicken will: gern, aber vorher absprechen.
 
 ### Demo 3, Folie 18: Die unangenehme Mail
 

@@ -198,7 +198,7 @@ hr.strich.zart{width:100%;height:1px;background:var(--linie);margin:26px 0;opaci
 .gesagt{font-size:40px;line-height:1.62;font-weight:400;color:var(--burgund);
         flex-shrink:0;}
 .gesagt .wer{font-weight:700;}
-.gesagt.matt{color:var(--tinte-weich);font-weight:300;}
+.gesagt.matt{color:var(--tinte);font-weight:400;opacity:.85;}
 
 /* Ein fertiger Brief. Nur Haarlinien oben und unten, keine Flaeche. */
 .brief{font-size:40px;line-height:1.62;font-weight:300;color:var(--tinte);
@@ -289,6 +289,32 @@ html.hatbild .vollbild,html.hatbild .dunkel,html.hatbild .schleier{visibility:hi
 .illu.gross{width:440px;height:440px;}
 /* Frei in die Folie gesetzt, ohne den Textfluss zu stoeren. */
 .illu.frei{position:absolute;z-index:0;pointer-events:none;}
+
+/* Versus-Aufbau: zwei Lager, dazwischen ein Kreis-Badge.
+   Der Kontrast kommt aus Deckkraft und Gewicht, nicht aus neuen Farben. */
+.clash{position:relative;}
+.clash .vs{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);
+  width:110px;height:110px;border-radius:50%;background:var(--burgund);
+  color:#F6F1E9;display:flex;align-items:center;justify-content:center;
+  font-family:"Avenir Next LT",sans-serif;font-weight:700;font-size:40px;z-index:2;}
+.clash .lager-links{opacity:.5;}
+
+/* Rollen-Markierung in den Prompts: vier gedeckte Toene als dicke
+   Unterstreichung, die Legende darunter traegt dieselben Farben.
+   Das ersetzt den frueheren Erklaertext unter jedem Prompt. */
+.rolle-m{text-decoration-line:underline;text-decoration-thickness:7px;text-underline-offset:10px;}
+.m-rolle{text-decoration-color:#33606F;}
+.m-ergebnis{text-decoration-color:#4A6B3A;}
+.m-wissen{text-decoration-color:#8A3B5C;}
+.m-form{text-decoration-color:#A6762A;}
+.rollen-legende{display:flex;gap:44px;font-size:22px;font-weight:700;
+  letter-spacing:.16em;text-transform:uppercase;color:var(--burgund);opacity:.85;}
+.rollen-legende span::before{content:"";display:inline-block;width:16px;height:16px;
+  border-radius:50%;margin-right:12px;vertical-align:-2px;}
+.rollen-legende .l-rolle::before{background:#33606F;}
+.rollen-legende .l-ergebnis::before{background:#4A6B3A;}
+.rollen-legende .l-wissen::before{background:#8A3B5C;}
+.rollen-legende .l-form::before{background:#A6762A;}
 
 /* Verbotsliste: Icon und Sache auf einer Zeile, gleichmaessiger Rhythmus.
    Kein Kasten, keine Kreuze. Die Ueberschrift sagt schon, dass es Tabus sind. */
@@ -384,6 +410,9 @@ html.nofrag .reveal .fragment{opacity:1!important;visibility:visible!important;t
 <body>
 
 <svg xmlns="http://www.w3.org/2000/svg" style="display:none" aria-hidden="true">
+  <symbol id="i-smartphone" viewBox="0 0 24 24"><rect width="14" height="20" x="5" y="2" rx="2" ry="2" /> <path d="M12 18h.01" /></symbol>
+  <symbol id="i-folder-open" viewBox="0 0 24 24"><path d="m6 14 1.5-2.9A2 2 0 0 1 9.24 10H20a2 2 0 0 1 1.94 2.5l-1.54 6a2 2 0 0 1-1.95 1.5H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h3.9a2 2 0 0 1 1.69.9l.81 1.2a2 2 0 0 0 1.67.9H18a2 2 0 0 1 2 2v2" /></symbol>
+  <symbol id="i-image" viewBox="0 0 24 24"><rect width="18" height="18" x="3" y="3" rx="2" ry="2" /> <circle cx="9" cy="9" r="2" /> <path d="m21 15-3.086-3.086a2 2 0 0 0-2.828 0L6 21" /></symbol>
   <symbol id="i-contact" viewBox="0 0 24 24"><path d="M16 2v2" /> <path d="M7 21v-2a2 2 0 012-2h6a2 2 0 012 2v2" /> <path d="M8 2v2" /> <circle cx="12" cy="10" r="3" /> <rect x="3" y="3" width="18" height="18" rx="2" /></symbol>
   <symbol id="i-folder-lock" viewBox="0 0 24 24"><rect width="8" height="5" x="14" y="17" rx="1" /> <path d="M10 20H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h3.9a2 2 0 0 1 1.69.9l.81 1.2a2 2 0 0 0 1.67.9H20a2 2 0 0 1 2 2v2.5" /> <path d="M20 17v-2a2 2 0 1 0-4 0v2" /></symbol>
   <symbol id="i-heart-pulse" viewBox="0 0 24 24"><path d="M2 9.5a5.5 5.5 0 0 1 9.591-3.676.56.56 0 0 0 .818 0A5.49 5.49 0 0 1 22 9.5c0 2.29-1.5 4-3 5.5l-5.492 5.313a2 2 0 0 1-3 .019L5 15c-1.5-1.5-3-3.2-3-5.5" /> <path d="M3.22 13H9.5l.5-1 2 4.5 2-7 1.5 3.5h5.27" /></symbol>
@@ -546,31 +575,25 @@ html.nofrag .reveal .fragment{opacity:1!important;visibility:visible!important;t
      ============================================================ -->
 <section data-slide-id="versprechen">
   <div class="buehne">
-    <div class="label">Drei Versprechen für die nächsten 35 Minuten</div>
     <h2 style="margin-top:26px;">Was heute <span class="akz">nicht</span> passiert.</h2>
-    <hr class="strich breit" style="margin:56px 0 0;">
-    <div class="zeilen" style="margin-top:0;">
-      <div style="padding:62px 0;">
+    <hr class="strich breit" style="margin:52px 0 0;">
+    <div class="zeilen" style="margin-top:6px;">
+      <div style="padding:52px 0;">
         <span class="zahl klein" style="width:150px;flex-shrink:0;">1</span>
-        <div>
-          <h3 style="font-size:70px;">Keine Fachwörter.</h3>
-        </div>
+        <h3 style="font-size:60px;">Keine Buzzwords.</h3>
       </div>
-      <div style="padding:62px 0;">
+      <div style="padding:52px 0;">
         <span class="zahl klein" style="width:150px;flex-shrink:0;">2</span>
-        <div>
-          <h3 style="font-size:70px;">Keine Angst.</h3>
-        </div>
+        <h3 style="font-size:60px;">Keine Angstmacherei.</h3>
       </div>
-      <div style="padding:62px 0;">
+      <div style="padding:52px 0;">
         <span class="zahl klein" style="width:150px;flex-shrink:0;">3</span>
-        <div>
-          <h3 style="font-size:70px;">Kein Verkauf.</h3>
-        </div>
+        <h3 style="font-size:60px;">Keine Zeitverschwendung.</h3>
       </div>
     </div>
+    <hr class="strich breit" style="margin:auto 0 26px;">
   </div>
-  <aside class="notes">
+<aside class="notes">
     Die drei Punkte sind bewusst nackt. Der Text dazu kommt von Ihnen:
     1. Kein Modell, kein Token, kein Algorithmus. Sie brauchen davon nichts,
        so wie Sie beim Autofahren nichts über Zündkerzen wissen müssen.
@@ -580,6 +603,45 @@ html.nofrag .reveal .fragment{opacity:1!important;visibility:visible!important;t
     Punkt 3 ist der, der den Raum gewinnt: die Charta verbietet
     Produktpräsentationen ausdrücklich, und alle wissen das.
     Wer es von sich aus anspricht, hat den Raum. Ruhig sagen, nicht kokett.
+  </aside>
+</section>
+
+<!-- ============================================================
+     FOLIE  Agenda. Drei Teile, damit der Vormittag eine Landkarte hat.
+     ============================================================ -->
+<section data-slide-id="agenda">
+  <div class="buehne">
+    <div class="label">Die nächsten 35 Minuten</div>
+    <h2 style="margin-top:26px;">Drei Teile.</h2>
+    <hr class="strich breit" style="margin:48px 0 0;">
+    <div class="zeilen" style="margin-top:6px;">
+      <div style="padding:38px 0;">
+        <span class="zahl klein" style="width:150px;flex-shrink:0;">1</span>
+        <div>
+          <h3 style="font-size:56px;">Verstehen.</h3>
+          <p class="klein" style="margin-top:10px;">Warum jetzt der richtige Moment ist.</p>
+        </div>
+      </div>
+      <div style="padding:38px 0;">
+        <span class="zahl klein" style="width:150px;flex-shrink:0;">2</span>
+        <div>
+          <h3 style="font-size:56px;">Machen.</h3>
+          <p class="klein" style="margin-top:10px;">Drei Aufgaben, live erledigt.</p>
+        </div>
+      </div>
+      <div style="padding:38px 0;">
+        <span class="zahl klein" style="width:150px;flex-shrink:0;">3</span>
+        <div>
+          <h3 style="font-size:56px;">Absichern.</h3>
+          <p class="klein" style="margin-top:10px;">Daten, Recht, Ruhe.</p>
+        </div>
+      </div>
+    </div>
+    <hr class="strich breit" style="margin:auto 0 26px;">
+  </div>
+  <aside class="notes">
+    Zügig, keine Minute. Die drei Teile stehen auch in der Kopfzeile jeder
+    Folie, hier bekommen sie einmal ein Gesicht.
   </aside>
 </section>
 
@@ -616,35 +678,30 @@ html.nofrag .reveal .fragment{opacity:1!important;visibility:visible!important;t
     <h2>Was um 21:47 Uhr <span class="akz">noch liegt</span>.</h2>
     <hr class="strich breit" style="margin:44px 0 0;">
     <div class="zeilen" style="margin-top:6px;">
-      <div style="justify-content:space-between;padding:20px 0;">
+      <div style="padding:26px 0;">
         <span style="display:flex;align-items:center;gap:34px;">
           <svg class="ik"><use href="#i-file-text"></use></svg>
-          <span style="font-size:44px;font-weight:600;">Das Angebot</span></span>
-        <span class="klein" style="white-space:nowrap;">seit 6 Tagen offen</span>
+          <span style="font-size:52px;font-weight:600;">Das Angebot</span></span>
       </div>
-      <div style="justify-content:space-between;padding:20px 0;">
+      <div style="padding:26px 0;">
         <span style="display:flex;align-items:center;gap:34px;">
           <svg class="ik"><use href="#i-megaphone"></use></svg>
-          <span style="font-size:44px;font-weight:600;">Der Beitrag</span></span>
-        <span class="klein" style="white-space:nowrap;">seit 3 Wochen geplant</span>
+          <span style="font-size:52px;font-weight:600;">Der Beitrag</span></span>
       </div>
-      <div style="justify-content:space-between;padding:20px 0;">
+      <div style="padding:26px 0;">
         <span style="display:flex;align-items:center;gap:34px;">
           <svg class="ik"><use href="#i-mail"></use></svg>
-          <span style="font-size:44px;font-weight:600;">Die Absage</span></span>
-        <span class="klein" style="white-space:nowrap;">seit Montag im Kopf</span>
+          <span style="font-size:52px;font-weight:600;">Die Absage</span></span>
       </div>
-      <div style="justify-content:space-between;padding:20px 0;">
+      <div style="padding:26px 0;">
         <span style="display:flex;align-items:center;gap:34px;">
           <svg class="ik"><use href="#i-receipt"></use></svg>
-          <span style="font-size:44px;font-weight:600;">Die Belege</span></span>
-        <span class="klein" style="white-space:nowrap;">in der Schublade</span>
+          <span style="font-size:52px;font-weight:600;">Die Belege</span></span>
       </div>
-      <div style="justify-content:space-between;padding:20px 0;">
+      <div style="padding:26px 0;">
         <span style="display:flex;align-items:center;gap:34px;">
           <svg class="ik"><use href="#i-lightbulb"></use></svg>
-          <span style="font-size:44px;font-weight:600;">Die Idee</span></span>
-        <span class="klein" style="white-space:nowrap;">nicht vorhanden</span>
+          <span style="font-size:52px;font-weight:600;">Die Idee</span></span>
       </div>
     </div>
     <hr class="strich breit" style="margin:0 0 34px;">
@@ -673,7 +730,6 @@ html.nofrag .reveal .fragment{opacity:1!important;visibility:visible!important;t
      ============================================================ -->
 <section data-slide-id="verbreitung">
   <div class="buehne">
-    <div class="label">Der Stand der Dinge, Juni 2026</div>
     <h2 style="margin-top:26px;">Sie sind nicht spät dran.</h2>
     <hr class="strich breit" style="margin:52px 0 56px;">
     <div style="display:flex;gap:96px;align-items:flex-start;">
@@ -734,36 +790,27 @@ html.nofrag .reveal .fragment{opacity:1!important;visibility:visible!important;t
 <section data-slide-id="denkfehler">
   <div class="buehne">
     <h2>Es gibt genau <span class="akz oval">einen</span> Anfängerfehler.</h2>
-    <hr class="strich breit" style="margin:46px 0 52px;">
-    <div class="spalten zwei" style="align-items:stretch;">
-      <div>
-        <div class="label" style="opacity:.5;">So machen es fast alle</div>
-        <h3 style="margin-top:26px;color:var(--tinte-weich);">
-          Man tippt wie bei Google.
-        </h3>
-        <p class="klein" style="margin-top:26px;">
-          Drei Wörter. Hoffen.
-        </p>
+    <hr class="strich breit" style="margin:46px 0 60px;">
+    <div class="spalten zwei clash" style="align-items:center;margin:auto 0;">
+      <div class="lager-links" style="padding-right:120px;">
+        <svg class="ik gross"><use href="#i-message-circle"></use></svg>
+        <div class="label" style="margin:26px 0 0;">So machen es fast alle</div>
+        <h3 style="margin-top:20px;">Man tippt<br>wie bei Google.</h3>
       </div>
-      <div>
-        <div class="label">So funktioniert es</div>
-        <h3 style="margin-top:26px;">
-          Man redet wie mit einer<br>neuen Aushilfe.
-        </h3>
-        <p class="klein" style="margin-top:26px;color:var(--tinte);">
-          Klug. Schnell.<br>Ahnungslos über Ihren Betrieb.
-        </p>
+      <div class="vs">VS</div>
+      <div style="border-left:1px solid var(--linie);padding-left:120px;">
+        <svg class="ik gross"><use href="#i-folder-open"></use></svg>
+        <div class="label" style="margin:26px 0 0;">So funktioniert es</div>
+        <h3 style="margin-top:20px;">Man redet wie mit<br>einer neuen Aushilfe.</h3>
       </div>
     </div>
-    <hr class="strich breit" style="margin:56px 0 34px;">
+    <hr class="strich breit" style="margin:auto 0 34px;">
     <p class="takeaway" style="max-width:1360px;">
       Einer Aushilfe sagen Sie auch nicht<br>
       „Mach mal Angebot" und gehen dann Kaffee holen.
     </p>
   </div>
-  <img src="assets/illu/dialog.png" alt="" class="illu frei"
-       style="width:340px;height:340px;right:96px;bottom:34px;opacity:.9;">
-  <aside class="notes">
+<aside class="notes">
     Der Text, der von der Folie geflogen ist, gehört jetzt Ihnen:
     Links: "Man bekommt etwas Allgemeines zurück, denkt sich nett aber nicht meins,
     und macht es am Ende doch selbst."
@@ -782,7 +829,6 @@ html.nofrag .reveal .fragment{opacity:1!important;visibility:visible!important;t
      ============================================================ -->
 <section data-slide-id="vier-fragen">
   <div class="buehne">
-    <div class="label">Was Sie sich merken müssen. Mehr nicht.</div>
     <h2 style="margin-top:26px;">Vier <span class="akz">Fragen</span>.</h2>
     <hr class="strich breit" style="margin:50px 0 56px;">
     <div class="spalten vier" style="align-items:start;">
@@ -843,7 +889,7 @@ html.nofrag .reveal .fragment{opacity:1!important;visibility:visible!important;t
         <svg class="ik"><use href="#i-pen-line"></use></svg>
         <div class="label" style="margin:22px 0;">Was Sie ab heute eingeben</div>
         <div class="gesagt" style="font-size:38px;">
-          <span class="wer">Du bist meine Büroleiterin.</span><br>
+          Du bist meine Büroleiterin.<br>
           Schreib das Angebot für Frau Petersen.<br>
           Vier Räume, Altbau, Einzug im Oktober.<br>
           2.400 Euro. Freundlich und kurz.
@@ -851,8 +897,8 @@ html.nofrag .reveal .fragment{opacity:1!important;visibility:visible!important;t
       </div>
     </div>
     <hr class="strich breit" style="margin:38px 0 24px;">
-    <p class="takeaway" style="font-size:48px;">
-      Vierzig Sekunden mehr Aufwand.<br>Eine Stunde weniger Arbeit.
+    <p class="takeaway" style="font-size:46px;">
+      Vierzig Sekunden mehr Aufwand. Eine Stunde weniger Arbeit.
     </p>
   </div>
   <aside class="notes">
@@ -895,17 +941,14 @@ html.nofrag .reveal .fragment{opacity:1!important;visibility:visible!important;t
 <section data-slide-id="demo-angebot">
   <div class="geist">1</div>
   <div class="buehne">
-    <div class="label">Live, Aufgabe eins</div>
     <h2 style="margin-top:26px;">Das <span class="akz">Angebot</span>,<br>das seit Dienstag wartet.</h2>
     <hr class="strich breit" style="margin:52px 0 46px;">
-    <p class="lead" style="font-size:52px;">Getippt wird nicht. Gesprochen.</p>
-    <p class="klein" style="margin-top:30px;font-size:40px;">Ihr Handy kann das seit Jahren. Kostenlos.</p>
+    <p class="lead" style="font-size:56px;font-weight:600;">Getippt wird nicht. Es wird gesprochen.</p>
+    <p class="klein" style="margin-top:34px;">Ihr Handy kann das seit Jahren. Kostenlos.</p>
     <hr class="strich breit" style="margin:auto 0 30px;">
-    <p class="takeaway">Ab hier läuft die Uhr.</p>
   </div>
-  <img src="assets/illu/zettel.png" alt="" class="illu frei"
-       style="width:430px;height:430px;right:110px;bottom:150px;opacity:.92;">
-  <aside class="notes">
+  <svg class="ik" style="position:absolute;width:300px;height:300px;right:170px;bottom:230px;stroke-width:1.1;opacity:.9;"><use href="#i-smartphone"></use></svg>
+<aside class="notes">
     REGIE: Diktat starten, den Satz von der nächsten Folie sprechen, absenden.
     Während es läuft in den Raum sprechen, nicht auf den Bildschirm starren.
     Beim Einblenden von "Ab hier läuft die Uhr" den Timer wirklich starten.
@@ -918,16 +961,15 @@ html.nofrag .reveal .fragment{opacity:1!important;visibility:visible!important;t
       <div class="label">Was gesprochen wird</div>
       <hr class="strich breit" style="margin:34px 0 auto;">
       <p class="prompt-gross">
-        <span class="wer">Du bist meine Büroleiterin.</span><br>
-        Schreib das Angebot für Frau Petersen.<br>
-        Vier Räume streichen, Altbau, hohe Decken,<br>
-        Einzug am ersten Oktober. 2.400 Euro.<br>
-        Freundlich, kurz, keine Fachwörter.
+        <span class="rolle-m m-rolle">Du bist meine Büroleiterin.</span><br>
+        <span class="rolle-m m-ergebnis">Schreib das Angebot für Frau Petersen.</span><br>
+        <span class="rolle-m m-wissen">Vier Räume streichen, Altbau, hohe Decken,<br>
+        Einzug am ersten Oktober. 2.400 Euro.</span><br>
+        <span class="rolle-m m-form">Freundlich, kurz, keine Fachwörter.</span>
       </p>
-      <p class="label" style="margin-top:52px;">
-        Rolle &middot; Ergebnis &middot; Wissen &middot; Form.
-        Alle vier Fragen stecken in diesem einen Satz.
-      </p>
+      <div class="rollen-legende" style="margin-top:52px;">
+        <span class="l-rolle">Rolle</span><span class="l-ergebnis">Ergebnis</span><span class="l-wissen">Wissen</span><span class="l-form">Form</span>
+      </div>
       <hr class="strich breit" style="margin:auto 0 0;">
     </div>
     <aside class="notes">
@@ -944,7 +986,7 @@ html.nofrag .reveal .fragment{opacity:1!important;visibility:visible!important;t
   <div class="buehne">
     <h2>Der <span class="akz">zweite</span> Satz ist der,<br>auf den es ankommt.</h2>
     <hr class="strich breit" style="margin:44px 0 42px;">
-    <p class="lead" style="font-size:52px;"><em>Naja, nicht ganz meins.</em></p>
+    <p class="lead" style="font-size:52px;"><em>„Naja, nicht ganz meins."</em></p>
     <div class="spalten drei" style="margin-top:52px;align-items:start;">
       <div>
         <svg class="ik" style="width:52px;height:52px;margin-bottom:22px;"><use href="#i-scale"></use></svg>
@@ -990,7 +1032,6 @@ html.nofrag .reveal .fragment{opacity:1!important;visibility:visible!important;t
 <section data-slide-id="demo-foto">
   <div class="geist">2</div>
   <div class="buehne">
-    <div class="label">Live, Aufgabe zwei</div>
     <h2 style="margin-top:26px;">Der Beitrag, den Sie seit<br>drei Wochen <span class="akz">aufschieben</span>.</h2>
     <hr class="strich breit" style="margin:52px 0 46px;">
     <p class="lead" style="font-size:52px;">Ein Foto aus Ihrem Betrieb.</p>
@@ -1014,17 +1055,16 @@ html.nofrag .reveal .fragment{opacity:1!important;visibility:visible!important;t
       <div class="label">Was wir eingeben</div>
       <hr class="strich breit" style="margin:34px 0 auto;">
       <p class="prompt-gross">
-        <span class="wer">Du machst unseren Instagram-Auftritt.</span><br>
-        Hier ist ein Foto aus meinem Betrieb.<br>
-        Schreib drei Bildunterschriften:<br>
-        eine persönliche, eine sachliche,<br>
+        <span class="rolle-m m-rolle">Du machst unseren Instagram-Auftritt.</span><br>
+        <span class="rolle-m m-wissen">Hier ist ein Foto aus meinem Betrieb.</span><br>
+        <span class="rolle-m m-ergebnis">Schreib drei Bildunterschriften:</span><br>
+        <span class="rolle-m m-form">eine persönliche, eine sachliche,<br>
         eine mit Augenzwinkern.<br>
-        Am Ende eine echte Frage.
+        Am Ende eine echte Frage.</span>
       </p>
-      <p class="label" style="margin-top:52px;">
-        Rolle &middot; Ergebnis &middot; Wissen &middot; Form.
-        Alle vier Fragen stecken in diesem einen Satz.
-      </p>
+      <div class="rollen-legende" style="margin-top:52px;">
+        <span class="l-rolle">Rolle</span><span class="l-ergebnis">Ergebnis</span><span class="l-wissen">Wissen</span><span class="l-form">Form</span>
+      </div>
       <hr class="strich breit" style="margin:auto 0 0;">
     </div>
     <aside class="notes">
@@ -1042,7 +1082,6 @@ html.nofrag .reveal .fragment{opacity:1!important;visibility:visible!important;t
 <section data-slide-id="demo-mail">
   <div class="geist">3</div>
   <div class="buehne">
-    <div class="label">Live, Aufgabe drei</div>
     <h2 style="margin-top:26px;">Die Mail, die Sie seit Montag<br>im <span class="akz">Kopf</span> haben.</h2>
     <hr class="strich breit" style="margin:52px 0 46px;">
     <p class="lead" style="font-size:52px;">Die Absage. Die Mahnung.<br>Die Antwort auf den Unhöflichen.</p>
@@ -1065,18 +1104,17 @@ html.nofrag .reveal .fragment{opacity:1!important;visibility:visible!important;t
     <div class="buehne">
       <div class="label">Was wir eingeben</div>
       <hr class="strich breit" style="margin:34px 0 auto;">
-      <p class="prompt-gross">
-        <span class="wer">Du bist meine ruhigste Kollegin.</span><br>
-        Eine Stammkundin hat seit sieben Wochen<br>
-        eine Rechnung offen.<br>
-        Ich will sie nicht verlieren.<br>
-        Schreib zwei Fassungen:<br>
-        einmal freundlich mit Frist, einmal deutlich.
+      <p class="prompt-gross" style="font-size:54px;">
+        <span class="rolle-m m-rolle">Du bist meine ruhigste Kollegin.</span><br>
+        <span class="rolle-m m-wissen">Eine Stammkundin hat seit sieben Wochen<br>
+        eine Rechnung offen. Ich will sie nicht verlieren.<br>
+        Hier ist ihre letzte Mail: [&hairsp;eingefügt&hairsp;]</span><br>
+        <span class="rolle-m m-ergebnis">Schreib zwei Fassungen:</span><br>
+        <span class="rolle-m m-form">einmal freundlich mit Frist, einmal deutlich.</span>
       </p>
-      <p class="label" style="margin-top:52px;">
-        Rolle &middot; Ergebnis &middot; Wissen &middot; Form.
-        Alle vier Fragen stecken in diesem einen Satz.
-      </p>
+      <div class="rollen-legende" style="margin-top:52px;">
+        <span class="l-rolle">Rolle</span><span class="l-ergebnis">Ergebnis</span><span class="l-wissen">Wissen</span><span class="l-form">Form</span>
+      </div>
       <hr class="strich breit" style="margin:auto 0 0;">
     </div>
     <aside class="notes">
@@ -1091,16 +1129,15 @@ html.nofrag .reveal .fragment{opacity:1!important;visibility:visible!important;t
      ============================================================ -->
 <section data-slide-id="zehn-ideen">
     <div class="buehne">
-      <div class="label">Eine noch. Die schnellste.</div>
       <h2 style="margin-top:26px;">Zehn Ideen. <span class="akz">Ihr Betrieb.</span></h2>
       <hr class="strich breit" style="margin:34px 0 auto;">
       <p class="prompt-gross">
-        <span class="wer">Du kennst meinen Betrieb:</span>
-        <span style="opacity:.55;">[&hairsp;drei Worte von Ihnen&hairsp;]</span>.<br>
-        Gib mir zehn Ideen für Instagram.<br>
-        Keine allgemeinen Tipps,<br>
+        <span class="rolle-m m-wissen">Du kennst meinen Betrieb:
+        <span style="opacity:.55;">[&hairsp;drei Worte von Ihnen&hairsp;]</span>.</span><br>
+        <span class="rolle-m m-ergebnis">Gib mir zehn Ideen für Instagram.</span><br>
+        <span class="rolle-m m-form">Keine allgemeinen Tipps,<br>
         nur was zu genau diesem Betrieb passt.<br>
-        Das Leichteste zuerst.
+        Das Leichteste zuerst.</span>
       </p>
       <hr class="strich breit" style="margin:auto 0 26px;">
       <p class="takeaway">Handzeichen: Was würden Sie posten?</p>
@@ -1127,7 +1164,7 @@ html.nofrag .reveal .fragment{opacity:1!important;visibility:visible!important;t
        class="vollbild" style="object-position:80% 50%;">
   <div class="schleier stark"></div>
   <div class="buehne mittig auf-bild">
-    <p class="label">Bevor Sie damit loslegen</p>
+    <p class="label">Teil drei von drei &middot; Bevor Sie damit loslegen</p>
     <h2 style="font-size:88px;margin-top:30px;max-width:1200px;">
       Drei Dinge, die Sie<br>einmal hören sollten.
     </h2>
@@ -1148,27 +1185,23 @@ html.nofrag .reveal .fragment{opacity:1!important;visibility:visible!important;t
      ============================================================ -->
 <section data-slide-id="datenschutz">
   <div class="buehne">
-    <div class="label">Die einzige Regel, die Sie sich merken müssen</div>
     <h2 style="margin-top:26px;">Beschreiben Sie die <span class="akz">Lage</span>.<br>Nicht die Person.</h2>
     <hr class="strich breit" style="margin:44px 0 42px;">
     <div class="spalten zwei" style="align-items:start;">
       <div>
-        <div class="label" style="opacity:.5;margin-bottom:20px;">So besser nicht</div>
+        <div class="label" style="opacity:.6;margin-bottom:20px;">&#10005;&nbsp;&nbsp;So besser nicht</div>
         <div class="gesagt matt">
           Frau Petersen aus der<br>Bergstraße 12 in Mölln<br>hat Rechnung 2026-0431<br>nicht bezahlt.
         </div>
       </div>
       <div>
-        <div class="label" style="margin-bottom:20px;">So</div>
+        <div class="label" style="margin-bottom:20px;">&#10003;&nbsp;&nbsp;So</div>
         <div class="gesagt">
           Eine Stammkundin hat<br>eine Rechnung offen<br>und meldet sich nicht.
         </div>
       </div>
     </div>
-    <hr class="strich breit" style="margin:48px 0 34px;">
-    <p class="takeaway" style="max-width:1360px;">
-      Der Text wird derselbe.
-    </p>
+    <hr class="strich breit" style="margin:auto 0 34px;">
   </div>
   <img src="assets/illu/schloss.png" alt="" class="illu frei"
        style="width:420px;height:420px;right:110px;bottom:56px;opacity:.9;">
@@ -1224,23 +1257,42 @@ html.nofrag .reveal .fragment{opacity:1!important;visibility:visible!important;t
 </section>
 
 <!-- ============================================================
+     FOLIE  Das Geheimnis. Einmal EDGE-Welt statt visionista-Sand:
+     dunkler Kosmos, weisse Zeile, der Roboter mit dem Cappy.
+     ============================================================ -->
+<section data-slide-id="geheimnis" data-chrome="aus" data-anim="aus">
+  <img src="assets/bilder/geheimnis-robo.jpg" alt="Kleiner Roboter mit visionista-Cappy"
+       class="vollbild" style="object-position:center center;">
+  <div class="buehne auf-bild" style="justify-content:center;">
+    <h2 style="font-size:84px;max-width:1150px;color:#F6F1E9;">
+      Wir teilen ein Geheimnis<br>mit Ihnen.
+    </h2>
+  </div>
+  <aside class="notes">
+    Tonwechsel, bewusst die einzige dunkle EDGE-Folie im Deck.
+    Hier kommt das Geheimnis muendlich. Kurz stehen lassen,
+    der Roboter macht die Sympathie-Arbeit von allein.
+  </aside>
+</section>
+
+<!-- ============================================================
      FOLIE 18  Die Rechtslage in einem Satz
      ============================================================ -->
 <section data-slide-id="ai-act">
   <div class="buehne mittig">
     <div class="label">Und weil danach immer gefragt wird</div>
     <h2 style="margin-top:30px;">Was seit dem 2. August gilt.</h2>
-    <hr class="strich" style="margin:56px 0 64px;">
+    <hr class="strich" style="margin:60px 0 66px;">
     <div class="spalten zwei" style="align-items:start;">
       <div>
-        <svg class="ik gross"><use href="#i-message-circle"></use></svg>
-        <h3 style="margin-top:34px;">Sagen, dass die KI<br>geantwortet hat.</h3>
-        <p class="klein" style="margin-top:28px;">Chatfenster.<br>Täuschend echte Bilder.</p>
+        <svg class="ik gross"><use href="#i-image"></use></svg>
+        <h3 style="margin-top:34px;">KI-Bilder<br>kennzeichnen.</h3>
+        <p class="klein" style="margin-top:30px;">Auch die schönen.</p>
       </div>
       <div>
-        <svg class="ik gross"><use href="#i-calendar"></use></svg>
-        <h3 style="margin-top:34px;">Der Rest kommt<br>erst 2027.</h3>
-        <p class="klein" style="margin-top:28px;">Betrifft die<br>wenigsten hier.</p>
+        <svg class="ik gross"><use href="#i-message-circle"></use></svg>
+        <h3 style="margin-top:34px;">Chatbots<br>kennzeichnen.</h3>
+        <p class="klein" style="margin-top:30px;">Wenn kein Mensch antwortet.</p>
       </div>
     </div>
     <hr class="strich breit" style="margin:auto 0 28px;">
@@ -1312,41 +1364,28 @@ html.nofrag .reveal .fragment{opacity:1!important;visibility:visible!important;t
      ============================================================ -->
 <section data-slide-id="erste-woche">
   <div class="buehne">
-    <div class="label">Wenn Sie heute nur eine Sache mitnehmen</div>
-    <h2 style="margin-top:26px;">Ihre <span class="akz">erste Woche</span>.</h2>
-    <hr class="strich breit" style="margin:42px 0 0;">
-    <div class="zeilen" style="margin-top:6px;">
-      <div style="padding:28px 0;opacity:.4;">
-        <div style="width:340px;flex-shrink:0;display:flex;align-items:center;gap:30px;">
-          <svg class="ik"><use href="#i-circle-check"></use></svg>
-          <div class="label">Gerade eben</div>
+    <h2 style="margin-top:26px;">Sie wissen jetzt, <span class="akz">wie es geht</span>.</h2>
+    <hr class="strich breit" style="margin:46px 0 52px;">
+    <div class="spalten zwei" style="align-items:start;margin:auto 0;">
+      <div>
+        <div class="label">Heute gelernt</div>
+        <div class="tabu-liste" style="margin-top:40px;gap:44px;">
+          <div><svg class="ik"><use href="#i-circle-check"></use></svg>Vier Fragen statt Fachwissen</div>
+          <div><svg class="ik"><use href="#i-circle-check"></use></svg>Drei Aufgaben, live erledigt</div>
+          <div><svg class="ik"><use href="#i-circle-check"></use></svg>Die eine Datenregel</div>
         </div>
-        <h3 style="font-size:50px;text-decoration:line-through;text-decoration-thickness:3px;">Herausfinden, wie es geht.</h3>
       </div>
-      <div style="padding:28px 0;">
-        <div style="width:340px;flex-shrink:0;display:flex;align-items:center;gap:30px;">
-          <svg class="ik"><use href="#i-hand"></use></svg>
-          <div class="label">Heute Mittag</div>
+      <div style="border-left:1px solid var(--linie);padding-left:96px;">
+        <div class="label">Ab morgen</div>
+        <div class="tabu-liste" style="margin-top:40px;gap:44px;">
+          <div><svg class="ik"><use href="#i-hand"></use></svg>Die lästigste Aufgabe zuerst</div>
+          <div><svg class="ik"><use href="#i-repeat"></use></svg>Noch einmal, diesmal meckern</div>
+          <div><svg class="ik"><use href="#i-bookmark"></use></svg>Den Satz aufheben, der ging</div>
         </div>
-        <h3 style="font-size:50px;">Die <span class="akz">lästigste</span> Aufgabe. Eine.</h3>
-      </div>
-      <div style="padding:28px 0;">
-        <div style="width:340px;flex-shrink:0;display:flex;align-items:center;gap:30px;">
-          <svg class="ik"><use href="#i-repeat"></use></svg>
-          <div class="label">Diese Woche</div>
-        </div>
-        <h3 style="font-size:50px;">Dieselbe noch einmal. Und meckern.</h3>
-      </div>
-      <div style="padding:28px 0;">
-        <div style="width:340px;flex-shrink:0;display:flex;align-items:center;gap:30px;">
-          <svg class="ik"><use href="#i-bookmark"></use></svg>
-          <div class="label">Ab dann</div>
-        </div>
-        <h3 style="font-size:50px;">Den Satz aufheben, der ging.</h3>
       </div>
     </div>
-    <hr class="strich breit" style="margin:0 0 26px;">
-    <p class="takeaway" style="font-size:76px;">Ein Werkzeug. Eine Aufgabe.</p>
+    <hr class="strich breit" style="margin:auto 0 30px;">
+    <p class="takeaway">Jetzt sind Sie dran.</p>
   </div>
 <aside class="notes">
     Dazusagen zu 1: „Nicht die wichtigste Aufgabe. Die lästigste."
@@ -1430,8 +1469,7 @@ html.nofrag .reveal .fragment{opacity:1!important;visibility:visible!important;t
         <figure data-live="schild"><figcaption class="label">Das Schild</figcaption></figure>
       </div>
       <hr class="strich breit" style="margin:auto 0 26px;">
-      <p class="takeaway">Ein erster Aufschlag. Ab hier wird gemeckert.</p>
-    </div>
+      </div>
     <aside class="notes">
       REGIE: Der Betrieb wird bei Folie 2 aus drei Zurufen gebaut
       (Was, Wo, Name), von drei verschiedenen Frauen. Emre stößt in einer ruhigen Minute die vier Bilder an und
