@@ -29,14 +29,16 @@ und im Prompt steht „using EXACTLY the logo from the reference image,
 reproduced faithfully". Dieselben Hex-Werte wiederholen. Alle drei
 parallel abschicken, je `resolution: "2k"`:
 
-1. Farbpalette, `16:9` — NUR Farben, ausdrücklich keine Mockups,
+1. Farbpalette, `4:5` HOCHFORMAT, damit sie das Folien-Feld füllt
+   statt als Querstreifen zu schrumpfen — NUR Farben, keine Mockups,
    keine Taschen, Sticker, Karten und keine Schriftmuster (Edgars
    Vorgabe vom 18.08.). Referenzlogo klein oben, darunter fünf große
-   Farbfelder, ÜBER jedem Feld ein gesperrtes deutsches Rollen-Label
-   (PRIMÄR, SEKUNDÄR, AKZENT, NEUTRAL HELL, NEUTRAL DUNKEL), UNTER
-   jedem Feld der Hex-Code in Monospace und ein deutscher Farbname in
-   Versalien, die Namen passend zur Betriebsart erfinden (beim
-   Angelladen etwa „Posenrot"). Viel Weißraum, ruhig, editorial.
+   Farb-BALKEN übereinander gestapelt, jeder über die volle Breite und
+   großzügig hoch. IM Balken links das Rollen-Label in fetten
+   gesperrten Versalien (PRIMÄR, SEKUNDÄR, AKZENT, NEUTRAL HELL,
+   NEUTRAL DUNKEL), rechts der Hex-Code groß in Monospace. Textfarbe
+   immer mit hohem Kontrast zum Balken, helle Balken bekommen eine
+   feine Kontur. Ruhig, editorial.
 2. Instagram-Beitrag, `4:5` — warmes Foto passend zum Betrieb, das Logo
    sichtbar auf einem Objekt (Tasse, Schürze, Tüte). Eine kleine
    handgeschriebene Karte mit einem kurzen deutschen Satz, den DU
