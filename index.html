@@ -827,30 +827,32 @@ html.nofrag .reveal .fragment{opacity:1!important;visibility:visible!important;t
 <section data-slide-id="vier-fragen">
   <div class="buehne">
     <h2 style="margin-top:26px;">Vier <span class="akz">Fragen</span>.</h2>
-    <hr class="strich breit" style="margin:50px 0 56px;">
-    <div class="spalten vier" style="align-items:start;">
-      <div>
-        <svg class="ik" style="width:132px;height:132px;"><use href="#i-user-round"></use></svg>
-        <div class="label" style="margin-top:34px;">1 &nbsp;·&nbsp; Die Rolle</div>
-        <h3 style="margin-top:22px;font-size:46px;">Wer bist du<br>für mich?</h3>
+    <hr class="strich breit" style="margin:44px 0 0;">
+    <!-- 2x2-Quadrat: Trennlinien wachsen aus dem Raster, rechte Spalte
+         traegt die senkrechte, untere Zeile die waagerechte. -->
+    <div style="display:grid;grid-template-columns:1fr 1fr;margin:auto 0;">
+      <div style="padding:44px 60px 44px 0;">
+        <svg class="ik gross"><use href="#i-user-round"></use></svg>
+        <div class="label" style="margin-top:22px;">1 &nbsp;&middot;&nbsp; Die Rolle</div>
+        <h3 style="margin-top:14px;font-size:50px;">Wer bist du für mich?</h3>
       </div>
-      <div>
-        <svg class="ik" style="width:132px;height:132px;"><use href="#i-target"></use></svg>
-        <div class="label" style="margin-top:34px;">2 &nbsp;·&nbsp; Das Ergebnis</div>
-        <h3 style="margin-top:22px;font-size:46px;">Was soll dabei<br>rauskommen?</h3>
+      <div style="padding:44px 0 44px 60px;border-left:1px solid var(--linie);">
+        <svg class="ik gross"><use href="#i-target"></use></svg>
+        <div class="label" style="margin-top:22px;">2 &nbsp;&middot;&nbsp; Das Ergebnis</div>
+        <h3 style="margin-top:14px;font-size:50px;">Was soll dabei rauskommen?</h3>
       </div>
-      <div>
-        <svg class="ik" style="width:132px;height:132px;"><use href="#i-brain"></use></svg>
-        <div class="label" style="margin-top:34px;">3 &nbsp;·&nbsp; Das Wissen</div>
-        <h3 style="margin-top:22px;font-size:46px;">Was musst du<br>dafür wissen?</h3>
+      <div style="padding:44px 60px 44px 0;border-top:1px solid var(--linie);">
+        <svg class="ik gross"><use href="#i-brain"></use></svg>
+        <div class="label" style="margin-top:22px;">3 &nbsp;&middot;&nbsp; Das Wissen</div>
+        <h3 style="margin-top:14px;font-size:50px;">Was musst du dafür wissen?</h3>
       </div>
-      <div>
-        <svg class="ik" style="width:132px;height:132px;"><use href="#i-shapes"></use></svg>
-        <div class="label" style="margin-top:34px;">4 &nbsp;·&nbsp; Die Form</div>
-        <h3 style="margin-top:22px;font-size:46px;">Wie soll es<br>aussehen?</h3>
+      <div style="padding:44px 0 44px 60px;border-left:1px solid var(--linie);border-top:1px solid var(--linie);">
+        <svg class="ik gross"><use href="#i-shapes"></use></svg>
+        <div class="label" style="margin-top:22px;">4 &nbsp;&middot;&nbsp; Die Form</div>
+        <h3 style="margin-top:14px;font-size:50px;">Wie soll es aussehen?</h3>
       </div>
     </div>
-    <hr class="strich breit" style="margin:auto 0 30px;">
+    <hr class="strich breit" style="margin:auto 0 26px;">
   </div>
 <aside class="notes">
     Beispiele mündlich dazugeben: zu 1 „Du bist meine Büroleiterin",
