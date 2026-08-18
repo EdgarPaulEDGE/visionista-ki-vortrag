@@ -45,7 +45,7 @@ fünf sind der Moment, die Streichliste zu benutzen.
 | **26 min** | **Zugabe: Zehn Ideen** | 21 |
 | 29 min | Drei Dinge vorab | 22 |
 | 30 min | Die Lage, nicht die Person | 23 |
-| 31 min | Das gehört in kein KI-Fenster | 24 |
+| 31 min | Das gehört in kein KI-Tool | 24 |
 | 31,5 min | Das Geheimnis | 25 |
 | 32 min | Was seit dem 2. August gilt | 26 |
 | 33 min | Sie wissen jetzt, wie es geht | 28 |
@@ -89,7 +89,7 @@ und nicht wie ein Vortrag.
       auf dem Beamer vorab einmal gegenprüfen, ob die Titelschrift trägt
 
 **Am Vorabend**
-- [ ] Beide KI-Fenster geöffnet und angemeldet, damit vor Ort keine Anmeldung nötig ist
+- [ ] Beide KI-Tool geöffnet und angemeldet, damit vor Ort keine Anmeldung nötig ist
 - [ ] Handy-Diktat einmal durchspielen, mit genau dem Satz von Folie 14
 - [ ] `visionista-ki-vortrag.pdf` auf beide Laptops laden, als Notnagel ohne Internet
 - [ ] Beide Laptops geladen, Netzteil eingepackt, HDMI-Adapter eingepackt
