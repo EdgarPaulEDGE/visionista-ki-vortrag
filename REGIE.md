@@ -133,10 +133,9 @@ das kostet drei bis vier Minuten. Der Fallback ist die **Alpakafarm Schmilau**
 garantiert keine Teilnehmerin, und der Raum denkt genau das richtige „hä?!".
 Ansage dazu: „Dann nehmen wir eben die Alpakas aus Schmilau." Ersatz:
 Alpakahof Carpe Diem in Giesensdorf.
-**VORHER ERLEDIGEN (Emre, heute):** der Farm per Instagram-DM oder Mail kurz
-schreiben und fragen, ob ein Foto von ihrer Seite im Workshop als Beispiel
-gezeigt werden darf, mit Angebot, sie zu taggen. Ohne Ja kein fremdes Foto
-auf die Leinwand. Das freigegebene Foto aufs Demo-Handy legen.
+Das Bild liegt fertig auf dem Desktop („Alpaka-Fallback Demo 2.jpg"),
+KI-generiert im Handy-Foto-Look, also ohne fremde Bildrechte. Es dient nur
+der Schulungsübung; die Ansage nennt Schmilau als Augenzwinkern.
 Wer doch spontan schicken will: gern, aber vorher absprechen.
 
 ### Demo 3, Folie 18: Die unangenehme Mail
