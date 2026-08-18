@@ -31,7 +31,9 @@ parallel abschicken, je `resolution: "2k"`:
 
 1. Markenboard, `16:9` — Referenzlogo oben links, Farbfelder mit den
    Hex-Codes, zwei Schriftmuster, drei kleine Anwendungen mit demselben
-   Logo. Deutsche Labels: „Farben", „Schrift", „Anwendung".
+   Logo. Deutsche Labels: „Farben", „Schrift", „Anwendung". Auch den
+   Fließtext im Schriftmuster wörtlich auf Deutsch vorgeben (zwei kurze
+   Sätze zur Betriebsart), sonst füllt das Modell Lorem ipsum ein.
 2. Instagram-Beitrag, `4:5` — warmes Foto passend zum Betrieb, das Logo
    sichtbar auf einem Objekt (Tasse, Schürze, Tüte). Eine kleine
    handgeschriebene Karte mit einem kurzen deutschen Satz, den DU
@@ -67,6 +69,9 @@ parallel abschicken, je `resolution: "2k"`:
   Weg. NACH DEM VORTRAG aufräumen: die vier PNGs wieder aus dem Repo
   entfernen, sonst zeigt die öffentliche Seite dauerhaft den Testlauf.
 
-Braucht insgesamt etwa drei Minuten. Schlägt ein Folgebild fehl: die
+Gemessene Zeiten (Probe 18.08., „Silvias Schuppen"): Logo nach ~1:35,
+alle vier Bilder nach ~4:10, über die Live-Zustellung öffentlich sichtbar
+nach ~5:05. Lokal entfällt der Deploy, dann sind es rund vier Minuten.
+Deshalb sofort nach den drei Zurufen feuern, nicht später. Schlägt ein Folgebild fehl: die
 übrigen trotzdem abliefern und in einem Satz sagen, welches fehlt,
 die Folie dimmt leere Felder von selbst.
