@@ -128,10 +128,16 @@ der Raum entscheidet per Handzeichen, welche rausgeht.
 **Das ist der lauteste Moment des Vormittags.** Zeit dafür lassen, nicht drüberreden.
 
 **Wenn niemand etwas hat:** NICHT auf AirDrop von einer Teilnehmerin warten,
-das kostet drei bis vier Minuten. Stattdessen liegt ein vorbereitetes Foto
-eines echten, kleinen, möglichst überraschenden Betriebs auf dem Handy
-(kein Betrieb aus dem Raum). Die Überraschung ersetzt den Wow-Effekt des
-Einsendens. Wer doch spontan schicken will: gern, aber vorher absprechen.
+das kostet drei bis vier Minuten. Der Fallback ist die **Alpakafarm Schmilau**
+(alpakafarm-schmilau.de): echtes Unternehmen, 600-Seelen-Dorf hinter Ratzeburg,
+garantiert keine Teilnehmerin, und der Raum denkt genau das richtige „hä?!".
+Ansage dazu: „Dann nehmen wir eben die Alpakas aus Schmilau." Ersatz:
+Alpakahof Carpe Diem in Giesensdorf.
+**VORHER ERLEDIGEN (Emre, heute):** der Farm per Instagram-DM oder Mail kurz
+schreiben und fragen, ob ein Foto von ihrer Seite im Workshop als Beispiel
+gezeigt werden darf, mit Angebot, sie zu taggen. Ohne Ja kein fremdes Foto
+auf die Leinwand. Das freigegebene Foto aufs Demo-Handy legen.
+Wer doch spontan schicken will: gern, aber vorher absprechen.
 
 ### Demo 3, Folie 18: Die unangenehme Mail
 
