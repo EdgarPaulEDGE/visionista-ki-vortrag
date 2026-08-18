@@ -1395,14 +1395,16 @@ html.nofrag .reveal .fragment{opacity:1!important;visibility:visible!important;t
   <img src="assets/bilder/ratzeburg.jpg" alt="Ratzeburg von oben, die Inselstadt im Kreis Herzogtum Lauenburg"
        class="vollbild" style="object-position:center 40%;">
   <div class="schleier stark"></div>
-  <div class="buehne auf-bild" style="justify-content:flex-end;padding-bottom:110px;">
+  <div class="buehne mittig auf-bild" style="align-items:flex-start;">
     <h2 style="font-size:84px;">An <span class="akz">Ideen</span> fehlt es hier nicht.</h2>
-    <hr class="strich" style="margin:38px 0 34px;">
-    <p class="lead" style="font-size:50px;line-height:1.55;color:rgba(246,241,233,.92);">
+    <p class="lead" style="margin-top:34px;font-size:48px;line-height:1.55;color:rgba(246,241,233,.92);">
       Ein Ruder-Achter mit zweimal Olympiagold.<br>Und die Diddl-Maus aus Geesthacht.
     </p>
-    <p class="takeaway" style="margin-top:48px;font-size:56px;">
-      Ab heute auch bekannt für Unternehmerinnen,<br>die KI richtig gut nutzen.
+    <!-- Stempel exakt in Textbreite: inline-block schrumpft auf den Inhalt,
+         align-items:flex-start verhindert, dass Flex ihn auf Spaltenbreite dehnt. -->
+    <p class="takeaway" style="margin-top:52px;font-size:50px;display:inline-block;
+       background:var(--burgund);padding:34px 50px;border-radius:14px;line-height:1.4;">
+      Ab heute auch bekannt für Unternehmerinnen,<br>die KI richtig gut nutzen. &#128521;
     </p>
   </div>
   <p class="foto-quelle" style="left:auto;right:34px;">Foto: Oliver Essing, Ratzeburg-Tourismus</p>
