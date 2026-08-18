@@ -11,7 +11,7 @@ visionista, das Unternehmerinnen-Netzwerk der WFL Herzogtum Lauenburg
 | Uhrzeit | Was |
 |---|---|
 | 08:30 bis 08:40 | Ankommen, Kaffee, Begrüßung durch die WFL |
-| 08:40 bis 09:15 | Vortrag, 35 Minuten, 31 Folien |
+| 08:40 bis 09:15 | Vortrag, 35 Minuten, 30 Folien |
 | 09:15 bis 09:25 | Fragen |
 | ab 09:25 | Sitzen bleiben, Gespräche, Networking |
 
@@ -48,7 +48,7 @@ fünf sind der Moment, die Streichliste zu benutzen.
 | 33 min | Ihre erste Woche | 26 |
 | 34 min | Ratzeburg, an Stunden fehlt es | 27 |
 | **34,5 min** | **Zugabe: Ihre Marke** | 29 |
-| 35 min | Das sind Sie, jetzt Sie | 30, 31 |
+| 35 min | Jetzt Sie | 30 |
 
 **Der wichtigste Wert in dieser Tabelle ist die 16.** Wenn Sie nach sechzehn
 Minuten noch nicht bei der ersten Demo sind, war der Vorlauf zu lang.
@@ -185,18 +185,15 @@ niemand muss allein kreativ sein. Am Ende kommt sie als Marke zurück: Logo, Far
 wartet, bis ALLE DREI Teile da sind, und stößt die vier Bilder dann in
 einer ruhigen Minute an (die Sätze stehen in den
 Sprechernotizen der Folie) und legt die fertigen Dateien in `assets/live/`
-ab, die Folie füllt sich von selbst. Geprobt am 17.08. als kompletter Durchlauf mit Umschwenk-Test: ein zu früh
+ab, die Folie füllt sich von selbst. Seit 18.08. läuft die Erzeugung zweistufig: erst das Logo mit fester
+Farbpalette, dann die drei Folgebilder mit dem Logo als Referenzbild.
+So tragen alle vier Bilder dieselbe Marke, vorher hat jedes Bild seine
+eigene erfunden. Kostet insgesamt etwa drei Minuten statt einer, deshalb
+feuert Emre direkt nach den drei Zurufen, nicht erst in einer ruhigen
+Minute. Geprobt am 17.08. als kompletter Durchlauf mit Umschwenk-Test: ein zu früh
 gefeuerter Satz wurde verworfen und neu gefeuert, Mehrkosten dreißig
 Sekunden, der Ablauf hat es geschluckt. 60 Sekunden für alle vier parallel. Framing wegen der Charta: „Ein erster Aufschlag, und
 das können Sie ab morgen selbst." Funktioniert nur lokal, nicht über die Web-Adresse.
-
-**Das sind Sie (Folie 30, das Abschiedsbild).** Das Raumfoto vom Anfang wird
-während der Fragerunde zur Strichzeichnung im Stil des Decks. Emre stößt die
-Umwandlung nach Demo 2 an (dauert etwa eine Minute, der genaue Satz steht in
-den Sprechernotizen der Folie), gezeigt wird im Werkzeugfenster. Geprobt am
-12.08.: 55 Sekunden, Stil sitzt. Danach die Zusage: das Bild kommt auf die
-Nachlese-Seite. Klappt die Generierung nicht, wird die Folie übersprungen,
-sie hängt an nichts.
 
 ---
 

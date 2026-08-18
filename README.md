@@ -5,7 +5,7 @@ Herzogtum Lauenburg, am 19. August 2026 bei der AWSH in Elmenhorst/Lanken.
 
 **Live: https://visionista.edge-digital.ai/**
 
-31 Folien, etwa 35 Minuten, mit drei Live-Teilen und drei Zugaben. Keine versteckten Unterfolien.
+30 Folien, etwa 35 Minuten, mit drei Live-Teilen und drei Zugaben. Keine versteckten Unterfolien.
 Referenten: Edgar Paul-Ghazaryan und Emre Erdogan, EDGE Digital.
 
 ## Bedienung
