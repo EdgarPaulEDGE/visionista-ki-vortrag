@@ -32,9 +32,11 @@ parallel abschicken, je `resolution: "2k"`:
 1. Farbpalette, `16:9` — NUR Farben, ausdrücklich keine Mockups,
    keine Taschen, Sticker, Karten und keine Schriftmuster (Edgars
    Vorgabe vom 18.08.). Referenzlogo klein oben, darunter fünf große
-   Farbfelder mit Hex-Code und einem deutschen Farbnamen in Versalien,
-   die Namen passend zur Betriebsart erfinden (beim Angelladen etwa
-   „Posenrot"). Viel Weißraum, ruhig, editorial.
+   Farbfelder, ÜBER jedem Feld ein gesperrtes deutsches Rollen-Label
+   (PRIMÄR, SEKUNDÄR, AKZENT, NEUTRAL HELL, NEUTRAL DUNKEL), UNTER
+   jedem Feld der Hex-Code in Monospace und ein deutscher Farbname in
+   Versalien, die Namen passend zur Betriebsart erfinden (beim
+   Angelladen etwa „Posenrot"). Viel Weißraum, ruhig, editorial.
 2. Instagram-Beitrag, `4:5` — warmes Foto passend zum Betrieb, das Logo
    sichtbar auf einem Objekt (Tasse, Schürze, Tüte). Eine kleine
    handgeschriebene Karte mit einem kurzen deutschen Satz, den DU
