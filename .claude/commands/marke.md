@@ -74,9 +74,9 @@ parallel abschicken, je `resolution: "2k"`:
   Weg. NACH DEM VORTRAG aufräumen: die vier PNGs wieder aus dem Repo
   entfernen, sonst zeigt die öffentliche Seite dauerhaft den Testlauf.
 
-Gemessene Zeiten (Probe 18.08., „Silvias Schuppen"): Logo nach ~1:35,
-alle vier Bilder nach ~4:10, über die Live-Zustellung öffentlich sichtbar
-nach ~5:05. Lokal entfällt der Deploy, dann sind es rund vier Minuten.
+Gemessene Zeiten über vier Probeläufe am 18.08.: Logo nach 1:35 bis 1:55,
+alle vier Bilder nach 4:10 bis 5:30, über die Live-Zustellung öffentlich
+nach 5:05 bis 6:35, die Warteschlange schwankt. Lokal entfällt der Deploy.
 Deshalb sofort nach den drei Zurufen feuern, nicht später. Schlägt ein Folgebild fehl: die
 übrigen trotzdem abliefern und in einem Satz sagen, welches fehlt,
 die Folie dimmt leere Felder von selbst.

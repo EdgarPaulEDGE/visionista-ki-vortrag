@@ -188,8 +188,8 @@ Sprechernotizen der Folie) und legt die fertigen Dateien in `assets/live/`
 ab, die Folie füllt sich von selbst. Seit 18.08. läuft die Erzeugung zweistufig: erst das Logo mit fester
 Farbpalette, dann die drei Folgebilder mit dem Logo als Referenzbild.
 So tragen alle vier Bilder dieselbe Marke, vorher hat jedes Bild seine
-eigene erfunden. Gemessen am 18.08.: rund vier Minuten bis alle vier Bilder da sind,
-über die Live-Zustellung gut fünf bis zur öffentlichen Seite. Deshalb
+eigene erfunden. Gemessen am 18.08. über vier Läufe: fünf bis sechseinhalb Minuten von
+der Eingabe bis zur öffentlichen Seite, die Warteschlange schwankt. Deshalb
 feuert Emre direkt nach den drei Zurufen, nicht erst in einer ruhigen
 Minute, dann ist bei Minute 34 längst alles da. Geprobt am 17.08. als kompletter Durchlauf mit Umschwenk-Test: ein zu früh
 gefeuerter Satz wurde verworfen und neu gefeuert, Mehrkosten dreißig
