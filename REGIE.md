@@ -140,6 +140,12 @@ Zuruf aus dem Raum aufnehmen. Beim Eintippen laut sagen:
 Das ist gleichzeitig die Überleitung zur Datenschutzfolie.
 
 **Wenn kein Zuruf kommt:** die Mahnung von der Folie nehmen, die kennt jede.
+**Die Übungsmail liegt auf dem Desktop** („Mail von Frau Behrens.txt", frei
+erfunden): eine echte, warme Antwortmail mit Namen, Adresse, Telefonnummer
+und Krankenhaus-Detail. Damit wird das Anonymisieren GEMEINSAM geübt:
+erst die Mail zeigen, dann live fragen, was davon in die KI darf, dann
+den Prompt mit „eine Stammkundin" bauen. Die Frau-Petersen-Daten auf der
+Datenschutz-Folie spiegeln genau diese Sorte Angaben.
 
 ---
 

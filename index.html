@@ -198,7 +198,7 @@ hr.strich.zart{width:100%;height:1px;background:var(--linie);margin:26px 0;opaci
 .gesagt{font-size:40px;line-height:1.62;font-weight:400;color:var(--burgund);
         flex-shrink:0;}
 .gesagt .wer{font-weight:700;}
-.gesagt.matt{color:var(--tinte);font-weight:400;opacity:.85;}
+.gesagt.matt{color:var(--burgund);font-weight:400;}
 
 /* Ein fertiger Brief. Nur Haarlinien oben und unten, keine Flaeche. */
 .brief{font-size:40px;line-height:1.62;font-weight:300;color:var(--tinte);
@@ -297,7 +297,7 @@ html.hatbild .vollbild,html.hatbild .dunkel,html.hatbild .schleier{visibility:hi
   width:110px;height:110px;border-radius:50%;background:var(--burgund);
   color:#F6F1E9;display:flex;align-items:center;justify-content:center;
   font-family:"Avenir Next LT",sans-serif;font-weight:700;font-size:40px;z-index:2;}
-.clash .lager-links{opacity:.5;}
+
 
 /* Rollen-Markierung in den Prompts: vier gedeckte Toene als dicke
    Unterstreichung, die Legende darunter traegt dieselben Farben.
@@ -791,16 +791,16 @@ html.nofrag .reveal .fragment{opacity:1!important;visibility:visible!important;t
   <div class="buehne">
     <h2>Es gibt genau <span class="akz oval">einen</span> Anfängerfehler.</h2>
     <hr class="strich breit" style="margin:46px 0 60px;">
-    <div class="spalten zwei clash" style="align-items:center;margin:auto 0;">
-      <div class="lager-links" style="padding-right:120px;">
+    <div class="spalten zwei clash" style="align-items:stretch;margin:auto 0;">
+      <div style="padding-right:130px;">
         <svg class="ik gross"><use href="#i-message-circle"></use></svg>
-        <div class="label" style="margin:26px 0 0;">So machen es fast alle</div>
+        <div class="label" style="margin:28px 0 0;">&#10005;&nbsp;&nbsp;So machen es fast alle</div>
         <h3 style="margin-top:20px;">Man tippt<br>wie bei Google.</h3>
       </div>
       <div class="vs">VS</div>
-      <div style="border-left:1px solid var(--linie);padding-left:120px;">
+      <div style="border-left:1px solid var(--linie);padding-left:130px;">
         <svg class="ik gross"><use href="#i-folder-open"></use></svg>
-        <div class="label" style="margin:26px 0 0;">So funktioniert es</div>
+        <div class="label" style="margin:28px 0 0;">&#10003;&nbsp;&nbsp;So funktioniert es</div>
         <h3 style="margin-top:20px;">Man redet wie mit<br>einer neuen Aushilfe.</h3>
       </div>
     </div>
@@ -1115,9 +1115,6 @@ html.nofrag .reveal .fragment{opacity:1!important;visibility:visible!important;t
       <div class="rollen-legende" style="margin-top:52px;">
         <span class="l-rolle">Rolle</span><span class="l-ergebnis">Ergebnis</span><span class="l-wissen">Wissen</span><span class="l-form">Form</span>
       </div>
-      <div class="gesagt matt" style="font-size:30px;margin-top:36px;">
-        Die eingefügte Mail: &nbsp;„Danke für die Erinnerung, ich kümmere mich darum. Viele Grüße, Frau B."
-      </div>
       <hr class="strich breit" style="margin:auto 0 0;">
     </div>
     <aside class="notes">
@@ -1268,7 +1265,7 @@ html.nofrag .reveal .fragment{opacity:1!important;visibility:visible!important;t
        class="vollbild" style="object-position:center center;">
   <div class="buehne auf-bild" style="justify-content:center;">
     <h2 style="font-size:84px;max-width:1150px;color:#F6F1E9;">
-      Wir teilen ein Geheimnis<br>mit Ihnen.
+      Wir teilen ein<br>Geheimnis mit Ihnen.
     </h2>
   </div>
   <aside class="notes">
@@ -1283,7 +1280,6 @@ html.nofrag .reveal .fragment{opacity:1!important;visibility:visible!important;t
      ============================================================ -->
 <section data-slide-id="ai-act">
   <div class="buehne mittig">
-    <div class="label">Und weil danach immer gefragt wird</div>
     <h2 style="margin-top:30px;">Was seit dem 2. August gilt.</h2>
     <hr class="strich" style="margin:60px 0 66px;">
     <div class="spalten zwei" style="align-items:start;">
@@ -1299,7 +1295,6 @@ html.nofrag .reveal .fragment{opacity:1!important;visibility:visible!important;t
       </div>
     </div>
     <hr class="strich breit" style="margin:auto 0 28px;">
-    <p class="takeaway">Nebenbei: Sie erledigen hier gerade eine Pflicht.</p>
   </div>
 <aside class="notes">
     Dazusagen: Bei den verschobenen Pflichten geht es um automatische
@@ -1413,8 +1408,8 @@ html.nofrag .reveal .fragment{opacity:1!important;visibility:visible!important;t
       Ein Ruder-Achter mit zweimal Olympiagold.<br>
       Und die Diddl-Maus aus Geesthacht.
     </p>
-    <p class="takeaway" style="margin-top:52px;text-align:center;font-size:64px;">
-      An <span class="akz">Stunden</span> schon.<br>Und darum ging es heute.
+    <p class="takeaway" style="margin-top:52px;text-align:center;font-size:58px;">
+      Ab heute auch bekannt für Unternehmerinnen,<br>die KI richtig gut nutzen.
     </p>
   </div>
   <p class="foto-quelle">Foto: Oliver Essing, Ratzeburg-Tourismus</p>
@@ -1457,7 +1452,6 @@ html.nofrag .reveal .fragment{opacity:1!important;visibility:visible!important;t
      ============================================================ -->
 <section data-slide-id="marke">
     <div class="buehne">
-      <div class="label">Der Wunsch von vorhin</div>
       <h2 style="margin-top:26px;">Und nebenbei ist das hier <span class="akz">entstanden</span>.</h2>
       <hr class="strich breit" style="margin:36px 0 34px;">
       <div class="marken-grid">
@@ -1506,8 +1500,8 @@ html.nofrag .reveal .fragment{opacity:1!important;visibility:visible!important;t
       </div>
       <h1 style="font-size:112px;">Jetzt <span class="akz">Sie</span>.</h1>
       <hr class="strich" style="margin:34px 0 32px;">
-      <p class="lead" style="font-size:48px;max-width:900px;">Fragen Sie uns alles.<br>
-      Besonders das Leise.</p>
+      <p class="lead" style="font-size:48px;max-width:900px;">Vielen Dank.<br>
+      Wir sind für Sie da.</p>
       <div style="margin-top:38px;display:flex;gap:40px;align-items:center;">
         <img src="assets/logos/qr-vortrag.png" alt="QR-Code zur Präsentation"
              style="width:150px;height:150px;display:block;">
