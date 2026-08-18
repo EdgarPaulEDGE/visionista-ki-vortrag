@@ -1633,24 +1633,42 @@ Reveal.initialize({
 });
 
 // Marken-Reveal: alle vier Sekunden nach assets/live/ schauen.
-// Ein Bild, das einmal geladen ist, bleibt stehen.
+// WICHTIG: Der Poll hoert NIE auf. Die erste Fassung hakte ein Feld nach
+// dem ersten Treffer fuer immer ab, und ein offener Tab bekam eine neue
+// Zustellung nie zu sehen (Edgars Tab zeigte den vorigen Testlauf).
+// Deshalb: billiger HEAD-Abruf je Feld, und nur wenn sich ETag oder
+// Last-Modified aendert, wird das eigentliche Bild (neu) geladen.
 (function markenReveal(){
   const felder = document.querySelectorAll('.marken-grid figure[data-live]');
   if (!felder.length) return;
-  const geladen = new Set();
+  const stand = {};
   setInterval(() => {
-    felder.forEach(f => {
+    felder.forEach(async f => {
       const name = f.dataset.live;
-      if (geladen.has(name)) return;
-      const probe = new Image();
-      probe.onload = () => {
-        if (geladen.has(name)) return;
-        geladen.add(name);
-        probe.style.cssText = 'width:100%;height:440px;object-fit:contain;display:block;';
-        f.appendChild(probe);
-        f.style.opacity = '1';
-      };
-      probe.src = 'assets/live/' + name + '.png?v=' + Date.now();
+      try {
+        const r = await fetch('assets/live/' + name + '.png?v=' + Date.now(),
+                              { method: 'HEAD', cache: 'no-store' });
+        if (!r.ok) return;
+        const marke = (r.headers.get('etag') || '') + '|' +
+                      (r.headers.get('last-modified') || '') + '|' +
+                      (r.headers.get('content-length') || '');
+        if (stand[name] === marke) return;
+        const probe = new Image();
+        probe.onload = () => {
+          stand[name] = marke;
+          // Das fertig geladene Element direkt einsetzen. Die naheliegende
+          // Variante alt.src = probe.src laedt die URL ein zweites Mal,
+          // und dieser zweite Abruf kann genau den Moment erwischen, in
+          // dem die Datei gerade neu geschrieben wird: dann bleibt ein
+          // kaputtes Bild stehen und der Stand gilt als aktuell.
+          probe.style.cssText = 'width:100%;height:440px;object-fit:contain;display:block;';
+          const alt = f.querySelector('img');
+          if (alt) { alt.replaceWith(probe); return; }
+          f.appendChild(probe);
+          f.style.opacity = '1';
+        };
+        probe.src = 'assets/live/' + name + '.png?v=' + Date.now();
+      } catch (e) { /* Netzwackler: naechste Runde probiert es wieder */ }
     });
   }, 4000);
 })();
