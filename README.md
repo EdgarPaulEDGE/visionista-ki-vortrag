@@ -24,7 +24,10 @@ Referenten: Edgar Paul-Ghazaryan und Emre Erdogan, EDGE Digital.
 
 **Für den Vortrag**
 - `index.html` — die Präsentation, eine Datei, läuft ohne Internet
-- `visionista-ki-vortrag.pdf` — der Notnagel, falls vor Ort nichts anderes läuft
+- `visionista-ki-vortrag.pdf` — der Notnagel, falls vor Ort nichts anderes läuft.
+  Erzeugt in doppelter Auflösung (`--size 3840x2160`) und anschließend mit
+  Ghostscript ohne Downsampling auf Präsentationsmaß normalisiert, JPEG 97.
+  Ergebnis: 8,7 MB, Text vollständig als Vektor, Bilder unangetastet.
 - `REGIE.md` — Zeitplan mit Marken, Rollenverteilung, Checkliste, Streichliste
 - `FRAGEN.md` — die absehbaren Publikumsfragen mit kurzen Antworten
 
