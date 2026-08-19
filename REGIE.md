@@ -11,7 +11,7 @@ visionista, das Unternehmerinnen-Netzwerk der WFL Herzogtum Lauenburg
 | Uhrzeit | Was |
 |---|---|
 | 08:30 bis 08:40 | Ankommen, Kaffee, Begrüßung durch die WFL |
-| 08:40 bis 09:15 | Vortrag, 35 Minuten, 32 Folien |
+| 08:40 bis 09:15 | Vortrag, 35 Minuten, 33 Folien |
 | 09:15 bis 09:25 | Fragen |
 | ab 09:25 | Sitzen bleiben, Gespräche, Networking |
 
@@ -45,13 +45,15 @@ fünf sind der Moment, die Streichliste zu benutzen.
 | **26 min** | **Zugabe: Zehn Ideen** | 21 |
 | 29 min | Drei Dinge vorab | 22 |
 | 30 min | Die Lage, nicht die Person | 23 |
-| 31 min | Das gehört in kein KI-Tool | 24 |
-| 31,5 min | Das Geheimnis | 25 |
-| 32 min | Was seit dem 2. August gilt | 26 |
+| 30,5 min | Das gehört in kein KI-Tool | 24 |
+| 31 min | Das Geheimnis | 25 |
+| 31,5 min | Was seit dem 2. August gilt, QR zu den EU-Zeichen | 26 |
+| 32,5 min | Was bei Ihnen bleibt | 27 |
 | 33 min | Sie wissen jetzt, wie es geht | 28 |
-| 34 min | Ratzeburg, an Ideen fehlt es nicht | 29 |
-| **34,5 min** | **Zugabe: Ihre Marke** | 31 |
-| 35 min | Jetzt Sie | 32 |
+| 33,5 min | Einmal einrichten | 29 |
+| 34 min | Ratzeburg, an Ideen fehlt es nicht | 30 |
+| **34,5 min** | **Zugabe: Ihre Marke** | 32 |
+| 35 min | Vielen Dank | 33 |
 
 **Der wichtigste Wert in dieser Tabelle ist die 16.** Wenn Sie nach sechzehn
 Minuten noch nicht bei der ersten Demo sind, war der Vorlauf zu lang.

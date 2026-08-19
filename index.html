@@ -329,6 +329,24 @@ html.hatbild .vollbild,html.hatbild .dunkel,html.hatbild .schleier{visibility:hi
 .rollen-legende .l-wissen::before{background:#8A3B5C;}
 .rollen-legende .l-form::before{background:#A6762A;}
 
+/* EU-Zeichen und ihr QR. Die Zeichen sind die offiziellen der
+   Kommission, hier in Burgund statt Weiss, weil der Grund Sand ist. */
+.eu-zeichen{display:flex;align-items:center;gap:56px;}
+.eu-zeichen img{display:block;width:auto;}
+.qr-block{display:flex;align-items:center;gap:26px;}
+.qr-block img{width:126px;height:126px;display:block;}
+.qr-block span{font-size:24px;font-weight:400;color:var(--tinte-weich);line-height:1.45;}
+
+/* Schritt-fuer-Schritt: nummerierter Kreis, Anweisung, kleiner Zusatz. */
+.schritte{display:flex;gap:0;margin:auto 0;}
+.schritte > div{flex:1;padding:0 48px;border-left:1px solid var(--linie);}
+.schritte > div:first-child{padding-left:0;border-left:none;}
+.schritte .kreis{width:88px;height:88px;border-radius:50%;background:var(--burgund);
+  color:#F6F1E9;display:flex;align-items:center;justify-content:center;
+  font-family:"Avenir Next LT",sans-serif;font-weight:700;font-size:44px;}
+.schritte h3{font-size:42px;margin-top:26px;}
+.schritte p{font-size:32px;color:var(--tinte-weich);margin-top:14px;line-height:1.45;}
+
 /* Verbotsliste: Icon und Sache auf einer Zeile, gleichmaessiger Rhythmus.
    Kein Kasten, keine Kreuze. Die Ueberschrift sagt schon, dass es Tabus sind. */
 .tabu-liste{display:flex;flex-direction:column;gap:56px;}
@@ -1279,24 +1297,45 @@ html.nofrag .reveal .fragment{opacity:1!important;visibility:visible!important;t
      FOLIE 18  Die Rechtslage in einem Satz
      ============================================================ -->
 <section data-slide-id="ai-act">
-  <div class="buehne mittig">
-    <h2 style="margin-top:30px;">Was seit dem 2. August gilt.</h2>
-    <hr class="strich" style="margin:60px 0 66px;">
+  <div class="buehne">
+    <h2 style="margin-top:26px;">Was seit dem 2. August gilt.</h2>
+    <hr class="strich breit" style="margin:40px 0 40px;">
     <div class="spalten zwei" style="align-items:start;">
-      <div>
-        <svg class="ik gross"><use href="#i-image"></use></svg>
-        <h3 style="margin-top:34px;">KI-Bilder<br>kennzeichnen.</h3>
-        <p class="klein" style="margin-top:30px;">Auch die schönen.</p>
+      <div style="display:flex;align-items:center;gap:34px;">
+        <svg class="ik"><use href="#i-image"></use></svg>
+        <div>
+          <h3 style="font-size:48px;">KI-Bilder kennzeichnen.</h3>
+          <p class="klein" style="margin-top:12px;">Auch die schönen.</p>
+        </div>
       </div>
-      <div>
-        <svg class="ik gross"><use href="#i-message-circle"></use></svg>
-        <h3 style="margin-top:34px;">Chatbots<br>kennzeichnen.</h3>
-        <p class="klein" style="margin-top:30px;">Wenn kein Mensch antwortet.</p>
+      <div style="display:flex;align-items:center;gap:34px;border-left:1px solid var(--linie);padding-left:70px;">
+        <svg class="ik"><use href="#i-message-circle"></use></svg>
+        <div>
+          <h3 style="font-size:48px;">Chatbots kennzeichnen.</h3>
+          <p class="klein" style="margin-top:12px;">Wenn kein Mensch antwortet.</p>
+        </div>
       </div>
     </div>
-    <hr class="strich breit" style="margin:auto 0 28px;">
+    <hr class="strich breit" style="margin:auto 0 40px;">
+    <div style="display:flex;justify-content:space-between;align-items:flex-end;gap:60px;margin-bottom:auto;">
+      <div>
+        <div class="label" style="margin-bottom:26px;">Ein Satz reicht. Oder eines dieser Zeichen</div>
+        <div class="eu-zeichen">
+          <img src="assets/eu/ki-generiert.svg" alt="EU-Zeichen für KI-generierte Inhalte" style="height:82px;">
+          <img src="assets/eu/ki-modifiziert.svg" alt="EU-Zeichen für KI-modifizierte Inhalte" style="height:54px;">
+        </div>
+      </div>
+      <div class="qr-block">
+        <img src="assets/eu/qr-eu-zeichen.png" alt="QR-Code zur Downloadseite der EU-Kommission">
+        <span>Beide Zeichen kostenlos,<br>direkt von der EU-Kommission</span>
+      </div>
+    </div>
   </div>
 <aside class="notes">
+    Die beiden Zeichen sind die offiziellen der EU-Kommission, veröffentlicht
+    im Juli 2026. Ihre Verwendung ist freiwillig, die Kennzeichnung dahinter
+    nicht. Dem Raum eine Minute zum Scannen geben, dort liegen die Zeichen
+    als SVG und PNG in mehreren Farben.
     Dazusagen: Bei den verschobenen Pflichten geht es um automatische
     Bewerberauswahl und Bonitätsprüfung, verlegt im Mai auf Ende 2027.
     Dazusagen: Wer solche Werkzeuge im Betrieb einsetzt, soll dafür sorgen,
@@ -1390,6 +1429,49 @@ html.nofrag .reveal .fragment{opacity:1!important;visibility:visible!important;t
     Wer sich die funktionierenden Sätze aufhebt, baut sich in vier Wochen
     etwas auf, das genau auf den eigenen Betrieb passt.
     Bild dazu: das ist die Einarbeitungsmappe für die Aushilfe.
+  </aside>
+</section>
+
+<!-- ============================================================
+     FOLIE  Einmal einrichten. Der Klickweg zu den persoenlichen
+     Vorgaben, bei Claude und ChatGPT fast identisch.
+     ============================================================ -->
+<section data-slide-id="personalisieren">
+  <div class="buehne">
+    <h2 style="margin-top:20px;">Einmal einrichten, <span class="akz">immer dabei</span>.</h2>
+    <hr class="strich breit" style="margin:34px 0 0;">
+    <div class="schritte">
+      <div>
+        <span class="kreis">1</span>
+        <h3>Unten links auf sich selbst.</h3>
+        <p>Ihre Initialen oder<br>Ihr Profilbild.</p>
+      </div>
+      <div>
+        <span class="kreis">2</span>
+        <h3>Einstellungen.</h3>
+        <p>Bei ChatGPT dann<br>„Personalisierung".</p>
+      </div>
+      <div>
+        <span class="kreis">3</span>
+        <h3>Drei Sätze über sich.</h3>
+        <p>Was Sie machen,<br>für wen, wie Sie klingen.</p>
+      </div>
+    </div>
+    <hr class="strich breit" style="margin:0 0 22px;">
+    <p class="takeaway">Danach kennt es Ihren Betrieb. Jedes Mal.</p>
+  </div>
+  <aside class="notes">
+    Der Klickweg ist bei beiden fast gleich, deshalb steht er nur einmal da.
+    Bei Claude heißt das Feld „Anweisungen für Claude", bei ChatGPT liegt es
+    unter Einstellungen, Personalisierung.
+    Dazusagen, das ist der Kern: „Die vier Fragen von vorhin beantworten Sie
+    hier EINMAL, statt bei jedem Satz neu. Die Rolle und Ihr Betrieb wandern
+    hier hinein, dann bleibt für den Alltag nur noch Ergebnis und Form."
+    Vorlesen, was man reinschreibt: „Ich habe einen Malerbetrieb in Mölln mit
+    vier Leuten. Meine Kundinnen sind Privatleute. Schreib freundlich, kurz,
+    ohne Fachwörter, und sieze immer."
+    Ein Satz zur Vorsicht: keine Kundendaten in dieses Feld, es gilt dieselbe
+    Regel wie eben. Danach weiter, das ist eine Ein-Minuten-Folie.
   </aside>
 </section>
 
