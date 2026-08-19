@@ -74,9 +74,15 @@ parallel abschicken, je `resolution: "2k"`:
   Weg. NACH DEM VORTRAG aufräumen: die vier PNGs wieder aus dem Repo
   entfernen, sonst zeigt die öffentliche Seite dauerhaft den Testlauf.
 
-Gemessene Zeiten über vier Probeläufe am 18.08.: Logo nach 1:35 bis 1:55,
-alle vier Bilder nach 4:10 bis 5:30, über die Live-Zustellung öffentlich
-nach 5:05 bis 6:35, die Warteschlange schwankt. Lokal entfällt der Deploy.
-Deshalb sofort nach den drei Zurufen feuern, nicht später. Schlägt ein Folgebild fehl: die
+Gemessene Zeiten über fünf Probeläufe (18./19.08.): störungsfrei 5:05 bis
+6:35 bis zur öffentlichen Seite; der Morgenlauf am 19.08. um 6:32 Uhr hatte
+einen Fehlschlag plus einen Hänger und brauchte 11:13, immer noch mit über
+20 Minuten Puffer. Deshalb sofort nach den drei Zurufen feuern, nicht später.
+
+**Störungsregeln aus dem Morgenlauf:**
+- Status `failed`: denselben Prompt sofort kommentarlos neu feuern.
+- Status `in_progress` länger als 3 Minuten: nicht weiter warten, einen
+  identischen Job PARALLEL feuern und nehmen, was zuerst fertig ist.
+  Im Test gewann der Parallel-Versuch, der erste hing dauerhaft. Schlägt ein Folgebild fehl: die
 übrigen trotzdem abliefern und in einem Satz sagen, welches fehlt,
 die Folie dimmt leere Felder von selbst.
